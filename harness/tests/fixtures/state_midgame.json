@@ -1,0 +1,1291 @@
+{
+ "type": "state",
+ "turn": 12,
+ "player": 1,
+ "state": {
+  "turn": 12,
+  "settings": {
+   "map_width": 16,
+   "map_height": 16,
+   "map_size": 16,
+   "game_mode": "Perfection",
+   "game_type": "SinglePlayer",
+   "difficulty": "Easy",
+   "opponents": 1,
+   "turn_limit": 30,
+   "score_limit": 0
+  },
+  "me": {
+   "id": 1,
+   "tribe": "Xinxi",
+   "stars": 12,
+   "income": 5,
+   "score": 2240,
+   "techs": [
+    "Basic",
+    "Climbing",
+    "Mining",
+    "Meditation",
+    "Hunting",
+    "Fishing"
+   ]
+  },
+  "players": [
+   {
+    "id": 1,
+    "tribe": "Xinxi",
+    "name": "August",
+    "is_bot": false,
+    "score": 2240,
+    "cities": 1,
+    "kills": 0,
+    "killed_turn": 0,
+    "alive": true,
+    "known": true,
+    "is_me": true,
+    "stars": 12
+   },
+   {
+    "id": 2,
+    "tribe": "Oumaji",
+    "name": "Yelake",
+    "is_bot": true,
+    "score": 4325,
+    "cities": 5,
+    "kills": 0,
+    "killed_turn": 0,
+    "alive": true,
+    "known": true,
+    "relation": "Neutral"
+   }
+  ],
+  "tiles": [
+   {
+    "x": 13,
+    "y": 8,
+    "terrain": "Forest",
+    "owner": 2,
+    "city": [
+     13,
+     7
+    ]
+   },
+   {
+    "x": 14,
+    "y": 8,
+    "terrain": "Forest",
+    "owner": 2,
+    "city": [
+     13,
+     7
+    ]
+   },
+   {
+    "x": 15,
+    "y": 8,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 9,
+    "terrain": "Ocean",
+    "owner": 0
+   },
+   {
+    "x": 8,
+    "y": 9,
+    "terrain": "Ocean",
+    "owner": 0
+   },
+   {
+    "x": 9,
+    "y": 9,
+    "terrain": "Water",
+    "owner": 0
+   },
+   {
+    "x": 10,
+    "y": 9,
+    "terrain": "Water",
+    "owner": 0
+   },
+   {
+    "x": 11,
+    "y": 9,
+    "terrain": "Water",
+    "owner": 0,
+    "resource": "Fish"
+   },
+   {
+    "x": 12,
+    "y": 9,
+    "terrain": "Water",
+    "owner": 0,
+    "resource": "Fish"
+   },
+   {
+    "x": 13,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 14,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 15,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 6,
+    "y": 10,
+    "terrain": "Ocean",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 10,
+    "terrain": "Ocean",
+    "owner": 0
+   },
+   {
+    "x": 8,
+    "y": 10,
+    "terrain": "Water",
+    "owner": 0
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 10,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0,
+    "road": true,
+    "improvement": "City",
+    "village": true
+   },
+   {
+    "x": 11,
+    "y": 10,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 12,
+    "y": 10,
+    "terrain": "Water",
+    "owner": 0,
+    "resource": "Fish"
+   },
+   {
+    "x": 13,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0,
+    "road": true,
+    "improvement": "City",
+    "village": true
+   },
+   {
+    "x": 14,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 15,
+    "y": 10,
+    "terrain": "Forest",
+    "owner": 0,
+    "resource": "Game"
+   },
+   {
+    "x": 6,
+    "y": 11,
+    "terrain": "Ocean",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 7,
+    "y": 11,
+    "terrain": "Water",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 8,
+    "y": 11,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Game"
+   },
+   {
+    "x": 9,
+    "y": 11,
+    "terrain": "Mountain",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Metal"
+   },
+   {
+    "x": 10,
+    "y": 11,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 11,
+    "y": 11,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 12,
+    "y": 11,
+    "terrain": "Mountain",
+    "owner": 0,
+    "resource": "Metal"
+   },
+   {
+    "x": 13,
+    "y": 11,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 14,
+    "y": 11,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 15,
+    "y": 11,
+    "terrain": "Forest",
+    "owner": 0,
+    "improvement": "Ruin"
+   },
+   {
+    "x": 6,
+    "y": 12,
+    "terrain": "Ocean",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Fish"
+   },
+   {
+    "x": 7,
+    "y": 12,
+    "terrain": "Water",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "improvement": "Monument1"
+   },
+   {
+    "x": 8,
+    "y": 12,
+    "terrain": "Mountain",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "improvement": "Mine"
+   },
+   {
+    "x": 9,
+    "y": 12,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 10,
+    "y": 12,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Game"
+   },
+   {
+    "x": 11,
+    "y": 12,
+    "terrain": "Mountain",
+    "owner": 0,
+    "resource": "Metal"
+   },
+   {
+    "x": 12,
+    "y": 12,
+    "terrain": "Forest",
+    "owner": 0,
+    "resource": "Game"
+   },
+   {
+    "x": 13,
+    "y": 12,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 14,
+    "y": 12,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 15,
+    "y": 12,
+    "terrain": "Mountain",
+    "owner": 0,
+    "resource": "Metal"
+   },
+   {
+    "x": 6,
+    "y": 13,
+    "terrain": "Water",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 7,
+    "y": 13,
+    "terrain": "Water",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 8,
+    "y": 13,
+    "terrain": "Field",
+    "owner": 1,
+    "road": true,
+    "city": [
+     8,
+     13
+    ],
+    "improvement": "City"
+   },
+   {
+    "x": 9,
+    "y": 13,
+    "terrain": "Mountain",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "improvement": "Mine"
+   },
+   {
+    "x": 10,
+    "y": 13,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 11,
+    "y": 13,
+    "terrain": "Field",
+    "owner": 0,
+    "road": true,
+    "improvement": "City",
+    "village": true
+   },
+   {
+    "x": 12,
+    "y": 13,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 13,
+    "y": 13,
+    "terrain": "Forest",
+    "owner": 0,
+    "resource": "Game"
+   },
+   {
+    "x": 14,
+    "y": 13,
+    "terrain": "Field",
+    "owner": 0,
+    "road": true,
+    "improvement": "City",
+    "village": true
+   },
+   {
+    "x": 15,
+    "y": 13,
+    "terrain": "Mountain",
+    "owner": 0,
+    "resource": "Metal"
+   },
+   {
+    "x": 6,
+    "y": 14,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 7,
+    "y": 14,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 8,
+    "y": 14,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 9,
+    "y": 14,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 10,
+    "y": 14,
+    "terrain": "Mountain",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Metal"
+   },
+   {
+    "x": 11,
+    "y": 14,
+    "terrain": "Mountain",
+    "owner": 0,
+    "resource": "Metal"
+   },
+   {
+    "x": 12,
+    "y": 14,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 13,
+    "y": 14,
+    "terrain": "Forest",
+    "owner": 0,
+    "resource": "Game"
+   },
+   {
+    "x": 14,
+    "y": 14,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 15,
+    "y": 14,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 6,
+    "y": 15,
+    "terrain": "Water",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 7,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 8,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 9,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ]
+   },
+   {
+    "x": 10,
+    "y": 15,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     13
+    ],
+    "resource": "Game"
+   },
+   {
+    "x": 11,
+    "y": 15,
+    "terrain": "Mountain",
+    "owner": 0
+   },
+   {
+    "x": 12,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 13,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 14,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 15,
+    "y": 15,
+    "terrain": "Field",
+    "owner": 0,
+    "improvement": "LightHouse"
+   }
+  ],
+  "cities": [
+   {
+    "x": 8,
+    "y": 13,
+    "name": "Xi--",
+    "owner": 1,
+    "level": 4,
+    "population": 0,
+    "population_total": 9,
+    "population_to_level": 5,
+    "production": 1,
+    "border_size": 2,
+    "is_capital": true,
+    "connected_to_capital": true,
+    "walls": true,
+    "rewards": [
+     "Explorer",
+     "CityWall",
+     "BorderGrowth"
+    ]
+   }
+  ],
+  "units": [
+   {
+    "id": 13,
+    "type": "Warrior",
+    "owner": 2,
+    "x": 14,
+    "y": 9,
+    "hp": 10,
+    "max_hp": 10,
+    "attack": 2,
+    "defence": 2,
+    "movement": 1,
+    "range": 1,
+    "veteran": false,
+    "kills": 0,
+    "abilities": [
+     "Dash",
+     "Fortify",
+     "Land"
+    ]
+   },
+   {
+    "id": 11,
+    "type": "Warrior",
+    "owner": 1,
+    "x": 9,
+    "y": 12,
+    "hp": 10,
+    "max_hp": 10,
+    "attack": 2,
+    "defence": 2,
+    "movement": 1,
+    "range": 1,
+    "veteran": false,
+    "kills": 0,
+    "moved": false,
+    "attacked": false,
+    "can_move": true,
+    "can_attack": true,
+    "home": [
+     8,
+     13
+    ],
+    "abilities": [
+     "Dash",
+     "Fortify",
+     "Land"
+    ]
+   },
+   {
+    "id": 7,
+    "type": "Warrior",
+    "owner": 1,
+    "x": 9,
+    "y": 14,
+    "hp": 10,
+    "max_hp": 10,
+    "attack": 2,
+    "defence": 2,
+    "movement": 1,
+    "range": 1,
+    "veteran": false,
+    "kills": 0,
+    "moved": false,
+    "attacked": false,
+    "can_move": true,
+    "can_attack": true,
+    "home": [
+     8,
+     13
+    ],
+    "abilities": [
+     "Dash",
+     "Fortify",
+     "Land"
+    ]
+   },
+   {
+    "id": 1,
+    "type": "Warrior",
+    "owner": 1,
+    "x": 11,
+    "y": 14,
+    "hp": 10,
+    "max_hp": 10,
+    "attack": 2,
+    "defence": 3,
+    "movement": 1,
+    "range": 1,
+    "veteran": false,
+    "kills": 0,
+    "moved": false,
+    "attacked": false,
+    "can_move": true,
+    "can_attack": true,
+    "home": [
+     8,
+     13
+    ],
+    "abilities": [
+     "Dash",
+     "Fortify",
+     "Land"
+    ]
+   }
+  ],
+  "pending_trigger": null
+ },
+ "legal_actions": [
+  {
+   "kind": "research",
+   "tech": "Organization",
+   "cost": 5,
+   "unlocks_units": [],
+   "unlocks_improvements": [
+    "HarvestFruit"
+   ],
+   "unlocks_techs": [
+    "Farming",
+    "Shields"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Riding",
+   "cost": 5,
+   "unlocks_units": [
+    "Rider"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Roads",
+    "FreeSpirit"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Sailing",
+   "cost": 6,
+   "unlocks_units": [
+    "Scoutship"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Navigation"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Ramming",
+   "cost": 6,
+   "unlocks_units": [
+    "Rammership"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Aquatism"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Archery",
+   "cost": 6,
+   "unlocks_units": [
+    "Archer"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Spiritualism"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Forestry",
+   "cost": 6,
+   "unlocks_units": [],
+   "unlocks_improvements": [
+    "LumberHut",
+    "HiddenSanctuary",
+    "ClearForest"
+   ],
+   "unlocks_techs": [
+    "Mathematics"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Smithery",
+   "cost": 7,
+   "unlocks_units": [
+    "Swordsman"
+   ],
+   "unlocks_improvements": [
+    "Forge"
+   ],
+   "unlocks_techs": []
+  },
+  {
+   "kind": "research",
+   "tech": "Philosophy",
+   "cost": 7,
+   "unlocks_units": [
+    "MindBender"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": []
+  },
+  {
+   "kind": "build",
+   "improvement": "Port",
+   "at": [
+    7,
+    11
+   ],
+   "cost": 7,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "Hunting",
+   "at": [
+    8,
+    11
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "Mine",
+   "at": [
+    9,
+    11
+   ],
+   "cost": 5,
+   "population": 2
+  },
+  {
+   "kind": "build",
+   "improvement": "Fishing",
+   "at": [
+    6,
+    12
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    8,
+    11
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    8,
+    12
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    8,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    9,
+    11
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    9,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    10,
+    11
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    10,
+    12
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 11,
+   "from": [
+    9,
+    12
+   ],
+   "to": [
+    10,
+    13
+   ]
+  },
+  {
+   "kind": "build",
+   "improvement": "Hunting",
+   "at": [
+    10,
+    12
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "Port",
+   "at": [
+    6,
+    13
+   ],
+   "cost": 7,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "Port",
+   "at": [
+    7,
+    13
+   ],
+   "cost": 7,
+   "population": 1
+  },
+  {
+   "kind": "train",
+   "unit_type": "Warrior",
+   "at": [
+    8,
+    13
+   ],
+   "cost": 2,
+   "hp": 100,
+   "attack": 20,
+   "defence": 20,
+   "movement": 1,
+   "range": 1,
+   "abilities": [
+    "Dash",
+    "Fortify",
+    "Land"
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    8,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    8,
+    14
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    8,
+    15
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    9,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    9,
+    15
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    10,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    10,
+    14
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 7,
+   "from": [
+    9,
+    14
+   ],
+   "to": [
+    10,
+    15
+   ]
+  },
+  {
+   "kind": "build",
+   "improvement": "Mine",
+   "at": [
+    10,
+    14
+   ],
+   "cost": 5,
+   "population": 2
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    10,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    10,
+    14
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    10,
+    15
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    11,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    11,
+    15
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    12,
+    13
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    12,
+    14
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    11,
+    14
+   ],
+   "to": [
+    12,
+    15
+   ]
+  },
+  {
+   "kind": "build",
+   "improvement": "Port",
+   "at": [
+    6,
+    15
+   ],
+   "cost": 7,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "Hunting",
+   "at": [
+    10,
+    15
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "end_turn"
+  }
+ ]
+}

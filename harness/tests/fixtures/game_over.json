@@ -1,0 +1,37 @@
+{
+ "type": "game_over",
+ "turn": 19,
+ "player": 1,
+ "winner": 2,
+ "won": false,
+ "score": 2460,
+ "players": [
+  {
+   "id": 1,
+   "tribe": "Xinxi",
+   "name": "August",
+   "is_bot": false,
+   "score": 2460,
+   "cities": 0,
+   "kills": 1,
+   "killed_turn": 19,
+   "alive": false,
+   "known": true,
+   "is_me": true,
+   "stars": 3
+  },
+  {
+   "id": 2,
+   "tribe": "Oumaji",
+   "name": "Yelake",
+   "is_bot": true,
+   "score": 8205,
+   "cities": 10,
+   "kills": 1,
+   "killed_turn": 0,
+   "alive": true,
+   "known": true,
+   "relation": "Neutral"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+# .NET build output
+mod/**/bin/
+mod/**/obj/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Game logs and evaluation output (large, per-run)
+harness/logs/
+harness/results/
+harness/*.jsonl
+harness/smoke_state*.json
