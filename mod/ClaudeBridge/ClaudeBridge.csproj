@@ -1,0 +1,110 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ClaudeBridge</AssemblyName>
+    <RootNamespace>ClaudeBridge</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <!-- Override with an environment variable or `-p:GamePath=...` -->
+    <GamePath Condition="'$(GamePath)' == '' And '$(POLYTOPIA_PATH)' != ''">$(POLYTOPIA_PATH)</GamePath>
+    <GamePath Condition="'$(GamePath)' == ''">C:\Program Files (x86)\Steam\steamapps\common\The Battle of Polytopia</GamePath>
+    <ModFolder>$(GamePath)\Mods\ClaudeBridge</ModFolder>
+    <!-- Interop assemblies have no XML docs and lots of odd names; keep the build quiet -->
+    <NoWarn>$(NoWarn);CS1591;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <!-- Loader + Harmony from BepInEx/core -->
+  <ItemGroup>
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(GamePath)\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>$(GamePath)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GamePath)\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(GamePath)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PolyMod">
+      <HintPath>$(GamePath)\BepInEx\plugins\PolyMod.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Generated interop assemblies (BepInEx/interop, created on first game launch) -->
+  <ItemGroup>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(GamePath)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>$(GamePath)\BepInEx\interop\Il2CppSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>$(GamePath)\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- PolyScript's config base types are JObject -->
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(GamePath)\BepInEx\interop\Newtonsoft.Json.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GamePath)\BepInEx\interop\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GamePath)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- uGUI (Selectable, EventSystem, ExecuteEvents) and TextMeshPro, for pressing popup buttons -->
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GamePath)\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(GamePath)\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(GamePath)\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PolytopiaBackendBase">
+      <HintPath>$(GamePath)\BepInEx\interop\PolytopiaBackendBase.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PolytopiaAssembly">
+      <HintPath>$(GamePath)\BepInEx\interop\PolytopiaAssembly.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="GameLogicAssembly">
+      <HintPath>$(GamePath)\BepInEx\interop\GameLogicAssembly.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Package as <game>/Mods/ClaudeBridge.polymod (a zip with manifest.json + the DLL) after every successful build -->
+  <Target Name="InstallMod" AfterTargets="Build">
+    <PropertyGroup>
+      <StageDir>$(IntermediateOutputPath)polymod\</StageDir>
+      <PolymodFile>$(GamePath)\Mods\ClaudeBridge.polymod</PolymodFile>
+    </PropertyGroup>
+    <RemoveDir Directories="$(StageDir)" />
+    <MakeDir Directories="$(StageDir);$(GamePath)\Mods" />
+    <Copy SourceFiles="$(TargetPath);$(ProjectDir)manifest.json" DestinationFolder="$(StageDir)" />
+    <Delete Files="$(PolymodFile)" />
+    <ZipDirectory SourceDirectory="$(StageDir)" DestinationFile="$(PolymodFile)" />
+    <Message Importance="High" Text="ClaudeBridge packaged to $(PolymodFile)" />
+  </Target>
+
+</Project>
