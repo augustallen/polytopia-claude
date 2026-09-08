@@ -91,7 +91,14 @@ log should show:
 ```
 
 Config lives in `<game>\BepInEx\config\ClaudeBridge.json` (created on first run). The bridge only acts in
-single-player games; start one by hand from the game's menu, then run the harness. Protocol: `docs/PROTOCOL.md`.
+offline games (single-player, or Pass & Play with two human seats for the deathmatch); start one by hand from
+the game's menu or with `new_game`, then run the harness. Protocol: `docs/PROTOCOL.md`.
+
+Looking up game API surface (there is no decompiled source on the box): `dotnet tool install -g ilspycmd --version 8.2.0.7535`
+(the current ilspycmd needs .NET 10) and e.g. `ilspycmd -t GameManager "<game>\BepInEx\interop\PolytopiaAssembly.dll"`,
+or `ilspycmd -p -o <dir> <dll>` to dump every type for grepping. The interop stubs carry signatures, fields and enum values,
+not method bodies. The game updated itself to 2.17.3.16375 on 2026-09-07; the mod built against the regenerated interop
+DLLs without changes.
 
 Python: the winget installer for Python 3.12 hung on this machine, so a portable CPython 3.12.10 (the NuGet
 `python` package, full stdlib + pip) lives at `%USERPROFILE%\tools\python312\tools\python.exe`; a portable

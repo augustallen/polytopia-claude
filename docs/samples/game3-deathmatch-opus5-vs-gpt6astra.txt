@@ -1,0 +1,1509 @@
+connected to Polytopia 2.17.3.16375 | p1 claude-code-claude-opus-5 vs p2 codex-gpt-6-astra | log logs\20260907-202029-deathmatch-claude-code-claude-opus-5-vs-codex-gpt-6-astra.jsonl
+  starting a new game: {'game_type': 'PassAndPlay', 'mode': 'Domination', 'players': 2, 'bots': 0, 'difficulty': 'Normal', 'map_preset': 'Dryland', 'map_size': 11, 'tribes': ['Imperius', 'Imperius']}
+  p1 = claude-code-claude-opus-5 plays player 1 (Imperius), moves first; p2 = codex-gpt-6-astra plays player 2 (Imperius), moves second
+
+=== TURN 0 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 1-5, y 6-10; each cell = terrain feature unit):
+     1  2  3  4  5
+ 6  ^  .u T  .  T  
+ 7  T  ^  .u .u .  
+ 8  T  T  .CW^  T  
+ 9  .  .u .u T  .  
+10  .u ^  .  .u T  
+-- planning (model call 1 of 3 this turn) ...
+  > Standard opening: harvest both fruit tiles for 4 stars to push the capital to level 2 and take the reward, then send the Warrior northeast to open fog toward likely enemy ground. No contact yet, so scouting for villages and the enemy capital is the priority.
+  PLAN (4 action(s), 10.3s): build HarvestFruit at (3,7) (2 stars); build HarvestFruit at (3,9) (2 stars); move #1 -> (4,7); end turn
+  ok  build HarvestFruit at (3,7) (2 stars)
+      => stars 5->3; Mareres pop 0->1
+  ok  build HarvestFruit at (3,9) (2 stars)
+      => stars 3->1
+  ok  move #1 -> (4,7)
+      => Mareres level 1->2
+  ok  [city reward] city reward Explorer at (3,8)
+      => Mareres pop 0->1
+  ok  end turn
+      => new enemy Warrior#2 at (8,3); city Remusres (8,3) now seen/owned (player 2)
+  state for a seat-turn that already ended; waiting for the next one
+--- turn 0 (claude-code-claude-opus-5): 5 actions, 1 model call(s), model 10s, wall 28s, est $0.04 this turn ($0.04 so far)
+
+=== TURN 0 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 6-10, y 1-5; each cell = terrain feature unit):
+     6  7  8  9 10
+ 1  .  T  .  .  .  
+ 2  ^  T  T  T  ^  
+ 3  .  ^  .CW.u .  
+ 4  T  .u ^  T  ^  
+ 5  .c Tg T  T  T  
+-- planning (model call 1 of 3 this turn) ...
+  > Spend four stars on fruit to raise the capital’s level and income. The Warrior will scout southwest toward the unexplored interior, looking for a village to expand into.
+  PLAN (4 action(s), 10.2s): build HarvestFruit at (9,3) (2 stars); build HarvestFruit at (7,4) (2 stars); move #2 -> (7,4); end turn
+  ok  build HarvestFruit at (9,3) (2 stars)
+      => stars 5->3; Remusres pop 0->1
+  ok  build HarvestFruit at (7,4) (2 stars)
+      => stars 3->1
+  ok  move #2 -> (7,4)
+      => Remusres level 1->2
+  ok  [city reward] city reward Explorer at (8,3)
+      => Remusres pop 0->1
+  ok  end turn
+      => Remusres pop 1->2
+  state for a seat-turn that already ended; waiting for the next one
+  codex-gpt-6-astra moved: stars 1->7; enemy Warrior#2 gone (killed or out of sight); Warrior#1 -> (4,7); Remusres level 1->2
+--- turn 0 (codex-gpt-6-astra): 5 actions, 1 model call(s), model 10s, wall 22s, cost n/a (subscription)
+
+=== TURN 1 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 7 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 1 located | visible units: none | enemy capital Remusres at (8,3) lvl 2
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  Tr .  T  .  
+ 2   ?  ?  ? .u .u .u ^  T  T  
+ 3   ?  ?  ? .u .v .c .  ^  .* 
+ 4   ?  ? ^  .u .u T  T   ?  ? 
+ 5   ? .v Tg .  ^  .   ?  ?  ? 
+ 6  T  ^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  .  .uW.   ?  ?  ? 
+ 8  T  T  T  .C ^  T   ?  ?  ? 
+ 9  .  .  .u .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Harvesting both fruit pushes the capital to level 3 for a free reward and more income, and 2 stars buys a second Warrior. The starting Warrior heads north toward the village at (4,3) while the new one will swing west for the village at (1,5).
+  PLAN (5 action(s), 10.7s): build HarvestFruit at (4,7) (2 stars); build HarvestFruit at (2,9) (2 stars); train Warrior at (3,8) (2 stars); move #1 -> (4,6); end turn
+  ok  build HarvestFruit at (4,7) (2 stars)
+      => stars 7->5; Mareres pop 1->2
+  ok  build HarvestFruit at (2,9) (2 stars)
+      => stars 5->3
+  ok  train Warrior at (3,8) (2 stars)
+      => Mareres level 2->3
+  ok  [city reward] city reward Resources at (3,8)
+      => stars 3->6; new Warrior#5 at (3,8)
+  ok  move #1 -> (4,6)
+      => Warrior#1 -> (4,6)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 1->4; Warrior#2 -> (7,4)
+--- turn 1 (claude-code-claude-opus-5): 6 actions, 1 model call(s), model 11s, wall 17s, est $0.05 this turn ($0.09 so far)
+
+=== TURN 1 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 4 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-5; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .   ? .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  Tr .  T  .  .  .  
+ 2  .u .v .u .u .u .u ^  T  T  T  ^  
+ 3  T  T  .u .u .v .c .  ^  .C .  .  
+ 4  T  .u ^  .u .u T  T  . W^  T  ^  
+ 5   ?  ?  ?  ?  ?  ? .c Tg T  T  T  
+-- planning (model call 1 of 3 this turn) ...
+  > The Warrior will head west toward the village at (4,3). A second Warrior costs 2 stars and can scout the northern ruins on a separate route; no enemy currently threatens the capital.
+  PLAN (3 action(s), 10.5s): move #2 -> (6,3); train Warrior at (8,3) (2 stars); end turn
+  ok  move #2 -> (6,3)
+      => Warrior#2 -> (6,3)
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 4->2; new Warrior#6 at (8,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 6->10; new enemy Warrior#2 at (6,3); new enemy Warrior#6 at (8,3)
+--- turn 1 (codex-gpt-6-astra): 3 actions, 1 model call(s), model 10s, wall 14s, cost n/a (subscription)
+
+=== TURN 2 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 10 stars (+4) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x2 | enemy capital Remusres at (8,3) lvl 2
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  Tr .  T  .  
+ 2   ?  ?  ? .u .u .u ^  T  T  
+ 3   ?  ?  ? .u .v .c . w^  .*w
+ 4   ?  ? ^  .u .u T  T   ?  ? 
+ 5   ? .v Tg .  ^  .   ?  ?  ? 
+ 6  T  ^  .u T  . WT   ?  ?  ? 
+ 7  .  T  ^  .  .  .   ?  ?  ? 
+ 8  T  T  T  .CW^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Both villages are worth claiming fast, so Warrior #1 pushes north toward (4,3) and Warrior #5 heads west toward (1,5). I'm buying Riding now while it's cheap at one city, then refreshing to train a Rider on the freed capital tile for quick expansion and scouting.
+  PLAN (3 action(s), 13.6s) then ask again: move #1 -> (3,5); move #5 -> (2,8); research Riding (5 stars)
+  ok  move #1 -> (3,5)
+      => Warrior#1 -> (3,5)
+  ok  move #5 -> (2,8)
+      => Warrior#5 -> (2,8)
+  ok  research Riding (5 stars)
+      => stars 10->5; learned Riding
+-- planning (model call 2 of 3 this turn) ...
+  > Both Warriors are en route to the villages at (4,3) and (1,5), so I'm spending on a Rider in the capital — its 2 moves let it scout the ruins and enemy approach far faster than a second Warrior. The enemy warrior at (6,3) may contest the village at (4,3), so the Rider doubles as a rapid responder.
+  PLAN (2 action(s), 8.5s): train Rider at (3,8) (3 stars); end turn
+  ok  train Rider at (3,8) (3 stars)
+      => stars 5->2; new Rider#7 at (3,8)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 2->5
+--- turn 2 (claude-code-claude-opus-5): 5 actions, 2 model call(s), model 22s, wall 26s, est $0.10 this turn ($0.20 so far)
+
+=== TURN 2 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+3) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-5; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .   ? .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  Tr .  T  .  .  .  
+ 2  .u .v .u .u .u .u ^  T  T  T  ^  
+ 3  T  T  .u .u .v .c . W^  .CW.  .  
+ 4  T  .u ^  .u .u T  T  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ?  ? .c Tg T  T  T  
+-- planning (model call 1 of 3 this turn) ...
+  > Advance toward the western village while the second Warrior scouts northwest toward the ruins. Buy Riding now so next turn’s income can fund a Rider for a separate scouting route; no enemies currently threaten the capital.
+  PLAN (4 action(s), 15.0s): move #2 -> (5,2); move #6 -> (7,2); research Riding (5 stars); end turn
+  ok  move #2 -> (5,2)
+      => Warrior#2 -> (5,2)
+  ok  move #6 -> (7,2)
+      => Warrior#6 -> (7,2)
+  ok  research Riding (5 stars)
+      => stars 5->0; learned Riding
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->6; enemy Warrior#2 -> (5,2); enemy Warrior#6 -> (7,2)
+--- turn 2 (codex-gpt-6-astra): 4 actions, 1 model call(s), model 15s, wall 19s, cost n/a (subscription)
+
+=== TURN 3 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 6 stars (+4) | 1 cities | units: Warrior x2, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x2 | enemy capital Remusres at (8,3) lvl 2
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  Tr .  T  .  
+ 2   ?  ?  ? .u .u .uw^  T wT  
+ 3   ?  ?  ? .u .v .c .  ^  .* 
+ 4   ?  ? ^  .u .u T  T   ?  ? 
+ 5   ? .v Tg . W^  .   ?  ?  ? 
+ 6  T  ^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  .  .  .   ?  ?  ? 
+ 8  T  T  T W.CR^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Warrior #1 steps to (4,4), one tile from the village at (4,3) to claim it next turn, while the Rider swings west to (2,6) to grab the (1,5) village quickly with Warrior #5 following. Vacating the capital tile lets me train a cheap Warrior for home defence with the refreshed list.
+  PLAN (3 action(s), 18.7s) then ask again: move #1 -> (4,4); move #5 -> (1,7); move #7 -> (2,6)
+  ok  move #1 -> (4,4)
+      => Warrior#1 -> (4,4)
+  ok  move #5 -> (1,7)
+      => Warrior#5 -> (1,7)
+  ok  move #7 -> (2,6)
+      => Rider#7 -> (2,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Units are already en route to both villages, so I'm spending 2 stars on a Warrior in Mareres for home defence and to keep 4 stars banked toward Hunting next turn. The enemy Warrior at (5,2) is the main worry — it can contest the (4,3) village my Warrior is about to step onto.
+  PLAN (2 action(s), 11.0s): train Warrior at (3,8) (2 stars); end turn
+  ok  train Warrior at (3,8) (2 stars)
+      => stars 6->4; new Warrior#8 at (3,8)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->8; new enemy Warrior#1 at (4,4)
+--- turn 3 (claude-code-claude-opus-5): 5 actions, 2 model call(s), model 30s, wall 33s, est $0.12 this turn ($0.32 so far)
+
+=== TURN 3 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 8 stars (+3) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-5; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .   ? .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  Tr .  T  .  .  .  
+ 2  .u .v .u .u .u .uW^  T WT  T  ^  
+ 3  T  T  .u .u .v .c .  ^  .C .  .  
+ 4  T  .u ^  .u .uwT  T  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ?  ? .c Tg T  T  T  
+-- planning (model call 1 of 3 this turn) ...
+  > Secure the central village while scouting the northern ruin. A new Rider will open a separate southern route; moving onto the village needs a fresh combat check because the enemy Warrior is adjacent.
+  PLAN (3 action(s), 19.3s) then ask again: move #2 -> (4,3); move #6 -> (6,1); train Rider at (8,3) (3 stars)
+  ok  move #2 -> (4,3)
+      => Warrior#2 -> (4,3)
+  ok  move #6 -> (6,1)
+      => Warrior#6 -> (6,1)
+  ok  train Rider at (8,3) (3 stars)
+      => stars 8->5; new Rider#9 at (8,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Hold the village for capture next turn. Trading blows now would leave our Warrior vulnerable to a lethal counterattack; save the stars for growth and reinforcements after capture.
+  PLAN (1 action(s), 19.5s): end turn
+  ok  end turn
+  codex-gpt-6-astra moved: stars 4->8; enemy Warrior#2 -> (4,3); enemy Warrior#6 -> (6,1); new enemy Rider#9 at (8,3)
+--- turn 3 (codex-gpt-6-astra): 4 actions, 2 model call(s), model 39s, wall 42s, cost n/a (subscription)
+
+=== TURN 4 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 8 stars (+4) | 1 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x2, Rider x1 | enemy capital Remusres at (8,3) lvl 2
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  Tr . wT  .  
+ 2   ?  ?  ? .u .u .u ^  T  T  
+ 3   ?  ?  ? .u .vw.c .  ^  .*r
+ 4   ?  ? ^  .u .uWT  T   ?  ? 
+ 5   ? .v Tg .  ^  .   ?  ?  ? 
+ 6  T  ^  .uRT  .  T   ?  ?  ? 
+ 7  .  T W^  .  .  .   ?  ?  ? 
+ 8  T  T  T  .CW^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > An enemy Warrior is squatting on the village at (4,3) and would claim it next turn, so I'm focusing fire: Warrior#1 hits it for 5, then Rider#7 steps to (3,4) to finish the kill and advance onto the village. Hunting is bought first (tech gets pricier per city) toward Archery support against Remusres.
+  PLAN (4 action(s), 19.0s) then ask again: research Hunting (5 stars); attack #1 -> Warrior#2 at (4,3) (preview: deals 5, takes 5); move #5 -> (0,6); move #7 -> (3,4)
+  ok  research Hunting (5 stars)
+      => stars 8->3; learned Hunting
+  ok  attack #1 -> Warrior#2 at (4,3) (preview: deals 5, takes 5)
+      => enemy Warrior#2 hp 10->5
+  ok  move #5 -> (0,6)
+      => Warrior#1 hp 10->5; Warrior#5 -> (0,6)
+  ok  move #7 -> (3,4)
+      => Rider#7 -> (3,4)
+-- planning (model call 2 of 3 this turn) ...
+  > Rider #7 finishes the wounded enemy Warrior on the village at (4,3) — a killing blow means no retaliation — and the melee advance plants my Rider right on the village tile for capture next turn. Unit support is capped at 4/4, so nothing to train; garrison stays home.
+  PLAN (2 action(s), 9.2s): attack #7 -> Warrior#2 at (4,3) (preview: deals 6, takes 0, kills); end turn
+  ok  attack #7 -> Warrior#2 at (4,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#2 hp 5->0
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 5->8; lost Warrior#2; enemy Warrior#1 hp 10->5; new enemy Rider#7 at (4,3)
+--- turn 4 (claude-code-claude-opus-5): 6 actions, 2 model call(s), model 28s, wall 34s, est $0.12 this turn ($0.44 so far)
+
+=== TURN 4 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 8 stars (+3) | 1 cities | units: Warrior x1, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Rider x1, Warrior x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-5; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .   ? .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  Tr . WT  .  .  .  
+ 2  .u .v .u .u .u .u ^  T  T  T  ^  
+ 3  T  T  .u .u .vr.c .  ^  .CR.  .  
+ 4  T  .u ^  .u .uwT  T  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ?  ? .c Tg T  T  T  
+-- planning (model call 1 of 3 this turn) ...
+  > The village force has been lost, so expansion needs renewed support. I’ll approach the ruin, scout south with the Rider, and research Hunting to unlock the capital’s next population gain; a fresh list will allow harvesting and recruitment.
+  PLAN (3 action(s), 21.9s) then ask again: research Hunting (5 stars); move #6 -> (5,1); move #9 -> (6,5)
+  ok  research Hunting (5 stars)
+      => stars 8->3; learned Hunting
+  ok  move #6 -> (5,1)
+      => Warrior#6 -> (5,1)
+  ok  move #9 -> (6,5)
+      => Rider#9 -> (6,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Recruit a Rider to reinforce the southern scout and help intercept enemies approaching the capital. The enemy may capture the central village next turn; contesting it will require coordinated attacks, while the northern Warrior explores the ruin.
+  PLAN (2 action(s), 14.1s): train Rider at (8,3) (3 stars); end turn
+  ok  train Rider at (8,3) (3 stars)
+      => stars 3->0; new Rider#10 at (8,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 3->7; enemy Warrior#6 -> (5,1); enemy Warrior#2 gone (killed or out of sight); enemy Rider#9 gone (killed or out of sight); Rider#7 -> (4,3); new enemy Rider#10 at (8,3)
+--- turn 4 (codex-gpt-6-astra): 5 actions, 2 model call(s), model 36s, wall 40s, cost n/a (subscription)
+
+=== TURN 5 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 7 stars (+4) | 1 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1, Rider x1 | enemy capital Remusres at (8,3) lvl 2
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  Trw.  T  .  
+ 2   ?  ?  ? .u .u .u ^  T  T  
+ 3   ?  ? .u .u .vR.c .  ^  .*r
+ 4   ?  ? ^  .u .uWT  T   ?  ? 
+ 5  .u .v Tg .  ^  .   ?  ?  ? 
+ 6  T W^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  .  .  .   ?  ?  ? 
+ 8  T  T  T  .CW^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Buying Archery before the capture, since tech prices rise with each new city. Rider #7 takes the village at (4,3) for a forward base and income, Warrior #5 steps onto the village at (1,5) to claim it next turn, and the wounded Warrior heals inside the new borders.
+  PLAN (5 action(s), 11.6s): research Archery (6 stars); capture #7 at (4,3); move #5 -> (1,5); recover at (4,4); end turn
+  ok  research Archery (6 stars)
+      => stars 7->1; learned Archery
+  ok  capture #7 at (4,3)
+      => city Domus (4,3) now seen/owned (yours)
+  ok  move #5 -> (1,5)
+      => Warrior#5 -> (1,5)
+  ok  recover at (4,4)
+      => Warrior#1 hp 5->9
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->3; enemy Warrior#1 hp 5->9; city Domus (4,3) now seen/owned (player 1)
+--- turn 5 (claude-code-claude-opus-5): 5 actions, 1 model call(s), model 12s, wall 18s, est $0.06 this turn ($0.50 so far)
+
+=== TURN 5 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 3 stars (+3) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Rider x1, Warrior x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .  .  .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  TrW.  T  .  .  .  
+ 2  .u .v .u .u .u .u ^  T  T  T  ^  
+ 3  T  T  .u .u .Er.c .  ^  .CR.  .  
+ 4  T  .u ^  .u .uwT  T  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ? .  .cRTg T  T  T  
+ 6   ?  ?  ?  ?  ? T  .  .u  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The ruin may provide the resources or technology needed for our next operation. Examine it first and keep both Riders available until the reward clarifies our options against Domus and its nearby Warrior.
+  PLAN (1 action(s), 13.4s) then ask again: examine ruins at (5,1)
+  ok  examine ruins at (5,1)
+      => Remusres pop 2->3
+-- planning (model call 2 of 3 this turn) ...
+  > We cannot yet break Domus and hold it against both defenders. Send one Rider south to look for expansion opportunities and bring the other toward the central approach, while keeping both beyond the Warrior’s immediate attack reach.
+  PLAN (3 action(s), 28.4s): move #9 -> (7,6); move #10 -> (6,4); end turn
+  !!  move #9 -> (7,6)  REJECTED: Pending command trigger exists
+  a city reward is pending; will retry that step after answering it
+      => Remusres level 2->3
+  ok  [city reward] city reward Resources at (8,3)
+      => stars 3->8; Remusres pop 0->2
+  ok  move #9 -> (7,6)
+      => Rider#9 -> (7,6)
+  ok  move #10 -> (6,4)
+      => Rider#10 -> (6,4)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->6; enemy Rider#10 -> (6,4); Remusres level 2->3
+--- turn 5 (codex-gpt-6-astra): 6 actions, 2 model call(s), model 42s, wall 48s, cost n/a (subscription)
+
+=== TURN 6 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 6 stars (+5) | 2 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1, Rider x1 | enemy capital Remusres at (8,3) lvl 3
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T w.  T  .  
+ 2   ?  ?  ? .u .u .u ^  T  T  
+ 3   ?  ? .u .u .CR.c .  ^  .* 
+ 4  T  .u ^  .u .uWT  T r ?  ? 
+ 5  .u .vWTg .  ^  .   ?  ?  ? 
+ 6  T  ^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  .  .  .   ?  ?  ? 
+ 8  T  T  T  .CW^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Warrior #5 takes the village at (1,5) for a third city and more income. I spend all six stars on fruit at Domus, which levels it to 2 and banks a pop toward level 3, while Rider #7 stays fortified inside against the enemy Rider prowling at (6,4).
+  PLAN (6 action(s), 13.8s): build HarvestFruit at (3,3) (2 stars); build HarvestFruit at (4,4) (2 stars); build HarvestFruit at (3,4) (2 stars); capture #5 at (1,5); recover at (4,4); end turn
+  ok  build HarvestFruit at (3,3) (2 stars)
+      => stars 6->4; Domus pop 0->1
+  ok  build HarvestFruit at (4,4) (2 stars)
+      => stars 4->2
+  ok  build HarvestFruit at (3,4) (2 stars)
+      => Domus level 1->2
+  ok  [city reward] city reward Workshop at (4,3)
+      => stars 2->0; Domus pop 0->1
+  ok  capture #5 at (1,5)
+      => city Piipnu (1,5) now seen/owned (yours)
+  ok  recover at (4,4)
+      => Warrior#1 hp 9->10
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 8->12; enemy Warrior#1 hp 9->10; Domus level 1->2
+--- turn 6 (claude-code-claude-opus-5): 7 actions, 1 model call(s), model 14s, wall 21s, est $0.06 this turn ($0.56 so far)
+
+=== TURN 6 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 12 stars (+4) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Rider x1, Warrior x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .  .  .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  T W.  T  .  .  .  
+ 2  .u .v .u .u .u .u ^  T  T  T  ^  
+ 3  T  T  .u .  .Er.c .  ^  .C .  .  
+ 4  T  .u ^  .  . wT  T R.  ^  T  ^  
+ 5   ?  ?  ?  ?  ? .  .c Tg T  T  T  
+ 6   ?  ?  ?  ?  ? T  .  .uR^   ?  ? 
+ 7   ?  ?  ?  ?  ?  ? .  T  .v  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll secure the southern village and work toward a Giant at Remusres to break Domus’s garrison. Forestry should unlock the population builds; I’ll reassess their costs and placement before committing the central Rider.
+  PLAN (3 action(s), 25.3s) then ask again: research Forestry (6 stars); move #6 -> (4,0); move #9 -> (8,7)
+  ok  research Forestry (6 stars)
+      => stars 12->6; learned Forestry
+  ok  move #6 -> (4,0)
+      => Warrior#6 -> (4,0)
+  ok  move #9 -> (8,7)
+      => Rider#9 -> (8,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Two lumber huts will advance Remusres toward a Giant, giving us the force needed to break Domus’s garrison. The central Rider will move south to support the upcoming village capture while staying clear of an unsupported siege.
+  PLAN (4 action(s), 25.1s): build LumberHut at (7,2) (3 stars); build LumberHut at (8,2) (3 stars); move #10 -> (7,6); end turn
+  ok  build LumberHut at (7,2) (3 stars)
+      => stars 6->3; Remusres pop 2->3
+  ok  build LumberHut at (8,2) (3 stars)
+      => stars 3->0; Remusres pop 3->4
+  ok  move #10 -> (7,6)
+      => Remusres level 3->4
+  ok  [city reward] city reward PopulationGrowth at (8,3)
+      => Rider#10 -> (7,6); Remusres pop 0->3
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->8; enemy Warrior#6 -> (4,0); enemy Rider#10 gone (killed or out of sight); Remusres level 3->4
+--- turn 6 (codex-gpt-6-astra): 8 actions, 2 model call(s), model 50s, wall 57s, cost n/a (subscription)
+
+=== TURN 7 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 8 stars (+8) | 3 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1 | enemy capital Remusres at (8,3) lvl 4
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? . w.  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ?  ?  ? .u .u .u ^  T+ T+ 
+ 3   ?  ? .u .  .CR.c .  ^  .* 
+ 4  T  .u ^  .  . WT  T   ?  ? 
+ 5  .u .CWTg .  ^  .   ?  ?  ? 
+ 6  T  ^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  .  .  .   ?  ?  ? 
+ 8  T  T  T  .CW^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Domus takes two fruit harvests (4 stars) to hit level 3 for its reward, and the capital's Warrior steps out to (3,7) so the city tile is free. I'll refresh the list to spend the remaining stars on Archers toward the eventual assault on Remusres.
+  PLAN (3 action(s), 14.9s) then ask again: build HarvestFruit at (4,2) (2 stars); build HarvestFruit at (5,2) (2 stars); move #8 -> (3,7)
+  ok  build HarvestFruit at (4,2) (2 stars)
+      => stars 8->6; Domus pop 1->2
+  ok  build HarvestFruit at (5,2) (2 stars)
+      => stars 6->4
+  ok  move #8 -> (3,7)
+      => Domus level 2->3
+  ok  [city reward] city reward Resources at (4,3)
+      => stars 4->9; Warrior#8 -> (3,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Building the siege force: an Archer trains at the capital to start the ranged core needed against Remusres' level-4 walls. The rest of the treasury goes into fruit harvests — two at Piipnu to push it to level 2 for a workshop, one at Domus toward a future Giant. Rider stays home guarding Domus against the enemy warrior probing from the north.
+  PLAN (5 action(s), 13.1s): train Archer at (3,8) (3 stars); build HarvestFruit at (1,4) (2 stars); build HarvestFruit at (0,5) (2 stars); build HarvestFruit at (3,2) (2 stars); end turn
+  ok  train Archer at (3,8) (3 stars)
+      => stars 9->6; new Archer#11 at (3,8)
+  ok  build HarvestFruit at (1,4) (2 stars)
+      => stars 6->4
+  ok  build HarvestFruit at (0,5) (2 stars)
+      => stars 4->2; Piipnu pop 0->1
+  ok  build HarvestFruit at (3,2) (2 stars)
+      => Piipnu level 1->2
+  ok  [city reward] city reward Workshop at (1,5)
+      => stars 2->0; Domus pop 0->1
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->5; Domus level 2->3
+--- turn 7 (claude-code-claude-opus-5): 10 actions, 2 model call(s), model 28s, wall 37s, est $0.13 this turn ($0.69 so far)
+
+=== TURN 7 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+5) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Rider x1, Warrior x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr .  . W.  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  T  .  T  .  .  .  
+ 2  .u .v .u .  .  .  ^  T+ T+ T  ^  
+ 3  T  T  .u .  .Er.c .  ^  .C .  .  
+ 4  T  .  ^  .  . wT  T  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ? .  .c Tg T  T  T  
+ 6   ?  ?  ?  ?  ? T  .  .uR^  ^   ? 
+ 7   ?  ?  ?  ?  ?  ? .  T  .vR.u  ? 
+ 8   ?  ?  ?  ?  ?  ?  ? ^  Tg T   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Capture the southern village and fund one of the two population needed for a capital Giant. A new Warrior will protect the recruitment base and later support occupation, while the northern Warrior approaches the ruins; the Domus assault waits for the Giant.
+  PLAN (6 action(s), 25.2s): capture #9 at (8,7); build LumberHut at (9,2) (3 stars); train Warrior at (8,3) (2 stars); move #6 -> (3,0); move #10 -> (6,7); end turn
+  ok  capture #9 at (8,7)
+      => city Moicare (8,7) now seen/owned (yours)
+  ok  build LumberHut at (9,2) (3 stars)
+      => stars 5->2; Remusres pop 3->4
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 2->0; new Warrior#12 at (8,3)
+  ok  move #6 -> (3,0)
+      => Warrior#6 -> (3,0)
+  ok  move #10 -> (6,7)
+      => Rider#10 -> (6,7)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->11; enemy Warrior#6 gone (killed or out of sight); new enemy Warrior#12 at (8,3)
+--- turn 7 (codex-gpt-6-astra): 6 actions, 1 model call(s), model 25s, wall 31s, cost n/a (subscription)
+
+=== TURN 8 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 11 stars (+11) | 3 cities | units: Warrior x3, Rider x1, Archer x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x1 | enemy capital Remusres at (8,3) lvl 4
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ?  ?  ? .  .  .  ^  T+ T+ 
+ 3   ?  ? .u .  .CR.c .  ^  .*w
+ 4  T  .  ^  .  . WT  T   ?  ? 
+ 5  .  .CWTg .  ^  .   ?  ?  ? 
+ 6  T  ^  .u T  .  T   ?  ?  ? 
+ 7  .  T  ^  . W.  .   ?  ?  ? 
+ 8  T  T  T  .CA^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Piipnu harvests game and fruit to hit level 2 for the Workshop. I clear the city tiles at Mareres and Domus so I can actually train this turn — no recruit options existed while units sat on them — then buy a second Archer for the eventual siege force.
+  PLAN (5 action(s), 17.1s) then ask again: build Hunting at (2,5) (2 stars); build HarvestFruit at (2,6) (2 stars); move #11 -> (4,7); move #7 -> (5,3); move #8 -> (4,6)
+  ok  build Hunting at (2,5) (2 stars)
+      => stars 11->9; Piipnu pop 0->1
+  ok  build HarvestFruit at (2,6) (2 stars)
+      => stars 9->7
+  ok  move #11 -> (4,7)
+      => Archer#11 -> (4,7); Piipnu pop 1->2
+  ok  move #7 -> (5,3)
+      => Rider#7 -> (5,3)
+  ok  move #8 -> (4,6)
+      => Warrior#8 -> (4,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Assembling the siege force for Remusres: two fresh Archers (Domus and Mareres) spend nearly all 7 stars, giving the ranged damage a Warrior/Rider alone can't deliver against a level-4 capital garrison. Warrior #1 steps to (5,4) as a screen, staying outside the lone enemy Warrior's reach.
+  PLAN (4 action(s), 12.7s): train Archer at (4,3) (3 stars); train Archer at (3,8) (3 stars); move #1 -> (5,4); end turn
+  ok  train Archer at (4,3) (3 stars)
+      => stars 7->4; new Archer#13 at (4,3)
+  ok  train Archer at (3,8) (3 stars)
+      => stars 4->1; new Archer#14 at (3,8)
+  ok  move #1 -> (5,4)
+      => Warrior#1 -> (5,4)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->6; enemy Rider#7 -> (5,3); enemy Warrior#1 -> (5,4); new enemy Archer#13 at (4,3)
+--- turn 8 (claude-code-claude-opus-5): 9 actions, 2 model call(s), model 30s, wall 34s, est $0.13 this turn ($0.82 so far)
+
+=== TURN 8 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 6 stars (+6) | 2 cities | units: Warrior x2, Rider x2 ===
+    enemy: 3 reported cities, 1 located | visible units: Archer x1, Rider x1, Warrior x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tr . W.  .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  T  .  T  .  .  .  
+ 2  .u .v .u .  .  .  ^  T+ T+ T+ ^  
+ 3  T  T  .u .  .Ea.cr.  ^  .CW.  .  
+ 4  T  .  ^  .  .  T wT  .  ^  T  ^  
+ 5   ?  ?  ?  ?  ? .  .c Tg T  T  T  
+ 6   ?  ?  ?  ?  ? T  .  .u ^  ^   ? 
+ 7   ?  ?  ?  ?  ? .  . RT  .CR.u  ? 
+ 8   ?  ?  ?  ?  ? T  .  ^  Tg T   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Remusres can produce a Giant now for 3 stars, giving us the force needed to break Domus’s garrison. I’ll clear the capital tile and reach the northern ruin, then reassess the Giant’s available moves and enemy approaches before committing the Riders.
+  PLAN (3 action(s), 17.2s) then ask again: move #6 -> (2,0); move #12 -> (7,2); build LumberHut at (9,4) (3 stars)
+  ok  move #6 -> (2,0)
+      => Warrior#6 -> (2,0)
+  ok  move #12 -> (7,2)
+      => Warrior#12 -> (7,2)
+  ok  build LumberHut at (9,4) (3 stars)
+      => stars 6->3; Remusres pop 4->5
+-- planning (model call 2 of 3 this turn) ...
+  > Upgrade Moicare for more income while keeping the capital free for its pending Giant. One Rider scouts west and the other moves toward the front; the enemy’s nearby troops make an unsupported advance on Domus premature.
+  PLAN (6 action(s), 33.4s): build ClearForest at (9,8) (0 stars); build HarvestFruit at (7,6) (2 stars); build HarvestFruit at (9,7) (2 stars); move #10 -> (5,7); move #9 -> (7,6); end turn
+  !!  build ClearForest at (9,8) (0 stars)  REJECTED: Pending command trigger exists
+  a city reward is pending; will retry that step after answering it
+      => Remusres level 4->5
+  ok  [city reward] city reward SuperUnit at (8,3)
+      => new Giant#15 at (8,3)
+  ok  build ClearForest at (9,8) (0 stars)
+      => stars 3->4
+  ok  build HarvestFruit at (7,6) (2 stars)
+      => stars 4->2; Moicare pop 0->1
+  ok  build HarvestFruit at (9,7) (2 stars)
+      => stars 2->0
+  ok  move #10 -> (5,7)
+      => Moicare level 1->2
+  ok  [city reward] city reward Workshop at (8,7)
+      => Rider#10 -> (5,7); new enemy Warrior#8 at (4,6); new enemy Archer#11 at (4,7)
+  ok  move #9 -> (7,6)
+      => Rider#9 -> (7,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->12; enemy Warrior#12 -> (7,2); new enemy Giant#15 at (8,3); new enemy Rider#10 at (5,7); Remusres level 4->5
+--- turn 8 (codex-gpt-6-astra): 12 actions, 2 model call(s), model 51s, wall 59s, cost n/a (subscription)
+
+=== TURN 9 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 12 stars (+11) | 3 cities | units: Archer x3, Warrior x3, Rider x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x1, Giant x1, Rider x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ?  ?  ? .  .  .  ^  T+wT+ 
+ 3   ?  ? .u .  .CA.cR.  ^  .*g
+ 4  T  .  ^  .  .  T WT   ?  ? 
+ 5  .  .CWT  .  ^  .  .c  ?  ? 
+ 6  T  ^  .  T  . WT   ?  ?  ? 
+ 7  .  T  ^  .  . A. r ?  ?  ? 
+ 8  T  T  T  .CA^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Two archers focus the enemy Rider raiding my south — the second shot should finish it with no return damage thanks to range. Meanwhile the eastern group creeps toward Remusres with Warrior#1 screening at (6,3), and I clear Domus and Piipnu city tiles so I can spend 12 stars on fresh Archers after a refresh.
+  PLAN (7 action(s), 24.9s) then ask again: attack #14 -> Rider#10 at (5,7) (preview: deals 6, takes 0); attack #11 -> Rider#10 at (5,7) (preview: deals 6, takes 2); move #13 -> (5,2); move #7 -> (6,4); move #1 -> (6,3); move #5 -> (2,5); move #8 -> (5,5)
+  ok  attack #14 -> Rider#10 at (5,7) (preview: deals 6, takes 0)
+      => enemy Rider#10 hp 10->4
+  ok  attack #11 -> Rider#10 at (5,7) (preview: deals 8, takes 0, kills)
+      => enemy Rider#10 hp 4->0
+  ok  move #13 -> (5,2)
+      => Archer#13 -> (5,2); enemy Rider#10 gone (killed or out of sight)
+  ok  move #7 -> (6,4)
+      => Rider#7 -> (6,4)
+  ok  move #1 -> (6,3)
+      => Warrior#1 -> (6,3)
+  ok  move #5 -> (2,5)
+      => Warrior#5 -> (2,5)
+  ok  move #8 -> (5,5)
+      => Warrior#8 -> (5,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Archer #13 chips the enemy Warrior from range 2, so nothing comes back; Warrior #1 holds the screen at (6,3) instead of trading 5 damage evenly. I add two more Archers (Domus and Piipnu) to build the ranged battery needed to grind down the 40hp Giant garrison at Remusres.
+  PLAN (4 action(s), 10.1s): attack #13 -> Warrior#12 at (7,2) (preview: deals 5, takes 0); train Archer at (4,3) (3 stars); train Archer at (1,5) (3 stars); end turn
+  ok  attack #13 -> Warrior#12 at (7,2) (preview: deals 5, takes 0)
+      => enemy Warrior#12 hp 10->5
+  ok  train Archer at (4,3) (3 stars)
+      => stars 12->9; new Archer#16 at (4,3)
+  ok  train Archer at (1,5) (3 stars)
+      => stars 9->6; new Archer#17 at (1,5)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->9; Warrior#12 hp 10->5; enemy Archer#13 -> (5,2); enemy Rider#7 -> (6,4); enemy Warrior#1 -> (6,3); enemy Warrior#8 -> (5,5); lost Rider#10; new enemy Archer#16 at (4,3)
+--- turn 9 (claude-code-claude-opus-5): 11 actions, 2 model call(s), model 35s, wall 41s, est $0.15 this turn ($0.97 so far)
+
+=== TURN 9 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 9 stars (+9) | 2 cities | units: Warrior x2, Giant x1, Rider x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Archer x3, Warrior x2, Rider x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  TrW.  .  .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  T  .  T  .  .  .  
+ 2  .u .v .u .  .  . a^  T+WT+ T+ ^  
+ 3  T  T  .u .  .Ea.c . w^  .CG.  .  
+ 4  T  .  ^  .  .  T  T r.  ^  T+ ^  
+ 5   ?  ?  ?  ?  ? . w.c Tg T  T  T  
+ 6   ?  ?  ?  ? .  T  .  . R^  ^   ? 
+ 7   ?  ?  ?  ? . a.  .  T  .C .   ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The Giant will advance to intercept the enemy force while the wounded Warrior falls back to protect our capital. A free monument at Moicare should fund supporting Archers; I’ll reassess recruitment and Rider attacks after the ruin reward and research resolve.
+  PLAN (5 action(s), 18.9s) then ask again: examine ruins at (2,0); build Monument6 at (9,7) (0 stars); research Archery (8 stars); move #15 -> (7,4); move #12 -> (8,2)
+  ok  examine ruins at (2,0)
+      => Warrior#6 -> (1,1)
+  ok  build Monument6 at (9,7) (0 stars)
+      => new Swordsman#18 at (2,0); Moicare pop 0->1
+  ok  research Archery (8 stars)
+      => Moicare level 2->3
+  ok  [city reward] city reward Resources at (8,7)
+      => stars 9->6; learned Archery
+  ok  move #15 -> (7,4)
+      => Giant#15 -> (7,4)
+  ok  move #12 -> (8,2)
+      => Warrior#12 -> (8,2)
+-- planning (model call 2 of 3 this turn) ...
+  > Both cities need supporting fire, so the six stars fund two Archers for next turn’s field battle. The Rider will stay behind the Giant’s flank, preserving a mobile responder while enemy Warriors and ranged units still threaten the approaches.
+  PLAN (4 action(s), 31.8s): train Archer at (8,3) (3 stars); train Archer at (8,7) (3 stars); move #9 -> (8,5); end turn
+  ok  train Archer at (8,3) (3 stars)
+      => stars 6->3; new Archer#19 at (8,3)
+  ok  train Archer at (8,7) (3 stars)
+      => stars 3->0; new Archer#20 at (8,7)
+  ok  move #9 -> (8,5)
+      => Rider#9 -> (8,5)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 6->17; enemy Warrior#12 -> (8,2); enemy Giant#15 -> (7,4); new enemy Archer#19 at (8,3)
+--- turn 9 (codex-gpt-6-astra): 10 actions, 2 model call(s), model 51s, wall 59s, cost n/a (subscription)
+
+=== TURN 10 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 17 stars (+11) | 3 cities | units: Archer x5, Warrior x3, Rider x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x1, Archer x1, Giant x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ?  ?  ? .  .  . A^  T+ T+w
+ 3   ?  ? .u .  .CA.c . W^  .*a
+ 4  T  .  ^  .  .  T  T R. g ? 
+ 5  .  .CAT W.  ^  . W.c Tg  ? 
+ 6  T  ^  .  T  .  T  .   ?  ? 
+ 7  .  T  ^  .  . A.   ?  ?  ? 
+ 8  T  T  T  .CA^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The Giant can't move and attack in the same turn, so archers at range 2 chip it for free — Archer#13 opens with 3 damage and no return fire. I pull Warrior#1 and Rider#7 out of the Giant's reach, send the Rider scouting southeast for the hidden second city, and vacate Domus and Piipnu's city tiles so I can refresh and train two more archers for the battery.
+  PLAN (6 action(s), 38.6s) then ask again: attack #13 -> Giant#15 at (7,4) (preview: deals 3, takes 0); move #16 -> (5,3); move #1 -> (5,4); move #7 -> (6,6); move #11 -> (5,6); move #17 -> (1,4)
+  ok  attack #13 -> Giant#15 at (7,4) (preview: deals 3, takes 0)
+      => enemy Giant#15 hp 40->37
+  ok  move #16 -> (5,3)
+      => Archer#16 -> (5,3)
+  ok  move #1 -> (5,4)
+      => Warrior#1 -> (5,4)
+  ok  move #7 -> (6,6)
+      => Rider#7 -> (6,6)
+  ok  move #11 -> (5,6)
+      => Archer#11 -> (5,6)
+  ok  move #17 -> (1,4)
+      => Archer#17 -> (1,4)
+-- planning (model call 2 of 3 this turn) ...
+  > The archer battery keeps chipping the enemy Giant from range 2, where it cannot answer — three more hits this turn take it toward 31. I buy Shields so Defenders can screen the battery cheaply, then train fresh Archers in Domus and Piipnu and walk reinforcements up from the south. The Giant plus the capital's archer is still the main obstacle to entering Remusres.
+  PLAN (8 action(s), 20.1s): attack #16 -> Giant#15 at (7,4) (preview: deals 3, takes 0); attack #11 -> Giant#15 at (7,4) (preview: deals 3, takes 0); research Shields (10 stars); train Archer at (4,3) (3 stars); train Archer at (1,5) (3 stars); move #5 -> (3,4); move #14 -> (4,7); end turn
+  ok  attack #16 -> Giant#15 at (7,4) (preview: deals 3, takes 0)
+      => enemy Giant#15 hp 37->34
+  ok  attack #11 -> Giant#15 at (7,4) (preview: deals 3, takes 0)
+      => enemy Giant#15 hp 34->31
+  ok  research Shields (10 stars)
+      => stars 17->7; learned Shields
+  ok  train Archer at (4,3) (3 stars)
+      => stars 7->4; new Archer#21 at (4,3)
+  ok  train Archer at (1,5) (3 stars)
+      => stars 4->1; new Archer#22 at (1,5)
+  ok  move #5 -> (3,4)
+      => Warrior#5 -> (3,4)
+  ok  move #14 -> (4,7)
+      => Archer#14 -> (4,7)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->10; enemy Archer#16 -> (5,3); enemy Warrior#1 -> (5,4); enemy Rider#7 -> (6,6); Giant#15 hp 40->31; enemy Archer#11 -> (5,6); new enemy Archer#21 at (4,3); new enemy Archer#17 at (1,4); new enemy Warrior#5 at (3,4); new enemy Archer#14 at (4,7)
+--- turn 10 (claude-code-claude-opus-5): 14 actions, 2 model call(s), model 59s, wall 66s, est $0.20 this turn ($1.16 so far)
+
+=== TURN 10 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 10 stars (+10) | 2 cities | units: Warrior x2, Archer x2, Swordsman x1, Giant x1, Rider x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Archer x6, Warrior x3, Rider x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  TgS.  .  .  T  .  .  .  .+ 
+ 1  ^  T WTg Tg T  T  .  T  .  .  .  
+ 2  .u .v .u .  .  . a^  T+ T+WT+ ^  
+ 3  T  T  .u .  .Ea.ca.  ^  .CA.  .  
+ 4  T  . a^  . w.  T wT  . G^  T+ ^  
+ 5   ?  ?  ?  ?  ? . w.c Tg T RT  T  
+ 6   ?  ?  ?  ? .  T a. r.  ^  ^   ? 
+ 7   ?  ?  ?  ? . a.  .  T  .CA.+  ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll soften the southern Rider for a finishing attack and move the northern Archer into firing range. The Warrior will approach the village with Swordsman support; a refreshed list will let me finish the Rider and recruit in the vacated capital.
+  PLAN (5 action(s), 33.5s) then ask again: attack #20 -> Rider#7 at (6,6) (preview: deals 6, takes 0); move #9 -> (7,6); move #19 -> (7,2); move #6 -> (1,2); move #18 -> (2,1)
+  ok  attack #20 -> Rider#7 at (6,6) (preview: deals 6, takes 0)
+      => enemy Rider#7 hp 10->4
+  ok  move #9 -> (7,6)
+      => Rider#9 -> (7,6)
+  ok  move #19 -> (7,2)
+      => Archer#19 -> (7,2)
+  ok  move #6 -> (1,2)
+      => Warrior#6 -> (1,2)
+  ok  move #18 -> (2,1)
+      => Swordsman#18 -> (2,1)
+-- planning (model call 2 of 3 this turn) ...
+  > Finish the wounded Rider and weaken the northern Archer while adding supporting fire at Remusres. Keep the Giant defending the eastern approaches; a fresh action list is needed to retreat our Rider after its estimated killing blow.
+  PLAN (5 action(s), 26.5s) then ask again: attack #9 -> Rider#7 at (6,6) (preview: deals 8, takes 0, kills); attack #19 -> Archer#13 at (5,2) (preview: deals 6, takes 2); train Archer at (8,3) (3 stars); recover at (8,2); recover at (7,4)
+  ok  attack #9 -> Rider#7 at (6,6) (preview: deals 8, takes 0, kills)
+      => enemy Rider#7 hp 4->0
+  ok  attack #19 -> Archer#13 at (5,2) (preview: deals 6, takes 2)
+      => enemy Archer#13 hp 10->4; enemy Rider#7 gone (killed or out of sight); Rider#9 -> (6,6)
+  ok  train Archer at (8,3) (3 stars)
+      => stars 10->7; Archer#19 hp 10->8; new Archer#23 at (8,3)
+  ok  recover at (8,2)
+      => Warrior#12 hp 5->9
+  ok  recover at (7,4)
+      => Giant#15 hp 31->35
+-- planning (model call 3 of 3 this turn) ...
+  > Pull the Rider back toward eastern support after its kill, while the Giant holds the approach to Remusres. Save the seven stars toward Mathematics and a Catapult; concentrated enemy Archer fire still makes an advance on Domus unsafe.
+  PLAN (2 action(s), 21.7s): move #9 -> (8,5); end turn
+  ok  move #9 -> (8,5)
+      => Rider#9 -> (8,5)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->12; Archer#13 hp 10->4; enemy Warrior#12 hp 5->9; enemy Archer#19 hp 10->8; enemy Archer#19 -> (7,2); enemy Giant#15 hp 31->35; lost Rider#7; new enemy Archer#23 at (8,3)
+--- turn 10 (codex-gpt-6-astra): 12 actions, 3 model call(s), model 82s, wall 89s, cost n/a (subscription)
+
+=== TURN 11 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 12 stars (+11) | 3 cities | units: Archer x7, Warrior x3 ===
+    enemy: 2 reported cities, 1 located | visible units: Archer x2, Warrior x1, Giant x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ?  ?  ? .  .  . A^  T+aT+w
+ 3  T  T  .u .  .CA.cA.  ^  .*a
+ 4  T  . A^  . W.  T WT  . g ? 
+ 5  .  .CAT  .  ^  . W.c Tg  ? 
+ 6  T  ^  .  T  .  T A.  .   ? 
+ 7  .  T  ^  .  . A.  .  T   ? 
+ 8  T  T  T  .C ^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Focus fire kills the wounded enemy Archer at (7,2): #16 softens it to 2hp, then #13 finishes for free — the killing blow means no return damage. #11 keeps chipping the Giant from range 2 while reinforcements march east. I'm vacating Domus's tile so I can train a fresh Archer there after a refresh.
+  PLAN (8 action(s), 29.8s) then ask again: attack #16 -> Archer#19 at (7,2) (preview: deals 6, takes 2); attack #13 -> Archer#19 at (7,2) (preview: deals 4, takes 3); attack #11 -> Giant#15 at (7,4) (preview: deals 3, takes 0); move #21 -> (4,2); move #5 -> (4,4); move #17 -> (2,3); move #22 -> (2,5); move #14 -> (4,6)
+  ok  attack #16 -> Archer#19 at (7,2) (preview: deals 6, takes 2)
+      => enemy Archer#19 hp 8->2
+  ok  attack #13 -> Archer#19 at (7,2) (preview: deals 7, takes 0, kills)
+      => enemy Archer#19 hp 2->0; Archer#16 hp 10->8
+  ok  attack #11 -> Giant#15 at (7,4) (preview: deals 3, takes 0)
+      => enemy Archer#19 gone (killed or out of sight); enemy Giant#15 hp 35->32
+  ok  move #21 -> (4,2)
+      => Archer#21 -> (4,2)
+  ok  move #5 -> (4,4)
+      => Warrior#5 -> (4,4)
+  ok  move #17 -> (2,3)
+      => Archer#17 -> (2,3)
+  ok  move #22 -> (2,5)
+      => Archer#22 -> (2,5); new enemy Warrior#6 at (1,2)
+  ok  move #14 -> (4,6)
+      => Archer#14 -> (4,6)
+-- planning (model call 2 of 3 this turn) ...
+  > West flank: an enemy Warrior is squatting on the village at (1,2), so Archer #17 hits it now to halve it before it can entrench — the retaliation is unavoidable since #17 is already adjacent. Domus trains a fresh Archer to reinforce that side; the eastern archers hold at range 2 from the enemy Giant rather than stepping into its reach.
+  PLAN (3 action(s), 24.9s): attack #17 -> Warrior#6 at (1,2) (preview: deals 5, takes 5); train Archer at (4,3) (3 stars); end turn
+  ok  attack #17 -> Warrior#6 at (1,2) (preview: deals 5, takes 5)
+      => enemy Warrior#6 hp 10->5
+  ok  train Archer at (4,3) (3 stars)
+      => stars 12->9; Archer#17 hp 10->5; new Archer#24 at (4,3)
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 7->17; Warrior#6 hp 10->5; lost Archer#19; enemy Archer#21 -> (4,2); enemy Archer#16 hp 10->8; enemy Archer#17 hp 10->5; enemy Archer#17 -> (2,3); enemy Warrior#5 -> (4,4); Giant#15 hp 35->32; enemy Archer#14 -> (4,6); new enemy Archer#24 at (4,3)
+--- turn 11 (claude-code-claude-opus-5): 11 actions, 2 model call(s), model 55s, wall 62s, est $0.19 this turn ($1.35 so far)
+
+=== TURN 11 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 17 stars (+10) | 2 cities | units: Warrior x2, Archer x2, Swordsman x1, Giant x1, Rider x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Archer x7, Warrior x3 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^  T  TgSTg T  T  .  T  .  .  .  
+ 2  .u .vW.u .  . a. a^  T+ T+WT+ ^  
+ 3  T  T  .ua.  .Ea.ca.  ^  .CA.  .  
+ 4  T  .  ^  .  . wT wT  . G^  T+ ^  
+ 5   ?  ?  ?  ?  ? . w.c Tg T RT  T  
+ 6   ?  ?  ?  ? . aT a.  .  ^  ^   ? 
+ 7   ?  ?  ?  ? .  .  .  T  .CA.+  ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll secure the western village and target the enemy Archers threatening our approach. Mathematics and one forest clearing can fund a capital Catapult this turn, but its deployment depends on removing the nearby ranged threats first.
+  PLAN (6 action(s), 21.3s) then ask again: research Mathematics (10 stars); build ClearForest at (7,7) (0 stars); capture #6 at (1,2); move #18 -> (2,2); move #23 -> (7,2); move #9 -> (6,3)
+  ok  research Mathematics (10 stars)
+      => stars 17->7; learned Mathematics
+  ok  build ClearForest at (7,7) (0 stars)
+      => stars 7->8
+  ok  capture #6 at (1,2)
+      => city Icare (1,2) now seen/owned (yours)
+  ok  move #18 -> (2,2)
+      => Swordsman#18 -> (2,2)
+  ok  move #23 -> (7,2)
+      => Archer#23 -> (7,2)
+  ok  move #9 -> (6,3)
+      => Rider#9 -> (6,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Clear the western city's attacker and weaken the archers threatening our capital. The Catapult can survive the remaining visible archer's potential shot; another call will let the southern Archer fire after moving and the Rider choose a safe escape.
+  PLAN (5 action(s), 28.0s) then ask again: attack #18 -> Archer#17 at (2,3) (preview: deals 12, takes 0, kills); attack #23 -> Archer#13 at (5,2) (preview: deals 8, takes 0, kills); attack #9 -> Archer#16 at (5,3) (preview: deals 6, takes 1); train Catapult at (8,3) (8 stars); move #20 -> (7,6)
+  ok  attack #18 -> Archer#17 at (2,3) (preview: deals 12, takes 0, kills)
+      => enemy Archer#17 hp 5->0
+  ok  attack #23 -> Archer#13 at (5,2) (preview: deals 8, takes 0, kills)
+      => Swordsman#18 -> (2,3); enemy Archer#13 hp 4->0; enemy Archer#17 gone (killed or out of sight)
+  ok  attack #9 -> Archer#16 at (5,3) (preview: deals 6, takes 1)
+      => enemy Archer#13 gone (killed or out of sight); enemy Archer#16 hp 8->2
+  ok  train Catapult at (8,3) (8 stars)
+      => stars 8->0; Rider#9 hp 10->9; new Catapult#25 at (8,3)
+  ok  move #20 -> (7,6)
+      => Archer#20 -> (7,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Reduce the southern archers while preserving the screen around Remusres and its new Catapult. The shot against Archer#11 estimates 5 damage for 2 retaliation; the Giant will recover while the Rider holds the northern approach. Domus must wait until supporting fire can clear its defenders and counterattackers.
+  PLAN (4 action(s), 24.9s): attack #20 -> Archer#11 at (5,6) (preview: deals 5, takes 2); recover at (7,4); recover at (8,2); end turn
+  ok  attack #20 -> Archer#11 at (5,6) (preview: deals 5, takes 2)
+      => enemy Archer#11 hp 10->5
+  ok  recover at (7,4)
+      => Giant#15 hp 32->36; Archer#20 hp 10->8
+  ok  recover at (8,2)
+      => Warrior#12 hp 9->10
+  ok  end turn
+  codex-gpt-6-astra moved: stars 9->20; lost Archer#13; enemy Warrior#12 hp 9->10; lost Archer#17; Archer#16 hp 8->2; enemy Archer#23 -> (7,2); enemy Giant#15 hp 32->36; Archer#11 hp 10->5; new enemy Swordsman#18 at (2,3); new enemy Rider#9 at (6,3); new enemy Catapult#25 at (8,3); new enemy Archer#20 at (7,6); city Icare (1,2) now seen/owned (player 2)
+--- turn 11 (codex-gpt-6-astra): 15 actions, 3 model call(s), model 74s, wall 84s, cost n/a (subscription)
+
+=== TURN 12 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 20 stars (+11) | 3 cities | units: Archer x6, Warrior x3 ===
+    enemy: 3 reported cities, 2 located | visible units: Warrior x2, Archer x2, Swordsman x1, Rider x1, Catapult x1, Giant x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ? .Ew.u .  . A.  ^  T+aT+w
+ 3  T  T  .us.  .CA.cA. r^  .*c
+ 4  T  .  ^  .  . WT WT  . g ? 
+ 5  .  .C T A.  ^  . W.c Tg  ? 
+ 6  T  ^  .  T  . AT A.  . a ? 
+ 7  .  T  ^  .  .  .  .  .   ? 
+ 8  T  T  T  .C ^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Two archers focus the wounded enemy Rider at (6,3) for a clean kill with no retaliation from range, while Archer #22 chips the Swordsman advancing on my west. I buy a Defender in Piipnu to hold the western front and research Forestry as the first step toward Mathematics and a Catapult, the only tool that breaks the capital's Giant.
+  PLAN (10 action(s), 24.1s): attack #21 -> Rider#9 at (6,3) (preview: deals 6, takes 0); attack #24 -> Rider#9 at (6,3) (preview: deals 6, takes 0); attack #22 -> Swordsman#18 at (2,3) (preview: deals 4, takes 0); recover at (5,3); recover at (5,6); move #14 -> (3,6); move #5 -> (3,4); train Defender at (1,5) (3 stars); research Forestry (10 stars); end turn
+  ok  attack #21 -> Rider#9 at (6,3) (preview: deals 6, takes 0)
+      => enemy Rider#9 hp 9->3
+  ok  attack #24 -> Rider#9 at (6,3) (preview: deals 8, takes 0, kills)
+      => enemy Rider#9 hp 3->0
+  ok  attack #22 -> Swordsman#18 at (2,3) (preview: deals 4, takes 0)
+      => enemy Swordsman#18 hp 20->16; enemy Rider#9 gone (killed or out of sight)
+  ok  recover at (5,3)
+      => Archer#16 hp 2->6
+  ok  recover at (5,6)
+      => Archer#11 hp 5->7
+  ok  move #14 -> (3,6)
+      => Archer#14 -> (3,6)
+  ok  move #5 -> (3,4)
+      => Warrior#5 -> (3,4)
+  ok  train Defender at (1,5) (3 stars)
+      => stars 20->17; new Defender#26 at (1,5)
+  ok  research Forestry (10 stars)
+      => stars 17->7; learned Forestry
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->11; Swordsman#18 hp 20->16; enemy Archer#16 hp 2->6; lost Rider#9; enemy Warrior#5 -> (3,4); enemy Archer#14 gone (killed or out of sight); enemy Archer#11 hp 5->7
+--- turn 12 (claude-code-claude-opus-5): 10 actions, 1 model call(s), model 24s, wall 31s, est $0.10 this turn ($1.45 so far)
+
+=== TURN 12 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 11 stars (+11) | 3 cities | units: Warrior x2, Archer x2, Swordsman x1, Catapult x1, Giant x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Archer x4, Warrior x3 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^  T  Tg Tg T  T  .  T  .  .  .  
+ 2  .u .CW.u .  . a.  ^  T+AT+WT+ ^  
+ 3  T  T  .uS.  .Ea.ca.  ^  .CC.  .  
+ 4  T  .  ^  . w.  T wT  . G^  T+ ^  
+ 5   ?  ?  ?  ?  ? . w.c Tg T  T  T  
+ 6   ?  ?  ?  ? .  T a.  . A^  ^   ? 
+ 7   ?  ?  ?  ? .  .  .  .  .C .+  ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Clear the eastern attackers while keeping Icare defended. The Catapult and northern Archer have estimated killing shots with no retaliation in the current previews; advancing the Giant provides a screen. I’ll grow Icare and free its recruitment tile, then request fresh actions to train western support.
+  PLAN (9 action(s), 49.1s) then ask again: attack #23 -> Archer#16 at (5,3) (preview: deals 7, takes 0, kills); attack #25 -> Archer#11 at (5,6) (preview: deals 14, takes 0, kills); attack #20 -> Warrior#8 at (5,5) (preview: deals 4, takes 0); attack #18 -> Warrior#5 at (3,4) (preview: deals 7, takes 4); move #15 -> (6,4); move #6 -> (1,1); build HarvestFruit at (0,2) (2 stars); build HarvestFruit at (2,2) (2 stars); train Rider at (8,7) (3 stars)
+  ok  attack #23 -> Archer#16 at (5,3) (preview: deals 7, takes 0, kills)
+      => enemy Archer#16 hp 6->0
+  ok  attack #25 -> Archer#11 at (5,6) (preview: deals 14, takes 0, kills)
+      => enemy Archer#16 gone (killed or out of sight); enemy Archer#11 hp 7->0
+  ok  attack #20 -> Warrior#8 at (5,5) (preview: deals 4, takes 0)
+      => enemy Warrior#8 hp 10->6; enemy Archer#11 gone (killed or out of sight)
+  ok  attack #18 -> Warrior#5 at (3,4) (preview: deals 7, takes 4)
+      => enemy Warrior#5 hp 10->3
+  ok  move #15 -> (6,4)
+      => Swordsman#18 hp 16->12; Giant#15 -> (6,4)
+  ok  move #6 -> (1,1)
+      => Warrior#6 -> (1,1)
+  ok  build HarvestFruit at (0,2) (2 stars)
+      => stars 11->9
+  ok  build HarvestFruit at (2,2) (2 stars)
+      => stars 9->7; Icare pop 0->1
+  ok  train Rider at (8,7) (3 stars)
+      => Icare level 1->2
+  ok  [city reward] city reward Workshop at (1,2)
+      => stars 7->4; new Rider#27 at (8,7)
+-- planning (model call 2 of 3 this turn) ...
+  > An Archer at Icare will support the wounded Swordsman and help defend the western city. The eastern Warrior will approach along the northern flank; Domus still needs its nearby attackers cleared before we commit an occupier.
+  PLAN (3 action(s), 17.4s): train Archer at (1,2) (3 stars); move #12 -> (7,1); end turn
+  ok  train Archer at (1,2) (3 stars)
+      => stars 4->1; new Archer#28 at (1,2)
+  ok  move #12 -> (7,1)
+      => Warrior#12 -> (7,1)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 7->18; enemy Warrior#6 gone (killed or out of sight); enemy Warrior#12 -> (7,1); enemy Swordsman#18 hp 16->12; lost Archer#16; Warrior#5 hp 10->3; enemy Giant#15 -> (6,4); Warrior#8 hp 10->6; lost Archer#11; new enemy Archer#28 at (1,2); Icare level 1->2
+--- turn 12 (codex-gpt-6-astra): 13 actions, 2 model call(s), model 67s, wall 76s, cost n/a (subscription)
+
+=== TURN 13 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 18 stars (+11) | 3 cities | units: Archer x4, Warrior x3, Defender x1 ===
+    enemy: 3 reported cities, 2 located | visible units: Archer x3, Warrior x1, Swordsman x1, Catapult x1, Giant x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T w.  
+ 2   ? .Ea.  .  . A.  ^  T+aT+ 
+ 3  T  T  .us.  .CA.c .  ^  .*c
+ 4  T  .  ^  . W.  T WT g.   ? 
+ 5  .  .CDT A.  ^  . W.c Tg  ? 
+ 6  T  ^  .  T A.  T  .  . a ? 
+ 7  .  T  ^  .  .  .  .  .   ? 
+ 8  T  T  T  .C ^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Three archers focus the wounded Swordsman at (2,3) — 15 damage on 12 hp should kill it with no return fire, ending the threat to Piipnu. I then buy Mathematics so a Catapult can be trained at Domus next turn to answer the Giant, and pull both Warriors out of the Giant's reach.
+  PLAN (10 action(s), 21.7s): attack #22 -> Swordsman#18 at (2,3) (preview: deals 5, takes 0); attack #24 -> Swordsman#18 at (2,3) (preview: deals 5, takes 0); attack #21 -> Swordsman#18 at (2,3) (preview: deals 5, takes 0); research Mathematics (13 stars); train Rider at (3,8) (3 stars); move #1 -> (4,4); move #8 -> (5,6); move #14 -> (3,5); recover at (3,4); end turn
+  ok  attack #22 -> Swordsman#18 at (2,3) (preview: deals 5, takes 0)
+      => enemy Swordsman#18 hp 12->7
+  ok  attack #24 -> Swordsman#18 at (2,3) (preview: deals 6, takes 0)
+      => enemy Swordsman#18 hp 7->1
+  ok  attack #21 -> Swordsman#18 at (2,3) (preview: deals 8, takes 0, kills)
+      => enemy Swordsman#18 hp 1->0
+  ok  research Mathematics (13 stars)
+      => stars 18->5; learned Mathematics; enemy Swordsman#18 gone (killed or out of sight)
+  ok  train Rider at (3,8) (3 stars)
+      => stars 5->2; new Rider#29 at (3,8)
+  ok  move #1 -> (4,4)
+      => Warrior#1 -> (4,4)
+  ok  move #8 -> (5,6)
+      => Warrior#8 -> (5,6)
+  ok  move #14 -> (3,5)
+      => Archer#14 -> (3,5)
+  ok  recover at (3,4)
+      => Warrior#5 hp 3->7
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 1->14; lost Swordsman#18; enemy Warrior#5 hp 3->7; enemy Warrior#1 -> (4,4); enemy Warrior#8 -> (5,6)
+--- turn 13 (claude-code-claude-opus-5): 10 actions, 1 model call(s), model 22s, wall 28s, est $0.10 this turn ($1.55 so far)
+
+=== TURN 13 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 14 stars (+13) | 3 cities | units: Archer x3, Warrior x2, Catapult x1, Giant x1, Rider x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Warrior x3, Archer x2 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^  T WTg Tg T  T  .  T W.  .  .  
+ 2  .  .CA.  .  . a.  ^  T+AT+ T+ ^  
+ 3  T  T  .u .  .Ea.c .  ^  .CC.  .  
+ 4  T  .  ^  . w. wT  T G.  ^  T+ ^  
+ 5   ?  ?  ?  ?  ? .  .c Tg T  T  T  
+ 6   ?  ?  ?  ? .  T w.  . A^  ^   ? 
+ 7   ?  ?  ?  ? .  .  .  .  .CR.+  ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll clear the southern Warrior and bring both northern Archers into position for focused attacks. The Giant will approach Domus for a possible attack next turn, while Icare’s growth should fund reinforcements; a fresh view is needed to choose attacks and recruitment.
+  PLAN (9 action(s), 23.0s) then ask again: attack #25 -> Warrior#8 at (5,6) (preview: deals 12, takes 0, kills); move #28 -> (2,2); move #23 -> (6,3); move #15 -> (5,4); move #12 -> (6,1); move #27 -> (6,6); build Hunting at (2,1) (2 stars); build HarvestFruit at (2,3) (2 stars); build LumberHut at (1,1) (3 stars)
+  ok  attack #25 -> Warrior#8 at (5,6) (preview: deals 12, takes 0, kills)
+      => enemy Warrior#8 hp 6->0
+  ok  move #28 -> (2,2)
+      => Archer#28 -> (2,2); enemy Warrior#8 gone (killed or out of sight)
+  ok  move #23 -> (6,3)
+      => Archer#23 -> (6,3)
+  ok  move #15 -> (5,4)
+      => Giant#15 -> (5,4)
+  ok  move #12 -> (6,1)
+      => Warrior#12 -> (6,1)
+  ok  move #27 -> (6,6)
+      => Rider#27 -> (6,6)
+  ok  build Hunting at (2,1) (2 stars)
+      => stars 14->12
+  ok  build HarvestFruit at (2,3) (2 stars)
+      => stars 12->10; Icare pop 0->1
+  ok  build LumberHut at (1,1) (3 stars)
+      => stars 10->7; Icare pop 1->3
+-- planning (model call 2 of 3 this turn) ...
+  > The two northern Archers will focus on the exposed enemy Archer, with estimated combined damage sufficient to kill it. Reinforcements will protect Icare and support southern expansion; moving the southern Archer forward needs a fresh attack preview before committing its shot.
+  PLAN (6 action(s), 28.4s) then ask again: attack #28 -> Archer#21 at (4,2) (preview: deals 6, takes 2); attack #23 -> Archer#21 at (4,2) (preview: deals 6, takes 2); move #20 -> (6,5); train Archer at (1,2) (3 stars); train Rider at (8,7) (3 stars); recover at (1,1)
+  !!  attack #28 -> Archer#21 at (4,2) (preview: deals 6, takes 2)  REJECTED: Pending command trigger exists
+  a city reward is pending; will retry that step after answering it
+      => Icare level 2->3
+  ok  [city reward] city reward Resources at (1,2)
+      => stars 7->12
+  ok  attack #28 -> Archer#21 at (4,2) (preview: deals 6, takes 2)
+      => enemy Archer#21 hp 10->4
+  ok  attack #23 -> Archer#21 at (4,2) (preview: deals 8, takes 0, kills)
+      => Archer#28 hp 10->8; enemy Archer#21 hp 4->0
+  ok  move #20 -> (6,5)
+      => enemy Archer#21 gone (killed or out of sight); Archer#20 -> (6,5)
+  ok  train Archer at (1,2) (3 stars)
+      => stars 12->9; new Archer#30 at (1,2)
+  ok  train Rider at (8,7) (3 stars)
+      => stars 9->6; new Rider#31 at (8,7)
+  ok  recover at (1,1)
+      => Warrior#6 hp 5->9
+-- planning (model call 3 of 3 this turn) ...
+  > Promote the veteran Archer and weaken the Warrior beside our Giant; the current preview estimates 4 damage without retaliation. Advance the western Warrior to support our Archers, and retain six stars toward a second Catapult for the Domus operation.
+  PLAN (4 action(s), 22.4s): promote at (6,3); attack #20 -> Warrior#1 at (4,4) (preview: deals 4, takes 0); move #6 -> (2,1); end turn
+  ok  promote at (6,3)
+      => Archer#23 hp 10->15
+  ok  attack #20 -> Warrior#1 at (4,4) (preview: deals 4, takes 0)
+      => enemy Warrior#1 hp 10->6
+  --  move #6 -> (2,1)  skipped: no longer legal
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->13; enemy Warrior#12 -> (6,1); enemy Archer#28 hp 10->8; enemy Archer#28 -> (2,2); lost Archer#21; enemy Archer#23 hp 10->15; enemy Archer#23 -> (6,3); Warrior#1 hp 10->6; enemy Giant#15 -> (5,4); lost Warrior#8; enemy Archer#20 -> (6,5); new enemy Archer#30 at (1,2); new enemy Rider#27 at (6,6); Icare level 2->3
+--- turn 13 (codex-gpt-6-astra): 20 actions, 3 model call(s), model 74s, wall 84s, cost n/a (subscription)
+
+=== TURN 14 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 13 stars (+11) | 3 cities | units: Archer x3, Warrior x2, Defender x1, Rider x1 ===
+    enemy: 3 reported cities, 2 located | visible units: Archer x4, Warrior x1, Catapult x1, Giant x1, Rider x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  . wT  .  
+ 2   ? .Ea. a.  .  .  ^  T+ T+ 
+ 3  T  T  .  .  .CA.c . a^  .*c
+ 4  T  .  ^  . W. WT gT  .   ? 
+ 5  .  .CDT A. A^  .  .caTg  ? 
+ 6  T  ^  .  T  .  T  . r.   ? 
+ 7  .  T  ^  .  .  .  .  .   ? 
+ 8  T  T  T  .CR^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The enemy Giant is beside Domus, so I clear the city tile to hire a real garrison: Archer#24 steps to (3,3), Archer#14 chips the Giant from range without retaliation, and the wounded Warriors heal behind the line. Rider#29 pushes to (4,7) to screen my capital from the enemy Rider so Mareres can also buy a Defender on the refreshed list.
+  PLAN (5 action(s), 48.6s) then ask again: attack #14 -> Giant#15 at (5,4) (preview: deals 2, takes 0); move #24 -> (3,3); move #29 -> (4,7); recover at (3,4); recover at (4,4)
+  ok  attack #14 -> Giant#15 at (5,4) (preview: deals 2, takes 0)
+      => enemy Giant#15 hp 36->34
+  ok  move #24 -> (3,3)
+      => Archer#24 -> (3,3)
+  ok  move #29 -> (4,7)
+      => Rider#29 -> (4,7)
+  ok  recover at (3,4)
+      => Warrior#5 hp 7->10
+  ok  recover at (4,4)
+      => Warrior#1 hp 6->10
+-- planning (model call 2 of 3 this turn) ...
+  > Archer#24 hammers the wounded enemy Archer at (2,2) for 6 from range 2, so it barely answers. With 13 stars I garrison Domus and Mareres with Defenders — the enemy Giant sits adjacent to Domus — and buy two lumber huts to push Piipnu to level 3 and Mareres toward level 4. Warrior#1 stays screening; attacking the Giant would kill it.
+  PLAN (6 action(s), 18.4s): attack #24 -> Archer#28 at (2,2) (preview: deals 6, takes 1); train Defender at (4,3) (3 stars); train Defender at (3,8) (3 stars); build LumberHut at (2,5) (3 stars); build LumberHut at (2,8) (3 stars); end turn
+  ok  attack #24 -> Archer#28 at (2,2) (preview: deals 6, takes 1)
+      => enemy Archer#28 hp 8->2
+  ok  train Defender at (4,3) (3 stars)
+      => stars 13->10; Archer#24 hp 10->9; new Defender#32 at (4,3)
+  ok  train Defender at (3,8) (3 stars)
+      => stars 10->7; new Defender#33 at (3,8)
+  ok  build LumberHut at (2,5) (3 stars)
+      => stars 7->4; Piipnu pop 2->3
+  ok  build LumberHut at (2,8) (3 stars)
+      => Piipnu level 2->3
+  ok  [city reward] city reward Resources at (1,5)
+      => stars 4->6; Mareres pop 0->1
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 6->20; Archer#28 hp 8->2; enemy Archer#24 hp 10->9; enemy Archer#24 -> (3,3); enemy Warrior#5 hp 7->10; enemy Warrior#1 hp 6->10; Giant#15 hp 36->34; new enemy Defender#32 at (4,3); new enemy Rider#29 at (4,7)
+--- turn 14 (claude-code-claude-opus-5): 12 actions, 2 model call(s), model 67s, wall 75s, est $0.23 this turn ($1.77 so far)
+
+=== TURN 14 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 20 stars (+14) | 3 cities | units: Archer x4, Warrior x2, Rider x2, Catapult x1, Giant x1 ===
+    enemy: 3 reported cities, 1 located | visible units: Warrior x2, Archer x1, Defender x1, Rider x1 | remaining targets: Domus at (4,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^  T+WT  Tg T  T  . WT  .  .  .  
+ 2  .  .CA. A.  .  .  ^  T+ T+ T+ ^  
+ 3  T  T  .  . a.Ed.c . A^  .CC.  .  
+ 4  T  .  ^  . w. wT GT  .  ^  T+ ^  
+ 5   ?  ?  ?  ? ^  .  .cATg T  T  T  
+ 6   ?  ?  ?  ? .  T  . R.  ^  ^   ? 
+ 7   ?  ?  ?  ? . r.  .  .  .CR.+  ? 
+ 8   ?  ?  ?  ? ^  T  .  ^  Tg .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll remove the western Archer and soften Domus for the Giant to enter this turn; the Giant should withstand the nearby Warriors while Icare remains covered. In the south, I’ll set up a Rider kill and free Remusres for another Catapult, then refresh to check the finishing attacks and recruitment.
+  PLAN (7 action(s), 34.2s) then ask again: attack #30 -> Archer#24 at (3,3) (preview: deals 6, takes 1); attack #28 -> Archer#24 at (3,3) (preview: deals 3, takes 3); attack #23 -> Defender#32 at (4,3) (preview: deals 3, takes 0); attack #20 -> Rider#29 at (4,7) (preview: deals 6, takes 0); move #27 -> (5,7); move #25 -> (7,4); move #6 -> (2,1)
+  ok  attack #30 -> Archer#24 at (3,3) (preview: deals 6, takes 1)
+      => enemy Archer#24 hp 9->3
+  ok  attack #28 -> Archer#24 at (3,3) (preview: deals 5, takes 0, kills)
+      => Archer#30 hp 10->9; enemy Archer#24 hp 3->0
+  ok  attack #23 -> Defender#32 at (4,3) (preview: deals 3, takes 0)
+      => enemy Archer#24 gone (killed or out of sight); enemy Defender#32 hp 15->12
+  ok  attack #20 -> Rider#29 at (4,7) (preview: deals 6, takes 0)
+      => enemy Rider#29 hp 10->4
+  ok  move #27 -> (5,7)
+      => Rider#27 -> (5,7)
+  ok  move #25 -> (7,4)
+      => Catapult#25 -> (7,4)
+  ok  move #6 -> (2,1)
+      => Warrior#6 -> (2,1)
+-- planning (model call 2 of 3 this turn) ...
+  > The Giant can break Domus’s garrison and occupy the city now; the preview estimates a killing blow with no retaliation. Finish the southern Rider and bring support forward, while funding another Catapult and Icare’s Giant path. A refresh will reveal southern threats and allow recruitment at Moicare.
+  PLAN (7 action(s), 27.6s) then ask again: attack #15 -> Defender#32 at (4,3) (preview: deals 12, takes 0, kills); attack #27 -> Rider#29 at (4,7) (preview: deals 8, takes 0, kills); move #12 -> (5,2); move #31 -> (6,8); train Catapult at (8,3) (8 stars); build LumberHut at (0,3) (3 stars); build LumberHut at (1,3) (3 stars)
+  ok  attack #15 -> Defender#32 at (4,3) (preview: deals 12, takes 0, kills)
+      => enemy Defender#32 hp 12->0
+  ok  attack #27 -> Rider#29 at (4,7) (preview: deals 8, takes 0, kills)
+      => enemy Defender#32 gone (killed or out of sight); Giant#15 -> (4,3); enemy Rider#29 hp 4->0
+  ok  move #12 -> (5,2)
+      => Warrior#12 -> (5,2); enemy Rider#29 gone (killed or out of sight); Rider#27 -> (4,7); new enemy Defender#33 at (3,8); city Mareres (3,8) now seen/owned (player 1)
+  ok  move #31 -> (6,8)
+      => Rider#31 -> (6,8)
+  ok  train Catapult at (8,3) (8 stars)
+      => stars 20->12; new Catapult#34 at (8,3)
+  ok  build LumberHut at (0,3) (3 stars)
+      => stars 12->9; Icare pop 0->1
+  ok  build LumberHut at (1,3) (3 stars)
+      => stars 9->6; Icare pop 1->2
+-- planning (model call 3 of 3 this turn) ...
+  > Domus’s Giant should survive the nearby Warriors and capture next turn. A free monument plus a lumber hut should produce a second Giant at Icare, leaving enough for an Archer at Moicare; the southern Rider withdraws while the siege force prepares for the capital.
+  PLAN (5 action(s), 20.7s): build Monument5 at (2,3) (0 stars); build LumberHut at (2,1) (3 stars); train Archer at (8,7) (3 stars); move #27 -> (5,7); end turn
+  ok  build Monument5 at (2,3) (0 stars)
+      => Icare pop 2->3
+  ok  build LumberHut at (2,1) (3 stars)
+      => Icare level 3->4
+  ok  [city reward] city reward PopulationGrowth at (1,2)
+      => stars 6->3; Icare pop 0->5
+  ok  train Archer at (8,7) (3 stars)
+      => Icare level 4->5
+  ok  [city reward] city reward SuperUnit at (1,2)
+      => stars 3->0; Archer#30 -> (2,3); new Giant#35 at (1,2); new Archer#36 at (8,7)
+  ok  move #27 -> (5,7)
+      => Rider#27 -> (5,7)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 6->14; enemy Warrior#12 -> (5,2); enemy Archer#30 hp 10->9; enemy Archer#30 -> (2,3); lost Archer#24; lost Defender#32; enemy Catapult#25 -> (7,4); enemy Giant#15 -> (4,3); enemy Rider#27 -> (5,7); lost Rider#29; new enemy Giant#35 at (1,2); new enemy Catapult#34 at (8,3); Icare level 3->5
+--- turn 14 (codex-gpt-6-astra): 21 actions, 3 model call(s), model 82s, wall 98s, cost n/a (subscription)
+
+=== TURN 15 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 14 stars (+8) | 3 cities | units: Warrior x2, Defender x2, Archer x2 ===
+    enemy: 3 reported cities, 2 located | visible units: Archer x4, Giant x2, Catapult x2, Warrior x1, Rider x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ? .Eg. a.  .  . w^  T+ T+ 
+ 3  T+ T+ .+a.  .Cg.c . a^  .*c
+ 4  T  .  ^  . W. WT  T  . c ? 
+ 5  .  .CDT+A. A^  .  .caTg  ? 
+ 6  T  ^  .  T  .  T  .  .   ? 
+ 7  .  T  ^  .  .  . r.  .   ? 
+ 8  T  T  T+ .CD^  T   ?  ?  ? 
+ 9  .  .  .  .  T  .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > An enemy Giant is sitting on Domus and I can't shift 34 hp, so I focus on a clean kill instead: both Archers finish the wounded Archer at (2,3) from range 2 for no return fire. Defender #26 steps off Piipnu's tile so I can train a fresh unit there this turn, and a lumber hut at (0,4) pushes Piipnu toward its next level.
+  PLAN (4 action(s), 41.2s) then ask again: attack #22 -> Archer#30 at (2,3) (preview: deals 6, takes 0); attack #14 -> Archer#30 at (2,3) (preview: deals 6, takes 0); move #26 -> (1,4); build LumberHut at (0,4) (3 stars)
+  ok  attack #22 -> Archer#30 at (2,3) (preview: deals 6, takes 0)
+      => enemy Archer#30 hp 9->3
+  ok  attack #14 -> Archer#30 at (2,3) (preview: deals 8, takes 0, kills)
+      => enemy Archer#30 hp 3->0
+  ok  move #26 -> (1,4)
+      => enemy Archer#30 gone (killed or out of sight); Defender#26 -> (1,4)
+  ok  build LumberHut at (0,4) (3 stars)
+      => stars 14->11; Piipnu pop 0->1
+-- planning (model call 2 of 3 this turn) ...
+  > The enemy Giant sitting on Domus is untouchable with warriors (3 damage for 11 back), so I hold the line and grow instead: a Defender garrisons Piipnu against the Giant coming from Icare, and two lumber huts push Piipnu and Mareres toward level-ups that fund a Catapult or Giant of my own.
+  PLAN (4 action(s), 23.6s): train Defender at (1,5) (3 stars); build LumberHut at (0,6) (3 stars); build LumberHut at (4,9) (3 stars); end turn
+  ok  train Defender at (1,5) (3 stars)
+      => stars 11->8; new Defender#37 at (1,5)
+  ok  build LumberHut at (0,6) (3 stars)
+      => stars 8->5; Piipnu pop 1->2
+  ok  build LumberHut at (4,9) (3 stars)
+      => stars 5->2; Mareres pop 1->2
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 0->16; lost Archer#30; new enemy Defender#26 at (1,4)
+--- turn 15 (claude-code-claude-opus-5): 8 actions, 2 model call(s), model 65s, wall 70s, est $0.22 this turn ($1.99 so far)
+
+=== TURN 15 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 16 stars (+16) | 3 cities | units: Archer x4, Warrior x2, Giant x2, Catapult x2, Rider x2 ===
+    enemy: 3 reported cities, 2 located | visible units: Defender x2, Warrior x2 | enemy capital Mareres at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-9; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^  T+ T+WTg T  T  .  T  .  .  .  
+ 2  .  .CG. A.  .  . W^  T+ T+ T+ ^  
+ 3  T+ T+ .+ .  .EG.c . A^  .CC.  .  
+ 4  T+ . d^  . w. wT  T  . C^  T+ ^  
+ 5   ?  ?  ?  ? ^  .  .cATg T  T  T  
+ 6   ?  ?  ? T  .  T  .  .  ^  ^   ? 
+ 7   ?  ?  ? .  .  . R.  .  .CA.+  ? 
+ 8   ?  ?  ? .*d^  T  . R^  Tg .   ? 
+ 9   ?  ?  ?  ?  ? .  .r T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Secure Domus and clear its eastern attacker while moving the siege force south. Climbing opens the mountain approaches; the capital operation aims for Catapult #25 to fire on turn 17 with Rider #31 available to occupy, subject to new enemy contacts. The western Giant will protect Icare, and a refreshed list will allow recruitment and ruin examination.
+  PLAN (13 action(s), 37.8s) then ask again: research Climbing (7 stars); capture #15 at (4,3); attack #23 -> Warrior#1 at (4,4) (preview: deals 5, takes 0); attack #20 -> Warrior#1 at (4,4) (preview: deals 4, takes 0); attack #28 -> Warrior#1 at (4,4) (preview: deals 2, takes 0); move #35 -> (2,3); move #6 -> (3,2); move #12 -> (4,2); move #25 -> (6,4); move #34 -> (7,2); move #27 -> (6,9); move #31 -> (5,9); move #36 -> (7,6)
+  ok  research Climbing (7 stars)
+      => stars 16->9; learned Climbing
+  ok  capture #15 at (4,3)
+      => city Domus (4,3) captured -> YOURS
+  ok  attack #23 -> Warrior#1 at (4,4) (preview: deals 5, takes 0)
+      => enemy Warrior#1 hp 10->5
+  ok  attack #20 -> Warrior#1 at (4,4) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#1 hp 5->0
+  ok  attack #28 -> Warrior#1 at (4,4) (preview: deals 9, takes 0, kills)
+      => enemy Warrior#1 gone (killed or out of sight)
+  ok  move #35 -> (2,3)
+      => Giant#35 -> (2,3)
+  ok  move #6 -> (3,2)
+      => Warrior#6 -> (3,2)
+  ok  move #12 -> (4,2)
+      => Warrior#12 -> (4,2)
+  ok  move #25 -> (6,4)
+      => Catapult#25 -> (6,4)
+  ok  move #34 -> (7,2)
+      => Catapult#34 -> (7,2)
+  ok  move #27 -> (6,9)
+      => Rider#27 -> (6,9)
+  ok  move #31 -> (5,9)
+      => Rider#31 -> (5,9)
+  ok  move #36 -> (7,6)
+      => Archer#36 -> (7,6)
+-- planning (model call 2 of 3 this turn) ...
+  > I’ll reinforce Icare with an Archer and start a two-sawmill plan for another Giant, supporting the push toward the unlocated western city. The existing Giants cover Icare and Domus while the southern siege force approaches the capital; its Defender still needs supporting fire before a Rider can safely occupy it.
+  PLAN (3 action(s), 24.9s): build Sawmill at (0,2) (5 stars); train Archer at (1,2) (3 stars); end turn
+  ok  build Sawmill at (0,2) (5 stars)
+      => stars 9->4
+  ok  train Archer at (1,2) (3 stars)
+      => stars 4->1; new Archer#38 at (1,2); Icare pop 0->3
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->10; enemy Giant#35 -> (2,3); enemy Warrior#12 -> (4,2); enemy Catapult#34 -> (7,2); lost Warrior#1; enemy Catapult#25 -> (6,4); enemy Rider#27 gone (killed or out of sight); new enemy Archer#38 at (1,2); new enemy Warrior#6 at (3,2); new enemy Archer#36 at (7,6); new enemy Rider#31 at (5,9); city Domus (4,3) captured -> player 2
+--- turn 15 (codex-gpt-6-astra): 16 actions, 2 model call(s), model 63s, wall 74s, cost n/a (subscription)
+
+=== TURN 16 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 10 stars (+8) | 2 cities | units: Defender x3, Archer x2, Warrior x1 ===
+    enemy: 4 reported cities, 3 located | visible units: Archer x5, Warrior x2, Catapult x2, Giant x2, Rider x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ? .Ea. a. w. w.  ^  T+cT+ 
+ 3  T+ T+ .+g.  .Eg.c . a^  .* 
+ 4  T+ . D^  . W.  T  T c.   ? 
+ 5  .  .CDT+A. A^  .  .caTg  ? 
+ 6  T+ ^  .  T  .  T  .  . a ? 
+ 7  .  T  ^  .  .  .  .  .   ? 
+ 8  T  T  T+ .CD^  T   ?  ?  ? 
+ 9  .  .  .  .  T+ . r ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Both Archers chip the western Giant for 6 free damage — range 2 means it can't hit back. I spend all 10 stars on two Sawmills, each adjacent to two lumber huts, which levels both Piipnu and Mareres to 4 and sets up level-5 Giants for defence. The enemy Giants are still bearing down on my west flank.
+  PLAN (5 action(s), 23.5s): attack #22 -> Giant#35 at (2,3) (preview: deals 3, takes 0); attack #14 -> Giant#35 at (2,3) (preview: deals 3, takes 0); build Sawmill at (1,4) (5 stars); build Sawmill at (3,9) (5 stars); end turn
+  ok  attack #22 -> Giant#35 at (2,3) (preview: deals 3, takes 0)
+      => enemy Giant#35 hp 40->37
+  ok  attack #14 -> Giant#35 at (2,3) (preview: deals 3, takes 0)
+      => enemy Giant#35 hp 37->34
+  ok  build Sawmill at (1,4) (5 stars)
+      => stars 10->5
+  ok  build Sawmill at (3,9) (5 stars)
+      => Piipnu level 3->4
+  ok  [city reward] city reward PopulationGrowth at (1,5)
+      => stars 5->0; Piipnu pop 0->3
+  ok  end turn
+      => Mareres level 3->4
+  ok  [city reward] city reward PopulationGrowth at (3,8)
+  claude-code-claude-opus-5 moved: stars 1->21; Giant#35 hp 40->34; Mareres level 3->4
+--- turn 16 (claude-code-claude-opus-5): 7 actions, 1 model call(s), model 23s, wall 33s, est $0.09 this turn ($2.09 so far)
+
+=== TURN 16 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 21 stars (+20) | 4 cities | units: Archer x5, Warrior x2, Catapult x2, Giant x2, Rider x2 ===
+    enemy: 2 reported cities, 1 located | visible units: Defender x2, Warrior x1 | enemy capital Mareres at (3,8) lvl 4
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^m T+ T+ Tg T  T  .  T  .  .  .  
+ 2  .+ .CA. A. W. W.  ^  T+CT+ T+ ^m 
+ 3  T+ T+ .+G.  .CG.c . A^m .C .  .  
+ 4  T+ .+d^  . w.  T  T C.  ^m T+ ^  
+ 5   ?  ?  ?  ? ^  .  .cATg T  T  T  
+ 6   ?  ?  ? T  .  T  .  . A^m ^m  ? 
+ 7   ?  ?  ? .  .  .  .  .  .C .+  ? 
+ 8   ?  ?  ? .*d^m T  .  ^m Tg .   ? 
+ 9   ?  ?  ?  ? T+ . R.rRT   ?  ?  ? 
+10   ?  ?  ?  ? .u T  .  .   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Clear the western attackers while advancing the siege force toward Mareres. Archer support should let Giant #35 finish the Defender, while Giant #15’s preview shows a killing blow against the Warrior; the Catapult can reach firing range for next turn. I’ll refresh after scouting and the ruins reward to assess threats and unlock Icare’s next Sawmill.
+  PLAN (9 action(s), 24.2s) then ask again: attack #38 -> Defender#26 at (1,4) (preview: deals 4, takes 0); attack #35 -> Defender#26 at (1,4) (preview: deals 13, takes 6); attack #15 -> Warrior#5 at (3,4) (preview: deals 15, takes 0, kills); move #28 -> (2,1); examine ruins at (6,9); move #25 -> (5,5); move #20 -> (5,6); move #36 -> (6,7); move #34 -> (6,2)
+  ok  attack #38 -> Defender#26 at (1,4) (preview: deals 4, takes 0)
+      => enemy Defender#26 hp 15->11
+  ok  attack #35 -> Defender#26 at (1,4) (preview: deals 15, takes 0, kills)
+      => enemy Defender#26 hp 11->0
+  ok  attack #15 -> Warrior#5 at (3,4) (preview: deals 15, takes 0, kills)
+      => Giant#35 -> (1,4); enemy Defender#26 gone (killed or out of sight); enemy Warrior#5 hp 10->0; new enemy Defender#37 at (1,5); new enemy Archer#22 at (2,5); city Piipnu (1,5) now seen/owned (player 1)
+  ok  move #28 -> (2,1)
+      => Archer#28 -> (2,1); Giant#15 -> (3,4); enemy Warrior#5 gone (killed or out of sight); new enemy Archer#14 at (3,5)
+  ok  examine ruins at (6,9)
+  ok  move #25 -> (5,5)
+      => Catapult#25 -> (5,5); Remusres pop 0->1
+  ok  move #20 -> (5,6)
+      => Archer#20 -> (5,6)
+  ok  move #36 -> (6,7)
+      => Archer#36 -> (6,7)
+  ok  move #34 -> (6,2)
+      => Catapult#34 -> (6,2)
+-- planning (model call 2 of 3 this turn) ...
+  > I’ll focus fire on the exposed eastern Archer to protect our Catapult and Giants. A supporting Archer at Domus strengthens the western push, while a sawmill advances Remusres toward another Giant; another call is needed to finish the attack after moving into range.
+  PLAN (7 action(s), 29.4s) then ask again: attack #20 -> Archer#14 at (3,5) (preview: deals 6, takes 2); move #23 -> (5,4); move #6 -> (2,3); move #12 -> (3,3); move #31 -> (4,9); build Sawmill at (9,3) (5 stars); train Archer at (4,3) (3 stars)
+  ok  attack #20 -> Archer#14 at (3,5) (preview: deals 6, takes 2)
+      => enemy Archer#14 hp 10->4
+  ok  move #23 -> (5,4)
+      => Archer#23 -> (5,4); Archer#20 hp 8->6
+  ok  move #6 -> (2,3)
+      => Warrior#6 -> (2,3)
+  ok  move #12 -> (3,3)
+      => Warrior#12 -> (3,3)
+  ok  move #31 -> (4,9)
+      => Rider#31 -> (4,9)
+  ok  build Sawmill at (9,3) (5 stars)
+      => stars 21->16
+  ok  train Archer at (4,3) (3 stars)
+      => stars 16->13; new Archer#40 at (4,3); Remusres pop 1->4
+-- planning (model call 3 of 3 this turn) ...
+  > Finish the wounded Archer to remove one threat, then research Mining to enable a Remusres Giant with a 5-star Mine next turn. The surviving enemy Archer may still reach Catapult #25, so the siege remains vulnerable.
+  PLAN (3 action(s), 21.2s): attack #23 -> Archer#14 at (3,5) (preview: deals 8, takes 0, kills); research Mining (12 stars); end turn
+  ok  attack #23 -> Archer#14 at (3,5) (preview: deals 8, takes 0, kills)
+      => enemy Archer#14 hp 4->0
+  ok  research Mining (12 stars)
+      => stars 13->1; learned Mining; enemy Archer#14 gone (killed or out of sight)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->10; enemy Archer#28 gone (killed or out of sight); enemy Warrior#6 -> (2,3); enemy Warrior#12 -> (3,3); enemy Catapult#34 -> (6,2); enemy Giant#35 -> (1,4); enemy Giant#15 -> (3,4); enemy Archer#23 -> (5,4); lost Defender#26; lost Warrior#5; enemy Catapult#25 -> (5,5); lost Archer#14; enemy Archer#20 hp 8->6; enemy Archer#20 -> (5,6); enemy Archer#36 -> (6,7); enemy Rider#31 -> (4,9); new enemy Archer#40 at (4,3); Mareres pop 0->3
+--- turn 16 (codex-gpt-6-astra): 19 actions, 3 model call(s), model 75s, wall 91s, cost n/a (subscription)
+
+=== TURN 17 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 10 stars (+10) | 2 cities | units: Defender x2, Archer x1 ===
+    enemy: 4 reported cities, 3 located | visible units: Archer x5, Catapult x2, Warrior x2, Giant x2, Rider x1 | enemy capital Remusres at (8,3) lvl 5
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ? .Ea.  .  .  .  ^ cT+ T+ 
+ 3  T+ T+ .+w. w.Ea.c .  ^  .* 
+ 4  T+ .+g^  . g.  T aT  .   ? 
+ 5  .  .CDT+A.  ^  . c.c Tg  ? 
+ 6  T+ ^  .  T  .  T a.  .   ? 
+ 7  .  T  ^  .  .  .  . a.   ? 
+ 8  T  T  T+ .CD^  T   ?  ?  ? 
+ 9  .  .  .  .+ T+r.   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Piipnu is pinned by two Giants, so the Archer steps back to (2,6) where it can still reach Giant#15 at range 2 — that distance, not the unit type, is what removes retaliation. Both Defenders stay fortified on their city tiles at 4.5 defence. I need a fresh list to fire after the move.
+  PLAN (1 action(s), 37.9s) then ask again: move #22 -> (2,6)
+  ok  move #22 -> (2,6)
+      => Archer#22 -> (2,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Both cities are under siege by Giants, so the Defenders stay fortified on their city tiles — vacating either would hand it over. The Archer chips the Giant beside Piipnu from range 2, where the preview shows no damage coming back. Stars stay banked because no city tile can be freed safely to train.
+  PLAN (2 action(s), 13.0s): attack #22 -> Giant#35 at (1,4) (preview: deals 3, takes 0); end turn
+  ok  attack #22 -> Giant#35 at (1,4) (preview: deals 3, takes 0)
+      => enemy Giant#35 hp 34->31
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 1->21; Giant#35 hp 34->31; enemy Archer#22 gone (killed or out of sight)
+--- turn 17 (claude-code-claude-opus-5): 3 actions, 2 model call(s), model 51s, wall 54s, est $0.18 this turn ($2.26 so far)
+
+=== TURN 17 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 21 stars (+20) | 4 cities | units: Archer x6, Catapult x2, Warrior x2, Giant x2, Rider x2 ===
+    enemy: 2 reported cities, 2 located | visible units: Defender x2 | enemy capital Mareres at (3,8) lvl 4
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^m T+ T+ATg T  T  .  T  .  .  .  
+ 2  .+ .CA.  .  .  .  ^ CT+ T+ T+ ^m 
+ 3  T+ T+ .+W. W.CA.c .  ^m .C .+ .  
+ 4  T+ .+G^  . G.  T AT  .  ^m T+ ^  
+ 5  .  .EdT+ .  ^  . C.c Tg T  T  T  
+ 6   ?  ?  ? T  .  T A.  .  ^m ^m .c 
+ 7   ?  ?  ? .  .  .  . A.  .C .+ .u 
+ 8   ?  ?  ? .*d^m T  .  ^m Tg .  T  
+ 9   ?  ?  ? .+ T+R.  .cRT  Tg .r T  
+10   ?  ?  ? .  .u T  .  .  ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > Both cities look vulnerable to coordinated fire, with no visible counterattackers threatening our cities. I’ll soften Mareres for Rider #31 to occupy from (4,9), bring an Archer into range of Piipnu for Giant #35’s finishing attack, and spend 5 stars on a reinforcing Giant.
+  PLAN (6 action(s), 22.0s) then ask again: attack #25 -> Defender#33 at (3,8) (preview: deals 8, takes 0); attack #20 -> Defender#33 at (3,8) (preview: deals 2, takes 0); move #36 -> (5,8); move #38 -> (1,3); move #6 -> (2,4); build Mine at (7,3) (5 stars)
+  ok  attack #25 -> Defender#33 at (3,8) (preview: deals 8, takes 0)
+      => enemy Defender#33 hp 15->7
+  ok  attack #20 -> Defender#33 at (3,8) (preview: deals 3, takes 0)
+      => enemy Defender#33 hp 7->4
+  ok  move #36 -> (5,8)
+      => Archer#36 -> (5,8)
+  ok  move #38 -> (1,3)
+      => Archer#38 -> (1,3)
+  ok  move #6 -> (2,4)
+      => Warrior#6 -> (2,4)
+  ok  build Mine at (7,3) (5 stars)
+      => stars 21->16; new enemy Archer#22 at (2,6); Remusres pop 4->5
+-- planning (model call 2 of 3 this turn) ...
+  > Rider #31 can finish the capital’s defender and occupy immediately; the preview estimates no retaliation from the killing blow. At Piipnu, ranged support will soften the garrison for Giant #35, while two Archers move to counter the enemy Archer. A mine should produce another Giant; the next call will check occupation and finish any surviving threats.
+  PLAN (6 action(s), 27.1s) then ask again: attack #31 -> Defender#33 at (3,8) (preview: deals 6, takes 0, kills); attack #38 -> Defender#37 at (1,5) (preview: deals 3, takes 0); attack #35 -> Defender#37 at (1,5) (preview: deals 10, takes 7); move #23 -> (4,5); move #40 -> (4,4); build Mine at (8,4) (5 stars)
+  !!  attack #31 -> Defender#33 at (3,8) (preview: deals 6, takes 0, kills)  REJECTED: Pending command trigger exists
+  a city reward is pending; will retry that step after answering it
+      => Remusres level 5->6
+  ok  [city reward] city reward SuperUnit at (8,3)
+      => new Giant#41 at (8,3)
+  ok  attack #31 -> Defender#33 at (3,8) (preview: deals 6, takes 0, kills)
+      => enemy Defender#33 hp 4->0
+  ok  attack #38 -> Defender#37 at (1,5) (preview: deals 3, takes 0)
+      => enemy Defender#37 hp 15->12; enemy Defender#33 gone (killed or out of sight); Rider#31 -> (3,8)
+  ok  attack #35 -> Defender#37 at (1,5) (preview: deals 12, takes 0, kills)
+      => enemy Defender#37 hp 12->0
+  ok  move #23 -> (4,5)
+      => Giant#35 -> (1,5); Archer#23 -> (4,5); enemy Defender#37 gone (killed or out of sight)
+  ok  move #40 -> (4,4)
+      => Archer#40 -> (4,4)
+  ok  build Mine at (8,4) (5 stars)
+      => stars 16->11; Remusres pop 0->1
+-- planning (model call 3 of 3 this turn) ...
+  > Both enemy cities are occupied by our units. Focus fire on the remaining enemy Archer—roughly 12 damage combined—to protect those occupations, then hold position for next-turn captures; no further spending is needed against the visible threat.
+  PLAN (3 action(s), 12.8s): attack #40 -> Archer#22 at (2,6) (preview: deals 6, takes 2); attack #23 -> Archer#22 at (2,6) (preview: deals 6, takes 2); end turn
+  ok  attack #40 -> Archer#22 at (2,6) (preview: deals 6, takes 2)
+      => enemy Archer#22 hp 10->4; Remusres pop 1->2
+  ok  attack #23 -> Archer#22 at (2,6) (preview: deals 8, takes 0, kills)
+      => Archer#40 hp 10->8; enemy Archer#22 hp 4->0
+  ok  end turn
+      => Giant#15 hp 34->38; enemy Archer#22 gone (killed or out of sight)
+  state for a seat-turn that already ended; waiting for the next one
+  codex-gpt-6-astra moved: enemy Archer#38 -> (1,3); enemy Warrior#6 -> (2,4); enemy Archer#40 hp 10->8; enemy Archer#40 -> (4,4); enemy Giant#35 -> (1,5); enemy Giant#15 hp 34->38; enemy Archer#23 -> (4,5); lost Defender#37; lost Archer#22; enemy Archer#36 -> (5,8); lost Defender#33; enemy Rider#31 -> (3,8); new enemy Giant#41 at (8,3); Remusres level 5->6
+--- turn 17 (codex-gpt-6-astra): 17 actions, 3 model call(s), model 62s, wall 72s, cost n/a (subscription)
+
+=== TURN 18 | Domination | 2 players | claude-code-claude-opus-5 as Imperius (player 1): 10 stars (+0) | 2 cities | units: none ===
+    enemy: 4 reported cities, 3 located | visible units: Archer x5, Giant x3, Catapult x2, Warrior x2, Rider x1 | enemy capital Remusres at (8,3) lvl 6
+MAP (explored region x 0-8, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8
+ 0   ?  ?  ?  ? .  .  T  .   ? 
+ 1   ?  ?  ? Tg T  T  .  T  .  
+ 2   ? .E .  .  .  .  ^ cT+ T+ 
+ 3  T+ T+a.+ . w.E .c .  ^+ .*g
+ 4  T+ .+ ^ w. g. aT  T  .   ? 
+ 5  .  .CgT+ .  ^ a. c.c Tg  ? 
+ 6  T+ ^  .  T  .  T a.  .   ? 
+ 7  .  T  ^  .  .  .  .  .   ? 
+ 8  T  T  T+ .Cr^  T a ?  ?  ? 
+ 9  .  .  .  .+ T+ .   ?  ?  ? 
+10  .+ .u ^  .  .u T   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Both my cities are occupied by enemy units and I have no units left on the board, so no combat, recruitment or eviction is legal. Spending stars on tech does nothing for a domination fight I can no longer contest, so I simply pass and hope a city tile frees up.
+  PLAN (1 action(s), 8.0s): end turn
+  ok  end turn
+  claude-code-claude-opus-5 moved: stars 11->32; Archer#28 hp 2->6
+--- turn 18 (claude-code-claude-opus-5): 1 actions, 1 model call(s), model 8s, wall 11s, est $0.05 this turn ($2.32 so far)
+
+=== TURN 18 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 32 stars (+21) | 4 cities | units: Archer x6, Giant x3, Catapult x2, Warrior x2, Rider x2 ===
+    enemy: 2 reported cities, 2 located | visible units: none | enemy capital Mareres at (3,8) lvl 4
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ ^  Tg .  .  .  T  .  .  .  .+ 
+ 1  ^m T+ T+ATg T  T  .  T  .  .  .  
+ 2  .+ .C .  .  .  .  ^ CT+ T+ T+ ^m 
+ 3  T+ T+A.+ . W.C .c .  ^+ .CG.+ .  
+ 4  T+ .+ ^ W. G. AT  T  .  ^+ T+ ^  
+ 5  .  .EGT+ .  ^ A. C.c Tg T  T  T  
+ 6  T+ ^m .  T  .  T A.  .  ^m ^m .c 
+ 7   ?  ? ^m .  .  .  .  .  .C .+ .u 
+ 8   ?  ? T+ .*R^m T A.  ^m Tg .  T  
+ 9   ?  ? .  .+ T+ .  .cRT  Tg .r T  
+10   ?  ?  ? .  .u T  .  .  ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > Both remaining enemy cities are occupied by our units and ready to capture. Claiming them should eliminate the opponent; no further spending or movement is needed.
+  PLAN (3 action(s), 6.8s): capture #35 at (1,5); capture #31 at (3,8); end turn
+  ok  capture #35 at (1,5)
+      => city Piipnu (1,5) captured -> YOURS
+  ok  capture #31 at (3,8)
+      => Piipnu level 4->5
+  ok  [city reward] city reward SuperUnit at (1,5)
+      => Giant#35 -> (1,6); new Giant#42 at (1,5); city Mareres (3,8) captured -> YOURS
+  ok  end turn
+      => Archer#20 hp 6->8
+  state for a seat-turn that already ended; waiting for the next one
+--- turn 18 (codex-gpt-6-astra): 4 actions, 1 model call(s), model 7s, wall 16s, cost n/a (subscription)
+
+GAME OVER on turn 18: WINNER codex-gpt-6-astra (player 2)
+  claude-code-claude-opus-5: scores by turn: 0:515 1:755 2:810 3:925 4:935 5:1045 6:1535 7:1870 8:1985 9:2030 10:2075 11:2315 12:2310 13:2495 14:2785 15:2815 16:2450 17:2520 18:2475
+  claude-code-claude-opus-5: tokens: {'input': 60, 'output': 38948, 'cache_write': 116134, 'cache_read': 164460}  model calls: 30  est. cost $2.32
+  codex-gpt-6-astra: scores by turn: 0:515 1:745 2:755 3:855 4:860 5:1000 6:1070 7:1350 8:1660 9:1790 10:2495 11:2495 12:3100 13:3155 14:3240 15:3860 16:4400 17:4710 18:4830
+  codex-gpt-6-astra: tokens: {'input': 541115, 'output': 16413, 'cache_write': 0, 'cache_read': 113664}  model calls: 39  est. cost n/a (subscription)
+  player 1 claude-code-claude-opus-5: won=False calls=30 actions=145 violations=0 cost=$2.32
+  player 2 codex-gpt-6-astra: won=True calls=39 actions=200 violations=0 cost=n/a (subscription)
+result: p2 (codex-gpt-6-astra) on turn 18

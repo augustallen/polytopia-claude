@@ -1,0 +1,15 @@
+# Sample: one planning call by claude-opus-5 on the recorded 16x16 Xinxi-vs-Easy midgame fixture (tests/fixtures/state_midgame.json), mode forced to Domination. Cold prompt cache (42k cache-write tokens); warm calls cost about $0.07 and 13 s.
+observation ~825 tokens, 44 legal actions, system prompt ~2089 tokens
+
+=== TURN 12 | Domination vs 1 Easy bot | Xinxi: 12 stars (+5) | 1 cities, 3 units | enemy: 0 cities seen, 1 units visible | enemy capital not found yet ===
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~50 tokens  thinking... ~100 tokens
+  > Riding is in, so I want Riders for scouting the still-unfound enemy capital to the east/north. This turn I take two cheap hunting grounds for population, push Warrior #1 onto the village at (11,13) to capture it next turn, and shift my other two warriors east toward the frontier. I'm omitting end turn so I can train a Rider now that Riding is unlocked.
+  PLAN: 5 action(s) in 14.6s  [asks to be called again]
+    1. build Hunting at (8,11) (2 stars)
+    2. build Hunting at (10,12) (2 stars)
+    3. move #1 -> (11,13)
+    4. move #7 -> (10,14)
+    5. move #11 -> (10,12)
+  notes: Riding done. Next: train Rider(s) at capital, scout east/northeast for enemy capital (enemy warrior seen at 14,9). Capture village (11,13) with Warrior #1 next turn; later villages (10,10), (13,10), (14,13); ruins at (15,11). Build cheap Hunting/Mine improvements to level capital. Keep warriors grou
+latency 14.6s attempts 1 usage {'input': 2, 'output': 830, 'cache_write': 42083, 'cache_read': 0} cost $0.444 error None

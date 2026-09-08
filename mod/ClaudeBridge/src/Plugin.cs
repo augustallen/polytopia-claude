@@ -6,6 +6,7 @@ using System.Text.Json;
 using BepInEx.Logging;
 using HarmonyLib;
 using PolyMod.Api;
+using Polytopia.Data;
 using PolytopiaBackendBase.Game;
 
 namespace ClaudeBridge;
@@ -64,6 +65,20 @@ public static class Bridge
     static bool _wasInGame;
     static int _idleFrames;
     static float _lastTickErrorLog;
+
+    // Hotseat (Pass & Play) handoff state (main thread only)
+    static byte _lastCurrentPlayer;
+    static float _handoffSince = -1f;      // realtime when gs.CurrentPlayer last changed; -1 once a state was sent
+    static float _lastHandoffWarning;
+    static bool _handoffKicked;
+    static int _overlaySeenId;
+    static float _overlaySeenAt;
+    static float _lastOverlayContinue;
+    const float HandoffWarnSeconds = 10f;
+    // The client only switches seats itself when the HUD's end-turn button drives the overlay; commands
+    // sent through the bridge skip that path, so after the engine has moved on to the next player and
+    // gone idle, the bridge makes the same call the overlay's Continue would.
+    const float HandoffKickSeconds = 1.5f;
 
     // ------------------------------------------------------------------ config
 
@@ -267,19 +282,38 @@ public static class Bridge
 
                 case "new_game":
                     // What the setup screen's Continue button does: fill PreliminaryGameSettings,
-                    // pick the tribe, then CreateSinglePlayerGame. Only from the start screen.
+                    // pick the tribe, then CreateSinglePlayerGame (or CreateHotseatGame for an offline
+                    // Pass & Play game with several human seats). Only from the start screen.
                     if (GameManager.GameState != null) { Send(new { type = "error", error = "already in a game; send return_to_menu first" }); break; }
                     try
                     {
+                        var gameType = EnumArg(root, "game_type", GameType.SinglePlayer);
+                        if (gameType != GameType.SinglePlayer && gameType != GameType.PassAndPlay)
+                            throw new ArgumentException("'game_type' must be SinglePlayer or PassAndPlay (offline only)");
                         var mode = EnumArg(root, "mode", PolytopiaBackendBase.Game.GameMode.Perfection);
                         var difficulty = EnumArg(root, "difficulty", BotDifficulty.Easy);
                         var preset = EnumArg(root, "map_preset", MapPreset.Continents);
                         var tribe = EnumArg(root, "tribe", PolytopiaBackendBase.Common.TribeType.Imperius);
-                        int opponents = root.TryGetProperty("opponents", out var o) ? o.GetInt32() : 3;
-                        int mapSize = root.TryGetProperty("map_size", out var ms) ? ms.GetInt32() : GameSettings.GetPreferredMapSizeFromOpponentCount(opponents);
+                        bool hotseat = gameType == GameType.PassAndPlay;
+                        int humans = hotseat && root.TryGetProperty("players", out var hp) ? hp.GetInt32() : (hotseat ? 2 : 1);
+                        int opponents = root.TryGetProperty("opponents", out var o) ? o.GetInt32()
+                                      : root.TryGetProperty("bots", out var bp) ? bp.GetInt32() : (hotseat ? 0 : 3);
+                        int mapSize = root.TryGetProperty("map_size", out var ms) ? ms.GetInt32()
+                                    : GameSettings.GetPreferredMapSizeFromOpponentCount(hotseat ? humans - 1 + opponents : opponents);
+                        var tribes = new List<PolytopiaBackendBase.Common.TribeType>();
+                        if (root.TryGetProperty("tribes", out var tr) && tr.ValueKind == JsonValueKind.Array)
+                            foreach (var e in tr.EnumerateArray())
+                                tribes.Add(Enum.Parse<PolytopiaBackendBase.Common.TribeType>(e.GetString() ?? "", true));
+                        while (tribes.Count < humans) tribes.Add(tribe);
+                        if (hotseat && humans < 2) throw new ArgumentException("a pass-and-play game needs at least 2 'players'");
 
                         var settings = GameManager.PreliminaryGameSettings ?? new GameSettings();
-                        settings.GameType = GameType.SinglePlayer;
+                        if (hotseat)
+                        {
+                            try { settings.ApplyGameTypeDefaults(GameType.PassAndPlay, mode); }
+                            catch (Exception ex) { Log.LogWarning($"ApplyGameTypeDefaults failed: {ex.Message}"); }
+                        }
+                        settings.GameType = gameType;
                         settings.BaseGameMode = mode;
                         settings.RulesGameMode = mode;
                         settings.rules = new GameRules(mode);
@@ -288,13 +322,49 @@ public static class Bridge
                         settings.OpponentCount = opponents;
                         settings.MapSize = mapSize;
                         settings.GameName = root.TryGetProperty("name", out var n) && n.GetString() is { } nm ? nm : $"claude {DateTime.Now:yyyyMMdd-HHmmss}";
+                        if (hotseat)
+                        {
+                            // One PlayerData per human seat, the way the player picker + tribe picker fill them in.
+                            HotseatProfilesState? profiles = null;
+                            try { profiles = GameManager.GetHotseatProfilesState(); }
+                            catch (Exception ex) { Log.LogWarning($"GetHotseatProfilesState failed: {ex.Message}"); }
+                            settings.ClearPlayers();
+                            for (int i = 0; i < humans; i++)
+                            {
+                                var pd = new PlayerData
+                                {
+                                    type = PlayerDataType.LocalUser,
+                                    tribe = tribes[i],
+                                    tribeMix = tribes[i],
+                                    climate = tribes[i],
+                                    skinType = PolytopiaBackendBase.Common.SkinType.Default,
+                                    knownTribe = true,
+                                    botDifficulty = difficulty,
+                                    defaultName = $"Player {i + 1}",
+                                };
+                                try
+                                {
+                                    if (profiles?.players != null && i < profiles.players.Count) pd.profile = profiles.players[i];
+                                }
+                                catch (Exception ex) { Log.LogWarning($"profile {i}: {ex.Message}"); }
+                                settings.AddPlayer(pd);
+                            }
+                            Log.LogInfo($"hotseat new_game: {humans} humans {opponents} bots mode {mode} map {mapSize} {preset} tribes [{string.Join(",", tribes)}] players={settings.GetPlayerCount()}");
+                        }
                         GameManager.PreliminaryGameSettings = settings;
-                        GameManager.SetStartingTribeValues(tribe, PolytopiaBackendBase.Common.SkinType.Default, tribe, tribe);
-                        GameManager.Instance.CreateSinglePlayerGame();
-                        Send(new { type = "ok", command = "new_game", mode = mode.ToString(), difficulty = difficulty.ToString(), map_preset = preset.ToString(), tribe = tribe.ToString(), opponents, map_size = mapSize });
+                        GameManager.SetStartingTribeValues(tribes[0], PolytopiaBackendBase.Common.SkinType.Default, tribes[0], tribes[0]);
+                        if (hotseat) GameManager.Instance.CreateHotseatGame();
+                        else GameManager.Instance.CreateSinglePlayerGame();
+                        Send(new
+                        {
+                            type = "ok", command = "new_game", game_type = gameType.ToString(), mode = mode.ToString(),
+                            difficulty = difficulty.ToString(), map_preset = preset.ToString(), tribe = tribes[0].ToString(),
+                            tribes = tribes.ConvertAll(t => t.ToString()), players = humans, opponents, map_size = mapSize,
+                        });
                     }
                     catch (Exception ex)
                     {
+                        Log.LogError($"new_game failed: {ex}");
                         Send(new { type = "error", error = $"new_game failed: {ex.Message}" });
                     }
                     break;
@@ -325,16 +395,33 @@ public static class Bridge
                         Send(new { type = "result", ok = false, error = "missing 'action'", kind = (string?)null });
                         break;
                     }
-                    var ok = ActionExecutor.Execute(action, out var error, out var kind);
+                    // Optional seat: in a hotseat game the harness says which player it is acting for,
+                    // and the bridge refuses if that is not the seat currently at the keyboard.
+                    byte? seat = root.TryGetProperty("player", out var pl) && pl.ValueKind == JsonValueKind.Number ? (byte)pl.GetInt32() : null;
+                    var before = GameManager.GameState != null ? CurrentKey() : StateKey.None;
+                    var ok = ActionExecutor.Execute(action, seat, out var error, out var kind);
                     Send(new { type = "result", ok, error, kind });
                     _idleFrames = 0;
                     if (ok)
                     {
-                        // SendCommand only queues the command; hold the next state until the
-                        // engine has actually consumed it (the command counter moves) so the
-                        // harness never sees a stale state and re-sends the same action.
-                        _pendingKey = CurrentKey();
-                        _pendingSince = UnityEngine.Time.realtimeSinceStartup;
+                        // SendCommand usually only queues the command; hold the next state until the
+                        // engine has actually consumed it (the command counter moves) so the harness
+                        // never sees a stale state and re-sends the same action. When the action loop
+                        // is stopped (after a resume, or a hotseat seat switch) the command is applied
+                        // synchronously and the key has already moved: nothing to wait for then.
+                        // CommandStack grows when the command is queued; CurrentCommand (and the turn or
+                        // player) only move when the engine has applied it.
+                        var after = GameManager.GameState != null ? CurrentKey() : StateKey.None;
+                        bool consumed = after.Command != before.Command || after.Turn != before.Turn || after.Player != before.Player;
+                        if (consumed)
+                        {
+                            _pendingKey = null;
+                        }
+                        else
+                        {
+                            _pendingKey = after;
+                            _pendingSince = UnityEngine.Time.realtimeSinceStartup;
+                        }
                     }
                     else
                     {
@@ -359,6 +446,118 @@ public static class Bridge
         if (root.TryGetProperty(key, out v) && v.ValueKind == JsonValueKind.String)
             throw new ArgumentException($"'{key}' must be one of {string.Join(", ", Enum.GetNames<T>())}");
         return fallback;
+    }
+
+    // ------------------------------------------------------------------ game type / hotseat
+
+    /// <summary>The bridge only ever acts in offline games: single-player, or Pass &amp; Play on this device.</summary>
+    public static bool IsOfflineGame(GameSettings? settings)
+    {
+        if (settings == null) return false;
+        var t = settings.GameType;
+        return t == GameType.SinglePlayer || t == GameType.PassAndPlay;
+    }
+
+    public static bool IsHotseat(GameState gs) => gs.Settings != null && gs.Settings.GameType == GameType.PassAndPlay;
+
+    /// <summary>The seat currently at the keyboard. In a hotseat game the client tracks it per turn.</summary>
+    public static PlayerState? LocalSeat(GameState gs, ClientBase client)
+    {
+        PlayerState? fromClient = null;
+        try { fromClient = client.GetCurrentLocalPlayer(); } catch (Exception) { }
+        var fromManager = GameManager.LocalPlayer;
+        if (IsHotseat(gs))
+        {
+            if (fromClient != null && fromClient.Id == gs.CurrentPlayer) return fromClient;
+            if (fromManager != null && fromManager.Id == gs.CurrentPlayer) return fromManager;
+        }
+        return fromManager ?? fromClient;
+    }
+
+    static HotSeatOverlay? GetHotseatOverlay()
+    {
+        var ui = UIManager.Instance;
+        if (ui == null) return null;
+        IScreen? screen = null;
+        try { screen = ui.GetScreen(UIConstants.Screens.HotSeatOverlay); } catch (Exception) { }
+        return screen?.TryCast<HotSeatOverlay>();
+    }
+
+    static bool IsHotseatOverlayShowing()
+    {
+        var overlay = GetHotseatOverlay();
+        return overlay != null && overlay.Showing;
+    }
+
+    /// <summary>
+    /// The "pass the device to player N" screen between hotseat turns. Press Continue the way a tap
+    /// would, after letting it settle. Returns true while it is showing.
+    /// </summary>
+    static bool HandleHotseatOverlay(GameState gs)
+    {
+        var overlay = GetHotseatOverlay();
+        if (overlay == null || !overlay.Showing) { _overlaySeenId = 0; return false; }
+        float now = UnityEngine.Time.realtimeSinceStartup;
+        int id = overlay.GetInstanceID();
+        if (id != _overlaySeenId) { _overlaySeenId = id; _overlaySeenAt = now; return true; }
+        if (now - _overlaySeenAt < PopupSettleSeconds) return true;
+        if (now - _lastOverlayContinue < 1.0f) return true;
+        _lastOverlayContinue = now;
+        Log.LogInfo($"Hotseat overlay showing (current player {gs.CurrentPlayer}, local {GameManager.LocalPlayer?.Id}); pressing Continue");
+        try { overlay.ContinueClicked(); }
+        catch (Exception ex) { Log.LogWarning($"HotSeatOverlay.ContinueClicked failed: {ex.Message}"); }
+        return true;
+    }
+
+    /// <summary>
+    /// Hotseat watchdog: the seat switch is the one step the bridge cannot see through the normal
+    /// idle gate. After a stall it tries the client's own seat-switch call once, and reports every
+    /// 10 s so the harness can give up instead of waiting forever.
+    /// </summary>
+    static bool _replayLogged;
+
+    /// <summary>
+    /// Hotseat recap: after the incoming seat's Continue the client rewinds to the start of the turn
+    /// and replays the other seat's commands for them to watch (a few seconds). GameState is a rewound
+    /// snapshot meanwhile, so the bridge just waits; SkipRecap is not used (it aborts the action loop).
+    /// </summary>
+    static bool HandleReplay(ClientBase client)
+    {
+        if (!IsReplaying(client)) { _replayLogged = false; return false; }
+        if (!_replayLogged)
+        {
+            _replayLogged = true;
+            Log.LogInfo("Hotseat recap in progress; waiting for it to finish");
+        }
+        return true;
+    }
+
+    static void HandoffWatchdog(GameState gs, ClientBase client, string where)
+    {
+        if (_handoffSince < 0) return;
+        float now = UnityEngine.Time.realtimeSinceStartup;
+        float stalled = now - _handoffSince;
+        var local = GameManager.LocalPlayer;
+        // Never touch the seat while the client is rewinding/replaying: CurrentPlayer is a snapshot then.
+        bool settled = !IsReplaying(client) && (IsIdle(client) || stalled > HandoffWarnSeconds);
+        if (stalled > HandoffKickSeconds && settled && !_handoffKicked && (local == null || local.Id != gs.CurrentPlayer) && !IsHotseatOverlayShowing())
+        {
+            _handoffKicked = true;
+            Log.LogWarning($"Hotseat handoff stalled {stalled:F0}s at '{where}' (local {local?.Id}, current {gs.CurrentPlayer}); calling SetNewLocalPlayerTurnForPassAndPlay({gs.CurrentPlayer})");
+            try { client.SetNewLocalPlayerTurnForPassAndPlay(gs.CurrentPlayer); }
+            catch (Exception ex) { Log.LogWarning($"SetNewLocalPlayerTurnForPassAndPlay failed: {ex.Message}"); }
+        }
+        if (stalled > HandoffWarnSeconds && now - _lastHandoffWarning > HandoffWarnSeconds)
+        {
+            _lastHandoffWarning = now;
+            var status = Status();
+            status["type"] = "warning";
+            status["reason"] = "handoff stalled";
+            status["where"] = where;
+            status["stalled_seconds"] = Math.Round(stalled);
+            Log.LogWarning($"Hotseat handoff stalled {stalled:F0}s at '{where}': {JsonSerializer.Serialize(status, JsonOpts)}");
+            Send(status);
+        }
     }
 
     static float _lastPopupDismiss;
@@ -450,19 +649,33 @@ public static class Bridge
         var am = client.ActionManager;
         if (am == null) return false;
         if (am.IsPausedOrPausing) return false;
+        if (IsReplaying(client)) return false;
         return client.IsWaitingForCommand || !am.IsProcessing;
     }
 
-    /// <summary>Anything that changes when the engine consumes a command or the turn moves on.</summary>
-    record struct StateKey(uint Turn, ushort Command, int Stack, int Triggers)
+    /// <summary>
+    /// The client is rewinding/replaying commands (a hotseat recap of the previous seat's turn, or a
+    /// replay): GameState is a rewound snapshot, so nothing it says can be trusted until this ends.
+    /// </summary>
+    public static bool IsReplaying(ClientBase client)
     {
-        public static readonly StateKey None = new(0, 0, -1, -1);
+        // IsRecap / ActionManager.isRecapping stay true for a whole human turn in a hotseat game, so they
+        // say nothing; the target state exists exactly from "Rewinding to command 0" until the replay
+        // has caught up with it.
+        try { return client.IsReplay || client.HasTargetState(); }
+        catch (Exception) { return false; }
+    }
+
+    /// <summary>Anything that changes when the engine consumes a command, the turn moves on, or (hotseat) the seat changes.</summary>
+    record struct StateKey(uint Turn, ushort Command, int Stack, int Triggers, byte Player)
+    {
+        public static readonly StateKey None = new(0, 0, -1, -1, 255);
     }
 
     static StateKey CurrentKey()
     {
         var gs = GameManager.GameState;
-        return new StateKey(gs.CurrentTurn, gs.CurrentCommand, gs.CommandStack?.Count ?? 0, gs.pendingCommandTriggers?.Count ?? 0);
+        return new StateKey(gs.CurrentTurn, gs.CurrentCommand, gs.CommandStack?.Count ?? 0, gs.pendingCommandTriggers?.Count ?? 0, gs.CurrentPlayer);
     }
 
     /// <summary>Every input the turn watcher looks at, for debugging why no state is being sent.</summary>
@@ -488,11 +701,30 @@ public static class Bridge
                 d["current_command"] = gs.CurrentCommand;
                 d["pending_triggers"] = gs.pendingCommandTriggers?.Count;
                 d["local_player"] = GameManager.LocalPlayer?.Id;
+                d["is_hotseat"] = IsHotseat(gs);
+                d["roster"] = StateSerializer.Roster(gs);
+                d["command_stack"] = gs.CommandStack?.Count;
+                d["pending_key"] = _pendingKey?.ToString();
+                d["last_sent_key"] = _lastSentKey.ToString();
+                d["handoff_stalled_seconds"] = _handoffSince >= 0 ? Math.Round(UnityEngine.Time.realtimeSinceStartup - _handoffSince) : (double?)null;
             }
+            try
+            {
+                var ui = UIManager.Instance;
+                d["ui_screen"] = ui?.CurrentScreen.ToString();
+                d["hotseat_overlay_showing"] = IsHotseatOverlayShowing();
+            }
+            catch (Exception ex) { d["ui_error"] = ex.Message; }
             if (client != null)
             {
                 d["client_type"] = client.GetType().Name;
                 if (gs != null) d["is_local_turn"] = client.IsPlayerLocal(gs.CurrentPlayer);
+                try
+                {
+                    d["client_local_player"] = client.GetCurrentLocalPlayer()?.Id;
+                    d["current_local_player_index"] = client.currentLocalPlayerIndex;
+                }
+                catch (Exception ex) { d["client_local_error"] = ex.Message; }
                 d["has_action_manager"] = client.ActionManager != null;
                 d["is_processing"] = client.ActionManager?.IsProcessing;
                 d["has_queued_actions"] = client.HasQueuedActions();
@@ -501,6 +733,7 @@ public static class Bridge
                 d["is_ready"] = client.IsReady;
                 d["is_recap"] = client.IsRecap;
                 d["is_replay"] = client.IsReplay;
+                d["is_replaying"] = IsReplaying(client);
                 d["has_target_state"] = client.HasTargetState();
                 d["gm_is_paused"] = gm?.isPaused;
                 var popup = PopupManager.GetCurrentPopup();
@@ -534,6 +767,10 @@ public static class Bridge
         _sentGameOver = false;
         _warnedNotSinglePlayer = false;
         _idleFrames = 0;
+        _handoffSince = -1f;
+        _handoffKicked = false;
+        _lastCurrentPlayer = 255;
+        _overlaySeenId = 0;
     }
 
     static void WatchGame()
@@ -554,14 +791,14 @@ public static class Bridge
             return;
         }
 
-        // Safety guard: the bridge never touches anything but offline single-player games.
-        if (gs.Settings.GameType != GameType.SinglePlayer)
+        // Safety guard: the bridge never touches anything but offline games (single-player, or Pass & Play on this device).
+        if (!IsOfflineGame(gs.Settings))
         {
             if (!_warnedNotSinglePlayer)
             {
                 _warnedNotSinglePlayer = true;
                 Log.LogWarning($"Game type is {gs.Settings.GameType}; bridge stays inert.");
-                Send(new { type = "error", error = $"bridge only works in single-player games (this is {gs.Settings.GameType})" });
+                Send(new { type = "error", error = $"bridge only works in offline single-player or pass-and-play games (this is {gs.Settings.GameType})" });
             }
             return;
         }
@@ -582,15 +819,51 @@ public static class Bridge
             }
             return;
         }
-        if (gs.CurrentState != GameState.State.Started && gs.CurrentState != GameState.State.FinalTurn) return;
+        bool hotseat = IsHotseat(gs);
+        if (hotseat)
+        {
+            if (gs.CurrentPlayer != _lastCurrentPlayer)
+            {
+                _lastCurrentPlayer = gs.CurrentPlayer;
+                _handoffSince = UnityEngine.Time.realtimeSinceStartup;
+                _handoffKicked = false;
+            }
+            // "Pass the device to player N": press Continue, then wait for the seat switch to land.
+            // This comes before the running-state gate because the very first overlay is what starts
+            // the game (CurrentState stays Unknown until player 1 taps it).
+            if (HandleHotseatOverlay(gs)) { _idleFrames = 0; HandoffWatchdog(gs, client, "overlay"); return; }
+        }
+
+        if (gs.CurrentState != GameState.State.Started && gs.CurrentState != GameState.State.FinalTurn)
+        {
+            if (hotseat) HandoffWatchdog(gs, client, $"state {gs.CurrentState}");
+            return;
+        }
 
         // Informational popups ("You got a new technology!", tribe met, task unlocked, ...) hold
         // every queued command - including the bots' turns - until closed, so close them the way a
-        // tap would, whoever's turn it is.
+        // tap would, whoever's turn it is. The pending-trigger guard is checked for the seat whose
+        // turn it is (in a hotseat game that is not necessarily GameManager.LocalPlayer yet).
         var local = GameManager.LocalPlayer;
-        if (DismissPopup(gs, local != null ? local.Id : gs.CurrentPlayer)) { _idleFrames = 0; return; }
+        byte popupPid = hotseat ? gs.CurrentPlayer : (local != null ? local.Id : gs.CurrentPlayer);
+        if (DismissPopup(gs, popupPid)) { _idleFrames = 0; if (hotseat) HandoffWatchdog(gs, client, "popup"); return; }
 
-        if (!client.IsPlayerLocal(gs.CurrentPlayer)) { _idleFrames = 0; return; }
+        // The recap that follows a hotseat overlay rewinds GameState; wait it out (popups first: one could hold it).
+        if (hotseat && HandleReplay(client)) { _idleFrames = 0; HandoffWatchdog(gs, client, "recap"); return; }
+
+        if (!client.IsPlayerLocal(gs.CurrentPlayer)) { _idleFrames = 0; if (hotseat) HandoffWatchdog(gs, client, "not local"); return; }
+        if (hotseat)
+        {
+            // Both the manager's and the client's idea of the local seat must be the current player.
+            var seat = LocalSeat(gs, client);
+            var manager = GameManager.LocalPlayer;
+            if (seat == null || seat.Id != gs.CurrentPlayer || manager == null || manager.Id != gs.CurrentPlayer)
+            {
+                _idleFrames = 0;
+                HandoffWatchdog(gs, client, "seat mismatch");
+                return;
+            }
+        }
 
         // "Your move" has two shapes: the action loop is running and waiting for a command (fresh
         // game / after a turn change), or the loop is stopped altogether (after a mid-game resume,
@@ -606,7 +879,7 @@ public static class Bridge
             if (key != pending) _pendingKey = null;
             else if (UnityEngine.Time.realtimeSinceStartup - _pendingSince > PendingTimeoutSeconds)
             {
-                Log.LogWarning("Accepted command was not consumed by the engine within 5s; resending state");
+                Log.LogWarning($"Accepted command was not consumed by the engine within 5s; resending state (key at accept {pending}, now {key}, waiting_for_command {client.IsWaitingForCommand}, processing {client.ActionManager?.IsProcessing})");
                 _pendingKey = null;
                 _forceState = true;
             }
@@ -615,6 +888,7 @@ public static class Bridge
         if (!_forceState && key == _lastSentKey) return;
         _forceState = false;
         _lastSentKey = key;
+        _handoffSince = -1f;
         Send(StateSerializer.BuildStateMessage(gs, client));
     }
 }

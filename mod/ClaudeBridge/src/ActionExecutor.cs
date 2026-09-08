@@ -9,17 +9,21 @@ namespace ClaudeBridge;
 /// </summary>
 internal static class ActionExecutor
 {
-    public static bool Execute(JsonElement action, out string? error, out string? kind)
+    public static bool Execute(JsonElement action, out string? error, out string? kind) => Execute(action, null, out error, out kind);
+
+    /// <param name="seat">The player the harness is acting for (hotseat); null means "whoever is local".</param>
+    public static bool Execute(JsonElement action, byte? seat, out string? error, out string? kind)
     {
         kind = action.ValueKind == JsonValueKind.Object && action.TryGetProperty("kind", out var k) ? k.GetString() : null;
 
         var gs = GameManager.GameState;
         var client = GameManager.Client;
         if (gs == null || client == null) { error = "no game in progress"; return false; }
-        if (gs.Settings.GameType != GameType.SinglePlayer) { error = "bridge only works in single-player games"; return false; }
+        if (!Bridge.IsOfflineGame(gs.Settings)) { error = "bridge only works in offline single-player or pass-and-play games"; return false; }
 
-        var me = GameManager.LocalPlayer;
+        var me = Bridge.LocalSeat(gs, client);
         if (me == null) { error = "no local player"; return false; }
+        if (seat.HasValue && seat.Value != me.Id) { error = $"wrong seat: local player is {me.Id}, not {seat.Value}"; return false; }
         if (gs.CurrentState != GameState.State.Started && gs.CurrentState != GameState.State.FinalTurn)
         {
             error = $"game is not running (state {gs.CurrentState})";

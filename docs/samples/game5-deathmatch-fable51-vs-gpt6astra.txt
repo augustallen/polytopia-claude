@@ -1,0 +1,1096 @@
+capturing screen region 2550x2724 at (2568,58) under window 'Polytopia'
+recording recordings\game5-fable51-vs-gpt6astra.mp4 (10 fps, 1920px wide) while running: scripts\play_deathmatch.py --p1 claude:claude-fable-5-1:medium --p2 codex:gpt-6-astra:medium --max-turns 60 --no-color --no-thinking
+connected to Polytopia 2.17.3.16375 | p1 claude-code-claude-fable-5-1 vs p2 codex-gpt-6-astra | log logs\20260907-213529-deathmatch-claude-code-claude-fable-5-1-vs-codex-gpt-6-astra.jsonl
+  starting a new game: {'game_type': 'PassAndPlay', 'mode': 'Domination', 'players': 2, 'bots': 0, 'difficulty': 'Normal', 'map_preset': 'Dryland', 'map_size': 11, 'tribes': ['Imperius', 'Imperius']}
+  p1 = claude-code-claude-fable-5-1 plays player 1 (Imperius), moves first; p2 = codex-gpt-6-astra plays player 2 (Imperius), moves second
+
+=== TURN 0 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 6-10, y 1-5; each cell = terrain feature unit):
+     6  7  8  9 10
+ 1  .  .  Tg T  ^  
+ 2  ^  .u T  T  T  
+ 3  .u .u .CW.u .  
+ 4  T  .c .u .u .c 
+ 5  .c T  T  ^  T  
+-- planning (model call 1 of 3 this turn) ...
+  > Standard opening: two fruit harvests take the capital to level 2 for the Workshop income and a support slot. The Warrior heads southwest toward the unexplored bulk of the map, where the enemy capital and villages most likely sit.
+  PLAN (4 action(s), 6.8s): build HarvestFruit at (7,2) (2 stars); build HarvestFruit at (7,3) (2 stars); move #1 -> (7,4); end turn
+  ok  build HarvestFruit at (7,2) (2 stars)
+      => stars 5->3; Nusumte pop 0->1
+  ok  build HarvestFruit at (7,3) (2 stars)
+      => stars 3->1
+  ok  move #1 -> (7,4)
+      => Nusumte level 1->2
+  ok  [city reward] city reward Explorer at (8,3)
+      => Nusumte pop 0->1
+  ok  end turn
+      => stars 1->4; new enemy Warrior#2 at (3,3); city Pinumo (3,3) now seen/owned (player 2)
+  state for a seat-turn that already ended; waiting for the next one
+--- turn 0 (claude-code-claude-fable-5-1): 5 actions, 1 model call(s), model 7s, wall 24s, est $0.07 this turn ($0.07 so far)
+
+=== TURN 0 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 1-5, y 1-5; each cell = terrain feature unit):
+     1  2  3  4  5
+ 1  T  T  T  T  .  
+ 2  Tg T  T  .c .  
+ 3  .  T  .CW.u .  
+ 4  T  .u Tg .u .u 
+ 5  .u T  .u ^  .c 
+-- planning (model call 1 of 3 this turn) ...
+  > Two fruit harvests will raise Pinumo to level 2 and improve income. The Warrior will scout southeast for villages and enemy approaches; no immediate threat is visible.
+  PLAN (4 action(s), 8.5s): build HarvestFruit at (4,3) (2 stars); build HarvestFruit at (2,4) (2 stars); move #2 -> (4,4); end turn
+  ok  build HarvestFruit at (4,3) (2 stars)
+      => stars 5->3; Pinumo pop 0->1
+  ok  build HarvestFruit at (2,4) (2 stars)
+      => stars 3->1
+  ok  move #2 -> (4,4)
+      => Pinumo level 1->2
+  ok  [city reward] city reward Explorer at (3,3)
+      => Pinumo pop 0->1
+  ok  end turn
+      => Pinumo pop 1->2
+  state for a seat-turn that already ended; waiting for the next one
+  codex-gpt-6-astra moved: stars 4->7; enemy Warrior#2 -> (4,4); Warrior#1 -> (7,4); Pinumo level 1->2
+--- turn 0 (codex-gpt-6-astra): 5 actions, 1 model call(s), model 8s, wall 21s, cost n/a (subscription)
+
+=== TURN 1 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 7 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1 | enemy capital Pinumo at (3,3) lvl 2
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .* .  .  .u .  .C .u .  
+ 4  T  T  .  Tg .uw.u T  .cW.u .u .c 
+ 5  .u .u T  .u ^   ? .c T  T  ^  T  
+ 6   ? .v T  .u  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy capital sits 5 tiles west with no garrison, so I harvest two fruit to push Nusumte to level 3 (Resources cash), train a second Warrior for the rush, and march the first Warrior west. I'll refresh to spend the level-up bonus before ending.
+  PLAN (4 action(s), 15.2s) then ask again: build HarvestFruit at (9,3) (2 stars); build HarvestFruit at (8,4) (2 stars); train Warrior at (8,3) (2 stars); move #1 -> (6,3)
+  ok  build HarvestFruit at (9,3) (2 stars)
+      => stars 7->5; Nusumte pop 1->2
+  ok  build HarvestFruit at (8,4) (2 stars)
+      => stars 5->3
+  ok  train Warrior at (8,3) (2 stars)
+      => Nusumte level 2->3
+  ok  [city reward] city reward Resources at (8,3)
+      => stars 3->6; new Warrior#5 at (8,3)
+  ok  move #1 -> (6,3)
+      => Warrior#1 -> (6,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Pinumo is ungarrisoned but their Warrior sits nearby, so speed matters. Researching Riding now lets me buy a Rider next turn (5 stars available then) to race west alongside Warrior #1. Main threat: the enemy Warrior stepping into the capital before I arrive.
+  PLAN (2 action(s), 10.4s): research Riding (5 stars); end turn
+  ok  research Riding (5 stars)
+      => stars 6->1; learned Riding
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 1->4; Warrior#2 -> (4,4)
+--- turn 1 (claude-code-claude-fable-5-1): 7 actions, 2 model call(s), model 26s, wall 32s, est $0.21 this turn ($0.28 so far)
+
+=== TURN 1 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 4 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ T  .   ?  ?  ? 
+ 1  ^  T  T  T  T  .  
+ 2  .  Tg T  T  .c .  
+ 3  ^r .  T  .C .  .  
+ 4  T  T  .  Tg .uW.u 
+ 5  .u .u T  .u ^  .c 
+ 6  .c .v T  .u  ?  ? 
+ 7  Tg Tg .c ^  .u  ? 
+ 8  T  ^  ^  T  Tr  ? 
+ 9  .  Tg .v .u ^   ? 
+10  .+ .c .u ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Harvesting the capital’s fruit reaches level 3 and triggers the Resources reward. A second Warrior can scout the western ruins while the first heads southwest toward the village at (1,6).
+  PLAN (4 action(s), 11.5s): build HarvestFruit at (4,4) (2 stars); train Warrior at (3,3) (2 stars); move #2 -> (3,5); end turn
+  ok  build HarvestFruit at (4,4) (2 stars)
+      => stars 4->2; Pinumo pop 2->3
+  ok  train Warrior at (3,3) (2 stars)
+      => Pinumo level 2->3
+  ok  [city reward] city reward Resources at (3,3)
+      => stars 2->5; new Warrior#6 at (3,3)
+  ok  move #2 -> (3,5)
+      => Warrior#2 -> (3,5)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->5; enemy Warrior#2 -> (3,5); new enemy Warrior#6 at (3,3); Pinumo level 2->3
+--- turn 1 (codex-gpt-6-astra): 5 actions, 1 model call(s), model 11s, wall 17s, cost n/a (subscription)
+
+=== TURN 2 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 5 stars (+4) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x2 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*w.  .  .uW.  .CW.  .  
+ 4  T  T  .  Tg .  .u T  .c .  .u .c 
+ 5  .u .u T  .uw^   ? .c T  T  ^  T  
+ 6   ? .v T  .u  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Objective: free the capital tile so a Rider can be trained this turn, while Warrior #1 advances to (5,3) toward Pinumo. Warrior #5 steps to (7,3) as the forward escort; leftover stars buy the fruit harvest. No enemy can reach Nusumte next turn.
+  PLAN (2 action(s), 11.8s) then ask again: move #1 -> (5,3); move #5 -> (7,3)
+  ok  move #1 -> (5,3)
+      => Warrior#1 -> (5,3)
+  ok  move #5 -> (7,3)
+      => Warrior#5 -> (7,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Enemy capital Pinumo sits just 2 tiles west with a single Warrior garrison; I'm spending 5 stars on a Rider for mobility plus a fruit harvest toward the capital's next level. Warriors hold positions; the enemy Warrior at (3,5) is the main field threat to watch.
+  PLAN (3 action(s), 8.5s): train Rider at (8,3) (3 stars); build HarvestFruit at (9,4) (2 stars); end turn
+  ok  train Rider at (8,3) (3 stars)
+      => stars 5->2; new Rider#7 at (8,3)
+  ok  build HarvestFruit at (9,4) (2 stars)
+      => stars 2->0
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 5->14; new enemy Warrior#1 at (5,3)
+--- turn 2 (claude-code-claude-fable-5-1): 5 actions, 2 model call(s), model 20s, wall 24s, est $0.19 this turn ($0.47 so far)
+
+=== TURN 2 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 14 stars (+4) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ T  .   ?  ?  ? 
+ 1  ^  T  T  T  T  .  
+ 2  .  Tg T  T  .c .  
+ 3  ^r .  T  .CW.  . w
+ 4  T  T  .  Tg .  .u 
+ 5  .u .u T  .uW^  .c 
+ 6  .c .v T  .u .v  ? 
+ 7  Tg Tg .c ^  .u  ? 
+ 8  T  ^  ^  T  Tr  ? 
+ 9  .  Tg .v .u ^   ? 
+10  .+ .c .u ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Claim the nearby eastern village while clearing the enemy Warrior from our capital’s approach. Riding will let us recruit a mobile reinforcement this turn; I’ll reassess attacks after moving into range.
+  PLAN (3 action(s), 19.1s) then ask again: research Riding (5 stars); move #2 -> (4,6); move #6 -> (4,3)
+  ok  research Riding (5 stars)
+      => stars 14->9; learned Riding
+  ok  move #2 -> (4,6)
+      => Warrior#2 -> (4,6)
+  ok  move #6 -> (4,3)
+      => Warrior#6 -> (4,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Pinumo needs support against the nearby Warrior while our southern unit prepares to claim a village next turn. I’ll recruit a Rider and strike for an estimated 5 damage; the refreshed state will show whether the Rider can help finish the enemy this turn.
+  PLAN (2 action(s), 23.6s) then ask again: train Rider at (3,3) (3 stars); attack #6 -> Warrior#1 at (5,3) (preview: deals 5, takes 5)
+  ok  train Rider at (3,3) (3 stars)
+      => stars 9->6; new Rider#8 at (3,3)
+  ok  attack #6 -> Warrior#1 at (5,3) (preview: deals 5, takes 5)
+      => enemy Warrior#1 hp 10->5
+-- planning (model call 3 of 3 this turn) ...
+  > Research Hunting before the expected village capture raises technology costs, opening Archery for supporting fire. No further attacks are available this turn; the wounded enemy Warrior remains a threat near Pinumo.
+  PLAN (2 action(s), 18.6s): research Hunting (5 stars); end turn
+  ok  research Hunting (5 stars)
+      => stars 6->1; learned Hunting; Warrior#6 hp 10->5
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->4; enemy Warrior#6 hp 10->5; enemy Warrior#6 -> (4,3); Warrior#1 hp 10->5; enemy Warrior#2 gone (killed or out of sight); new enemy Rider#8 at (3,3); Nusumte pop 0->1
+--- turn 2 (codex-gpt-6-astra): 7 actions, 3 model call(s), model 61s, wall 67s, cost n/a (subscription)
+
+=== TURN 3 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 4 stars (+4) | 1 cities | units: Warrior x2, Rider x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Rider x1, Warrior x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*r. w. W.u . W.CR.  .  
+ 4  T  T  .  Tg .  .u T  .c .  .  .c 
+ 5  .u .u T  .u ^   ? .c T  T  ^  T  
+ 6   ? .v T  .u  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Warrior #1 has a free kill on the wounded enemy Warrior at (4,3) with zero retaliation, so we take it and advance beside Pinumo. The Rider and second Warrior move west to support; then I refresh to see whether the vacated capital tile allows training a cheap garrison Warrior.
+  PLAN (3 action(s), 13.6s) then ask again: attack #1 -> Warrior#6 at (4,3) (preview: deals 5, takes 0, kills); move #7 -> (6,3); move #5 -> (6,4)
+  ok  attack #1 -> Warrior#6 at (4,3) (preview: deals 5, takes 0, kills)
+      => enemy Warrior#6 hp 5->0
+  ok  move #7 -> (6,3)
+      => enemy Warrior#6 gone (killed or out of sight); Warrior#1 -> (4,3); Rider#7 -> (6,3)
+  ok  move #5 -> (6,4)
+      => Warrior#5 -> (6,4)
+-- planning (model call 2 of 3 this turn) ...
+  > All three field units have already acted, so the remaining choice is spending. Training a cheap Warrior at Nusumte secures the capital against a raiding Rider and adds a future occupier for Pinumo; 2 stars carry over. Main threat: Rider#8 hitting the wounded Warrior#1 at (4,3).
+  PLAN (2 action(s), 8.4s): train Warrior at (8,3) (2 stars); end turn
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 4->2; new Warrior#9 at (8,3)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 1->5; lost Warrior#6; enemy Warrior#1 -> (4,3)
+--- turn 3 (claude-code-claude-fable-5-1): 5 actions, 2 model call(s), model 22s, wall 27s, est $0.20 this turn ($0.66 so far)
+
+=== TURN 3 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+4) | 1 cities | units: Rider x1, Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ T  .   ?  ?  ? 
+ 1  ^  T  T  T  T  .  
+ 2  .  Tg T  T  .c .  
+ 3  ^r .  T  .CR. w.  
+ 4  T  T  .  Tg .  .u 
+ 5  .u .u T  .u ^  .c 
+ 6  .c .v T  .u .vWTg 
+ 7  Tg Tg .c ^  .u .c 
+ 8  T  ^  ^  T  Tr  ? 
+ 9  .  Tg .v .u ^   ? 
+10  .+ .c .u ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The Rider can remove the nearby Warrior with an estimated lethal hit and no retaliation in the current preview. Capture the southern village, then refresh to recruit from the freed capital and assess the Rider’s escape options for scouting.
+  PLAN (2 action(s), 16.8s) then ask again: attack #8 -> Warrior#1 at (4,3) (preview: deals 6, takes 0, kills); capture #2 at (4,6)
+  ok  attack #8 -> Warrior#1 at (4,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#1 hp 5->0
+  ok  capture #2 at (4,6)
+      => Rider#8 -> (4,3); enemy Warrior#1 gone (killed or out of sight); city Sumpi (4,6) now seen/owned (yours)
+-- planning (model call 2 of 3 this turn) ...
+  > Expand west while the Rider scouts east for enemy cities. A new Warrior provides a separate village-capture force, and one fruit harvest starts Sumpi toward its next level; no visible enemies currently threaten either city.
+  PLAN (4 action(s), 24.2s): train Warrior at (3,3) (2 stars); build HarvestFruit at (3,5) (2 stars); move #8 -> (5,3); end turn
+  ok  train Warrior at (3,3) (2 stars)
+      => stars 5->3; new Warrior#10 at (3,3)
+  ok  build HarvestFruit at (3,5) (2 stars)
+      => stars 3->1
+  ok  move #8 -> (5,3)
+      => Rider#8 -> (5,3); Sumpi pop 0->1
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->6; enemy Rider#8 -> (5,3); lost Warrior#1; new enemy Warrior#10 at (3,3)
+--- turn 3 (codex-gpt-6-astra): 6 actions, 2 model call(s), model 41s, wall 46s, cost n/a (subscription)
+
+=== TURN 4 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 6 stars (+4) | 1 cities | units: Warrior x2, Rider x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*w.  . r.uR.  .CW.  .  
+ 4  T  T  .  Tg .  .u T W.c .  .  .c 
+ 5  .u .u T  .  ^  .c .c T  T  ^  T  
+ 6   ? .v T  .u  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Focus fire kills the exposed enemy Rider at (5,3): #7 hits for 6, #5 finishes and advances next to Pinumo's approaches. Warrior #9 steps out of the capital so a cheap replacement garrison can be trained behind it and the army converges for a three-hit assault on the fortified garrison around turn 6.
+  PLAN (3 action(s), 28.1s) then ask again: attack #7 -> Rider#8 at (5,3) (preview: deals 6, takes 2); attack #5 -> Rider#8 at (5,3) (preview: deals 6, takes 2); move #9 -> (7,3)
+  ok  attack #7 -> Rider#8 at (5,3) (preview: deals 6, takes 2)
+      => enemy Rider#8 hp 10->4
+  ok  attack #5 -> Rider#8 at (5,3) (preview: deals 8, takes 0, kills)
+      => enemy Rider#8 hp 4->0; Rider#7 hp 10->8
+  ok  move #9 -> (7,3)
+      => enemy Rider#8 gone (killed or out of sight); Warrior#9 -> (7,3); Warrior#5 -> (5,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Enemy Rider is dead, so the objective shifts to assembling a four-unit strike on Pinumo. I spend 2 stars on a fourth Warrior at Nusumte to add a hit to the siege, and stage the wounded Rider at (5,4), two tiles from the garrison so it cannot be counterattacked. Main risk: Pinumo training extra defenders before we converge.
+  PLAN (3 action(s), 15.5s): train Warrior at (8,3) (2 stars); move #7 -> (5,4); end turn
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 6->4; new Warrior#11 at (8,3)
+  ok  move #7 -> (5,4)
+      => Rider#7 -> (5,4)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 1->6; lost Rider#8; new enemy Warrior#5 at (5,3); new enemy Rider#7 at (5,4)
+--- turn 4 (claude-code-claude-fable-5-1): 6 actions, 2 model call(s), model 44s, wall 48s, est $0.29 this turn ($0.95 so far)
+
+=== TURN 4 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 6 stars (+5) | 2 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1, Rider x1 | no enemy city located yet
+MAP (explored region x 0-6, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6
+ 0  .+ T  .   ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .   ? 
+ 2  .  Tg T  T  .c .  ^  
+ 3  ^r .  T  .CW.  . w.u 
+ 4  T  T  .  Tg .  .urT  
+ 5  .u .u T  .  ^  .c  ? 
+ 6  .c .v T  .u .CWTg  ? 
+ 7  Tg Tg .c ^  .u .c  ? 
+ 8  T  ^  ^  T  Tr  ?  ? 
+ 9  .  Tg .v .u ^   ?  ? 
+10  .+ .c .u ^   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Grow Sumpi to increase income, then send both Warriors west toward the nearby village. Vacating the cities will allow fresh Warrior garrisons this turn; the eastern Rider makes replacing those defenders essential.
+  PLAN (3 action(s), 17.1s) then ask again: build HarvestFruit at (3,6) (2 stars); move #10 -> (2,4); move #2 -> (3,6)
+  ok  build HarvestFruit at (3,6) (2 stars)
+      => stars 6->4; Sumpi pop 1->2
+  ok  move #10 -> (2,4)
+      => Sumpi level 1->2
+  ok  [city reward] city reward Workshop at (4,6)
+      => Warrior#10 -> (2,4)
+  ok  move #2 -> (3,6)
+      => Warrior#2 -> (3,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Both cities need protection from the approaching Warrior and Rider. Spending all four stars on two Warrior garrisons protects recruitment while the existing Warriors prepare to secure nearby villages.
+  PLAN (3 action(s), 10.8s): train Warrior at (3,3) (2 stars); train Warrior at (4,6) (2 stars); end turn
+  ok  train Warrior at (3,3) (2 stars)
+      => stars 4->2; new Warrior#12 at (3,3)
+  ok  train Warrior at (4,6) (2 stars)
+      => stars 2->0; new Warrior#13 at (4,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 4->8; enemy Warrior#10 -> (2,4); new enemy Warrior#12 at (3,3); new enemy Warrior#2 at (3,6)
+--- turn 4 (codex-gpt-6-astra): 7 actions, 2 model call(s), model 28s, wall 33s, cost n/a (subscription)
+
+=== TURN 5 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 8 stars (+4) | 1 cities | units: Warrior x3, Rider x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x3 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*w.  . W.u . W.CW.  .  
+ 4  T  T  . wTg .  .uRT  .c .  .  .c 
+ 5  .u .u T  .  ^  .c .c T  T  ^  T  
+ 6   ? .v T  . w ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Only two units can hit Pinumo's fortified garrison this turn, so I hold at distance 2 rather than feed units piecemeal. #9 moves up to (6,3) so three attackers can strike together on turn 7; the Rider recovers. I buy Shields now (cheaper before capturing) so a Defender can hold Pinumo once taken.
+  PLAN (4 action(s), 51.6s): research Shields (6 stars); move #9 -> (6,3); recover at (5,4); end turn
+  ok  research Shields (6 stars)
+      => stars 8->2; learned Shields
+  ok  move #9 -> (6,3)
+      => Warrior#9 -> (6,3)
+  ok  recover at (5,4)
+      => Rider#7 hp 8->10
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->7; enemy Rider#7 hp 8->10; new enemy Warrior#9 at (6,3)
+--- turn 5 (claude-code-claude-fable-5-1): 4 actions, 1 model call(s), model 52s, wall 56s, est $0.25 this turn ($1.20 so far)
+
+=== TURN 5 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 7 stars (+7) | 2 cities | units: Warrior x4 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x2, Rider x1 | no enemy city located yet
+MAP (explored region x 0-6, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6
+ 0  .+ T  .   ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .   ? 
+ 2  .  Tg T  T  .c .  ^  
+ 3  ^r .  T  .CW.  . w.uw
+ 4  T  T  . WTg .  .urT  
+ 5  .u .u T  .  ^  .c  ? 
+ 6  .c .v T  . W.CWTg  ? 
+ 7  Tg Tg .c ^  .u .c  ? 
+ 8  T  ^  ^  T  Tr  ?  ? 
+ 9  .  Tg .v .u ^   ?  ? 
+10  .+ .c .u ^   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll bring two Warriors into range to intercept the Rider threatening Sumpi, while the western troops approach the village. Moving both garrisons also opens recruitment; I’ll check the new attack previews and replacement options before committing the fight.
+  PLAN (4 action(s), 25.2s) then ask again: move #10 -> (1,5); move #2 -> (2,7); move #12 -> (4,4); move #13 -> (5,5)
+  ok  move #10 -> (1,5)
+      => Warrior#10 -> (1,5)
+  ok  move #2 -> (2,7)
+      => Warrior#2 -> (2,7)
+  ok  move #12 -> (4,4)
+      => Warrior#12 -> (4,4)
+  ok  move #13 -> (5,5)
+      => Warrior#13 -> (5,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Focus both Warriors on the Rider to remove its threat to our cities. Recruit a sturdy capital garrison and a mobile reinforcement at Sumpi; the Warrior advancing onto the Rider’s tile will remain exposed to both enemy Warriors.
+  PLAN (5 action(s), 24.8s): attack #12 -> Rider#7 at (5,4) (preview: deals 6, takes 2); attack #13 -> Rider#7 at (5,4) (preview: deals 6, takes 2); train Warrior at (3,3) (2 stars); train Rider at (4,6) (3 stars); end turn
+  ok  attack #12 -> Rider#7 at (5,4) (preview: deals 6, takes 2)
+      => enemy Rider#7 hp 10->4
+  ok  attack #13 -> Rider#7 at (5,4) (preview: deals 8, takes 0, kills)
+      => Warrior#12 hp 10->8; enemy Rider#7 hp 4->0
+  ok  train Warrior at (3,3) (2 stars)
+      => stars 7->5; enemy Rider#7 gone (killed or out of sight); Warrior#13 -> (5,4); new Warrior#14 at (3,3)
+  ok  train Rider at (4,6) (3 stars)
+      => stars 5->2; new Rider#15 at (4,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->6; enemy Warrior#12 hp 10->8; enemy Warrior#12 -> (4,4); enemy Warrior#10 -> (1,5); lost Rider#7; enemy Warrior#2 gone (killed or out of sight); new enemy Warrior#14 at (3,3); new enemy Warrior#13 at (5,4)
+--- turn 5 (codex-gpt-6-astra): 9 actions, 2 model call(s), model 50s, wall 55s, cost n/a (subscription)
+
+=== TURN 6 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 6 stars (+4) | 1 cities | units: Warrior x3 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x4 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*w.  . W.uW.  .CW.  .  
+ 4  T  T  .  Tg . w.uwT  .c .  .  .c 
+ 5  .u .uwT  .  ^  .c .c T  T  ^  T  
+ 6   ? .v T  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Rider is gone and two enemy warriors are pressed against my forward pair, so I strike first to blunt their retaliation: #5 hits the wounded #12, #9 trades with #13. #11 steps out of the capital so I can train a fresh Warrior there and rebuild numbers. Main threat: three enemy warriors focusing #5 next turn.
+  PLAN (3 action(s), 27.8s) then ask again: attack #5 -> Warrior#12 at (4,4) (preview: deals 5, takes 4); attack #9 -> Warrior#13 at (5,4) (preview: deals 5, takes 5); move #11 -> (7,3)
+  ok  attack #5 -> Warrior#12 at (4,4) (preview: deals 5, takes 4)
+      => enemy Warrior#12 hp 8->3
+  ok  attack #9 -> Warrior#13 at (5,4) (preview: deals 5, takes 5)
+      => Warrior#5 hp 10->6; enemy Warrior#13 hp 10->5
+  ok  move #11 -> (7,3)
+      => Warrior#9 hp 10->5; Warrior#11 -> (7,3)
+-- planning (model call 2 of 3 this turn) ...
+  > The field fight is going our way: both forward enemy warriors are crippled (3 and 5 hp). My damaged warriors are spent, so the remaining choice is spending: a Rider from the capital can reach and finish either wounded enemy next turn, faster than a Warrior. Risk is enemy #13 hitting my 5-hp Warrior #9 this reply.
+  PLAN (2 action(s), 13.6s): train Rider at (8,3) (3 stars); end turn
+  ok  train Rider at (8,3) (3 stars)
+      => stars 6->3; new Rider#16 at (8,3)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 2->9; enemy Warrior#5 hp 10->6; enemy Warrior#9 hp 10->5; Warrior#12 hp 8->3; Warrior#13 hp 10->5
+--- turn 6 (claude-code-claude-fable-5-1): 5 actions, 2 model call(s), model 41s, wall 45s, est $0.29 this turn ($1.49 so far)
+
+=== TURN 6 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 9 stars (+7) | 2 cities | units: Warrior x5, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x2 | no enemy city located yet
+MAP (explored region x 0-6, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6
+ 0  .+ T  .   ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .   ? 
+ 2  .  Tg T  T  .c .  ^  
+ 3  ^r .  T  .CW.  . w.uw
+ 4  T  T  .  Tg . W.uWT  
+ 5  .u .uWT  .  ^  .c .c 
+ 6  .c .v T  .  .CRTg ^  
+ 7  Tg Tg .cW^  .u .c  ? 
+ 8  T  ^  ^  T  Tr  ?  ? 
+ 9  .  Tg .v .u ^   ?  ? 
+10  .+ .c .u ^   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Clear the two wounded enemy Warriors while opening routes to both villages. The eastern attack previews a killing blow with no retaliation; moving Pinumo’s healthy Warrior forward should enable the second kill and free recruitment. The Rider will investigate the southern ruin before we decide spending.
+  PLAN (5 action(s), 26.5s) then ask again: attack #13 -> Warrior#9 at (6,3) (preview: deals 5, takes 0, kills); move #14 -> (4,3); move #10 -> (1,6); move #2 -> (3,8); move #15 -> (4,8)
+  ok  attack #13 -> Warrior#9 at (6,3) (preview: deals 5, takes 0, kills)
+      => enemy Warrior#9 hp 5->0
+  ok  move #14 -> (4,3)
+      => Warrior#14 -> (4,3); enemy Warrior#9 gone (killed or out of sight); Warrior#13 -> (6,3); new enemy Warrior#11 at (7,3)
+  ok  move #10 -> (1,6)
+      => Warrior#10 -> (1,6)
+  ok  move #2 -> (3,8)
+      => Warrior#2 -> (3,8)
+  ok  move #15 -> (4,8)
+      => Rider#15 -> (4,8)
+-- planning (model call 2 of 3 this turn) ...
+  > Clear the wounded enemy to protect Pinumo’s approach; the preview gives a killing blow with no retaliation. Recruit a Rider for reinforcement and heal the injured Warrior behind the front. Our Warrior at (6,3) remains exposed to the eastern enemy.
+  PLAN (4 action(s), 21.0s): attack #14 -> Warrior#5 at (5,3) (preview: deals 6, takes 0, kills); recover at (4,4); train Rider at (3,3) (3 stars); end turn
+  ok  attack #14 -> Warrior#5 at (5,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#5 hp 6->0
+  ok  recover at (4,4)
+      => Warrior#14 -> (5,3); enemy Warrior#5 gone (killed or out of sight); Warrior#12 hp 3->7
+  ok  train Rider at (3,3) (3 stars)
+      => stars 9->6; new Rider#17 at (3,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 3->7; enemy Warrior#14 -> (5,3); lost Warrior#5; lost Warrior#9; enemy Warrior#12 hp 3->7; enemy Warrior#13 -> (6,3); enemy Warrior#10 -> (1,6); new enemy Rider#17 at (3,3)
+--- turn 6 (codex-gpt-6-astra): 9 actions, 2 model call(s), model 48s, wall 53s, cost n/a (subscription)
+
+=== TURN 7 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 7 stars (+4) | 1 cities | units: Warrior x1, Rider x1 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x4, Rider x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*r.  . w.uw. W.CR.  .  
+ 4  T  T  .  Tg . w.u T  .c .  .  .c 
+ 5  .u .u T  .  ^  .c .c T  T  ^  T  
+ 6   ? .vwT  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Warrior #11 finishes the 5-hp enemy Warrior at (6,3) for free (no retaliation in preview) and advances. Rider steps to (7,4) to back it up, Hunting starts the Archery chain, and I want a fresh list to train a Warrior in the vacated capital for 2 stars. Threat: enemy Warriors #14 and #12 can double up on #11 next turn.
+  PLAN (3 action(s), 21.9s) then ask again: attack #11 -> Warrior#13 at (6,3) (preview: deals 6, takes 0, kills); move #16 -> (7,4); research Hunting (5 stars)
+  ok  attack #11 -> Warrior#13 at (6,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#13 hp 5->0
+  ok  move #16 -> (7,4)
+      => enemy Warrior#13 gone (killed or out of sight); Warrior#11 -> (6,3); Rider#16 -> (7,4)
+  ok  research Hunting (5 stars)
+      => stars 7->2; learned Hunting
+-- planning (model call 2 of 3 this turn) ...
+  > Rider has no attack or move options listed, so the only useful spend is a 2-star Warrior at the capital to build toward a 3-unit force and cover the capital while #11 screens at (6,3). Enemy Warriors #14 and #12 are adjacent-ish to #11; expect a hit next turn.
+  PLAN (2 action(s), 8.2s): train Warrior at (8,3) (2 stars); end turn
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 2->0; new Warrior#18 at (8,3)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 6->13; lost Warrior#13; enemy Warrior#11 -> (6,3); new enemy Rider#16 at (7,4)
+--- turn 7 (claude-code-claude-fable-5-1): 5 actions, 2 model call(s), model 30s, wall 34s, est $0.24 this turn ($1.73 so far)
+
+=== TURN 7 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 13 stars (+7) | 2 cities | units: Warrior x4, Rider x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1, Rider x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0  .+ T  .   ?  ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .   ?  ? 
+ 2  .  Tg T  T  .c .  ^  .  
+ 3  ^r .  T  .CR.  . W.uw.  
+ 4  T  T  .  Tg . W.u T  .cr
+ 5  .u .u T  .  ^  .c .c  ? 
+ 6  .c .vWT  .  .C Tg ^   ? 
+ 7  Tg Tg .c ^  .u .c  ?  ? 
+ 8  T  ^  ^  T WTrR.u  ?  ? 
+ 9  .  Tg .v .u ^  T   ?  ? 
+10  .+ .c .u ^   ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Secure the western villages while removing the eastern Warrior. Research Archery before capturing to avoid the higher technology cost, then soften the Warrior and bring the Rider into finishing range; a fresh list will let us assess that attack and recruit at Pinumo.
+  PLAN (6 action(s), 22.7s) then ask again: research Archery (8 stars); attack #14 -> Warrior#11 at (6,3) (preview: deals 5, takes 5); move #17 -> (5,2); capture #10 at (1,6); move #2 -> (2,9); examine ruins at (4,8)
+  ok  research Archery (8 stars)
+      => stars 13->5; learned Archery
+  ok  attack #14 -> Warrior#11 at (6,3) (preview: deals 5, takes 5)
+      => enemy Warrior#11 hp 10->5
+  ok  move #17 -> (5,2)
+      => Rider#17 -> (5,2); Warrior#14 hp 10->5
+  ok  capture #10 at (1,6)
+      => city Teicamus (1,6) now seen/owned (yours)
+  ok  move #2 -> (2,9)
+      => Warrior#2 -> (2,9)
+  ok  examine ruins at (4,8)
+-- planning (model call 2 of 3 this turn) ...
+  > The Rider can finish the wounded Warrior; the preview predicts no retaliation because the blow kills it. Recruit an Archer at Pinumo and a Warrior at Sumpi for eastern support, then reassess the Rider’s escape route against the enemy Rider.
+  PLAN (3 action(s), 15.7s) then ask again: attack #17 -> Warrior#11 at (6,3) (preview: deals 6, takes 0, kills); train Archer at (3,3) (3 stars); train Warrior at (4,6) (2 stars)
+  ok  attack #17 -> Warrior#11 at (6,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#11 hp 5->0; new enemy Warrior#18 at (8,3); Pinumo pop 0->1; city Nusumte (8,3) now seen/owned (player 1)
+  ok  train Archer at (3,3) (3 stars)
+      => stars 5->2; Rider#17 -> (6,3); enemy Warrior#11 gone (killed or out of sight); new Archer#20 at (3,3)
+  ok  train Warrior at (4,6) (2 stars)
+      => stars 2->0; new Warrior#21 at (4,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Pull the Rider back to support the new Archer and let the wounded Warrior recover. The enemy Rider threatens our forward troops; a capital assault should wait until supporting fire and a healthy occupier are ready.
+  PLAN (3 action(s), 15.1s): move #17 -> (4,3); recover at (4,4); end turn
+  ok  move #17 -> (4,3)
+      => Rider#17 -> (4,3)
+  ok  recover at (4,4)
+      => Warrior#12 hp 7->10
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->4; enemy Rider#17 -> (4,3); enemy Warrior#14 hp 10->5; lost Warrior#11; enemy Warrior#12 hp 7->10; new enemy Archer#20 at (3,3); city Teicamus (1,6) now seen/owned (player 2)
+--- turn 7 (codex-gpt-6-astra): 12 actions, 3 model call(s), model 53s, wall 63s, cost n/a (subscription)
+
+=== TURN 8 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 4 stars (+4) | 1 cities | units: Warrior x1, Rider x1 ===
+    enemy: 3 reported cities, 2 located | visible units: Warrior x3, Archer x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .*a. r. w.u .  .CW.  .  
+ 4  T  T  .  Tg . w.u T  .cR.  .  .c 
+ 5  .u .u T  .  ^  .c .c T  T  ^  T  
+ 6   ? .EwT  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Objective: pick off the wounded enemy Warrior (#14, 5hp) at (5,3) with the Rider's dash-attack, then Escape back toward the capital. Warrior #18 steps to (7,3) to free the capital tile so a new Warrior can be trained with our 4 stars. Refresh needed for the attack and training.
+  PLAN (2 action(s), 21.2s) then ask again: move #16 -> (6,3); move #18 -> (7,3)
+  ok  move #16 -> (6,3)
+      => Rider#16 -> (6,3)
+  ok  move #18 -> (7,3)
+      => Warrior#18 -> (7,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Rider #16 finishes the wounded Warrior at (5,3) for free, but that tile sits next to the enemy Rider, Warrior and within Archer range, so I need a refreshed list to Escape back toward (7,3)/(7,4). Meanwhile a Defender garrisons the empty capital against the enemy's mobile units.
+  PLAN (2 action(s), 11.1s) then ask again: attack #16 -> Warrior#14 at (5,3) (preview: deals 6, takes 0, kills); train Defender at (8,3) (3 stars)
+  ok  attack #16 -> Warrior#14 at (5,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#14 hp 5->0
+  ok  train Defender at (8,3) (3 stars)
+      => stars 4->1; enemy Warrior#14 gone (killed or out of sight); Rider#16 -> (5,3); new Defender#22 at (8,3)
+-- planning (model call 3 of 3 this turn) ...
+  > Rider #16 just killed a Warrior but sits exposed next to enemy Rider, Warrior and Archer. Use Escape to pull it back to (7,4) next to the capital, screened by Warrior #18 and Defender #22, and bank stars toward Archery.
+  PLAN (2 action(s), 7.8s): move #16 -> (7,4); end turn
+  ok  move #16 -> (7,4)
+      => Rider#16 -> (7,4)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->8; lost Warrior#14; enemy Warrior#18 -> (7,3); new enemy Defender#22 at (8,3)
+--- turn 8 (claude-code-claude-fable-5-1): 6 actions, 3 model call(s), model 40s, wall 44s, est $0.34 this turn ($2.07 so far)
+
+=== TURN 8 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 8 stars (+8) | 3 cities | units: Warrior x4, Rider x2, Archer x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1, Defender x1, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ?  ?  ?  ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .  .  .  Tg T   ? 
+ 2  .  Tg T  T  .c .  ^  .  T  T  T  
+ 3  ^r .  T  .CA. R.  .u . w.*d.  .  
+ 4  T  T  .  Tg . W.u T  .cr.  .  .c 
+ 5  .u .u T  .  ^  .c .c T  T  ^  T  
+ 6  .c .CWT  .  .CWTg ^  .v T  T  .  
+ 7  Tg Tg .c ^  .u .c Tg ^  Tg .c .  
+ 8  T  ^  ^  T  T R.u T  ^  ^  .  T  
+ 9  .  Tg .vW.u ^  T  .u .v Tg .r .  
+10  .+ .c .u ^  T  .  .u .u T  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll strengthen income and claim the southern village while assembling a protected advance. Nusumte’s Defender and nearby attackers make an immediate siege premature; freeing the capital lets us recruit another supporting Archer this turn.
+  PLAN (9 action(s), 24.0s) then ask again: build HarvestFruit at (0,5) (2 stars); build HarvestFruit at (1,5) (2 stars); capture #2 at (2,9); move #17 -> (5,3); move #12 -> (5,4); move #20 -> (4,2); move #21 -> (5,6); move #15 -> (6,9); move #10 -> (0,5)
+  ok  build HarvestFruit at (0,5) (2 stars)
+      => stars 8->6; Teicamus pop 0->1
+  ok  build HarvestFruit at (1,5) (2 stars)
+      => stars 6->4
+  ok  capture #2 at (2,9)
+      => Teicamus level 1->2
+  ok  [city reward] city reward Workshop at (1,6)
+      => city Nupiip (2,9) now seen/owned (yours)
+  ok  move #17 -> (5,3)
+      => Rider#17 -> (5,3)
+  ok  move #12 -> (5,4)
+      => Warrior#12 -> (5,4)
+  ok  move #20 -> (4,2)
+      => Archer#20 -> (4,2)
+  ok  move #21 -> (5,6)
+      => Warrior#21 -> (5,6)
+  ok  move #15 -> (6,9)
+      => Rider#15 -> (6,9)
+  ok  move #10 -> (0,5)
+      => Warrior#10 -> (0,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Recruit another Archer at Pinumo to strengthen focus fire against the enemy Warrior and Rider before attempting the capital. The fortified Defender still needs a stronger breaking force; nearby villages can fund that investment while the army protects their approaches.
+  PLAN (2 action(s), 12.8s): train Archer at (3,3) (3 stars); end turn
+  ok  train Archer at (3,3) (3 stars)
+      => stars 4->1; new Archer#23 at (3,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->5; enemy Archer#20 -> (4,2); enemy Rider#17 -> (5,3); enemy Warrior#12 -> (5,4); enemy Warrior#10 -> (0,5); new enemy Archer#23 at (3,3); Teicamus level 1->2
+--- turn 8 (codex-gpt-6-astra): 12 actions, 2 model call(s), model 37s, wall 45s, cost n/a (subscription)
+
+=== TURN 9 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 5 stars (+4) | 1 cities | units: Warrior x1, Defender x1, Rider x1 ===
+    enemy: 4 reported cities, 2 located | visible units: Archer x2, Warrior x2, Rider x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .ca.  ^  .  T  T  T  
+ 3  ^r .  T  .*a.  . r.u . W.CD.  .  
+ 4  T  T  .  Tg .  .uwT  .cR.  .  .c 
+ 5  . w.  T  .  ^  .c .c T  T  ^  T  
+ 6   ? .E T  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy Rider, Warrior and Archer are converging on Nusumte, so the objective is a compact defence around the capital and a counter-kill next turn. I keep the Warrior screening at (7,3) and tuck the fragile Rider behind it at (8,4), saving 5 stars so Archery (6) plus an Archer become affordable next turn.
+  PLAN (2 action(s), 21.9s): move #16 -> (8,4); end turn
+  ok  move #16 -> (8,4)
+      => Rider#16 -> (8,4)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 1->12; enemy Rider#16 -> (8,4)
+--- turn 9 (claude-code-claude-fable-5-1): 2 actions, 1 model call(s), model 22s, wall 25s, est $0.15 this turn ($2.22 so far)
+
+=== TURN 9 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 12 stars (+11) | 4 cities | units: Warrior x4, Archer x2, Rider x2 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1, Defender x1, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ?  ?  ?  ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .  .  .  Tg T   ? 
+ 2  .  Tg T  T  .cA.  ^  .  T  T  T  
+ 3  ^r .  T  .CA.  . R.u . w.*d.  .  
+ 4  T  T  .  Tg .  .uWT  .c . r.  .c 
+ 5  . W.  T  .  ^  .c .c T  T  ^  T  
+ 6  .c .C T  .  .C TgW^  .v T  T  .  
+ 7  Tg Tg .c ^  .u .c Tg ^  Tg .c .  
+ 8  T  ^  ^  T  T  .u T  ^  ^  .  T  
+ 9  .  Tg .CW.u ^  T  .uR.v Tg .r .  
+10  .+ .c .u ^  T  .  .u .u T  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll bring the Archers forward to help remove the enemy’s field units while securing the southern villages. Forestry funds a five-hut Giant plan at Pinumo next turn; the Defender and nearby Rider still make an immediate capital assault premature. A fresh view will show attacks after movement.
+  PLAN (7 action(s), 34.8s) then ask again: research Forestry (12 stars); move #20 -> (5,2); move #23 -> (4,3); move #12 -> (6,3); move #21 -> (6,5); move #15 -> (7,9); move #10 -> (0,4)
+  ok  research Forestry (12 stars)
+      => stars 12->0; learned Forestry
+  ok  move #20 -> (5,2)
+      => Archer#20 -> (5,2)
+  ok  move #23 -> (4,3)
+      => Archer#23 -> (4,3)
+  ok  move #12 -> (6,3)
+      => Warrior#12 -> (6,3)
+  ok  move #21 -> (6,5)
+      => Warrior#21 -> (6,5)
+  ok  move #15 -> (7,9)
+      => Rider#15 -> (7,9)
+  ok  move #10 -> (0,4)
+      => Warrior#10 -> (0,4)
+-- planning (model call 2 of 3 this turn) ...
+  > Remove the forward Warrior with Archer support, then reassess the enemy Rider before committing our Rider. The opening shot estimates 5 damage with zero retaliation in the current preview; clearing this enemy may open a useful move-and-attack route.
+  PLAN (3 action(s), 36.2s) then ask again: attack #20 -> Warrior#18 at (7,3) (preview: deals 5, takes 0); attack #12 -> Warrior#18 at (7,3) (preview: deals 5, takes 5); move #2 -> (3,8)
+  ok  attack #20 -> Warrior#18 at (7,3) (preview: deals 5, takes 0)
+      => enemy Warrior#18 hp 10->5
+  ok  attack #12 -> Warrior#18 at (7,3) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#18 hp 5->0
+  ok  move #2 -> (3,8)
+      => Warrior#12 -> (7,3); enemy Warrior#18 gone (killed or out of sight); Warrior#2 -> (3,8)
+-- planning (model call 3 of 3 this turn) ...
+  > Move the Rider forward to support the southern village approach and threaten the enemy Rider next turn. Preserve the forests for Pinumo’s Giant plan; the fortified capital still needs a stronger attacking force.
+  PLAN (2 action(s), 20.1s): move #17 -> (6,4); end turn
+  ok  move #17 -> (6,4)
+      => Rider#17 -> (6,4)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 5->9; enemy Archer#20 -> (5,2); enemy Archer#23 -> (4,3); enemy Rider#17 -> (6,4); lost Warrior#18; enemy Warrior#12 -> (7,3); enemy Warrior#10 -> (0,4); new enemy Warrior#21 at (6,5)
+--- turn 9 (codex-gpt-6-astra): 12 actions, 3 model call(s), model 91s, wall 98s, cost n/a (subscription)
+
+=== TURN 10 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 9 stars (+4) | 1 cities | units: Defender x1, Rider x1 ===
+    enemy: 4 reported cities, 2 located | visible units: Warrior x3, Archer x2, Rider x1 | enemy capital Pinumo at (3,3) lvl 3
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T  T  .c . a^  .  T  T  T  
+ 3  ^r .  T  .* . a.  .u . w.CD.  .  
+ 4  T wT  .  Tg .  .u T r.c . R.  .c 
+ 5  .  .  T  .  ^  .c .cwT  T  ^  T  
+ 6   ? .E T  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy Warrior at (7,3) is adjacent to our capital with a Rider and two Archers behind it. Rider #16 hits it (5 dmg) and will escape beyond enemy Rider reach; Archery is bought for ranged support; the Defender steps into the (8,2) forest so a second Defender can be trained in the capital this turn.
+  PLAN (3 action(s), 45.9s) then ask again: attack #16 -> Warrior#12 at (7,3) (preview: deals 5, takes 5); research Archery (6 stars); move #22 -> (8,2)
+  ok  attack #16 -> Warrior#12 at (7,3) (preview: deals 5, takes 5)
+      => enemy Warrior#12 hp 10->5
+  ok  research Archery (6 stars)
+      => stars 9->3; learned Archery; Rider#16 hp 10->5
+  ok  move #22 -> (8,2)
+      => Defender#22 -> (8,2)
+-- planning (model call 2 of 3 this turn) ...
+  > The capital tile is empty with a wounded enemy Warrior adjacent and an enemy Rider two tiles out, so the 3 stars go into a Defender on (8,3) to hold the city. The 5-hp Rider escapes east to (10,3), out of the enemy Rider's move-and-attack reach, to heal for a finishing strike next turn.
+  PLAN (3 action(s), 15.5s): train Defender at (8,3) (3 stars); move #16 -> (10,3); end turn
+  ok  train Defender at (8,3) (3 stars)
+      => stars 3->0; new Defender#24 at (8,3)
+  ok  move #16 -> (10,3)
+      => Rider#16 -> (10,3)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->11; Warrior#12 hp 10->5; enemy Defender#22 -> (8,2); enemy Rider#16 hp 10->5; enemy Rider#16 -> (10,3); new enemy Defender#24 at (8,3)
+--- turn 10 (claude-code-claude-fable-5-1): 6 actions, 2 model call(s), model 61s, wall 66s, est $0.35 this turn ($2.57 so far)
+
+=== TURN 10 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 11 stars (+11) | 4 cities | units: Warrior x4, Archer x2, Rider x2 ===
+    enemy: 1 reported cities, 1 located | visible units: Defender x2, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ?  ?  ?  ?  ?  ?  ? 
+ 1  ^  T  T  T  T  .  .  .  Tg T   ? 
+ 2  .  Tg T  T  .c . A^  .  T dT  T  
+ 3  ^r .  T  .C . A.  .u . W.*d.  . r
+ 4  T WT  .  Tg .  .u T R.c .  .  .c 
+ 5  .  .  T  .  ^  .c .cWT  T  ^  T  
+ 6  .c .C T  .  .C Tg ^  .v T  T  .  
+ 7  Tg Tg .c ^  .u .c Tg ^  Tg .c .  
+ 8  T  ^  ^  T WT  .u T  ^  ^  .  T  
+ 9  .  Tg .C .u ^  T  .u .vRTg .r .  
+10  .+ .c .u ^  T  .  .u .u T  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > Lumber huts cost 3 stars now, so Pinumo’s Giant needs another turn of investment. I’ll build toward that reward, withdraw the wounded Warrior, and secure southern expansion while moving an Archer into range of the exposed Defender; a fresh preview will determine its shot.
+  PLAN (11 action(s), 29.2s) then ask again: build Hunting at (3,4) (2 stars); build LumberHut at (2,2) (3 stars); build LumberHut at (3,2) (3 stars); build LumberHut at (2,3) (3 stars); capture #15 at (7,9); move #12 -> (6,3); move #20 -> (6,1); move #23 -> (5,3); move #17 -> (7,5); move #21 -> (7,6); move #2 -> (4,7)
+  ok  build Hunting at (3,4) (2 stars)
+      => stars 11->9; Pinumo pop 1->2
+  ok  build LumberHut at (2,2) (3 stars)
+      => stars 9->6; Pinumo pop 2->3
+  ok  build LumberHut at (3,2) (3 stars)
+      => stars 6->3; Pinumo pop 3->4
+  ok  build LumberHut at (2,3) (3 stars)
+      => Pinumo level 3->4
+  ok  [city reward] city reward PopulationGrowth at (3,3)
+      => stars 3->0; Pinumo pop 0->4
+  ok  capture #15 at (7,9)
+      => city Pilus (7,9) now seen/owned (yours)
+  ok  move #12 -> (6,3)
+      => Warrior#12 -> (6,3)
+  ok  move #20 -> (6,1)
+      => Archer#20 -> (6,1)
+  ok  move #23 -> (5,3)
+      => Archer#23 -> (5,3)
+  ok  move #17 -> (7,5)
+      => Rider#17 -> (7,5)
+  ok  move #21 -> (7,6)
+      => Warrior#21 -> (7,6)
+  ok  move #2 -> (4,7)
+      => Warrior#2 -> (4,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Clearing three resource-free forests will fund Pinumo’s final lumber hut and bring the Giant forward a turn. The Archer will soften the field Defender for an estimated 3 damage with zero retaliation in the current preview; a fresh action list is needed to build the hut.
+  PLAN (5 action(s), 14.3s) then ask again: attack #20 -> Defender#22 at (8,2) (preview: deals 3, takes 0); move #10 -> (1,3); build ClearForest at (2,5) (0 stars); build ClearForest at (3,8) (0 stars); build ClearForest at (8,10) (0 stars)
+  ok  attack #20 -> Defender#22 at (8,2) (preview: deals 3, takes 0)
+      => enemy Defender#22 hp 15->12
+  ok  move #10 -> (1,3)
+      => Warrior#10 -> (1,3)
+  ok  build ClearForest at (2,5) (0 stars)
+      => stars 0->1
+  ok  build ClearForest at (3,8) (0 stars)
+      => stars 1->2
+  ok  build ClearForest at (8,10) (0 stars)
+      => stars 2->3
+-- planning (model call 3 of 3 this turn) ...
+  > Spend the remaining 3 stars on Pinumo’s final population to earn a Giant, supplying the force needed to break the capital’s Defender. The siege must wait for its arrival; the nearby enemy Rider remains a threat to eventual occupation.
+  PLAN (2 action(s), 13.8s): build LumberHut at (3,4) (3 stars); end turn
+  ok  build LumberHut at (3,4) (3 stars)
+      => stars 3->0; Pinumo pop 4->5
+  ok  end turn
+      => Pinumo level 4->5
+  ok  [city reward] city reward SuperUnit at (3,3)
+  codex-gpt-6-astra moved: stars 0->4; enemy Archer#20 -> (6,1); Defender#22 hp 15->12; enemy Archer#23 -> (5,3); enemy Warrior#12 -> (6,3); enemy Warrior#10 -> (1,3); enemy Rider#17 -> (7,5); enemy Warrior#21 gone (killed or out of sight); new enemy Giant#25 at (3,3); Pinumo level 3->5
+--- turn 10 (codex-gpt-6-astra): 20 actions, 3 model call(s), model 57s, wall 69s, cost n/a (subscription)
+
+=== TURN 11 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 4 stars (+4) | 1 cities | units: Defender x2, Rider x1 ===
+    enemy: 5 reported cities, 2 located | visible units: Archer x2, Warrior x2, Giant x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 5
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .r T  .  .+ 
+ 1  ^  T  T   ? T  .  . a.  Tg T  ^  
+ 2  .  Tg T+ T+ .c .  ^  .  T DT  T  
+ 3  ^r . wT+ .*g.  . a.uw.  .CD.  . R
+ 4  T  T  .  T+ .  .u T  .c .  .  .c 
+ 5  .  .  .  .  ^  .c .c T rT  ^  T  
+ 6   ? .E T  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > No enemy is in reach this turn, so the priority is keeping the capital garrison intact while the wounded Rider and forest Defender heal inside friendly territory. Training an Archer would require vacating the city tile to a fragile unit within reach of two archers, a rider and a warrior, so the 4 stars are held for next turn.
+  PLAN (3 action(s), 19.8s): recover at (8,2); recover at (10,3); end turn
+  ok  recover at (8,2)
+      => Defender#22 hp 12->15
+  ok  recover at (10,3)
+      => Rider#16 hp 5->7
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->14; enemy Defender#22 hp 12->15; enemy Rider#16 hp 5->7; new Giant#25 at (3,3)
+--- turn 11 (claude-code-claude-fable-5-1): 3 actions, 1 model call(s), model 20s, wall 23s, est $0.13 this turn ($2.70 so far)
+
+=== TURN 11 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 14 stars (+14) | 5 cities | units: Warrior x4, Archer x2, Rider x2, Giant x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Defender x2, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ? .  .  .r  ?  ?  ? 
+ 1  ^  T  T  T  T  .  . A.  Tg T   ? 
+ 2  .  Tg T+ T+ .c .  ^  .  T dT  T  
+ 3  ^r . WT+ .CG.  . A.uW.  .*d.  . r
+ 4  T  T  .  T+ .  .u T  .c .  .  .c 
+ 5  .  .  .  .  ^  .c .c T RT  ^  T  
+ 6  .c .C T  .  .C Tg ^  .vWT  T  .  
+ 7  Tg Tg .c ^  .uW.c Tg ^  Tg .c .  
+ 8  T  ^  ^  .  T  .u T  ^  ^  .  T  
+ 9  .  Tg .C .u ^  T  .u .CRTg .r .  
+10  .+ .c .u ^  T  .  .u .u .  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > The Giant needs a faster route to Nusumte before we commit an occupier. I’ll buy Roads before capturing the village, use a free monument for Teicamus’s Resources reward, and move scouts onto ruins; a refreshed list will reveal the road placements and ruin actions.
+  PLAN (8 action(s), 36.0s) then ask again: research Roads (14 stars); build Monument6 at (0,5) (0 stars); capture #21 at (7,6); move #20 -> (7,0); move #15 -> (9,9); move #23 -> (6,4); recover at (6,3); move #2 -> (5,7)
+  ok  research Roads (14 stars)
+      => stars 14->0; learned Roads
+  ok  build Monument6 at (0,5) (0 stars)
+      => Teicamus pop 0->1
+  ok  capture #21 at (7,6)
+      => Teicamus level 2->3
+  ok  [city reward] city reward Resources at (1,6)
+      => stars 0->5; city Dotedo (7,6) now seen/owned (yours)
+  ok  move #20 -> (7,0)
+      => Archer#20 -> (7,0)
+  ok  move #15 -> (9,9)
+      => Rider#15 -> (9,9)
+  ok  move #23 -> (6,4)
+      => Archer#23 -> (6,4)
+  ok  recover at (6,3)
+      => Warrior#12 hp 5->7
+  ok  move #2 -> (5,7)
+      => Warrior#2 -> (5,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Both Archers will soften the field Defender for an estimated 6 damage; the current previews show no retaliation. Clearing one rear forest funds two roads toward Nusumte, accelerating the Giant while the Rider and forward Warriors protect Dotedo and await a supported assault.
+  PLAN (7 action(s), 19.9s): attack #20 -> Defender#22 at (8,2) (preview: deals 3, takes 0); attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0); build ClearForest at (2,6) (0 stars); build Road at (4,3) (3 stars); build Road at (5,3) (3 stars); move #10 -> (2,3); end turn
+  ok  attack #20 -> Defender#22 at (8,2) (preview: deals 3, takes 0)
+      => enemy Defender#22 hp 15->12
+  ok  attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0)
+      => enemy Defender#22 hp 12->9
+  ok  build ClearForest at (2,6) (0 stars)
+      => stars 5->6
+  ok  build Road at (4,3) (3 stars)
+      => stars 6->3
+  ok  build Road at (5,3) (3 stars)
+      => stars 3->0
+  ok  move #10 -> (2,3)
+      => Warrior#10 -> (2,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 4->8; enemy Archer#20 -> (7,0); Defender#22 hp 15->9; enemy Warrior#10 -> (2,3); enemy Archer#23 -> (6,4); enemy Warrior#12 hp 5->7; Teicamus level 2->3
+--- turn 11 (codex-gpt-6-astra): 16 actions, 2 model call(s), model 56s, wall 66s, cost n/a (subscription)
+
+=== TURN 12 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 8 stars (+4) | 1 cities | units: Defender x2, Rider x1 ===
+    enemy: 6 reported cities, 2 located | visible units: Archer x2, Warrior x2, Giant x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 5
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .raT  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T+ T+ .c .  ^  .  T DT  T  
+ 3  ^r .  T+w.*g.  .  .uw.  .CD.  . R
+ 4  T  T  .  T+ .  .u T a.c .  .  .c 
+ 5  .+ .  .  .  ^  .c .c T rT  ^  T  
+ 6   ? .E .  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy field units (Warrior, Archer, Rider, Archer at the ruin) hover around Nusumte but none is in reach, so the garrison holds: both Defenders stay put and recover, the Rider heals off-map. Stars go to Forestry as the first step toward Mathematics and a Catapult, the only tool that can break a Giant-held capital without walking into retaliation.
+  PLAN (4 action(s), 34.2s): research Forestry (6 stars); recover at (8,2); recover at (10,3); end turn
+  ok  research Forestry (6 stars)
+      => stars 8->2; learned Forestry
+  ok  recover at (8,2)
+      => Defender#22 hp 9->13
+  ok  recover at (10,3)
+      => Rider#16 hp 7->9
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->16; enemy Defender#22 hp 9->13; enemy Rider#16 hp 7->9
+--- turn 12 (claude-code-claude-fable-5-1): 4 actions, 1 model call(s), model 34s, wall 39s, est $0.19 this turn ($2.89 so far)
+
+=== TURN 12 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 16 stars (+16) | 6 cities | units: Warrior x4, Archer x2, Rider x2, Giant x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Defender x2, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ? .  .  .rAT   ?  ? 
+ 1  ^  T  T  T  T  .  .  .  Tg T   ? 
+ 2  .  Tg T+ T+ .c .  ^  .  T dT  T  
+ 3  ^r .  T+W.CG.  .  .uW.  .*d.  . r
+ 4  T  T  .  T+ .  .u T A.c .  .  .c 
+ 5  .+ .  .  .  ^  .c .c T RT  ^  T  
+ 6  .c .C .  .  .C Tg ^  .CWT  T  .  
+ 7  Tg Tg .c ^  .u .cWTg ^  Tg .c .  
+ 8  T  ^  ^  .  T  .u T  ^  ^  .  T  
+ 9  .  Tg .C .u ^  T  .u .C Tg .rR.  
+10  .+ .c .u ^  T  .  .u .u .  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > Advance the Giant toward a turn-14 assault while weakening the field Defender and reinforcing Dotedo’s approach. Examine both ruins before committing the remaining budget; their rewards and the newly freed recruitment tile need a fresh action list.
+  PLAN (10 action(s), 28.2s) then ask again: examine ruins at (7,0); examine ruins at (9,9); move #25 -> (5,3); attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0); build Road at (6,3) (3 stars); move #21 -> (8,5); move #2 -> (6,7); build Hunting at (6,7) (2 stars); build Hunting at (8,7) (2 stars); train Archer at (4,6) (3 stars)
+  ok  examine ruins at (7,0)
+      => learned Trade
+  ok  examine ruins at (9,9)
+      => Rider#15 -> (10,8)
+  ok  move #25 -> (5,3)
+      => Giant#25 -> (5,3); new Swordsman#26 at (9,9)
+  ok  attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0)
+      => enemy Defender#22 hp 13->10
+  ok  build Road at (6,3) (3 stars)
+      => stars 16->13
+  ok  move #21 -> (8,5)
+      => Warrior#21 -> (8,5)
+  ok  move #2 -> (6,7)
+      => Warrior#2 -> (6,7)
+  ok  build Hunting at (6,7) (2 stars)
+      => stars 13->11
+  ok  build Hunting at (8,7) (2 stars)
+      => stars 11->9; Dotedo pop 0->1
+  ok  train Archer at (4,6) (3 stars)
+      => Dotedo level 1->2
+  ok  [city reward] city reward Workshop at (7,6)
+      => stars 9->6; new Archer#27 at (4,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Prepare the Giant’s supported assault for turn 14, spending six stars on two Archers to strengthen its supporting fire. The wounded Warrior will recover for occupation duty; Warriors near Dotedo protect recruitment while the enemy Rider remains the main counterattack threat.
+  PLAN (5 action(s), 22.1s): move #10 -> (1,3); recover at (6,3); train Archer at (3,3) (3 stars); train Archer at (7,6) (3 stars); end turn
+  ok  move #10 -> (1,3)
+      => Warrior#10 -> (1,3)
+  ok  recover at (6,3)
+      => Warrior#12 hp 7->9
+  ok  train Archer at (3,3) (3 stars)
+      => stars 6->3; new Archer#28 at (3,3)
+  ok  train Archer at (7,6) (3 stars)
+      => stars 3->0; new Archer#29 at (7,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->6; Defender#22 hp 13->10; enemy Warrior#10 -> (1,3); enemy Giant#25 -> (5,3); enemy Warrior#12 hp 7->9; new enemy Archer#28 at (3,3); new enemy Warrior#21 at (8,5)
+--- turn 12 (codex-gpt-6-astra): 16 actions, 2 model call(s), model 50s, wall 63s, cost n/a (subscription)
+
+=== TURN 13 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 6 stars (+4) | 1 cities | units: Defender x2, Rider x1 ===
+    enemy: 6 reported cities, 2 located | visible units: Archer x3, Warrior x3, Giant x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 5
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  . aT  .  .+ 
+ 1  ^  T  T   ? T  .  .  .  Tg T  ^  
+ 2  .  Tg T+ T+ .c .  ^  .  T DT  T  
+ 3  ^r . wT+ .*a.  . g.uw.  .CD.  . R
+ 4  T  T  .  T+ .  .u T a.c .  .  .c 
+ 5  .+ .  .  .  ^  .c .c T rT w^  T  
+ 6   ? .E .  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy Giant, Warrior, Archer and Rider are converging on Nusumte, so the capital stays locked down: fortified Defender in the city, second Defender healing in the forest, Rider recovering out of easy reach. The 6 stars go into two lumber huts (+2 pop) to push the capital toward level 4 for more support and income; Mathematics is unaffordable this turn.
+  PLAN (5 action(s), 25.6s): build LumberHut at (9,2) (3 stars); build LumberHut at (8,2) (3 stars); recover at (8,2); recover at (10,3); end turn
+  ok  build LumberHut at (9,2) (3 stars)
+      => stars 6->3; Nusumte pop 1->2
+  ok  build LumberHut at (8,2) (3 stars)
+      => stars 3->0; Nusumte pop 2->3
+  ok  recover at (8,2)
+      => Defender#22 hp 10->14
+  ok  recover at (10,3)
+      => Rider#16 hp 9->10
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 0->18; enemy Defender#22 hp 10->14; enemy Rider#16 hp 9->10
+--- turn 13 (claude-code-claude-fable-5-1): 5 actions, 1 model call(s), model 26s, wall 30s, est $0.18 this turn ($3.06 so far)
+
+=== TURN 13 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 18 stars (+18) | 6 cities | units: Archer x5, Warrior x4, Rider x2, Giant x1, Swordsman x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Defender x2, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ? .  .  . AT   ?  ? 
+ 1  ^  T  T  T  T  .  .  .  Tg T   ? 
+ 2  .  Tg T+ T+ .c .  ^  .  T+dT+ T  
+ 3  ^r . WT+ .CA.  . G.uW.  .*d.  . r
+ 4  T  T  .  T+ .  .u T A.c .  .  .c 
+ 5  .+ .  .  .  ^  .c .c T RT W^  T  
+ 6  .c .C .  .  .CATg ^  .CAT  T  .  
+ 7  Tg Tg .c ^  .u .c T W^  T  .c .  
+ 8  T  ^  ^  .  T  .u T  ^  ^  .  T R
+ 9  .  Tg .C .u ^  T  .u .C Tg .uS.  
+10  .+ .c .u ^  T  .  .u .u .  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > The Giant will stage beside Nusumte for a turn-14 assault, with Warrior #12 positioned to occupy after supporting fire. I’ll weaken the northern Defender and add a road for Archer reinforcements; the enemy Rider remains the main counterattack threat, so Dotedo keeps its nearby Warrior.
+  PLAN (8 action(s), 31.3s) then ask again: move #25 -> (7,3); move #12 -> (7,4); move #20 -> (7,1); attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0); build Road at (6,4) (3 stars); move #29 -> (6,5); move #15 -> (9,6); move #26 -> (9,8)
+  ok  move #25 -> (7,3)
+      => Giant#25 -> (7,3)
+  ok  move #12 -> (7,4)
+      => Warrior#12 -> (7,4)
+  ok  move #20 -> (7,1)
+      => Archer#20 -> (7,1)
+  ok  attack #23 -> Defender#22 at (8,2) (preview: deals 3, takes 0)
+      => enemy Defender#22 hp 14->11
+  ok  build Road at (6,4) (3 stars)
+      => stars 18->15
+  ok  move #29 -> (6,5)
+      => Archer#29 -> (6,5)
+  ok  move #15 -> (9,6)
+      => Rider#15 -> (9,6)
+  ok  move #26 -> (9,8)
+      => Swordsman#26 -> (9,8)
+-- planning (model call 2 of 3 this turn) ...
+  > Soften the capital and bring Rider #17 into finishing range; the current ranged previews show no retaliation. Warrior #21 will approach the enemy Rider to disrupt its counterattack, then a fresh preview will determine whether we can occupy the capital now or need the Giant next turn.
+  PLAN (8 action(s), 28.9s) then ask again: attack #20 -> Defender#24 at (8,3) (preview: deals 3, takes 0); attack #29 -> Defender#24 at (8,3) (preview: deals 3, takes 0); move #17 -> (8,4); move #21 -> (9,4); move #28 -> (5,3); move #27 -> (5,5); move #2 -> (5,6); train Archer at (7,6) (3 stars)
+  ok  attack #20 -> Defender#24 at (8,3) (preview: deals 3, takes 0)
+      => enemy Defender#24 hp 15->12
+  ok  attack #29 -> Defender#24 at (8,3) (preview: deals 3, takes 0)
+      => enemy Defender#24 hp 12->9
+  ok  move #17 -> (8,4)
+      => Rider#17 -> (8,4)
+  ok  move #21 -> (9,4)
+      => Warrior#21 -> (9,4)
+  ok  move #28 -> (5,3)
+      => Archer#28 -> (5,3)
+  ok  move #27 -> (5,5)
+      => Archer#27 -> (5,5)
+  ok  move #2 -> (5,6)
+      => Warrior#2 -> (5,6)
+  ok  train Archer at (7,6) (3 stars)
+      => stars 15->12; new Archer#30 at (7,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Concentrate the remaining melee attacks on the capital, with Rider #17 softening the garrison before healthy Warrior #21 attempts the killing blow and occupation. The northern Defender and eastern Rider threaten the occupier, but a healthy Warrior should withstand their estimated combined damage; our Giant supports capture next turn.
+  PLAN (4 action(s), 28.1s): attack #17 -> Defender#24 at (8,3) (preview: deals 4, takes 8); attack #21 -> Defender#24 at (8,3) (preview: deals 4, takes 8); attack #12 -> Defender#24 at (8,3) (preview: deals 4, takes 8); end turn
+  ok  attack #17 -> Defender#24 at (8,3) (preview: deals 4, takes 8)
+      => enemy Defender#24 hp 9->5
+  ok  attack #21 -> Defender#24 at (8,3) (preview: deals 5, takes 0, kills)
+      => enemy Defender#24 hp 5->0; Rider#17 hp 10->2
+  ok  attack #12 -> Defender#24 at (8,3) (preview: deals 9, takes 0, kills)
+      => enemy Defender#24 gone (killed or out of sight); Warrior#21 -> (8,3)
+  ok  end turn
+  codex-gpt-6-astra moved: enemy Archer#20 -> (7,1); Defender#22 hp 14->11; enemy Archer#28 -> (5,3); enemy Giant#25 -> (7,3); enemy Warrior#12 -> (7,4); lost Defender#24; enemy Rider#17 hp 10->2; enemy Rider#17 -> (8,4); enemy Warrior#21 -> (8,3); new enemy Archer#27 at (5,5); new enemy Archer#29 at (6,5)
+--- turn 13 (codex-gpt-6-astra): 20 actions, 3 model call(s), model 88s, wall 97s, cost n/a (subscription)
+
+=== TURN 14 | Domination | 2 players | claude-code-claude-fable-5-1 as Imperius (player 1): 0 stars (+0) | 1 cities | units: Defender x1, Rider x1 ===
+    enemy: 6 reported cities, 2 located | visible units: Archer x5, Warrior x3, Giant x1, Rider x1 | enemy capital Pinumo at (3,3) lvl 5
+MAP (explored region x 0-10, y 0-6; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ? .  .  .  T  .  .+ 
+ 1  ^  T  T   ? T  .  .  . aTg T  ^  
+ 2  .  Tg T+ T+ .c .  ^  .  T+DT+ T  
+ 3  ^r . wT+ .* .  . a.u . g.Cw.  . R
+ 4  T  T  .  T+ .  .u T a.cw. r.  .c 
+ 5  .+ .  .  .  ^  .ca.caT  T  ^  T  
+ 6   ? .E .  .   ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The enemy Warrior sits on our capital tile and will capture it next turn unless removed; with 0 stars and two units, the only play is to throw everything at it. Defender hits first, Rider moves adjacent to add a dash attack after a refresh. A kill is unlikely, but nothing else matters if the city falls.
+  PLAN (2 action(s), 15.3s) then ask again: attack #22 -> Warrior#21 at (8,3) (preview: deals 1, takes 7); move #16 -> (9,3)
+  ok  attack #22 -> Warrior#21 at (8,3) (preview: deals 1, takes 7)
+      => enemy Warrior#21 hp 10->9
+  ok  move #16 -> (9,3)
+      => Defender#22 hp 11->4; Rider#16 -> (9,3)
+-- planning (model call 2 of 3 this turn) ...
+  > The garrison Warrior can't be killed this turn (Rider does 5 vs 9 hp), so the capital will likely fall. Best remaining value: the Rider kills the 2-hp enemy Rider at (8,4) with zero retaliation, then uses Escape on the refreshed list to pull back out of Giant/archer reach.
+  PLAN (1 action(s), 12.6s) then ask again: attack #16 -> Rider#17 at (8,4) (preview: deals 8, takes 0, kills)
+  ok  attack #16 -> Rider#17 at (8,4) (preview: deals 8, takes 0, kills)
+      => enemy Rider#17 hp 2->0
+-- planning (model call 3 of 3 this turn) ...
+  > Capital is occupied by a 9hp Warrior we can't kill this turn; the Rider already killed the enemy Rider and must survive. Escape it to (10,4), out of Giant and archer reach, so it can pounce on (8,3) next turn if the garrison moves or is weakened.
+  PLAN (2 action(s), 8.4s): move #16 -> (10,4); end turn
+  !!  move #16 -> (10,4)  REJECTED: Invalid path
+      => Rider#16 -> (8,4); enemy Rider#17 gone (killed or out of sight)
+  ok  end turn
+  claude-code-claude-fable-5-1 moved: stars 12->30; enemy Defender#22 hp 11->4; Warrior#21 hp 10->9; enemy Rider#16 -> (8,4); lost Rider#17
+--- turn 14 (claude-code-claude-fable-5-1): 5 actions, 3 model call(s), model 36s, wall 40s, est $0.34 this turn ($3.41 so far)
+
+=== TURN 14 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 30 stars (+18) | 6 cities | units: Archer x6, Warrior x4, Giant x1, Rider x1, Swordsman x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Defender x1, Rider x1 | enemy capital Nusumte at (8,3) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  .   ?  ? .  .  .  T   ?  ? 
+ 1  ^  T  T  T  T  .  .  . ATg T   ? 
+ 2  .  Tg T+ T+ .c .  ^  .  T+dT+ T  
+ 3  ^r . WT+ .C .  . A.u . G.*W.  .  
+ 4  T  T  .  T+ .  .u T A.cW. r.  .c 
+ 5  .+ .  .  .  ^  .cA.cAT  T  ^  T  
+ 6  .c .C .  .  .C TgW^  .CAT  T R.  
+ 7  Tg Tg .c ^  .u .c T  ^  T  .c .  
+ 8  T  ^  ^  .  T  .u T  ^  ^  . ST  
+ 9  .  Tg .C .u ^  T  .u .C Tg .u .  
+10  .+ .c .u ^  T  .  .u .u .  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  > Warrior #21 already occupies Nusumte and can capture the opponent’s last city immediately. Take it now; no further spending or combat is needed if the engine confirms elimination.
+  PLAN (2 action(s), 6.1s): capture #21 at (8,3); end turn
+  ok  capture #21 at (8,3)
+      => city Nusumte (8,3) captured -> YOURS
+  ok  end turn
+      => enemy Defender#22 gone (killed or out of sight); Warrior#12 hp 9->10; enemy Rider#16 gone (killed or out of sight)
+  state for a seat-turn that already ended; waiting for the next one
+--- turn 14 (codex-gpt-6-astra): 2 actions, 1 model call(s), model 6s, wall 10s, cost n/a (subscription)
+
+GAME OVER on turn 14: WINNER codex-gpt-6-astra (player 2)
+  claude-code-claude-fable-5-1: scores by turn: 0:515 1:755 2:910 3:930 4:935 5:945 6:1130 7:1125 8:1225 9:1240 10:1230 11:1445 12:1445 13:1645 14:1640
+  claude-code-claude-fable-5-1: tokens: {'input': 52, 'output': 32258, 'cache_write': 84175, 'cache_read': 142532}  model calls: 26  est. cost $3.41
+  codex-gpt-6-astra: scores by turn: 0:515 1:730 2:785 3:1000 4:1295 5:1360 6:1395 7:1425 8:2140 9:2485 10:2685 11:3125 12:4060 13:4480 14:4480
+  codex-gpt-6-astra: tokens: {'input': 330941, 'output': 10786, 'cache_write': 0, 'cache_read': 217856}  model calls: 32  est. cost n/a (subscription)
+  player 1 claude-code-claude-fable-5-1: won=False calls=26 actions=73 violations=0 cost=$3.41
+  player 2 codex-gpt-6-astra: won=True calls=32 actions=158 violations=0 cost=n/a (subscription)
+result: p2 (codex-gpt-6-astra) on turn 14
+recording stopped after 22.9 min: recordings\game5-fable51-vs-gpt6astra.mp4 (111 MB); ffmpeg said: [in#0/gdigrab @ 000001dfec6a1940] Stream #0: not enough frames to estimate rate; consider increasing probesize

@@ -4,8 +4,9 @@ Newline-delimited JSON over TCP. The mod listens on `127.0.0.1:9876` by default
 (`<game>/BepInEx/config/ClaudeBridge.json`: `{"port": 9876, "bind": "127.0.0.1"}`; set `bind` to
 `0.0.0.0` to accept LAN connections). One client at a time; a new connection replaces the old one.
 
-The bridge only ever acts in **single-player** games (`GameSettings.GameType == SinglePlayer`).
-In any other game type it answers with an error and stays inert.
+The bridge only ever acts in **offline** games: `GameSettings.GameType == SinglePlayer`, or `PassAndPlay` (the
+game's hotseat mode, several human seats on this device; used to let two agents play each other). In any other
+game type (Multiplayer, Matchmaking, Competitive, WeeklyChallenge) it answers with an error and stays inert.
 
 ## Messages from the harness
 
@@ -16,9 +17,10 @@ In any other game type it answers with an error and stays inert.
 | `{"type": "status"}` | Debug: every gate the turn watcher looks at (`in_game`, `current_state`, `is_local_turn`, `is_waiting_for_command`, `popup`, …). Answered immediately, in or out of a game. |
 | `{"type": "resume"}` | Press the menu's Resume for the saved single-player game (`GameManager.ResumeSingleplayerGame`). Replies `{"type": "ok"}` or an `error` (already in a game). No clicking needed after a game restart. |
 | `{"type": "new_game", "mode": "Perfection", "difficulty": "Easy", "opponents": 3, "map_size": 16, "map_preset": "Continents", "tribe": "Imperius", "name": "..."}` | Start a new single-player game from the start screen, exactly like the setup screen's Continue button. All fields optional (defaults shown except `map_size`, which follows the opponent count). `mode`: Perfection/Domination/Glory/Might; `difficulty`: Easy/Normal/Hard/Crazy; `map_preset`: Dryland/Lakes/Continents/Archipelago/WaterWorld/Pangea; `map_size`: 11 (tiny) 14 16 18 20 30. Replies `ok` with the settings used; the first `state` follows once the level is loaded. |
+| `{"type": "new_game", "game_type": "PassAndPlay", "players": 2, "bots": 0, "tribes": ["Imperius", "Imperius"], "mode": "Domination", "map_size": 11, ...}` | Start an offline **Pass & Play** (hotseat) game with `players` human seats (default 2) and `bots` built-in bots (default 0; `opponents` is an alias), one tribe per seat (defaults to `tribe`). Mirrors the player picker + tribe picker + setup screen (`GameManager.CreateHotseatGame`). The `ok` reply echoes the request; the first `state` (for the opening seat) carries the actual `roster`, which the harness validates. |
 | `{"type": "return_to_menu"}` | Leave the current game (`GameManager.ReturnToMenu`), e.g. after `game_over`, so `new_game` can be sent. |
 | `{"type": "kick", "method": "start_processing"}` | Diagnostics only: poke the client (`start_processing`, `stop_processing`, `skip_recap`, `force_update`, …). |
-| `{"type": "action", "action": {...}}` | Execute one command. Always answered with a `result`, followed by a fresh `state` once the game has finished processing (or by `game_over`). |
+| `{"type": "action", "action": {...}, "player": 2}` | Execute one command. Always answered with a `result`, followed by a fresh `state` once the game has finished processing (or by `game_over`). `player` is optional: the seat the sender is acting for; in a hotseat game the bridge answers `wrong seat: local player is N, not M` when another seat is at the keyboard (the harness treats that as a desync and stops). |
 
 ## Messages from the bridge
 
@@ -32,6 +34,7 @@ changed since the last `state` (turn, command count or pending trigger), or afte
 ```json
 {
   "type": "state", "turn": 3, "player": 1,
+  "roster": [{"id": 1, "tribe": "Imperius", "name": "Player 1", "is_bot": false, "alive": true}, ...],
   "state": {
     "turn": 3,
     "settings": {"map_width": 11, "map_height": 11, "map_size": 11, "game_mode": "Perfection",
@@ -77,6 +80,36 @@ After an accepted `action` the bridge waits until the engine has consumed the co
 move) before sending the next `state`, so the harness always sees the post-action state; if nothing changes
 within 5 s it logs a warning and sends the state anyway.
 
+`roster` (on `state`, `game_over` and `status`) is the seat-neutral list of players: the same list whichever
+seat is local, with `is_bot` false for human seats.
+
+### Hotseat handoff (Pass & Play)
+
+In a `PassAndPlay` game `player` changes from state to state: each `state` is serialized for the seat whose
+turn it is (its own fog, stars, techs and legal actions), and only when the client agrees that seat is local.
+The bridge handles the seat switch itself, in this order every frame: game ended -> `game_over`; the
+"pass the device to player N" overlay (`HotSeatOverlay`) showing -> press its Continue after a 1 s settle
+(the very first overlay is what starts the game); game not running yet -> wait; informational popups ->
+dismissed as in single-player; the client replaying (after the overlay's Continue the client rewinds to
+the start of the turn and replays the other seat's commands as a recap; `ClientBase.HasTargetState()` is
+true until the replay has caught up, and GameState is a rewound snapshot meanwhile) -> wait;
+`GameManager.LocalPlayer` not yet the current player -> wait. Commands sent through the bridge bypass the
+HUD path that normally shows the overlay between turns, so when the engine has moved on to the next player
+and is idle for 1.5 s with no overlay and no replay, the bridge calls the client's own
+`SetNewLocalPlayerTurnForPassAndPlay(current player)`, which is what the overlay's Continue does. After
+that switch the client's action loop is stopped, so commands are applied synchronously (the bridge notices
+the command counter has already moved and does not wait for it). The `StateKey` de-duplication includes
+the player, so the first state of each seat is always sent. `IsRecap`/`isRecapping` are not usable as
+"replay in progress" signals: they stay true for a whole human turn in a hotseat game.
+
+If a handoff stalls for more than 10 s the bridge sends `{"type": "warning", "reason": "handoff stalled",
+"where": "...", "stalled_seconds": N, ...status fields}` at most every 10 s. Warnings are informational; the
+harness prints them and its state deadline keeps running (the client's `expect()` uses an absolute deadline).
+`status` additionally reports `is_hotseat`, `client_local_player`, `current_local_player_index`, `ui_screen`,
+`hotseat_overlay_showing`, `handoff_stalled_seconds` and `roster`.
+
+Hotseat `resume` is not implemented: a deathmatch always starts with `new_game`.
+
 ### `legal_actions`
 Every command the engine will currently accept, produced from the game's own option generators plus
 each command's `IsValid`. Each entry is a ready-to-send `action` object with extra read-only annotations.
@@ -107,11 +140,13 @@ Coordinates are `[x, y]` (`{"x":..,"y":..}` is also accepted on input). Enum nam
 `{"type": "result", "ok": false, "error": "<engine validation string or bridge message>", "kind": "move"}`.
 The bridge validates with `CommandBase.IsValid(state, out error)` and only then hands the command to the
 client (`ClientBase.SendCommand`), the same path the UI uses. Bridge-side rejections include
-`not your turn`, `game is still processing the previous action`, `unit N is not yours`, `unknown kind`.
+`not your turn`, `wrong seat: local player is N, not M`, `game is still processing the previous action`,
+`unit N is not yours`, `unknown kind`.
 
 ### `game_over`
-`{"type": "game_over", "turn": 30, "player": 1, "winner": 1, "won": true, "score": 12345, "players": [...]}`
-when `GameState.CurrentState` becomes `Ended`.
+`{"type": "game_over", "turn": 30, "player": 1, "winner": 1, "won": true, "score": 12345, "roster": [...], "players": [...]}`
+when `GameState.CurrentState` becomes `Ended`. `won` and `score` are for the seat that is local at that moment;
+in a hotseat game the harness derives each seat's result from `winner` instead.
 
 ### `left_game`, `error`
 `left_game` when the level unloads (back to menu). `error` for malformed messages or non-single-player games.

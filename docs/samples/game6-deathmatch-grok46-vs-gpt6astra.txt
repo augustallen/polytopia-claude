@@ -1,0 +1,765 @@
+capturing screen region 2550x2724 at (2568,58) under window 'Polytopia'
+recording recordings\game6-grok46-vs-gpt6astra.mp4 (10 fps, 1920px wide) while running: scripts\play_deathmatch.py --p1 grok:grok-4.6:medium --p2 codex:gpt-6-astra:medium --max-turns 60 --no-color --no-thinking --call-timeout 420
+connected to Polytopia 2.17.3.16375 | p1 grok-grok-4.6 vs p2 codex-gpt-6-astra | log logs\20260907-231239-deathmatch-grok-grok-4.6-vs-codex-gpt-6-astra.jsonl
+  starting a new game: {'game_type': 'PassAndPlay', 'mode': 'Domination', 'players': 2, 'bots': 0, 'difficulty': 'Normal', 'map_preset': 'Dryland', 'map_size': 11, 'tribes': ['Imperius', 'Imperius']}
+  p1 = grok-grok-4.6 plays player 1 (Imperius), moves first; p2 = codex-gpt-6-astra plays player 2 (Imperius), moves second
+
+=== TURN 0 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 1-5, y 6-10; each cell = terrain feature unit):
+     1  2  3  4  5
+ 6  T  .  ^  .  T  
+ 7  ^  .u Tg T  ^  
+ 8  T  T  .CW.u ^  
+ 9  Tg .u ^  Tg .u 
+10  .  .  T  .u .u 
+-- planning (model call 1 of 3 this turn) ...
+  > Harvest two fruit to hit capital level 2 this turn. Hold the Warrior until the reward resolves—Explorer would reveal villages and change the scout heading. No enemy contact yet.
+  PLAN (2 action(s), 52.0s) then ask again: build HarvestFruit at (2,7) (2 stars); build HarvestFruit at (4,8) (2 stars)
+  ok  build HarvestFruit at (2,7) (2 stars)
+      => stars 5->3; Sumsum pop 0->1
+  ok  build HarvestFruit at (4,8) (2 stars)
+      => stars 3->1
+-- planning (model call 2 of 3 this turn) ...
+  > Two fruit already harvested; capital still needs one pop and we have 1 star left. Warrior leaves Sumsum northeast onto (4,7) to start scouting the map center for villages while freeing the city tile. No enemy in sight — find their capital before they find ours.
+  PLAN (2 action(s), 60.9s): move #1 -> (4,7); end turn
+  !!  move #1 -> (4,7)  REJECTED: Pending command trigger exists
+  a city reward is pending; will retry that step after answering it
+      => Sumsum level 1->2
+  ok  [city reward] city reward Explorer at (3,8)
+      => Sumsum pop 0->1
+  ok  move #1 -> (4,7)
+      => Warrior#1 -> (4,7)
+  ok  end turn
+--- turn 0 (grok-grok-4.6): 6 actions, 2 model call(s), model 113s, wall 127s, est $0.01 this turn ($0.01 so far)
+
+=== TURN 0 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 6-10, y 1-5; each cell = terrain feature unit):
+     6  7  8  9 10
+ 1  T  T  T  ^  T  
+ 2  .u T  ^  .u .u 
+ 3  ^  ^  .CWT  .  
+ 4  T  T  .u ^  .u 
+ 5  T  T  .u .  .  
+-- planning (model call 1 of 3 this turn) ...
+  > Two fruit harvests will raise Romus to level 2 for stronger income. The Warrior will scout southwest toward the map interior, looking for villages and the still-hidden opponent.
+  PLAN (4 action(s), 11.2s): build HarvestFruit at (9,2) (2 stars); build HarvestFruit at (8,4) (2 stars); move #2 -> (7,4); end turn
+  ok  build HarvestFruit at (9,2) (2 stars)
+      => stars 5->3; Romus pop 0->1
+  ok  build HarvestFruit at (8,4) (2 stars)
+      => stars 3->1
+  ok  move #2 -> (7,4)
+      => Romus level 1->2
+  ok  [city reward] city reward Explorer at (8,3)
+      => Romus pop 0->1
+  ok  end turn
+      => Warrior#2 -> (7,4)
+  state for a seat-turn that already ended; waiting for the next one
+  codex-gpt-6-astra moved: stars 1->4
+--- turn 0 (codex-gpt-6-astra): 5 actions, 1 model call(s), model 11s, wall 23s, cost n/a (subscription)
+
+=== TURN 1 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 4 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .v .u T  
+ 3  .r .u .v .u T  .u ^   ? 
+ 4  .  T  .u T   ?  ?  ?  ? 
+ 5  T  .u T  Tg  ?  ?  ?  ? 
+ 6  T  T  .  ^  .  T   ?  ? 
+ 7  .  ^  .  Tg T W^   ?  ? 
+ 8  .r T  T  .C .  ^   ?  ? 
+ 9  .  Tg .u ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Harvest capital fruit to push Sumsum toward level 3, and march the Warrior to (5,6) toward village (5,2) and the enemy border at (7,2). Saving 2 stars for Riding next turn rather than a second Warrior: neither village is in one-turn reach, and a Rider will contest the west village faster.
+  PLAN (3 action(s), 125.2s): build HarvestFruit at (2,9) (2 stars); move #1 -> (5,6); end turn
+  ok  build HarvestFruit at (2,9) (2 stars)
+      => stars 4->2; Sumsum pop 1->2
+  ok  move #1 -> (5,6)
+      => Warrior#1 -> (5,6)
+  ok  end turn
+  grok-grok-4.6 moved: stars 1->4
+--- turn 1 (grok-grok-4.6): 3 actions, 1 model call(s), model 125s, wall 129s, est $0.01 this turn ($0.02 so far)
+
+=== TURN 1 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 4 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ?  ? T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .v .u T  ^  .  .u 
+ 3   ? .u .v .u T  .u ^  ^  .C T  .  
+ 4  .  T  .u T  T  .u T  T W.  ^  .u 
+ 5  T  .u T  Tg Tr T  T  T  .u .  .  
+ 6  T  T  .  ^  .   ?  ?  ?  ?  ?  ? 
+ 7   ? ^  .  Tg  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Send the first Warrior toward the ruins and recruit a second to claim the northern village on a separate route. Visible enemy territory lies southwest, so splitting exploration should secure expansion while revealing that approach.
+  PLAN (3 action(s), 15.3s): move #2 -> (6,5); train Warrior at (8,3) (2 stars); end turn
+  ok  move #2 -> (6,5)
+      => Warrior#2 -> (6,5)
+  ok  train Warrior at (8,3) (2 stars)
+      => stars 4->7; new Warrior#5 at (8,3); new enemy Warrior#1 at (5,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 2->8; new enemy Warrior#2 at (6,5)
+--- turn 1 (codex-gpt-6-astra): 3 actions, 1 model call(s), model 15s, wall 20s, cost n/a (subscription)
+
+=== TURN 2 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 8 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .v .u T  
+ 3  .r .u .v .u T  .u ^   ? 
+ 4  .  T  .u T   ?  ?  ?  ? 
+ 5  T  .u T  Tg Tr T  T w ? 
+ 6  T  T  .  ^  .  T WT   ? 
+ 7  .  ^  .  Tg T  ^  .u  ? 
+ 8  .r T  T  .C .  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Buy Riding now and keep the capital free so a Rider can train this turn. The Warrior steps onto the (4,5) ruin instead of a 5–5 trade, staying out of the enemy Warrior’s reach while we scout toward village (5,2).
+  PLAN (2 action(s), 102.0s) then ask again: research Riding (5 stars); move #1 -> (4,5)
+  ok  research Riding (5 stars)
+      => stars 8->3; learned Riding
+  ok  move #1 -> (4,5)
+      => Warrior#1 -> (4,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Train the Rider at Sumsum (all 3 stars) so it can still move this turn toward village (2,3). The Warrior already used its move on the (4,5) ruin and cannot act; the enemy Warrior can step adjacent and hit it next turn.
+  PLAN (1 action(s), 50.3s) then ask again: train Rider at (3,8) (3 stars)
+  ok  train Rider at (3,8) (3 stars)
+      => stars 3->0; new Rider#6 at (3,8)
+-- planning (model call 3 of 3 this turn) ...
+  > Treasury is empty after Riding and the new Rider, and the Warrior already stepped onto the (4,5) ruin, so only end turn remains. Next income funds movement: Rider toward village (2,3), Warrior examines then contests (5,2). Watch the enemy Warrior at (6,5) so it cannot snatch the eastern village first.
+  PLAN (1 action(s), 35.7s): end turn
+  ok  end turn
+  grok-grok-4.6 moved: stars 7->10; enemy Warrior#1 -> (4,5)
+--- turn 2 (grok-grok-4.6): 4 actions, 3 model call(s), model 188s, wall 192s, est $0.02 this turn ($0.04 so far)
+
+=== TURN 2 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 10 stars (+3) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ?  ? T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .v .u T  ^  .  .u 
+ 3   ? .u .v .u T  .u ^  ^  .CWT  .  
+ 4  .  T  .u T  T  .u T  T  .  ^  .u 
+ 5  T  .u T  Tg TrwT  T WT  .u .  .  
+ 6  T  T  .  ^  .  T  T  .v  ?  ?  ? 
+ 7   ? ^  .  Tg  ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Secure the nearby villages while scouting on separate routes. Riding leaves enough stars to recruit a Rider at Romus this turn, adding mobile reinforcement as the southern Warrior approaches enemy territory; a fresh action list is needed to train it.
+  PLAN (3 action(s), 17.2s) then ask again: research Riding (5 stars); move #5 -> (7,2); move #2 -> (7,6)
+  ok  research Riding (5 stars)
+      => stars 10->5; learned Riding
+  ok  move #5 -> (7,2)
+      => Warrior#5 -> (7,2)
+  ok  move #2 -> (7,6)
+      => Warrior#2 -> (7,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Train a Rider at Romus to scout the southern frontier and reinforce village expansion. The visible enemy Warrior cannot immediately reach our capital or the southern village, so this is a useful recruitment window.
+  PLAN (2 action(s), 10.1s): train Rider at (8,3) (3 stars); end turn
+  ok  train Rider at (8,3) (3 stars)
+      => stars 5->2; new Rider#7 at (8,3)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->3; enemy Warrior#2 gone (killed or out of sight); new enemy Warrior#5 at (7,2)
+--- turn 2 (codex-gpt-6-astra): 5 actions, 2 model call(s), model 27s, wall 31s, cost n/a (subscription)
+
+=== TURN 3 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 3 stars (+3) | 1 cities | units: Warrior x1, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .v .u T w
+ 3  .r .u .v .u T  .u ^   ? 
+ 4  .  T  .u T  T  .u  ?  ? 
+ 5  T  .u T  Tg TrWT  T   ? 
+ 6  T  T  .  ^  .  T  T   ? 
+ 7  .  ^  .  Tg T  ^  .u  ? 
+ 8  .r T  T  .CR.  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Examine the ruin under the Warrior for an immediate reward, then send the Rider northwest toward village (2,3) so it can occupy next. Enemy Warrior at (7,2) is two tiles from village (5,2); we skip training until the ruin result, then contest that village.
+  PLAN (2 action(s), 63.1s) then ask again: examine ruins at (4,5); move #6 -> (2,6)
+  ok  examine ruins at (4,5)
+      => learned FreeSpirit
+  ok  move #6 -> (2,6)
+      => Rider#6 -> (2,6)
+-- planning (model call 2 of 3 this turn) ...
+  > Ruin gave Free Spirit, not a unit, and (5,2) sits two tiles from the enemy Warrior. Spend all 3★ on a Rider at Sumsum so it can still move this turn toward that village and the eastern fog. Capital is otherwise idle; Rider #6 is already committed west.
+  PLAN (1 action(s), 143.9s) then ask again: train Rider at (3,8) (3 stars)
+  ok  train Rider at (3,8) (3 stars)
+      => stars 3->0; new Rider#8 at (3,8)
+-- planning (model call 3 of 3 this turn) ...
+  > All units have acted and the treasury is empty, so the turn ends. Rider #6 is staged at (2,6) for the (2,3) village; the new Rider holds the capital. Next threat is the enemy Warrior at (7,2) racing village (5,2).
+  PLAN (1 action(s), 76.2s): end turn
+  ok  end turn
+  grok-grok-4.6 moved: stars 2->5; new enemy Rider#6 at (2,6)
+--- turn 3 (grok-grok-4.6): 4 actions, 3 model call(s), model 283s, wall 288s, est $0.02 this turn ($0.06 so far)
+
+=== TURN 3 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 5 stars (+3) | 1 cities | units: Warrior x2, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1, Rider x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ?  ? T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .v .u T W^  .  .u 
+ 3   ? .u .v .u T  .u ^  ^  .CRT  .  
+ 4  .  T  .u T  T  .u T  T  .  ^  .u 
+ 5  T  .u T  Tg T wT  T  T  .u .  .  
+ 6  T  T  . r^  .  T  T  .vWT   ?  ? 
+ 7   ? ^  .  Tg  ?  ? .u T  ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Claim the southern village and advance toward the northern one while the Rider scouts and supports expansion. Keep the five stars available for growth in the new city; a fresh action list will show whether its resources can fund an immediate level-up.
+  PLAN (3 action(s), 19.0s) then ask again: capture #2 at (7,6); move #5 -> (6,2); move #7 -> (8,5)
+  ok  capture #2 at (7,6)
+      => city Romus (7,6) now seen/owned (yours)
+  ok  move #5 -> (6,2)
+      => Warrior#5 -> (6,2)
+  ok  move #7 -> (8,5)
+      => Rider#7 -> (8,5)
+-- planning (model call 2 of 3 this turn) ...
+  > Spend four stars to upgrade the southern city, increasing income and unit capacity while its Warrior holds position. The visible enemies cannot reach it immediately; next turn, scout the southwest and move the northern Warrior onto the village.
+  PLAN (3 action(s), 10.2s): build HarvestFruit at (8,5) (2 stars); build HarvestFruit at (6,7) (2 stars); end turn
+  ok  build HarvestFruit at (8,5) (2 stars)
+      => stars 5->3; Romus pop 0->1
+  ok  build HarvestFruit at (6,7) (2 stars)
+      => stars 3->1
+  ok  end turn
+      => Romus level 1->2
+  ok  [city reward] city reward Workshop at (7,6)
+  codex-gpt-6-astra moved: stars 0->3; enemy Warrior#5 -> (6,2)
+--- turn 3 (codex-gpt-6-astra): 7 actions, 2 model call(s), model 29s, wall 37s, cost n/a (subscription)
+
+=== TURN 4 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 3 stars (+3) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 2 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .v .uwT  
+ 3  .r .u .v .u T  .u ^   ? 
+ 4  .  T  .u T  T  .u  ?  ? 
+ 5  T  .u T  Tg T WT  T   ? 
+ 6  T  T  . R^  .  T  T   ? 
+ 7  .  ^  .  Tg T  ^  .   ? 
+ 8  .r T  T  .CR.  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Contest (5,2) before the enemy warrior steps on it: Warrior advances to (5,4) so T5 can dash from (5,3). Rider#6 parks at (2,4) for the free village. Capital rider peels to (1,8) toward ruin (0,8). Hold 3★ for Hunting next turn while still one city.
+  PLAN (4 action(s), 170.8s): move #1 -> (5,4); move #6 -> (2,4); move #8 -> (1,8); end turn
+  ok  move #1 -> (5,4)
+      => Warrior#1 -> (5,4)
+  ok  move #6 -> (2,4)
+      => Rider#6 -> (2,4)
+  ok  move #8 -> (1,8)
+      => Rider#8 -> (1,8)
+  ok  end turn
+  grok-grok-4.6 moved: stars 1->7; enemy Warrior#1 -> (5,4); enemy Rider#6 -> (2,4)
+--- turn 4 (grok-grok-4.6): 4 actions, 1 model call(s), model 171s, wall 175s, est $0.01 this turn ($0.08 so far)
+
+=== TURN 4 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 7 stars (+6) | 2 cities | units: Warrior x2, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Rider x1, Warrior x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ?  ? T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .v .uWT  ^  .  .u 
+ 3   ? .u .v .u T  .u ^  ^  .C T  .  
+ 4  .  T  .urT  T  .uwT  T  .  ^  .u 
+ 5  T  .u T  Tg T  T  T  T  . R.  .  
+ 6  T  T  .  ^  .  T  T  .CWT  .   ? 
+ 7   ? ^  .  Tg  ?  ? .  T  ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Secure the northern village while intercepting the Warrior approaching our southern city. A new Rider can reinforce either front; I’ll inspect the attack preview after moving our existing Rider into range before committing the southern Warrior.
+  PLAN (3 action(s), 27.2s) then ask again: move #5 -> (5,2); move #7 -> (6,5); train Rider at (8,3) (3 stars)
+  ok  move #5 -> (5,2)
+      => Warrior#5 -> (5,2)
+  ok  move #7 -> (6,5)
+      => Rider#7 -> (6,5)
+  ok  train Rider at (8,3) (3 stars)
+      => stars 7->4; new Rider#9 at (8,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Secure the northern village capture while preparing a supported response to the enemy Warrior. Move the southern Warrior forward to support our Rider and free recruitment; another call will allow a new Rider to strengthen southern defence and scouting.
+  PLAN (1 action(s), 24.2s) then ask again: move #2 -> (6,6)
+  ok  move #2 -> (6,6)
+      => Warrior#2 -> (6,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Train a Rider in the southern city to reinforce the frontier and help scout for the enemy capital. Leave the nearby Warrior unharmed this turn: the current attack trades an estimated five damage each without a finishing attack available.
+  PLAN (2 action(s), 13.8s): train Rider at (7,6) (3 stars); end turn
+  ok  train Rider at (7,6) (3 stars)
+      => stars 4->1; new Rider#10 at (7,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 3->6; enemy Warrior#5 -> (5,2); new enemy Rider#7 at (6,5); new enemy Warrior#2 at (6,6)
+--- turn 4 (codex-gpt-6-astra): 6 actions, 3 model call(s), model 65s, wall 69s, cost n/a (subscription)
+
+=== TURN 5 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 6 stars (+3) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 2 reported cities, 0 located | visible units: Warrior x2, Rider x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .vw.u T  
+ 3  .r .u .v .u T  .u ^   ? 
+ 4  .  T  .uRT  T  .uWT   ? 
+ 5  T  .u T  Tg T  T  T r ? 
+ 6  T  T  .  ^  .  T  T w ? 
+ 7  .  ^  .  Tg T  ^  .   ? 
+ 8  .r T RT  .C .  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Deny the (5,2) village capture: research Hunting, then put Rider #6 and Warrior #1 adjacent for a two-hit kill next list. Rider #8 goes to the (0,8) ruin. Hunt for capital L3 (then train) and the village attacks need a refresh.
+  PLAN (4 action(s), 133.3s) then ask again: research Hunting (5 stars); move #6 -> (4,3); move #1 -> (5,3); move #8 -> (0,8)
+  ok  research Hunting (5 stars)
+      => stars 6->1; learned Hunting
+  ok  move #6 -> (4,3)
+      => Rider#6 -> (4,3)
+  ok  move #1 -> (5,3)
+      => Warrior#1 -> (5,3)
+  ok  move #8 -> (0,8)
+      => Rider#8 -> (0,8)
+-- planning (model call 2 of 3 this turn) ...
+  > Kill the Warrior on village (5,2) before they capture it. Rider #6 hits first so Warrior #1 can finish and occupy; another call is needed for the updated kill preview and Rider escape. Enemy Rider at (6,5) can reach (6,3) and strike the occupant next turn.
+  PLAN (1 action(s), 79.6s) then ask again: attack #6 -> Warrior#5 at (5,2) (preview: deals 5, takes 5)
+  ok  attack #6 -> Warrior#5 at (5,2) (preview: deals 5, takes 5)
+      => enemy Warrior#5 hp 10->5
+-- planning (model call 3 of 3 this turn) ...
+  > Warrior #1 finishes the 5-hp garrison (6 dmg, 0 back) and steps onto village (5,2) for a T6 capture. Escaping Rider #6 onto (2,3) sets a second T6 capture and leaves the enemy Rider’s move-2 reach. Ruin #8 stays put; 1 star cannot hunt or train.
+  PLAN (3 action(s), 91.3s): attack #1 -> Warrior#5 at (5,2) (preview: deals 6, takes 0, kills); move #6 -> (2,3); end turn
+  ok  attack #1 -> Warrior#5 at (5,2) (preview: deals 6, takes 0, kills)
+      => enemy Warrior#5 hp 5->0; Rider#6 hp 10->5
+  ok  move #6 -> (2,3)
+      => enemy Warrior#5 gone (killed or out of sight); Rider#6 -> (2,3); Warrior#1 -> (5,2)
+  ok  end turn
+  grok-grok-4.6 moved: stars 1->7; lost Warrior#5; enemy Rider#6 hp 10->5; enemy Rider#6 -> (2,3); enemy Warrior#1 -> (5,2)
+--- turn 5 (grok-grok-4.6): 8 actions, 3 model call(s), model 304s, wall 311s, est $0.03 this turn ($0.10 so far)
+
+=== TURN 5 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 7 stars (+6) | 2 cities | units: Rider x3, Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1, Rider x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ? .u T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .vw.u T  ^  .  .u 
+ 3   ? .u .vr.u T  .u ^  ^  .CRT  .  
+ 4  .  T  .u T  T  .u T  T  .  ^  .u 
+ 5  T  .u T  Tg T  T  T RT  .  .  .  
+ 6  T  T  .  ^  .  T  T W.CRT  .   ? 
+ 7   ? ^  .  Tg  ? ^  .  T  ^   ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The northern Warrior has displaced our village claimant, so the immediate goal is to weaken it and bring support forward. I’ll also scout southwest toward the visible enemy territory; the next view will determine safe attacks, retreats, and recruitment.
+  PLAN (3 action(s), 25.7s) then ask again: move #7 -> (5,3); move #9 -> (7,2); move #2 -> (5,6)
+  ok  move #7 -> (5,3)
+      => Rider#7 -> (5,3)
+  ok  move #9 -> (7,2)
+      => Rider#9 -> (7,2)
+  ok  move #2 -> (5,6)
+      => Warrior#2 -> (5,6)
+-- planning (model call 2 of 3 this turn) ...
+  > We can weaken the Warrior before it captures the northern village, then withdraw the injured Rider for a supported attack next turn. A fresh northern Rider and southwest reinforcements support both fronts; another call is needed to choose the escape and recruit after clearing the southern city.
+  PLAN (3 action(s), 24.6s) then ask again: attack #7 -> Warrior#1 at (5,2) (preview: deals 5, takes 5); move #10 -> (6,7); train Rider at (8,3) (3 stars)
+  ok  attack #7 -> Warrior#1 at (5,2) (preview: deals 5, takes 5)
+      => enemy Warrior#1 hp 10->5
+  ok  move #10 -> (6,7)
+      => Rider#7 hp 10->5; Rider#10 -> (6,7)
+  ok  train Rider at (8,3) (3 stars)
+      => stars 7->4; new Rider#11 at (8,3)
+-- planning (model call 3 of 3 this turn) ...
+  > Withdraw the wounded Rider to (5,4), keeping it available for the northern village fight next turn. Train a Warrior in southern Romus to protect recruitment while the scouts investigate the enemy territory southwest.
+  PLAN (3 action(s), 13.8s): move #7 -> (5,4); train Warrior at (7,6) (2 stars); end turn
+  ok  move #7 -> (5,4)
+      => Rider#7 -> (5,4)
+  ok  train Warrior at (7,6) (2 stars)
+      => stars 4->2; new Warrior#12 at (7,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->4; Warrior#1 hp 10->5; enemy Rider#7 hp 10->5; enemy Rider#7 -> (5,4); enemy Warrior#2 -> (5,6); new enemy Rider#9 at (7,2); new enemy Rider#10 at (6,7)
+--- turn 5 (codex-gpt-6-astra): 9 actions, 3 model call(s), model 64s, wall 69s, cost n/a (subscription)
+
+=== TURN 6 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 4 stars (+3) | 1 cities | units: Rider x2, Warrior x1 ===
+    enemy: 2 reported cities, 0 located | visible units: Rider x3, Warrior x1 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .vW.u T r
+ 3  .r .u .vR.u T  .u ^   ? 
+ 4  .  T  .u T  T  .urT   ? 
+ 5  T  .u T  Tg T  T  T   ? 
+ 6  T  T  .  ^  .  T wT   ? 
+ 7  .  ^  .  Tg T  ^  . r ? 
+ 8  .rRT  T  .C .  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Level Sumsum with one 2★ hunt so L3 Resources funds Archery before the two village captures raise tech cost. Examine the ruin under #8. Leave both village units in place until research is bought; (5,2) is threatened by two Riders.
+  PLAN (2 action(s), 92.1s) then ask again: build Hunting at (3,7) (2 stars); examine ruins at (0,8)
+  ok  build Hunting at (3,7) (2 stars)
+      => stars 4->2; Sumsum pop 2->3
+  ok  examine ruins at (0,8)
+      => Sumsum level 2->3
+  ok  [city reward] city reward Resources at (3,8)
+      => stars 2->7; Sumsum pop 0->3
+-- planning (model call 2 of 3 this turn) ...
+  > Buy Archery at the 1-city price, then capture both villages. Ranged support is required against four eastern units, and two more cities would inflate the tech. Main threat: 5hp Warrior holding (5,2) against two Riders; city defence still beats abandoning the village.
+  PLAN (4 action(s), 118.0s): research Archery (6 stars); capture #1 at (5,2); capture #6 at (2,3); end turn
+  ok  research Archery (6 stars)
+      => stars 7->1; learned Archery
+  ok  capture #1 at (5,2)
+      => city Musmus (5,2) now seen/owned (yours)
+  ok  capture #6 at (2,3)
+      => city Doressum (2,3) now seen/owned (yours)
+  ok  end turn
+  grok-grok-4.6 moved: stars 2->8; city Musmus (5,2) now seen/owned (player 1); city Doressum (2,3) now seen/owned (player 1)
+--- turn 6 (grok-grok-4.6): 7 actions, 2 model call(s), model 210s, wall 221s, est $0.02 this turn ($0.12 so far)
+
+=== TURN 6 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 8 stars (+6) | 2 cities | units: Rider x4, Warrior x2 ===
+    enemy: 3 reported cities, 2 located | visible units: Warrior x1, Rider x1 | remaining targets: Musmus at (5,2), Doressum at (2,3)
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ? .u T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .Ew.u T R^  .  .u 
+ 3   ? .u .Er.u T  .u ^  ^  .CRT  .  
+ 4  .  T  .u T  T  .uRT  T  .  ^  .u 
+ 5  T  .u T  Tg T  T  T  T  .  .  .  
+ 6  T  T  .  ^  .  T WT  .CWT  .   ? 
+ 7   ? ^  .  T  T  ^  . RT  ^   ?  ? 
+ 8   ?  ?  ?  ?  ? ^  ^  ^   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > The wounded Musmus garrison may be weak enough for a healthy Rider to kill and occupy the city this turn. I’ll check that attack while the southern Warrior scouts the third city; the remaining units stay available until those moves reveal the counterattack risks.
+  PLAN (2 action(s), 25.1s) then ask again: move #9 -> (6,2); move #2 -> (4,7)
+  ok  move #9 -> (6,2)
+      => Rider#9 -> (6,2)
+  ok  move #2 -> (4,7)
+      => Warrior#2 -> (4,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Rider #9 can take Musmus’s tile with an estimated lethal hit and no retaliation from the killing blow; the visible enemy Rider cannot immediately reach it. Bring reinforcements west and research Hunting toward ranged support, then reassess newly revealed threats before committing the wounded Rider.
+  PLAN (4 action(s), 30.8s) then ask again: research Hunting (6 stars); attack #9 -> Warrior#1 at (5,2) (preview: deals 5, takes 0, kills); move #11 -> (7,2); move #10 -> (5,6)
+  ok  research Hunting (6 stars)
+      => stars 8->2; learned Hunting; city Sumsum (3,8) now seen/owned (player 1)
+  ok  attack #9 -> Warrior#1 at (5,2) (preview: deals 5, takes 0, kills)
+      => enemy Warrior#1 hp 5->0
+  ok  move #11 -> (7,2)
+      => enemy Warrior#1 gone (killed or out of sight); Rider#9 -> (5,2); Rider#11 -> (7,2)
+  ok  move #10 -> (5,6)
+      => Rider#10 -> (5,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Hold Musmus for capture next turn and reinforce the southern advance. The wounded Rider will recover while the reserve Warrior moves southwest; the empty enemy capital is an opportunity, but a newly trained garrison could delay entry.
+  PLAN (3 action(s), 17.7s): recover at (5,4); move #12 -> (6,7); end turn
+  ok  recover at (5,4)
+      => Rider#7 hp 5->7
+  ok  move #12 -> (6,7)
+      => Warrior#12 -> (6,7)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->6; lost Warrior#1; enemy Rider#9 -> (5,2); enemy Rider#7 hp 5->7; enemy Warrior#2 -> (4,7); enemy Rider#10 -> (5,6); new enemy Rider#11 at (7,2); new enemy Warrior#12 at (6,7)
+--- turn 6 (codex-gpt-6-astra): 9 actions, 3 model call(s), model 74s, wall 81s, cost n/a (subscription)
+
+=== TURN 7 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 6 stars (+5) | 3 cities | units: Rider x2 ===
+    enemy: 2 reported cities, 0 located | visible units: Rider x4, Warrior x2 | no enemy city located yet
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2   ? ^  .u .u ^  .Cr.u T r
+ 3  .r .u .CR.u T  .u ^   ? 
+ 4  .  T  .u T  T  .urT   ? 
+ 5  T  .u T  Tg T  T  T   ? 
+ 6  T  T  .  ^  .  T rT   ? 
+ 7  .  ^  .  T  T w^  . w ? 
+ 8  . RT  T  .C .  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Musmus is ringed by four Riders and cannot be held, so we abandon it and garrison the empty capital. Train an Archer to chip the (5,6) Rider from range 2 with no retaliation, send the wounded Rider to the (0,3) ruin, and keep 3 stars to train a Rider at Doressum after it vacates.
+  PLAN (3 action(s), 204.9s) then ask again: train Archer at (3,8) (3 stars); move #6 -> (0,3); move #8 -> (1,8)
+  ok  train Archer at (3,8) (3 stars)
+      => stars 6->3; new Archer#13 at (3,8)
+  ok  move #6 -> (0,3)
+      => Rider#6 -> (0,3)
+  ok  move #8 -> (1,8)
+      => Rider#8 -> (1,8)
+-- planning (model call 2 of 3 this turn) ...
+  > Musmus is occupied and will fall at the start of their turn unless we kill that Rider now. Spend all 3 stars on a Doressum Rider that can dash onto (4,1) or (4,3) and melee the garrison; a kill advances us in. Capital still faces Warrior (4,7) and Rider (5,6) next turn.
+  PLAN (1 action(s), 130.5s) then ask again: train Rider at (2,3) (3 stars)
+  ok  train Rider at (2,3) (3 stars)
+      => stars 3->0; new Rider#14 at (2,3)
+-- planning (model call 3 of 3 this turn) ...
+  > No stars and no remaining legal moves, so the turn must end. Enemy Rider #9 occupies Musmus and will capture it unless they leave. Capital is threatened by Warrior (4,7) and nearby Riders; #8 screens, Archer holds the city.
+  PLAN (1 action(s), 50.3s): end turn
+  ok  end turn
+  grok-grok-4.6 moved: stars 2->8; enemy Rider#6 gone (killed or out of sight); new enemy Rider#14 at (2,3); new enemy Archer#13 at (3,8)
+--- turn 7 (grok-grok-4.6): 5 actions, 3 model call(s), model 386s, wall 389s, est $0.03 this turn ($0.15 so far)
+
+=== TURN 7 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 8 stars (+6) | 2 cities | units: Rider x4, Warrior x2 ===
+    enemy: 3 reported cities, 3 located | visible units: Rider x1, Archer x1 | enemy capital Sumsum at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ? .u T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .ER.u T R^  .  .u 
+ 3   ? .u .Er.u T  .u ^  ^  .C T  .  
+ 4  .  T  .u T  T  .uRT  T  .  ^  .u 
+ 5  T  .u T  Tg T  T  T  T  .  .  .  
+ 6  T  T  .  ^  .  T RT  .C T  .   ? 
+ 7   ? ^  .  T  T W^  . WT  ^   ?  ? 
+ 8   ?  ?  ? .*a.  ^  ^  ^   ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > I’ll capture Musmus and bring the southern Rider into range to soften Sumsum’s Archer, reserving the Warrior to finish and occupy the capital. Archery supplies supporting fire for the remaining conquest; a fresh preview is needed before committing the capital attack.
+  PLAN (3 action(s), 27.8s) then ask again: research Archery (8 stars); capture #9 at (5,2); move #10 -> (3,7)
+  ok  research Archery (8 stars)
+      => stars 8->0; learned Archery
+  ok  capture #9 at (5,2)
+      => city Musmus (5,2) captured -> YOURS
+  ok  move #10 -> (3,7)
+      => Rider#10 -> (3,7)
+-- planning (model call 2 of 3 this turn) ...
+  > The Rider will soften Sumsum’s garrison so the Warrior can finish it and occupy the capital; the current previews suggest enough combined damage. No other counterattackers are visible nearby. Reinforcements will cover the approach and Musmus, then a fresh view will let us assess the occupation and the Rider’s escape.
+  PLAN (4 action(s), 18.8s) then ask again: attack #10 -> Archer#13 at (3,8) (preview: deals 5, takes 2); attack #2 -> Archer#13 at (3,8) (preview: deals 5, takes 2); move #11 -> (5,3); move #12 -> (5,6)
+  ok  attack #10 -> Archer#13 at (3,8) (preview: deals 5, takes 2)
+      => enemy Archer#13 hp 10->5
+  ok  attack #2 -> Archer#13 at (3,8) (preview: deals 7, takes 0, kills)
+      => Rider#10 hp 10->8; enemy Archer#13 hp 5->0
+  ok  move #11 -> (5,3)
+      => Rider#11 -> (5,3); Warrior#2 -> (3,8); enemy Archer#13 gone (killed or out of sight)
+  ok  move #12 -> (5,6)
+      => Warrior#12 -> (5,6)
+-- planning (model call 3 of 3 this turn) ...
+  > Hold Sumsum for capture next turn while shifting the surviving Rider toward Doressum. Recover the wounded northern Rider for the next attack; the only visible enemy is too far away to threaten our occupier immediately.
+  PLAN (3 action(s), 26.8s): move #10 -> (4,5); recover at (5,4); end turn
+  ok  move #10 -> (4,5)
+      => Rider#10 -> (4,5)
+  ok  recover at (5,4)
+      => Rider#7 hp 7->9
+  ok  end turn
+  codex-gpt-6-astra moved: stars 0->1; enemy Rider#11 -> (5,3); enemy Rider#7 hp 7->9; enemy Rider#10 hp 10->8; enemy Rider#10 -> (4,5); enemy Warrior#2 -> (3,8); enemy Warrior#12 -> (5,6); lost Archer#13; city Musmus (5,2) captured -> player 2
+--- turn 7 (codex-gpt-6-astra): 10 actions, 3 model call(s), model 73s, wall 82s, cost n/a (subscription)
+
+=== TURN 8 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 1 stars (+1) | 2 cities | units: Rider x3 ===
+    enemy: 3 reported cities, 1 located | visible units: Rider x4, Warrior x2 | remaining targets: Musmus at (5,2)
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .u T  T  T  
+ 2  .  ^  .u .u ^  .Er.u T  
+ 3  .rR.u .CR.u T  .ur^   ? 
+ 4  .  T  .u T  T  .urT   ? 
+ 5  T  .u T  Tg T rT  T   ? 
+ 6  T  T  .  ^  .  T wT   ? 
+ 7  .  ^  .  T  T  ^  .   ? 
+ 8  .  T RT  .Cw.  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Enemy Warrior sits on Sumsum; it captures next turn if it lives. Move Rider #8 onto (2,8) to melee it (dash), and examine the (0,3) ruin. Leave #14 on Doressum so Rider (4,5) cannot walk in. Need a refresh to fire the capital attack.
+  PLAN (2 action(s), 157.1s) then ask again: examine ruins at (0,3); move #8 -> (2,8)
+  ok  examine ruins at (0,3)
+      => learned Chivalry
+  ok  move #8 -> (2,8)
+      => Rider#8 -> (2,8)
+-- planning (model call 2 of 3 this turn) ...
+  > Capital Sumsum is occupied by Warrior#2; one hit only deals 5 so it lives and they will capture next. Attack with Rider#8 to leave it at 5 hp, then we need the escape list so the wounded rider is not adjacent for the reply. Rider#14 stays on Doressum — only enemy Rider#10 can reach that city.
+  PLAN (1 action(s), 108.6s) then ask again: attack #8 -> Warrior#2 at (3,8) (preview: deals 5, takes 5)
+  ok  attack #8 -> Warrior#2 at (3,8) (preview: deals 5, takes 5)
+      => enemy Warrior#2 hp 10->5
+-- planning (model call 3 of 3 this turn) ...
+  > Cannot finish the 5hp occupier this turn, so Sumsum will flip at their start. #8 stays adjacent at 10hp to melee-kill and recapture next turn; #14 holds Doressum — only rider #10 can reach it. One star buys nothing.
+  PLAN (1 action(s), 228.3s): end turn
+  ok  end turn
+  grok-grok-4.6 moved: stars 0->7; Warrior#2 hp 10->5; new enemy Rider#8 at (2,8)
+--- turn 8 (grok-grok-4.6): 4 actions, 3 model call(s), model 494s, wall 499s, est $0.04 this turn ($0.18 so far)
+
+=== TURN 8 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 7 stars (+7) | 3 cities | units: Rider x4, Warrior x2 ===
+    enemy: 2 reported cities, 2 located | visible units: Rider x2 | enemy capital Sumsum at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-9; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ? .u T  T  T  T  ^  T  
+ 2   ?  ?  ?  ? ^  .CR.u T  ^  .  .u 
+ 3   ? .u .Er.u T  .uR^  ^  .C T  .  
+ 4  .  T  .u T  T  .uRT  T  .  ^  .u 
+ 5  T  .u T  Tg T RT  T  T  .  .  .  
+ 6  T  T  .  ^  .  T WT  .C T  .   ? 
+ 7   ? ^  .  T  T  ^  .  T  ^   ?  ? 
+ 8   ?  ? T r.*W.  ^  ^  ^   ?  ?  ? 
+ 9   ?  ? .  ^  Tg  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Capture Sumsum and remove the nearby Rider to secure it. Grow Musmus for income and an Archer recruitment slot; move our southern Rider into attack range, then reassess the kill and northern advance with a fresh action list.
+  PLAN (6 action(s), 23.8s) then ask again: capture #2 at (3,8); build HarvestFruit at (4,1) (2 stars); build HarvestFruit at (6,2) (2 stars); move #9 -> (4,3); move #10 -> (3,7); move #12 -> (4,7)
+  ok  capture #2 at (3,8)
+      => city Sumsum (3,8) captured -> YOURS
+  ok  build HarvestFruit at (4,1) (2 stars)
+      => stars 7->5
+  ok  build HarvestFruit at (6,2) (2 stars)
+      => stars 5->3; Musmus pop 0->1
+  ok  move #9 -> (4,3)
+      => Musmus level 1->2
+  ok  [city reward] city reward Workshop at (5,2)
+      => Rider#9 -> (4,3)
+  ok  move #10 -> (3,7)
+      => Rider#10 -> (3,7)
+  ok  move #12 -> (4,7)
+      => Warrior#12 -> (4,7)
+-- planning (model call 2 of 3 this turn) ...
+  > Remove the Rider threatening Sumsum and recruit an Archer at Musmus to support the final assault. Advance the northern Riders together; another call will check whether the southern victor can examine the ruins or make a useful escape move.
+  PLAN (4 action(s), 18.6s) then ask again: attack #10 -> Rider#8 at (2,8) (preview: deals 6, takes 0, kills); train Archer at (5,2) (3 stars); move #11 -> (4,4); move #7 -> (4,5)
+  ok  attack #10 -> Rider#8 at (2,8) (preview: deals 6, takes 0, kills)
+      => enemy Rider#8 hp 5->0
+  ok  train Archer at (5,2) (3 stars)
+      => stars 3->0; Rider#10 -> (2,8); enemy Rider#8 gone (killed or out of sight); new Archer#15 at (5,2)
+  ok  move #11 -> (4,4)
+      => Rider#11 -> (4,4)
+  ok  move #7 -> (4,5)
+      => Rider#7 -> (4,5)
+-- planning (model call 3 of 3 this turn) ...
+  > Send the southern Rider north to reinforce the final-city operation while the Warriors secure Sumsum. Doressum’s garrison is beyond reach this turn; next turn, check whether supporting fire and a healthy Rider can clear and occupy it together.
+  PLAN (2 action(s), 12.5s): move #10 -> (2,6); end turn
+  ok  move #10 -> (2,6)
+      => Rider#10 -> (2,6)
+  ok  end turn
+  codex-gpt-6-astra moved: stars 1->2; enemy Rider#9 -> (4,3); enemy Rider#11 -> (4,4); enemy Rider#7 -> (4,5); enemy Rider#10 -> (2,6); enemy Warrior#12 -> (4,7); lost Rider#8; new enemy Archer#15 at (5,2); Musmus level 1->2; city Sumsum (3,8) captured -> player 2
+--- turn 8 (codex-gpt-6-astra): 13 actions, 3 model call(s), model 55s, wall 64s, cost n/a (subscription)
+
+=== TURN 9 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 2 stars (+1) | 1 cities | units: Rider x2 ===
+    enemy: 4 reported cities, 2 located | visible units: Rider x4, Warrior x2, Archer x1 | remaining targets: Musmus at (5,2), Sumsum at (3,8)
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u .  T  T  T  
+ 2  .  ^  .u .u ^  .Ea.  T  
+ 3  . R.u .CR.u T r.u ^   ? 
+ 4  .  T  .u T  T r.u T   ? 
+ 5  T  .u T  Tg T rT  T   ? 
+ 6  T  T  . r^  .  T  T   ? 
+ 7  .  ^  .  T  T w^  .   ? 
+ 8  .  T  T  .Ew.  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Doressum is the last city and four enemy Riders can reach it this turn. #14 stays put to fortify; a sortie cannot kill anyone and would empty or weaken the garrison. #6 heals off the line so a 7hp recapture remains possible. Saving 2 stars for a Rider or Archer next turn if a support slot opens.
+  PLAN (2 action(s), 161.2s): recover at (0,3); end turn
+  ok  recover at (0,3)
+      => Rider#6 hp 5->7
+  ok  end turn
+  grok-grok-4.6 moved: stars 0->12
+--- turn 9 (grok-grok-4.6): 2 actions, 1 model call(s), model 161s, wall 164s, est $0.01 this turn ($0.20 so far)
+
+=== TURN 9 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 12 stars (+12) | 4 cities | units: Rider x4, Warrior x2, Archer x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Rider x1 | remaining targets: Doressum at (2,3)
+MAP (explored region x 0-10, y 0-9; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ?  ?  ?  ? .  .  .  T  .+ 
+ 1   ?  ?  ?  ? .  T  T  T  T  ^  T  
+ 2   ?  ?  ? .u ^  .CA.  T  ^  .  .u 
+ 3   ? .u .Er.u T R.u ^  ^  .C T  .  
+ 4  .  T  .u T  T R.u T  T  .  ^  .u 
+ 5  T  .u T  Tg T RT  T  T  .  .  .  
+ 6  T  T  . R^  .  T  T  .C T  .   ? 
+ 7   ? ^  .  T  T W^  .  T  ^   ?  ? 
+ 8   ? T  T  .CW.  ^  ^  ^   ?  ?  ? 
+ 9   ? Tg .  ^  Tg  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Doressum’s lone Rider looks vulnerable to a coordinated attack this turn. I’ll bring the Archer into range and position two healthy Riders to finish the garrison and occupy the city; a fresh action list will confirm damage and reveal any hidden counterattackers.
+  PLAN (3 action(s), 23.9s) then ask again: move #15 -> (4,1); move #9 -> (3,2); move #11 -> (3,3)
+  ok  move #15 -> (4,1)
+      => Archer#15 -> (4,1)
+  ok  move #9 -> (3,2)
+      => Rider#9 -> (3,2)
+  ok  move #11 -> (3,3)
+      => Rider#11 -> (3,3)
+-- planning (model call 2 of 3 this turn) ...
+  > The Archer will soften Doressum’s garrison, then Rider #9 will attempt the killing blow and occupy from (3,2). The preview estimates 5 damage with no retaliation for the ranged opening; no counterattackers are visible, but a refreshed state will confirm occupation and reveal any new threats.
+  PLAN (2 action(s), 12.3s) then ask again: attack #15 -> Rider#14 at (2,3) (preview: deals 5, takes 0); attack #9 -> Rider#14 at (2,3) (preview: deals 5, takes 2)
+  ok  attack #15 -> Rider#14 at (2,3) (preview: deals 5, takes 0)
+      => enemy Rider#14 hp 10->5
+  ok  attack #9 -> Rider#14 at (2,3) (preview: deals 7, takes 0, kills)
+      => enemy Rider#14 hp 5->0
+-- planning (model call 3 of 3 this turn) ...
+  > Rider #11 will clear the remaining listed garrison and advance into Doressum, preparing to capture the opponent’s last city next turn. Two Riders will reinforce its southern approaches; no visible enemies threaten our cities, so further recruitment is unnecessary if this occupation holds.
+  PLAN (4 action(s), 15.0s): attack #11 -> Rider#14 at (2,3) (preview: deals 9, takes 0, kills); move #7 -> (3,4); move #10 -> (2,4); end turn
+  !!  attack #11 -> Rider#14 at (2,3) (preview: deals 9, takes 0, kills)  REJECTED: Invalid attack target
+      => Rider#9 -> (2,3); enemy Rider#14 gone (killed or out of sight)
+  ok  move #7 -> (3,4)
+      => Rider#7 -> (3,4)
+  ok  move #10 -> (2,4)
+      => Rider#10 -> (2,4)
+  ok  end turn
+      => Warrior#2 hp 5->9
+  state for a seat-turn that already ended; waiting for the next one
+  codex-gpt-6-astra moved: enemy Archer#15 -> (4,1); lost Rider#14; enemy Rider#9 -> (2,3); enemy Rider#11 -> (3,3); enemy Rider#7 -> (3,4); enemy Rider#10 -> (2,4); enemy Warrior#2 hp 5->9
+--- turn 9 (codex-gpt-6-astra): 9 actions, 3 model call(s), model 51s, wall 56s, cost n/a (subscription)
+
+=== TURN 10 | Domination | 2 players | grok-grok-4.6 as Imperius (player 1): 2 stars (+0) | 1 cities | units: Rider x1 ===
+    enemy: 4 reported cities, 2 located | visible units: Rider x4, Warrior x2, Archer x1 | remaining targets: Musmus at (5,2), Sumsum at (3,8)
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0   ?  ?  ? ^  .u Tr .  .  
+ 1   ?  ? .u .u . aT  T  T  
+ 2  .  ^  .u .u ^  .E .  T  
+ 3  . R.u .Cr.urT  .u ^   ? 
+ 4  .  T  .urT rT  .u T   ? 
+ 5  T  .u T  Tg T  T  T   ? 
+ 6  T  T  .  ^  .  T  T   ? 
+ 7  .  ^  .  T  T w^  .   ? 
+ 8  .  T  T  .Ew.  ^   ?  ? 
+ 9  .  Tg .  ^  Tg .u  ?  ? 
+10  .+ .  .  T  .u .u  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Doressum is occupied; if that rider lives they capture our last city this enemy turn. Move #6 to (1,3) to melee the garrison and recapture on a kill (dash). Skip harvest so stars stay available after the fight.
+  PLAN (1 action(s), 70.7s) then ask again: move #6 -> (1,3)
+  ok  move #6 -> (1,3)
+      => Rider#6 -> (1,3)
+-- planning (model call 2 of 3 this turn) ...
+  > Must evict enemy Rider #9 from Doressum or lose the last city. The preview is only 5 dmg vs 10 hp so the kill likely fails, but the attack is the only eviction chance; spend 2 stars on fruit in case the city holds.
+  PLAN (3 action(s), 58.7s): build HarvestFruit at (2,2) (2 stars); attack #6 -> Rider#9 at (2,3) (preview: deals 5, takes 2); end turn
+  ok  build HarvestFruit at (2,2) (2 stars)
+      => stars 2->0; Doressum pop 0->1
+  ok  attack #6 -> Rider#9 at (2,3) (preview: deals 5, takes 2)
+      => enemy Rider#9 hp 10->5
+  ok  end turn
+  grok-grok-4.6 moved: stars 12->24; Rider#9 hp 10->5; new enemy Rider#6 at (1,3)
+--- turn 10 (grok-grok-4.6): 4 actions, 2 model call(s), model 129s, wall 133s, est $0.01 this turn ($0.21 so far)
+
+=== TURN 10 | Domination | 2 players | codex-gpt-6-astra as Imperius (player 2): 24 stars (+12) | 4 cities | units: Rider x4, Warrior x2, Archer x1 ===
+    enemy: 1 reported cities, 1 located | visible units: Rider x1 | remaining targets: Doressum at (2,3)
+MAP (explored region x 0-10, y 0-9; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0   ?  ?  ? ^  .u Tr .  .  .  T  .+ 
+ 1   ?  ? .u .u . AT  T  T  T  ^  T  
+ 2   ? ^  .  .u ^  .C .  T  ^  .  .u 
+ 3   ? .ur.ER.uRT  .u ^  ^  .C T  .  
+ 4  .  T  .uRT RT  .u T  T  .  ^  .u 
+ 5  T  .u T  Tg T  T  T  T  .  .  .  
+ 6  T  T  .  ^  .  T  T  .C T  .   ? 
+ 7   ? ^  .  T  T W^  .  T  ^   ?  ? 
+ 8   ? T  T  .CW.  ^  ^  ^   ?  ?  ? 
+ 9   ? Tg .  ^  Tg  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  > Rider #9 can capture Doressum now, the opponent’s only reported city. Taking it should eliminate them; the engine must confirm victory.
+  PLAN (2 action(s), 9.2s): capture #9 at (2,3); end turn
+  ok  capture #9 at (2,3)
+      => city Doressum (2,3) captured -> YOURS
+  ok  end turn
+      => enemy Rider#6 gone (killed or out of sight); Warrior#2 hp 9->10
+  state for a seat-turn that already ended; waiting for the next one
+--- turn 10 (codex-gpt-6-astra): 2 actions, 1 model call(s), model 9s, wall 14s, cost n/a (subscription)
+
+GAME OVER on turn 10: WINNER codex-gpt-6-astra (player 2)
+  grok-grok-4.6: scores by turn: 0:515 1:760 2:790 3:915 4:1130 5:1135 6:1235 7:2040 8:1780 9:1670 10:1655
+  grok-grok-4.6: tokens: {'input': 213128, 'output': 132797, 'cache_write': 0, 'cache_read': 1792}  model calls: 24  est. cost $0.21
+  codex-gpt-6-astra: scores by turn: 0:515 1:735 2:760 3:895 4:1230 5:1260 6:1305 7:1415 8:1915 9:2390 10:2425
+  codex-gpt-6-astra: tokens: {'input': 281002, 'output': 7204, 'cache_write': 0, 'cache_read': 123136}  model calls: 25  est. cost n/a (subscription)
+  player 1 grok-grok-4.6: won=False calls=24 actions=51 violations=0 cost=$0.21
+  player 2 codex-gpt-6-astra: won=True calls=25 actions=78 violations=0 cost=n/a (subscription)
+result: p2 (codex-gpt-6-astra) on turn 10
+recording stopped after 53.1 min: recordings\game6-grok46-vs-gpt6astra.mp4 (107 MB); ffmpeg said: [in#0/gdigrab @ 0000024cc6571fc0] Stream #0: not enough frames to estimate rate; consider increasing probesize

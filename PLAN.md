@@ -24,7 +24,7 @@ What does not work or is not worth it:
 
 ### Terms of service
 
-Midjiwan's ToS section 2.5 says users agree "not to use bots, scripts, automation tools ... to access or interact with Polytopia in a way not expressly permitted by Midjiwan," with no single-player carve-out. The same clause covers every mod in the PolyMod catalogue, and the community mods (including in-game AI mods) have run for years without issue, but this is the user's risk to accept. Mitigations baked into the plan: offline single-player only, never multiplayer or Pass & Play online, the plugin refuses to activate unless `GameType` is single-player (same guard `CAs-mods/polytopia-cheatmod` uses), and no Steam account automation of any kind.
+Midjiwan's ToS section 2.5 says users agree "not to use bots, scripts, automation tools ... to access or interact with Polytopia in a way not expressly permitted by Midjiwan," with no single-player carve-out. The same clause covers every mod in the PolyMod catalogue, and the community mods (including in-game AI mods) have run for years without issue, but this is the user's risk to accept. Mitigations baked into the plan: offline games only (single-player, and since 2026-09-07 the offline Pass & Play hotseat mode so two agents can share one device), never online multiplayer, the plugin refuses to activate unless `GameType` is SinglePlayer or PassAndPlay (the single-player guard is the same one `CAs-mods/polytopia-cheatmod` uses), and no Steam account automation of any kind.
 
 ## Architecture
 

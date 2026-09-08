@@ -1,0 +1,985 @@
+connected to Polytopia 2.17.2.16299 | model claude-opus-5 (medium) | log logs\20260905-170843-domination-claude-opus-5.jsonl
+  starting a new game: {'mode': 'Domination', 'difficulty': 'Normal', 'opponents': 1, 'map_preset': 'Dryland', 'tribe': 'Imperius', 'map_size': 11}
+  game created: {'type': 'ok', 'command': 'new_game', 'mode': 'Domination', 'difficulty': 'Normal', 'map_preset': 'Dryland', 'tribe': 'Imperius', 'opponents': 1, 'map_size': 11}
+
+=== TURN 0 | Domination vs 1 Normal bot | Imperius: 5 stars (+2) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 1-5, y 1-5; each cell = terrain feature unit):
+     1  2  3  4  5
+ 1  Tg T  .  T  .  
+ 2  .  .u .u .u .  
+ 3  ^  .u .CW.u ^  
+ 4  T  .c .u .u .  
+ 5  ^  T  .  .  .  
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Opening: harvest two fruit for 4 stars to push the capital to level 2 immediately, banking the level-up reward. The lone Warrior heads southeast toward the unexplored edge to hunt for the Bardur capital and any villages, since we have no contact yet.
+  PLAN (4 action(s), 20.0s): build HarvestFruit at (2,2) (2 stars); build HarvestFruit at (3,2) (2 stars); move #1 -> (4,4); end turn
+  ok  build HarvestFruit at (2,2) (2 stars)
+      => stars 5->3; Mama pop 0->1
+  ok  build HarvestFruit at (3,2) (2 stars)
+      => stars 3->1; Mama level 1->2
+  ok  [city reward] city reward Explorer at (3,3)
+      => Mama pop 0->1
+  ok  move #1 -> (4,4)
+      => Warrior#1 -> (4,4)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 0: 5 actions, 1 model call(s), model 20s, wall 35s, est $0.44 this turn ($0.44 so far)
+
+=== TURN 1 | Domination vs 1 Normal bot | Imperius: 1 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .u .  .u .u ^   ?  ? 
+ 3  T  ^  .u .C .u ^  .u Tg .v ^   ? 
+ 4   ? T  .c .u .uW.  .  .u T  T  .  
+ 5   ? ^  T  .  .  .   ? ^  ^  T  T  
+ 6   ?  ?  ?  ?  ?  ?  ? T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > No stars to spend this turn, so the whole move is about tempo: the Warrior pushes east to (5,4) on the shortest road to the village at (8,3), which is three tiles further. Bardur's capital is still unfound, so scouting east doubles as reconnaissance.
+  PLAN (2 action(s), 9.7s): move #1 -> (5,4); end turn
+  ok  move #1 -> (5,4)
+      => stars 1->4; Warrior#1 -> (5,4)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 1: 2 actions, 1 model call(s), model 10s, wall 15s, est $0.06 this turn ($0.50 so far)
+
+=== TURN 2 | Domination vs 1 Normal bot | Imperius: 4 stars (+3) | 1 cities | units: Warrior x1 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .u .  .u .u ^   ?  ? 
+ 3  T  ^  .u .C .u ^  .u Tg .v ^   ? 
+ 4   ? T  .c .u .u . W.  .u T  T  .  
+ 5   ? ^  T  .  .  .  T  ^  ^  T  T  
+ 6   ?  ?  ?  ?  ?  ?  ? T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Spending all four stars: one fruit harvest pushes Mama to level 3 (Resources refunds stars), and a second Warrior starts south-east toward the village at (8,6). Warrior #1 pushes to (6,3), two steps from the village at (8,3). Still no sign of Bardur, so scouting east remains urgent.
+  PLAN (4 action(s), 11.7s): build HarvestFruit at (4,3) (2 stars); train Warrior at (3,3) (2 stars); move #1 -> (6,3); end turn
+  ok  build HarvestFruit at (4,3) (2 stars)
+      => stars 4->5; Mama pop 1->2
+  ok  train Warrior at (3,3) (2 stars)
+      => stars 5->3; new Warrior#5 at (3,3)
+  ok  move #1 -> (6,3)
+      => Warrior#1 -> (6,3)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 2: 4 actions, 1 model call(s), model 12s, wall 27s, est $0.06 this turn ($0.56 so far)
+
+=== TURN 3 | Domination vs 1 Normal bot | Imperius: 3 stars (+3) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .u .  .u .u ^   ?  ? 
+ 3  T  ^  .u .CW.  ^  .uWTg .v ^   ? 
+ 4   ? T  .c .u .u .  .  .u T  T  .  
+ 5   ? ^  T  .  .  .  T  ^  ^  T  T  
+ 6   ?  ?  ?  ?  ?  ?  ? T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Harvesting the fruit at (4,2) pushes Mama to level 3, which should hand back +5 stars to fund the next wave. Warrior #1 steps to (7,3) so it can stand on the village at (8,3) next turn, while Warrior #5 vacates the capital tile heading south-east and frees recruitment. No enemy contact yet, so scouting east remains the priority.
+  PLAN (4 action(s), 14.3s): build HarvestFruit at (4,2) (2 stars); move #5 -> (4,4); move #1 -> (7,3); end turn
+  ok  build HarvestFruit at (4,2) (2 stars)
+      => stars 3->4; Mama level 2->3
+  ok  [city reward] city reward Resources at (3,3)
+      => stars 4->9
+  ok  move #5 -> (4,4)
+      => Warrior#5 -> (4,4)
+  ok  move #1 -> (7,3)
+      => Warrior#1 -> (7,3)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 3: 5 actions, 1 model call(s), model 14s, wall 31s, est $0.07 this turn ($0.63 so far)
+
+=== TURN 4 | Domination vs 1 Normal bot | Imperius: 9 stars (+4) | 1 cities | units: Warrior x2 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .u ^   ?  ? 
+ 3  T  ^  .u .C .  ^  .u TgW.v ^   ? 
+ 4   ? T  .c .u .uW.  .  .u T  T  .  
+ 5   ? ^  T  .  .  .  T  ^  ^  T  T  
+ 6   ?  ?  ?  ?  ?  ?  ? T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Warrior #1 steps onto the village at (8,3) to capture it next turn, while #5 pushes southeast toward the second village at (8,6). I spend the treasury on all three fruit harvests (+3 pop toward the capital's next level) plus a fresh Warrior on the now-free capital tile for scouting east, where Bardur must be.
+  PLAN (7 action(s), 10.8s): move #1 -> (8,3); move #5 -> (5,5); build HarvestFruit at (2,3) (2 stars); build HarvestFruit at (3,4) (2 stars); build HarvestFruit at (4,4) (2 stars); train Warrior at (3,3) (2 stars); end turn
+  ok  move #1 -> (8,3)
+      => stars 9->13; Warrior#1 -> (8,3)
+  ok  move #5 -> (5,5)
+      => Warrior#5 -> (5,5)
+  ok  build HarvestFruit at (2,3) (2 stars)
+      => stars 13->11; Mama pop 0->1
+  ok  build HarvestFruit at (3,4) (2 stars)
+      => stars 11->9; Mama pop 1->2
+  ok  build HarvestFruit at (4,4) (2 stars)
+      => stars 9->7; Mama pop 2->3
+  ok  train Warrior at (3,3) (2 stars)
+      => stars 7->5; new Warrior#7 at (3,3)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 4: 7 actions, 1 model call(s), model 11s, wall 41s, est $0.07 this turn ($0.70 so far)
+
+=== TURN 5 | Domination vs 1 Normal bot | Imperius: 5 stars (+4) | 1 cities | units: Warrior x3 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .u ^  .u  ? 
+ 3  T  ^  .  .CW.  ^  .u Tg .vW^   ? 
+ 4   ? T  .c .  .  .  .  .u T  T  .  
+ 5   ? ^  T  .  .  . WT  ^  ^  T  T  
+ 6   ?  ?  ?  ? .  .  ^r T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Warrior #1 captures the village at (8,3), giving a second city and a forward base in the unexplored east. I spend all 5 stars on Riding so next turn's income buys a Rider to hunt for Bardur's still-unfound capital, and I clear the capital tile so that Rider can be trained there.
+  PLAN (5 action(s), 15.5s): research Riding (5 stars); capture #1 at (8,3); move #5 -> (6,5); move #7 -> (4,3); end turn
+  ok  research Riding (5 stars)
+      => stars 5->4; learned Riding
+  ok  capture #1 at (8,3)
+      => city Camomo (8,3) now seen/owned (yours)
+  ok  move #5 -> (6,5)
+      => Warrior#5 -> (6,5)
+  ok  move #7 -> (4,3)
+      => Warrior#7 -> (4,3)
+  ok  end turn
+  ENEMY TURN: nothing visible changed
+--- turn 5: 5 actions, 1 model call(s), model 15s, wall 36s, est $0.07 this turn ($0.77 so far)
+
+=== TURN 6 | Domination vs 1 Normal bot | Imperius: 4 stars (+5) | 2 cities | units: Warrior x3 ===
+    enemy: 1 reported cities, 0 located | visible units: none | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .u ^  .u  ? 
+ 3  T  ^  .  .C . W^  .u Tg .CW^   ? 
+ 4   ? T  .c .  .  .  .  .u T  T  .  
+ 5   ? ^  T  .  .  .  T W^  ^  T  T  
+ 6   ?  ?  ?  ? .  .  ^r T  .v T  .r 
+ 7   ?  ?  ?  ?  ?  ?  ? Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Bardur's capital is still unfound, so I spend my 4 stars on a Rider at Mama to scout the unexplored south-east fast. Warrior#5 steps to (7,6) to sit on the village at (8,6) and capture it next turn; Warrior#7 pushes east. Warrior#1 stays garrisoning Camomo since the enemy could appear from the unexplored east.
+  PLAN (4 action(s), 13.3s): train Rider at (3,3) (3 stars); move #5 -> (7,6); move #7 -> (5,4); end turn
+  ok  train Rider at (3,3) (3 stars)
+      => stars 4->6; new Rider#9 at (3,3)
+  ok  move #5 -> (7,6)
+      => Warrior#5 -> (7,6)
+  ok  move #7 -> (5,4)
+      => Warrior#7 -> (5,4)
+  ok  end turn
+  ENEMY TURN: new enemy Warrior#6 at (4,6); new enemy Warrior#8 at (5,6)
+--- turn 6: 4 actions, 1 model call(s), model 13s, wall 29s, est $0.07 this turn ($0.84 so far)
+
+=== TURN 7 | Domination vs 1 Normal bot | Imperius: 6 stars (+5) | 2 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x2 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .u ^  .u  ? 
+ 3  T  ^  .  .CR.  ^  .u Tg .CW^   ? 
+ 4   ? T  .c .  .  . W.  .u T  T  .  
+ 5   ? ^  T  .  .  .  T  ^  ^  T  T  
+ 6   ?  ?  ?  ? . w. w^r T W.v T  .r 
+ 7   ?  ?  ?  ?  ?  ? T  Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Camomo gets all three fruit harvests (6 stars) to jump toward level 2 and better income/support. Warrior#5 steps onto the village at (8,6) to capture it next turn, and the Rider probes southwest at (2,5) to hunt for Bardur's capital while staying out of reach of the two enemy Warriors near (4,6)-(5,6).
+  PLAN (7 action(s), 18.0s): build HarvestFruit at (7,2) (2 stars); build HarvestFruit at (7,4) (2 stars); build HarvestFruit at (9,2) (2 stars); move #5 -> (8,6); move #7 -> (6,5); move #9 -> (2,5); end turn
+  ok  build HarvestFruit at (7,2) (2 stars)
+      => stars 6->14; Camomo pop 0->1
+  ok  build HarvestFruit at (7,4) (2 stars)
+      => stars 14->12; Camomo level 1->2
+  ok  [city reward] city reward Workshop at (8,3)
+  ok  build HarvestFruit at (9,2) (2 stars)
+      => stars 12->10; Camomo pop 0->1
+  ok  move #5 -> (8,6)
+      => Warrior#5 -> (8,6)
+  ok  move #7 -> (6,5)
+      => Warrior#7 -> (6,5)
+  ok  move #9 -> (2,5)
+      => Rider#9 -> (2,5)
+  ok  end turn
+  ENEMY TURN: Warrior#7 hp 10->5; enemy Warrior#6 hp 10->5; enemy Warrior#6 -> (5,5); enemy Warrior#8 -> (6,7)
+--- turn 7: 8 actions, 1 model call(s), model 18s, wall 51s, est $0.08 this turn ($0.92 so far)
+
+=== TURN 8 | Domination vs 1 Normal bot | Imperius: 10 stars (+7) | 2 cities | units: Warrior x3, Rider x1 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x2 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .C .  ^  .u Tg .CW^   ? 
+ 4   ? T  .c .  .  .  .  .  T  T  .  
+ 5   ? ^  T R.  .  . wT W^  ^  T  T  
+ 6   ? .  T  .  .  .  ^r T  .vWT  .r 
+ 7   ?  ?  ?  ?  ?  ? T wTg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Warrior#7 finishes the wounded Bardur Warrior with no retaliation, and Warrior#5 converts the village at (8,6) into a third city. Rider#9 pushes to (3,6) to open the southern fog, and a second Rider from the capital doubles the search for Bardur's still-unfound capital.
+  PLAN (5 action(s), 12.3s): attack #7 -> Warrior#6 at (5,5) (preview: deals 5, takes 0, kills); capture #5 at (8,6); move #9 -> (3,6); train Rider at (3,3) (3 stars); end turn
+  ok  attack #7 -> Warrior#6 at (5,5) (preview: deals 5, takes 0, kills)
+      => stars 10->17; enemy Warrior#6 gone (killed or out of sight); Warrior#7 -> (5,5)
+  ok  capture #5 at (8,6)
+      => city Musdo (8,6) now seen/owned (yours)
+  ok  move #9 -> (3,6)
+      => Rider#9 -> (3,6)
+  ok  train Rider at (3,3) (3 stars)
+      => stars 17->14; new Rider#10 at (3,3)
+  ok  end turn
+  ENEMY TURN: Rider#9 hp 10->4; enemy Warrior#8 gone (killed or out of sight); new enemy Warrior#4 at (4,7)
+--- turn 8: 5 actions, 1 model call(s), model 12s, wall 34s, est $0.07 this turn ($1.00 so far)
+
+=== TURN 9 | Domination vs 1 Normal bot | Imperius: 14 stars (+8) | 3 cities | units: Warrior x3, Rider x2 ===
+    enemy: 1 reported cities, 0 located | visible units: Warrior x1 | no enemy city located yet
+MAP (explored region x 0-10, y 0-7; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CR.  ^  .u Tg .CW^   ? 
+ 4   ? T  .c .  .  .  .  .  T  T  .  
+ 5   ? ^  T  .  .  . WT  ^  ^  T  T  
+ 6   ? .  T  . R.  .  ^r T  .CWT  .r 
+ 7   ?  ? .  .  . w ? T  Tg ^  .   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Bardur's territory hugs the south edge, so the capital is almost certainly just below (2-4,7): Rider#9 pushes to (2,7) to reveal it while staying off the enemy Warrior's face, and Rider#10 moves south to (3,5) as follow-up. Warrior#7 recovers at 5hp instead of trading badly. Vacating the capital tile lets me buy another Rider on a refreshed list.
+  PLAN (4 action(s), 19.0s) then ask again: move #10 -> (3,5); recover at (5,5); move #9 -> (2,7); move #5 -> (9,6)
+  ok  move #10 -> (3,5)
+      => stars 14->22; Rider#10 -> (3,5)
+  ok  recover at (5,5)
+      => Warrior#7 hp 5->7
+  ok  move #9 -> (2,7)
+      => Rider#9 -> (2,7); new enemy Warrior#11 at (3,8); city Tofork (3,8) now seen/owned (player 2)
+  ok  move #5 -> (9,6)
+      => Warrior#5 -> (9,6)
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > The walled capital garrison (def 8) shrugs off Warriors and Riders, so I'm buying Farming to farm Mama's crop, pushing the capital toward level 5 and a Giant to crack Tofork. Meanwhile two fresh Riders start massing. Skipping Rider#9's suicidal 1-damage poke.
+  PLAN (3 action(s), 24.9s) then ask again: research Farming (10 stars); train Rider at (3,3) (3 stars); train Rider at (8,6) (3 stars)
+  ok  research Farming (10 stars)
+      => stars 22->12; learned Farming
+  ok  train Rider at (3,3) (3 stars)
+      => stars 12->9; new Rider#12 at (3,3)
+  ok  train Rider at (8,6) (3 stars)
+      => stars 9->6; new Rider#13 at (8,6)
+-- planning (model call 3 of 3 this turn) ...
+  thinking...
+  > Building the farm on the crop at (2,4) spends my last stars but pushes Mama to level 4, and the Population Growth reward should carry it straight to level 5 and a Giant to march on Tofork. Rider#9 skips its attack — 1 damage for 8 back would just kill it under the walled garrison.
+  PLAN (2 action(s), 10.8s): build Farm at (2,4) (5 stars); end turn
+  ok  build Farm at (2,4) (5 stars)
+      => stars 6->1; Mama level 3->4
+  ok  [city reward] city reward PopulationGrowth at (3,3)
+      => Mama pop 0->4
+  ok  end turn
+  ENEMY TURN: enemy Warrior#4 gone (killed or out of sight)
+--- turn 9: 10 actions, 3 model call(s), model 55s, wall 97s, est $0.28 this turn ($1.28 so far)
+
+=== TURN 10 | Domination vs 1 Normal bot | Imperius: 1 stars (+9) | 3 cities | units: Rider x4, Warrior x3 ===
+    enemy: 1 reported cities, 1 located | visible units: Warrior x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CR.  ^  .u Tg .CW^   ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5   ? ^  T  . R.  . WT  ^  ^  T  T  
+ 6   ? .  T  .  .  .  ^r T  .CRT W.r 
+ 7   ? .  . R.  .   ? T  Tg ^  .  .u 
+ 8   ? .  ^  .*w ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Broke with one star, so this is a staging turn: wounded Rider #9 pulls back out of the garrison's reach while Riders #10/#12 and Warrior #7 close on Tofork for the Giant-led assault. Warrior #5 pops the ruin at (10,6) for a free reward, and #13 starts the long march west.Broke with one star, so this is a staging turn: wounded Rider #9 pulls back out of the garrison's reach while Riders #10/#12 and Warrior #7 close on Tofork for the Giant-led assault. Warrior #5 pops the ruin at (10,6) for a free reward, and #13 starts the long march west.
+  PLAN (7 action(s), 27.7s): move #9 -> (2,5); move #12 -> (4,5); move #10 -> (3,6); move #7 -> (4,6); move #5 -> (10,6); move #13 -> (7,6); end turn
+  ok  move #9 -> (2,5)
+      => stars 1->10; Rider#9 -> (2,5)
+  ok  move #12 -> (4,5)
+      => Rider#12 -> (4,5)
+  ok  move #10 -> (3,6)
+      => Rider#10 -> (3,6)
+  ok  move #7 -> (4,6)
+      => Warrior#7 -> (4,6)
+  ok  move #5 -> (10,6)
+      => Warrior#5 -> (10,6)
+  ok  move #13 -> (7,6)
+      => Rider#13 -> (7,6)
+  ok  end turn
+  ENEMY TURN: Rider#13 hp 10->4; new enemy Warrior#4 at (6,7)
+--- turn 10: 7 actions, 1 model call(s), model 28s, wall 59s, est $0.14 this turn ($1.42 so far)
+
+=== TURN 11 | Domination vs 1 Normal bot | Imperius: 10 stars (+9) | 3 cities | units: Rider x4, Warrior x3 ===
+    enemy: 2 reported cities, 1 located | visible units: Warrior x2 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-8; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .C .  ^  .u Tg .CW^   ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5  .  ^  T R.  . R.  T  ^  ^  T  T  
+ 6  T  .  T  . R. W.  ^r T R.C T  .rW
+ 7  T  .  .  .  .  .  T wTg ^  .  .u 
+ 8   ? .  ^  .*w ?  ?  ?  ?  ?  ?  ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Tofork's garrison sits at defence 8 behind walls, so I'm staging rather than trading: Riders #10 and #12 plus Warrior #7 ring the capital at (3,7), (2,7) and (4,7) while a fresh Rider trains at Mama. Warrior #5 pops the ruins at (10,6) for a free reward, and the two 4-hp Riders recover instead of feeding the wounded enemy Warrior a kill.
+  PLAN (8 action(s), 45.2s): examine ruins at (10,6); recover at (2,5); recover at (7,6); move #10 -> (3,7); move #12 -> (2,7); move #7 -> (4,7); train Rider at (3,3) (3 stars); end turn
+  ok  examine ruins at (10,6)
+      => stars 10->19; Mama level 4->5
+  ok  [city reward] city reward SuperUnit at (3,3)
+      => new Giant#15 at (3,3); new enemy Warrior#2 at (1,9); new enemy Warrior#8 at (6,9); city Bulinrø (6,9) now seen/owned (player 2)
+  ok  recover at (2,5)
+      => Rider#9 hp 4->6; Mama pop 0->1
+  ok  recover at (7,6)
+      => Rider#13 hp 4->8
+  ok  move #10 -> (3,7)
+      => Rider#10 -> (3,7)
+  ok  move #12 -> (2,7)
+      => Rider#12 -> (2,7)
+  ok  move #7 -> (4,7)
+      => Warrior#7 -> (4,7)
+  --  train Rider at (3,3) (3 stars)  skipped: no longer legal
+  ok  end turn
+  ENEMY TURN: Rider#13 hp 8->3; Rider#10 hp 10->4; enemy Warrior#4 hp 6->4; enemy Warrior#4 -> (6,6); enemy Warrior#11 hp 10->8; enemy Warrior#11 -> (4,8); enemy Warrior#2 -> (2,9); enemy Warrior#8 -> (7,8); new enemy Defender#16 at (3,8); new enemy Defender#17 at (6,9)
+--- turn 11: 8 actions, 1 model call(s), model 45s, wall 62s, est $0.14 this turn ($1.56 so far)
+
+=== TURN 12 | Domination vs 1 Normal bot | Imperius: 19 stars (+10) | 3 cities | units: Rider x4, Warrior x3, Giant x1 ===
+    enemy: 2 reported cities, 2 located | visible units: Warrior x4, Defender x2 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CG.  ^  .u Tg .CW^   ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5  .  ^  T R.  .  .  T  ^  ^  T  T  
+ 6  T  .  T  .  .  .  ^rwT R.C T  . W
+ 7  T  .  . R. R. W.  T  Tg ^  .  .u 
+ 8  .  .  ^  .*d. w.u ^  T w.u T  Tg 
+ 9  T  .  T wT  .  .u .Ed.  .u .v ^  
+10  .+ .  ^  T  ^  .u Tg Tg .u .u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Tofork's walled Defender shrugs off every cheap hit, so I stop grinding: wounded Riders pull back to heal, the Giant starts its walk south, and I buy Hunting to open the Forestry→Mathematics road to a Catapult that can shoot the garrison without retaliation. The free monument goes to (9,7), which should level Musdo immediately for extra income and support.
+  PLAN (9 action(s), 34.7s): research Hunting (7 stars); build Monument6 at (9,7) (0 stars); move #15 -> (3,4); recover at (2,5); move #13 -> (8,6); move #10 -> (3,6); recover at (4,7); move #5 -> (9,7); end turn
+  ok  research Hunting (7 stars)
+      => stars 19->22; learned Hunting
+  ok  build Monument6 at (9,7) (0 stars)
+      => Musdo level 1->2
+  ok  [city reward] city reward Workshop at (8,6)
+      => Musdo pop 0->1
+  ok  move #15 -> (3,4)
+      => Giant#15 -> (3,4)
+  ok  recover at (2,5)
+      => Rider#9 hp 6->8
+  ok  move #13 -> (8,6)
+      => Rider#13 -> (8,6)
+  ok  move #10 -> (3,6)
+      => Rider#10 -> (3,6)
+  ok  recover at (4,7)
+      => Warrior#7 hp 7->9
+  ok  move #5 -> (9,7)
+      => Warrior#5 -> (9,7)
+  ok  end turn
+  ENEMY TURN: enemy Warrior#4 -> (7,6); lost Rider#13; Warrior#7 hp 9->5; enemy Warrior#11 hp 8->3; enemy Warrior#11 -> (5,7); enemy Warrior#8 -> (8,6); enemy Warrior#2 -> (1,9); new enemy Swordsman#18 at (6,6); Bulinrø level 1->2
+--- turn 12: 10 actions, 1 model call(s), model 35s, wall 80s, est $0.13 this turn ($1.69 so far)
+
+=== TURN 13 | Domination vs 1 Normal bot | Imperius: 22 stars (+9) | 3 cities | units: Warrior x3, Rider x3, Giant x1 ===
+    enemy: 2 reported cities, 2 located | visible units: Warrior x4, Defender x2, Swordsman x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .C .  ^  .u Tg .CW^   ? 
+ 4   ? T  .+ . G.  .  .  .  T  T  .  
+ 5  .  ^  T R.  .  .  T  ^  ^  T  T  
+ 6  T  .  T  . R.  .  ^ sT w.CwT  .  
+ 7  T  .  . R.  . W. wT  Tg ^  .+W.u 
+ 8  .  .  ^  .*d.  .u ^  T  .u T  Tg 
+ 9  T  . wT  T  .  .  .Ed.  .u .v ^  
+10  .+ .  ^  T  ^  .u Tg T  .u .u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Buying Forestry to open the Mathematics/Catapult line — nothing else can crack Tofork's def-12 walled garrison. Two cheap hunting builds level both border cities for extra income and support, funding another Rider. Warrior #7 finishes the wounded enemy Warrior at no cost, wounded Riders heal, and the Giant keeps marching south.
+  PLAN (11 action(s), 31.1s): research Forestry (10 stars); build Hunting at (7,3) (2 stars); build Hunting at (7,7) (2 stars); train Rider at (3,3) (3 stars); attack #7 -> Warrior#11 at (5,7) (preview: deals 6, takes 0, kills); move #15 -> (3,5); move #12 -> (2,6); recover at (2,5); recover at (3,6); move #5 -> (9,8); end turn
+  ok  research Forestry (10 stars)
+      => stars 22->21; learned Forestry
+  ok  build Hunting at (7,3) (2 stars)
+      => stars 21->19; Camomo pop 1->2
+  ok  build Hunting at (7,7) (2 stars)
+      => stars 19->17; Musdo pop 1->2
+  ok  train Rider at (3,3) (3 stars)
+      => stars 17->14; new Rider#19 at (3,3)
+  ok  attack #7 -> Warrior#11 at (5,7) (preview: deals 6, takes 0, kills)
+      => Warrior#7 -> (5,7); enemy Warrior#11 gone (killed or out of sight)
+  ok  move #15 -> (3,5)
+      => Giant#15 -> (3,5)
+  ok  move #12 -> (2,6)
+      => Rider#12 -> (2,6)
+  ok  recover at (2,5)
+      => Rider#9 hp 8->10
+  ok  recover at (3,6)
+      => Rider#10 hp 4->6
+  ok  move #5 -> (9,8)
+      => Warrior#5 -> (9,8)
+  ok  end turn
+  ENEMY TURN: enemy Swordsman#18 -> (7,5); enemy Warrior#4 -> (8,5); enemy Defender#16 -> (4,8); enemy Warrior#2 -> (2,9); enemy Defender#17 -> (7,9); new enemy Defender#20 at (3,8); new enemy Defender#21 at (6,9); city Musdo (8,6) captured -> player 2
+--- turn 13: 11 actions, 1 model call(s), model 31s, wall 84s, est $0.12 this turn ($1.81 so far)
+
+=== TURN 14 | Domination vs 1 Normal bot | Imperius: 14 stars (+9) | 2 cities | units: Rider x4, Warrior x3, Giant x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x4, Warrior x3, Swordsman x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CR.  ^  .u T  .CW^   ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5  .  ^  T R. G.  .  T  ^ s^ wT  T  
+ 6  T  .  T R. R.  .  ^  T  .EwT  .  
+ 7  T  .  .  .  .  . WT  T  ^  .+ .u 
+ 8  .  .  ^  .*d. d.  ^  T  .u T WTg 
+ 9  T  .  T wT  .  .  .Ed. d.u .v ^  
+10  .+ .  ^  T  ^  .u Tg T  .u .u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Mathematics buys the siege piece we lack: next turn Camomo trains a Catapult that already sits exactly range 3 from Musdo, so Warrior #1 steps to (8,4) to keep the recruitment tile free and screen the enemy Swordsman. Meanwhile the Giant walks toward Tofork, wounded units heal, and Warrior #5 sits on the village at (9,9) to capture it.
+  PLAN (9 action(s), 30.8s): research Mathematics (10 stars); move #1 -> (8,4); move #5 -> (9,9); move #15 -> (4,6); recover at (3,6); recover at (5,7); move #12 -> (2,7); move #9 -> (4,5); end turn
+  ok  research Mathematics (10 stars)
+      => stars 14->13; learned Mathematics
+  ok  move #1 -> (8,4)
+      => Warrior#1 -> (8,4)
+  ok  move #5 -> (9,9)
+      => Warrior#5 -> (9,9)
+  ok  move #15 -> (4,6)
+      => Giant#15 -> (4,6)
+  ok  recover at (3,6)
+      => Rider#10 hp 6->8
+  ok  recover at (5,7)
+      => Warrior#7 hp 5->7
+  ok  move #12 -> (2,7)
+      => Rider#12 -> (2,7)
+  ok  move #9 -> (4,5)
+      => Rider#9 -> (4,5)
+  ok  end turn
+  ENEMY TURN: Warrior#1 hp 10->2; enemy Swordsman#18 -> (6,4); enemy Warrior#4 gone (killed or out of sight); enemy Warrior#8 hp 10->6; enemy Warrior#8 -> (8,5); enemy Defender#20 -> (2,8); enemy Defender#16 -> (5,9); enemy Warrior#2 -> (3,10); enemy Defender#21 -> (5,8); enemy Defender#17 -> (8,10); new enemy Archer#24 at (8,6); new enemy Defender#22 at (3,8); new enemy Defender#23 at (6,9)
+--- turn 14: 9 actions, 1 model call(s), model 31s, wall 76s, est $0.13 this turn ($1.94 so far)
+
+=== TURN 15 | Domination vs 1 Normal bot | Imperius: 13 stars (+9) | 2 cities | units: Rider x4, Warrior x3, Giant x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x6, Warrior x2, Swordsman x1, Archer x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CR.  ^  .u T  .C ^   ? 
+ 4   ? T  .+ .  .  .  . s.  T WT  .  
+ 5  .  ^  T  .  . R.  T  ^  ^ wT  T  
+ 6  T  .  T  . R. G.  ^  T  .EaT  .  
+ 7  T  .  . R.  .  . WT  T  ^  .+ .u 
+ 8  .  .  ^ d.*d.  . d^  T  .u T  Tg 
+ 9  T  .  T  T  .  . d.Ed.  .u .vW^  
+10  .+ .  ^  T w^  .  Tg T  .ud.u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Camomo trains a Catapult — it sits exactly range 3 from Musdo and will bombard from safety starting next turn. Warrior #5 takes the village at (9,9) for a third city and forward income. Wounded units recover; the Giant steps to (4,7) to threaten Tofork/Bulinrø while nothing melees the def-12 capital garrison.
+  PLAN (9 action(s), 16.1s): train Catapult at (8,3) (8 stars); capture #5 at (9,9); recover at (8,4); move #15 -> (4,7); recover at (3,6); recover at (5,7); move #9 -> (5,6); move #12 -> (2,6); end turn
+  ok  train Catapult at (8,3) (8 stars)
+      => stars 13->14; new Catapult#25 at (8,3)
+  ok  capture #5 at (9,9)
+      => city Modolo (9,9) now seen/owned (yours)
+  ok  recover at (8,4)
+      => Warrior#1 hp 2->6
+  ok  move #15 -> (4,7)
+      => Giant#15 -> (4,7)
+  ok  recover at (3,6)
+      => Rider#10 hp 8->10
+  ok  recover at (5,7)
+      => Warrior#7 hp 7->9
+  ok  move #9 -> (5,6)
+      => Rider#9 -> (5,6)
+  ok  move #12 -> (2,6)
+      => Rider#12 -> (2,6)
+  ok  end turn
+  ENEMY TURN: lost Catapult#25; enemy Swordsman#18 -> (8,3); lost Warrior#1; enemy Warrior#8 -> (8,4); Warrior#7 hp 9->7; enemy Defender#20 -> (3,9); enemy Defender#21 hp 15->9; enemy Defender#16 -> (6,8); Warrior#5 hp 10->9; enemy Warrior#2 -> (2,10); enemy Defender#17 hp 15->8; Bulinrø level 2->3
+--- turn 15: 9 actions, 1 model call(s), model 16s, wall 62s, est $0.10 this turn ($2.04 so far)
+
+=== TURN 16 | Domination vs 1 Normal bot | Imperius: 14 stars (+7) | 3 cities | units: Rider x4, Warrior x2, Giant x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x6, Warrior x2, Swordsman x1, Archer x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CR.  ^  .u T  .Cs^   ? 
+ 4   ? T  .+ .  .  .  .  .  T wT  .  
+ 5  .  ^  T  .  .  .  T  ^  ^  T  T  
+ 6  T  .  T R. R.  . R^  T  .EaT  .  
+ 7  T  .  .  .  . G. WT  T  ^  .+ .u 
+ 8  .  .  ^  .*d.  . d^ dT  .u T  Tg 
+ 9  T  .  T  T d.  .  .Ed.  .u .CW^  
+10  .+ .  ^ wT  ^  .  T  T  .ud.u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > The Giant crushes the wounded Defender at (5,8) for free and advances into Tofork's outskirts. Riders shift south to screen it and probe Bulinrø, while 4 stars of fruit harvests push Modolo to level 2 for extra income and a support slot. Main worry: an enemy Swordsman is squatting on my city tile at Camomo and I have nothing in range to evict it.
+  PLAN (10 action(s), 37.6s): attack #15 -> Defender#21 at (5,8) (preview: deals 17, takes 0, kills); build HarvestFruit at (8,8) (2 stars); build HarvestFruit at (8,9) (2 stars); move #9 -> (6,7); move #10 -> (4,6); move #12 -> (3,7); move #19 -> (5,2); recover at (5,7); recover at (9,9); end turn
+  ok  attack #15 -> Defender#21 at (5,8) (preview: deals 17, takes 0, kills)
+      => stars 14->21; Giant#15 -> (5,8); enemy Defender#21 gone (killed or out of sight)
+  ok  build HarvestFruit at (8,8) (2 stars)
+      => stars 21->19; Modolo pop 0->1
+  ok  build HarvestFruit at (8,9) (2 stars)
+      => stars 19->17; Modolo level 1->2
+  ok  [city reward] city reward Workshop at (9,9)
+  ok  move #9 -> (6,7)
+      => Rider#9 -> (6,7)
+  ok  move #10 -> (4,6)
+      => Rider#10 -> (4,6)
+  ok  move #12 -> (3,7)
+      => Rider#12 -> (3,7)
+  ok  move #19 -> (5,2)
+      => Rider#19 -> (5,2)
+  ok  recover at (5,7)
+      => Warrior#7 hp 7->9
+  ok  recover at (9,9)
+      => Warrior#5 hp 9->10
+  ok  end turn
+  ENEMY TURN: enemy Warrior#8 -> (9,3); enemy Archer#24 -> (8,5); Rider#9 hp 10->1; enemy Defender#16 hp 15->14; enemy Defender#20 -> (3,10); enemy Defender#23 -> (5,10); Warrior#5 hp 10->9; enemy Warrior#2 -> (3,9); enemy Defender#17 gone (killed or out of sight); new enemy Rider#27 at (8,6); new enemy Defender#26 at (6,9); city Camomo (8,3) captured -> player 2
+--- turn 16: 11 actions, 1 model call(s), model 38s, wall 90s, est $0.12 this turn ($2.16 so far)
+
+=== TURN 17 | Domination vs 1 Normal bot | Imperius: 17 stars (+9) | 2 cities | units: Rider x4, Warrior x2, Giant x1 ===
+    enemy: 4 reported cities, 4 located | visible units: Defender x5, Warrior x2, Swordsman x1, Archer x1, Rider x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T   ?  ?  ?  ? 
+ 1  T  Tg T  .  T  .  .r T   ?  ?  ? 
+ 2  T  .  .  .  .  . R.u .  ^  .   ? 
+ 3  T  ^  .  .C .  ^  .u T  .Es^ w ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5  .  ^  T  .  .  .  T  ^  ^ aT  T  
+ 6  T  .  T  .  . R.  ^  T  .ErT  .  
+ 7  T  .  .  . R.  . WT RT  ^  .+ .u 
+ 8  .  .  ^  .*d.  . G^ dT  .  T  Tg 
+ 9  T  .  T  T w.  .  .Ed.  .  .CW^  
+10  .+ .  ^  T d^  . dT  T  .u .u .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > The Giant smashes Bulinrø's garrison down to a sliver so it can kill and step into the city next turn; escorts close in while the 1hp Rider slips out of reach. Modolo buys three cheap harvests to hit level 3 for extra support capacity, and Rider #19 rolls onto the northern ruin for a free reward.
+  PLAN (10 action(s), 27.3s) then ask again: attack #15 -> Defender#26 at (6,9) (preview: deals 12, takes 6); move #12 -> (4,8); move #10 -> (4,7); move #9 -> (5,6); recover at (5,7); move #19 -> (6,1); build Hunting at (10,8) (2 stars); build HarvestFruit at (8,10) (2 stars); build HarvestFruit at (9,10) (2 stars); recover at (9,9)
+  ok  attack #15 -> Defender#26 at (6,9) (preview: deals 12, takes 6)
+      => stars 17->26; Giant#15 hp 40->34; enemy Defender#26 hp 15->3
+  ok  move #12 -> (4,8)
+      => Rider#12 -> (4,8)
+  ok  move #10 -> (4,7)
+      => Rider#10 -> (4,7)
+  ok  move #9 -> (5,6)
+      => Rider#9 -> (5,6)
+  ok  recover at (5,7)
+      => Warrior#7 hp 9->10
+  ok  move #19 -> (6,1)
+      => Rider#19 -> (6,1)
+  ok  build Hunting at (10,8) (2 stars)
+      => stars 26->24; Modolo pop 0->1
+  ok  build HarvestFruit at (8,10) (2 stars)
+      => stars 24->22; Modolo pop 1->2
+  ok  build HarvestFruit at (9,10) (2 stars)
+      => stars 22->20; Modolo level 2->3
+  ok  [city reward] city reward Resources at (9,9)
+      => stars 20->25
+  ok  recover at (9,9)
+      => Warrior#5 hp 9->10
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > The Giant already smashed Bulinrø's Defender down to 3 hp, so next turn it kills and walks in to take the city. Everything else has moved; the only offered attacks trade badly (1 damage for 12 against Tofork's def-12 garrison), so I skip them and instead spend 6 stars on two lumber huts to push Modolo toward level 4 and more unit support, banking 19 stars.
+  PLAN (3 action(s), 18.6s): build LumberHut at (9,8) (3 stars); build LumberHut at (10,8) (3 stars); end turn
+  ok  build LumberHut at (9,8) (3 stars)
+      => stars 25->22; Modolo pop 0->1
+  ok  build LumberHut at (10,8) (3 stars)
+      => stars 22->19; Modolo pop 1->2
+  ok  end turn
+  ENEMY TURN: enemy Swordsman#18 -> (8,2); enemy Warrior#8 -> (9,2); enemy Archer#24 -> (7,5); Warrior#7 hp 10->5; Rider#12 hp 10->4; enemy Defender#16 hp 14->15; enemy Warrior#2 hp 10->8; enemy Defender#26 -> (7,9); enemy Defender#20 -> (4,9); enemy Defender#23 -> (4,10); new enemy Defender#29 at (8,3); new enemy Defender#28 at (6,9); Musdo level 2->3
+--- turn 17: 14 actions, 2 model call(s), model 46s, wall 112s, est $0.20 this turn ($2.36 so far)
+
+=== TURN 18 | Domination vs 1 Normal bot | Imperius: 19 stars (+10) | 2 cities | units: Rider x4, Warrior x2, Giant x1 ===
+    enemy: 4 reported cities, 4 located | visible units: Defender x7, Warrior x2, Swordsman x1, Archer x1, Rider x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T   ?  ?  ? 
+ 1  T  Tg T  .  T  .  .rRT   ?  ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^ s. w ? 
+ 3  T  ^  .  .C .  ^  .u T  .Ed^   ? 
+ 4   ? T  .+ .  .  .  .  .  T  T  .  
+ 5  .  ^  T  .  .  .  T  ^ a^  T  T  
+ 6  T  .  T  .  .  . R^  T  .ErT+ .  
+ 7  T  .  .  .  . R. WT  T  ^  .+ .u 
+ 8  .  .  ^  .*d. R. G^ dT  .  T+ T+ 
+ 9  T  .  T  T w. d.  .Ed. d.  .CW^  
+10  .+ .  ^  T  ^ d.  T  T  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Giant softens Bulinrø's garrison from 15 to about 4 hp so it can kill and step into the city next turn; the wounded Rider, Warrior and second Rider all sit still to heal instead of trading into fortified defenders. Warrior #5 steps off Modolo's tile so I can refresh and recruit a reinforcing Rider there.
+  PLAN (7 action(s), 35.7s) then ask again: examine ruins at (6,1); attack #15 -> Defender#28 at (6,9) (preview: deals 11, takes 7); recover at (5,6); recover at (5,7); recover at (4,8); move #10 -> (4,6); move #5 -> (8,9)
+  ok  examine ruins at (6,1)
+      => stars 19->29; Rider#19 -> (7,0); new Swordsman#30 at (6,1)
+  ok  attack #15 -> Defender#28 at (6,9) (preview: deals 11, takes 7)
+      => Giant#15 hp 34->27; enemy Defender#28 hp 15->4
+  ok  recover at (5,6)
+      => Rider#9 hp 1->3
+  ok  recover at (5,7)
+      => Warrior#7 hp 5->7
+  ok  recover at (4,8)
+      => Rider#12 hp 4->6
+  ok  move #10 -> (4,6)
+      => Rider#10 -> (4,6)
+  ok  move #5 -> (8,9)
+      => Warrior#5 -> (8,9)
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > Warrior #5 finishes the 3hp Defender at (7,9) and advances onto the tile, tightening the ring around Bulinrø — zero retaliation because the blow kills. Modolo trains another Rider to keep feeding the southern push, and I bank the rest for next turn's captures.
+  PLAN (3 action(s), 13.7s): attack #5 -> Defender#26 at (7,9) (preview: deals 7, takes 0, kills); train Rider at (9,9) (3 stars); end turn
+  ok  attack #5 -> Defender#26 at (7,9) (preview: deals 7, takes 0, kills)
+      => enemy Defender#26 gone (killed or out of sight); Warrior#5 -> (7,9)
+  ok  train Rider at (9,9) (3 stars)
+      => stars 29->26; new Rider#31 at (9,9)
+  ok  end turn
+  ENEMY TURN: lost Rider#19; enemy Swordsman#18 -> (7,0); enemy Warrior#8 hp 6->10; enemy Defender#29 -> (7,3); enemy Archer#24 -> (7,4); lost Rider#9; enemy Rider#27 hp 10->8; enemy Rider#27 -> (8,8); enemy Defender#16 -> (6,7); enemy Warrior#2 -> (2,8); enemy Defender#20 -> (3,9); enemy Defender#28 -> (7,10); Rider#31 hp 10->5; enemy Defender#23 -> (4,9); new enemy Defender#33 at (8,3); new enemy Archer#34 at (8,6); new enemy Defender#32 at (6,9)
+--- turn 18: 10 actions, 2 model call(s), model 49s, wall 101s, est $0.23 this turn ($2.58 so far)
+
+=== TURN 19 | Domination vs 1 Normal bot | Imperius: 26 stars (+10) | 2 cities | units: Rider x3, Warrior x2, Swordsman x1, Giant x1 ===
+    enemy: 4 reported cities, 4 located | visible units: Defender x8, Warrior x2, Archer x2, Swordsman x1, Rider x1 | enemy capital Tofork at (3,8) lvl 3
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T s.   ?  ? 
+ 1  T  Tg T  .  T  .  .uST  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  . w ? 
+ 3  T  ^  .  .C .  ^  .u T d.Ed^   ? 
+ 4   ? T  .+ .  .  .  .  . aT  T  .  
+ 5  .  ^  T  .  .  .  T  ^  ^  T  T  
+ 6  T  .  T  .  . R.  ^  T  .EaT+ .  
+ 7  T  .  .  .  .  . WT dT  ^  .+ .u 
+ 8  .  .  ^ w.*d. R. G^  T  . rT+ T+ 
+ 9  T  .  T  T d. d.  .Ed. W.  .CR^  
+10  .+ .  ^  T  ^  .  T  T d.  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Bulinrø is the target: the Giant softens Defender#32 to about a third health, then Warrior#5 should finish it and advance onto the city tile to capture. Wounded units recover, and I bank a Catapult at the capital — the only tool that can crack Tofork's defence-12 garrison later. Refreshing to confirm the capture.
+  PLAN (8 action(s), 41.5s) then ask again: attack #15 -> Defender#32 at (6,9) (preview: deals 10, takes 8); attack #5 -> Defender#32 at (6,9) (preview: deals 3, takes 9); recover at (9,9); recover at (4,8); recover at (5,7); move #10 -> (5,6); move #30 -> (6,2); train Catapult at (3,3) (8 stars)
+  ok  attack #15 -> Defender#32 at (6,9) (preview: deals 10, takes 8)
+      => stars 26->36; Giant#15 hp 27->19; enemy Defender#32 hp 15->5
+  ok  attack #5 -> Defender#32 at (6,9) (preview: deals 5, takes 0, kills)
+      => enemy Defender#32 gone (killed or out of sight); Warrior#5 -> (6,9)
+  ok  recover at (9,9)
+      => Rider#31 hp 5->9
+  ok  recover at (4,8)
+      => Rider#12 hp 6->8
+  ok  recover at (5,7)
+      => Warrior#7 hp 7->9
+  ok  move #10 -> (5,6)
+      => Rider#10 -> (5,6)
+  ok  move #30 -> (6,2)
+      => Swordsman#30 -> (6,2)
+  ok  train Catapult at (3,3) (8 stars)
+      => stars 36->28; new Catapult#35 at (3,3)
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > Bulinrø's garrison is dead and Warrior#5 sits on the city tile — promoting him to veteran heals him to full so he survives the bot's counterattack and can claim the city next turn. Both offered attacks trade badly (5 for 8, 3 for 9), so I decline them and bank 28 stars for units near Tofork.
+  PLAN (2 action(s), 15.0s): promote at (6,9); end turn
+  ok  promote at (6,9)
+      => Warrior#5 hp 10->15
+  ok  end turn
+  ENEMY TURN: enemy Swordsman#18 -> (6,0); Swordsman#30 hp 20->16; enemy Warrior#8 gone (killed or out of sight); enemy Defender#29 -> (6,4); enemy Archer#24 hp 10->2; enemy Archer#24 -> (6,3); enemy Defender#16 -> (6,8); enemy Warrior#2 hp 8->10; Rider#12 hp 8->5; enemy Rider#27 hp 8->3; enemy Rider#27 -> (6,10); enemy Defender#20 hp 15->13; enemy Defender#23 -> (5,9); Warrior#5 hp 15->10; enemy Defender#28 gone (killed or out of sight); Camomo level 2->3; Tofork level 3->4
+--- turn 19: 10 actions, 2 model call(s), model 56s, wall 110s, est $0.24 this turn ($2.82 so far)
+
+=== TURN 20 | Domination vs 1 Normal bot | Imperius: 28 stars (+10) | 2 cities | units: Rider x3, Warrior x2, Swordsman x1, Catapult x1, Giant x1 ===
+    enemy: 4 reported cities, 4 located | visible units: Defender x6, Archer x2, Swordsman x1, Warrior x1, Rider x1 | enemy capital Tofork at (3,8) lvl 4
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T sT  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .uS.  ^  .   ? 
+ 3  T  ^  .  .CC.  ^  .uaT  .Ed^   ? 
+ 4   ? T  .+ .  .  .  . d.  T+ T  .  
+ 5  .  ^  T  .  .  .  T  ^  ^  T  T  
+ 6  T  .  T  .  .  . R^  T  .EaT+ .  
+ 7  T  .  .  .  .  . WT  T  ^  .+ .u 
+ 8  .  .  ^ w.*d. R. G^ dT  .  T+ T+ 
+ 9  T  .  T+ T+d.  . d.EW.  .  .CR^  
+10  .+ .  ^  T  ^  .  T rT  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Bulinrø falls: Warrior#5 captures the city, cutting Bardur to three. Swordsman#30 finishes the crippled Archer for free, and Catapult#35 starts the walk south to bombard Tofork — vacating Mama's tile so I can buy a second catapult with the 28 stars on a refreshed list.
+  PLAN (8 action(s), 26.7s) then ask again: capture #5 at (6,9); attack #30 -> Archer#24 at (6,3) (preview: deals 12, takes 0, kills); move #35 -> (3,4); attack #15 -> Defender#23 at (5,9) (preview: deals 10, takes 8); recover at (5,7); recover at (4,8); move #10 -> (4,7); move #31 -> (7,9)
+  ok  capture #5 at (6,9)
+      => stars 28->38; city Bulinrø (6,9) captured -> YOURS
+  ok  attack #30 -> Archer#24 at (6,3) (preview: deals 12, takes 0, kills)
+      => Swordsman#30 -> (6,3); enemy Archer#24 gone (killed or out of sight)
+  ok  move #35 -> (3,4)
+      => Catapult#35 -> (3,4)
+  ok  attack #15 -> Defender#23 at (5,9) (preview: deals 10, takes 8)
+      => Giant#15 hp 19->11; enemy Defender#23 hp 15->5
+  ok  recover at (5,7)
+      => Warrior#7 hp 9->10
+  ok  recover at (4,8)
+      => Rider#12 hp 5->7
+  ok  move #10 -> (4,7)
+      => Rider#10 -> (4,7)
+  ok  move #31 -> (7,9)
+      => Rider#31 -> (7,9)
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > Rider#31 finishes the wounded enemy Rider at (6,10) — a clean kill with no return damage thanks to the target's 3 hp. I skip Rider#10's suicidal poke at the wall-backed def-12 garrison and instead spend 8 stars on a second Catapult at Mama, the only tool that can grind down Tofork's defenders; two free forest clears top up the treasury.
+  PLAN (5 action(s), 14.5s): attack #31 -> Rider#27 at (6,10) (preview: deals 7, takes 0, kills); build ClearForest at (7,8) (0 stars); build ClearForest at (7,10) (0 stars); train Catapult at (3,3) (8 stars); end turn
+  ok  attack #31 -> Rider#27 at (6,10) (preview: deals 7, takes 0, kills)
+      => Rider#31 -> (6,10); enemy Rider#27 gone (killed or out of sight)
+  ok  build ClearForest at (7,8) (0 stars)
+      => stars 38->39
+  ok  build ClearForest at (7,10) (0 stars)
+      => stars 39->40
+  ok  train Catapult at (3,3) (8 stars)
+      => stars 40->32; new Catapult#36 at (3,3)
+  ok  end turn
+  ENEMY TURN: enemy Swordsman#18 -> (5,1); enemy Defender#33 -> (9,4); enemy Defender#29 -> (5,3); enemy Archer#34 -> (9,7); enemy Warrior#2 -> (2,9); enemy Defender#22 hp 15->13; Rider#12 hp 7->4; enemy Defender#16 hp 15->9; enemy Defender#20 -> (4,9); enemy Defender#23 hp 5->7; Warrior#5 hp 10->8; new enemy Defender#37 at (8,3); new enemy Cloak#38 at (8,6)
+--- turn 20: 13 actions, 2 model call(s), model 41s, wall 105s, est $0.21 this turn ($3.04 so far)
+
+=== TURN 21 | Domination vs 1 Normal bot | Imperius: 32 stars (+14) | 3 cities | units: Rider x3, Catapult x2, Warrior x2, Swordsman x1, Giant x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x7, Swordsman x1, Cloak x1, Archer x1, Warrior x1 | enemy capital Tofork at (3,8) lvl 4
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  . s.u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .CC.  ^ d.uST  .Ed^   ? 
+ 4   ? T  .+ . C.  .  .  .  T+ T d.  
+ 5  .  ^  T  .  .  .  T  ^  ^  T  T  
+ 6  T  .  T  .  .  .  ^  T  .EqT+ .  
+ 7  T  .  .  .  . R. WT  T  ^  .+a.u 
+ 8  .  .  ^  .*d. R. G^ d.  .  T+ T+ 
+ 9  T  .  T+wT+ . d. d.CW.  .  .C ^  
+10  .+ .  ^  T+ ^  .  T R.  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > The Giant finishes the weakened defender at (5,9) with no reply, while both catapults focus the healthy enemy Swordsman marching on Mama — 10+10 damage kills it before it can reach my defenceless capital tile. A free monument at (8,8) levels Modolo, which then trains a catapult to open the siege of Musdo.
+  PLAN (10 action(s), 32.9s): attack #15 -> Defender#23 at (5,9) (preview: deals 11, takes 0, kills); attack #36 -> Swordsman#18 at (5,1) (preview: deals 10, takes 0); attack #35 -> Swordsman#18 at (5,1) (preview: deals 10, takes 0); build Monument5 at (8,8) (0 stars); train Catapult at (9,9) (8 stars); recover at (4,8); recover at (6,3); recover at (6,9); recover at (6,10); end turn
+  ok  attack #15 -> Defender#23 at (5,9) (preview: deals 11, takes 0, kills)
+      => stars 32->46; Giant#15 -> (5,9); enemy Defender#23 gone (killed or out of sight)
+  ok  attack #36 -> Swordsman#18 at (5,1) (preview: deals 10, takes 0)
+      => enemy Swordsman#18 hp 20->10
+  ok  attack #35 -> Swordsman#18 at (5,1) (preview: deals 13, takes 0, kills)
+      => enemy Swordsman#18 gone (killed or out of sight)
+  ok  build Monument5 at (8,8) (0 stars)
+      => Modolo level 3->4
+  ok  [city reward] city reward PopulationGrowth at (9,9)
+      => Modolo pop 0->4
+  ok  train Catapult at (9,9) (8 stars)
+      => stars 46->38; new Catapult#39 at (9,9)
+  ok  recover at (4,8)
+      => Rider#12 hp 4->6
+  ok  recover at (6,3)
+      => Swordsman#30 hp 16->18
+  ok  recover at (6,9)
+      => Warrior#5 hp 8->12
+  ok  recover at (6,10)
+      => Rider#31 hp 9->10
+  ok  end turn
+  ENEMY TURN: enemy Defender#29 -> (4,4); enemy Defender#37 -> (7,4); enemy Defender#33 -> (10,4); enemy Cloak#38 gone (killed or out of sight); enemy Defender#22 hp 13->11; enemy Defender#22 -> (3,9); lost Rider#12; enemy Defender#16 -> (7,9); enemy Warrior#2 -> (1,8); enemy Defender#20 -> (4,8); Catapult#39 hp 10->1; new enemy Warrior#8 at (9,2); new enemy Defender#41 at (8,3); new enemy Catapult#42 at (8,6); new enemy Giant#40 at (3,8); Tofork level 4->5
+--- turn 21: 11 actions, 1 model call(s), model 33s, wall 86s, est $0.14 this turn ($3.17 so far)
+
+=== TURN 22 | Domination vs 1 Normal bot | Imperius: 38 stars (+15) | 3 cities | units: Catapult x3, Rider x2, Warrior x2, Swordsman x1, Giant x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x7, Warrior x2, Catapult x1, Archer x1, Giant x1 | enemy capital Tofork at (3,8) lvl 5
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  . w ? 
+ 3  T  ^  .  .CC.  ^  .uST  .Ed^   ? 
+ 4   ? T  .+ . C. d.  .  . dT+ T  . d
+ 5  .  ^  T  .  .  .  T  ^  ^  T  T  
+ 6  T  .  T  .  .  .  ^  T  .EcT+ .  
+ 7  T  .  .+ .  . R. WT  T  ^  .+a.u 
+ 8  .  . w^  .*g. d.  ^  .  .+ T+ T+ 
+ 9  T  .  T+ T+d.  . G.CW. d.  .CC^  
+10  .+ .  ^  T+ ^  .  T R.  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Catapult #39 snipes Bardur's catapult inside Musdo from max range — that removes the only thing that can one-shot my siege engines and leaves Musdo hollow. In the south, Warrior #5 softens Defender #16 so Rider #31's follow-up finishes it and takes the tile. Both Mama catapults creep toward Tofork's giant garrison; stars held for replacements.
+  PLAN (8 action(s), 45.8s): attack #39 -> Catapult#42 at (8,6) (preview: deals 18, takes 0, kills); attack #5 -> Defender#16 at (7,9) (preview: deals 4, takes 7); attack #31 -> Defender#16 at (7,9) (preview: deals 5, takes 6); recover at (6,3); recover at (5,9); move #35 -> (3,5); move #36 -> (2,4); end turn
+  ok  attack #39 -> Catapult#42 at (8,6) (preview: deals 18, takes 0, kills)
+      => stars 38->53; enemy Catapult#42 gone (killed or out of sight)
+  ok  attack #5 -> Defender#16 at (7,9) (preview: deals 4, takes 7)
+      => Warrior#5 hp 12->5; enemy Defender#16 hp 9->5
+  ok  attack #31 -> Defender#16 at (7,9) (preview: deals 6, takes 0, kills)
+      => enemy Defender#16 gone (killed or out of sight); Rider#31 -> (7,9)
+  ok  recover at (6,3)
+      => Swordsman#30 hp 18->20
+  ok  recover at (5,9)
+      => Giant#15 hp 11->15
+  ok  move #35 -> (3,5)
+      => Catapult#35 -> (3,5)
+  ok  move #36 -> (2,4)
+      => Catapult#36 -> (2,4)
+  ok  end turn
+  ENEMY TURN: enemy Warrior#8 gone (killed or out of sight); enemy Defender#29 -> (3,3); enemy Defender#37 -> (6,5); enemy Defender#33 -> (9,5); lost Rider#10; enemy Warrior#2 -> (2,7); enemy Giant#40 -> (4,7); enemy Defender#20 -> (3,7); enemy Defender#22 -> (4,8); lost Catapult#39; new enemy Defender#48 at (8,6); new enemy Defender#47 at (3,8); new enemy Dagger#45 at (9,8); new enemy Dagger#46 at (10,8); new enemy Dagger#43 at (9,9); new enemy Dagger#44 at (10,9)
+--- turn 22: 8 actions, 1 model call(s), model 46s, wall 87s, est $0.14 this turn ($3.31 so far)
+
+=== TURN 23 | Domination vs 1 Normal bot | Imperius: 53 stars (+4) | 3 cities | units: Catapult x2, Warrior x2, Swordsman x1, Giant x1, Rider x1 ===
+    enemy: 3 reported cities, 3 located | visible units: Defender x8, Dagger x4, Warrior x1, Giant x1, Archer x1 | enemy capital Tofork at (3,8) lvl 5
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .Cd.  ^  .uST  .Ed^   ? 
+ 4   ? T  .+C.  .  .  .  .  T+ T  .  
+ 5  .  ^  T  . C.  .  T d^  ^  T dT  
+ 6  T  .  T  .  .  .  ^  T  .EdT+ .  
+ 7  T  .  .+w. d. g. WT  T  ^  .+a.u 
+ 8  .  .  ^  .*d. d.  ^  .  .+ T+yT+y
+ 9  T  .  T+ T+ .  . G.CW. R.  .Cy^ y
+10  .+ .  ^  T+ ^  .  T  .  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Two free catapult kills: #35 finishes the wounded Defender at (4,8) and #36 wipes the Warrior at (2,7), both with no return fire, thinning Tofork's screen. My battered Giant and veteran Warrior heal instead of trading with the enemy Giant, and the Warrior at (5,7) backs off out of its reach.
+  PLAN (8 action(s), 28.1s): attack #35 -> Defender#22 at (4,8) (preview: deals 12, takes 0, kills); attack #36 -> Warrior#2 at (2,7) (preview: deals 12, takes 0, kills); recover at (5,9); recover at (6,9); move #7 -> (6,7); move #30 -> (5,4); build LumberHut at (6,10) (3 stars); end turn
+  ok  attack #35 -> Defender#22 at (4,8) (preview: deals 12, takes 0, kills)
+      => stars 53->57; enemy Defender#22 gone (killed or out of sight)
+  ok  attack #36 -> Warrior#2 at (2,7) (preview: deals 12, takes 0, kills)
+      => enemy Warrior#2 gone (killed or out of sight)
+  ok  recover at (5,9)
+      => Giant#15 hp 15->19
+  ok  recover at (6,9)
+      => Warrior#5 hp 5->9
+  ok  move #7 -> (6,7)
+      => Warrior#7 -> (6,7)
+  ok  move #30 -> (5,4)
+      => Swordsman#30 -> (5,4)
+  ok  build LumberHut at (6,10) (3 stars)
+      => stars 57->54; Bulinrø pop 0->1
+  ok  end turn
+  ENEMY TURN: enemy Defender#41 -> (9,3); enemy Defender#37 -> (5,6); enemy Defender#33 -> (8,4); enemy Defender#48 -> (7,7); enemy Defender#20 hp 13->15; enemy Giant#40 -> (5,8); enemy Archer#34 -> (8,8); enemy Defender#47 -> (4,9); enemy Dagger#45 -> (8,9); enemy Dagger#46 -> (9,8); Warrior#5 hp 9->4; Rider#31 hp 10->4; enemy Dagger#44 -> (10,8); new enemy Warrior#8 at (10,4); new enemy Defender#49 at (8,6); city Mama (3,3) captured -> player 2; city Modolo (9,9) captured -> player 2
+--- turn 23: 8 actions, 1 model call(s), model 28s, wall 70s, est $0.12 this turn ($3.43 so far)
+
+=== TURN 24 | Domination vs 1 Normal bot | Imperius: 54 stars (+4) | 1 cities | units: Catapult x2, Warrior x2, Swordsman x1, Giant x1, Rider x1 ===
+    enemy: 5 reported cities, 5 located | visible units: Defender x8, Dagger x4, Warrior x1, Giant x1, Archer x1 | enemy capital Tofork at (3,8) lvl 5
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .Ed.  ^  .u T  .E ^ d ? 
+ 4   ? T  .+C.  .  . S.  .  T+dT  . w
+ 5  .  ^  T  . C.  .  T  ^  ^  T  T  
+ 6  T  .  T  .  .  . d^  T  .EdT+ .  
+ 7  T  .  .+ . d.  .  T WT d^  .+ .u 
+ 8  .  .  ^  .* .  . g^  .  .+aT+yT+y
+ 9  T  .  T+ T+ . d. G.CW. R. y.Ey^  
+10  .+ .  ^  T+ ^  .  T+ .  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Both catapults focus Defender#20 at (3,7) — two 10-damage hits kill the guard screening the enemy capital, with no retaliation at range 3. The Giant heals at (5,9) rather than stepping next to the 40hp enemy Giant, and the wounded Warrior vacates Bulinrø's tile so I can spend banked stars on a fresh unit after the refresh.
+  PLAN (6 action(s), 42.1s) then ask again: attack #35 -> Defender#20 at (3,7) (preview: deals 10, takes 0); attack #36 -> Defender#20 at (3,7) (preview: deals 10, takes 0); move #30 -> (4,5); recover at (5,9); move #5 -> (6,10); recover at (7,9)
+  ok  attack #35 -> Defender#20 at (3,7) (preview: deals 10, takes 0)
+      => stars 54->58; enemy Defender#20 hp 15->5
+  ok  attack #36 -> Defender#20 at (3,7) (preview: deals 14, takes 0, kills)
+      => enemy Defender#20 gone (killed or out of sight)
+  ok  move #30 -> (4,5)
+      => Swordsman#30 -> (4,5)
+  ok  recover at (5,9)
+      => Giant#15 hp 19->23
+  ok  move #5 -> (6,10)
+      => Warrior#5 -> (6,10)
+  ok  recover at (7,9)
+      => Rider#31 hp 4->8
+-- planning (model call 2 of 3 this turn) ...
+  thinking...
+  > Both catapults already killed the defender screening Tofork, so I'm keeping the melee units healthy rather than trading 7-for-7 into a fortified Defender. The 8 stars go into a third Catapult at Bulinrø, which can reach range of the enemy Giant and the capital approach within two turns. Enemy Giant at (5,8) remains the main obstacle to occupying Tofork.
+  PLAN (2 action(s), 20.4s): train Catapult at (6,9) (8 stars); end turn
+  ok  train Catapult at (6,9) (8 stars)
+      => stars 58->50; new Catapult#50 at (6,9)
+  ok  end turn
+  ENEMY TURN: enemy Defender#41 -> (8,3); Catapult#36 hp 10->5; enemy Defender#33 -> (7,5); enemy Warrior#8 -> (9,3); enemy Defender#37 -> (5,7); enemy Defender#48 -> (6,8); enemy Giant#40 hp 40->34; enemy Dagger#44 -> (10,7); Giant#15 hp 23->8; lost Catapult#50; Rider#31 hp 8->2; enemy Dagger#45 -> (6,9); enemy Dagger#43 -> (8,9); new enemy Catapult#52 at (3,8); new enemy Knight#51 at (10,8); new enemy Giant#53 at (9,9); Modolo level 4->5
+--- turn 24: 8 actions, 2 model call(s), model 63s, wall 105s, est $0.23 this turn ($3.67 so far)
+
+=== TURN 25 | Domination vs 1 Normal bot | Imperius: 50 stars (+0) | 1 cities | units: Catapult x2, Warrior x2, Swordsman x1, Giant x1, Rider x1 ===
+    enemy: 5 reported cities, 5 located | visible units: Defender x7, Dagger x4, Giant x2, Warrior x1, Catapult x1, Archer x1, Knight x1 | enemy capital Tofork at (3,8) lvl 5
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^  .   ? 
+ 3  T  ^  .  .Ed.  ^  .u T  .Ed^ w ? 
+ 4   ? T  .+C.  .  .  .  .  T+ T  .  
+ 5  .  ^  T  . C. S.  T  ^ d^  T  T  
+ 6  T  .  T  .  .  .  ^  T  .EdT+ .  
+ 7  T  .  .+ .  .  . dT WT  ^  .+ .uy
+ 8  .  .  ^  .*c.  . g^ d.  .+aT+yT+k
+ 9  T  .  T+ T+ . d. G.Cy. R.+y.Eg^  
+10  .+ .  ^  T+ ^  .  T+W.  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Catapult #35 kills the Catapult garrisoning Tofork, emptying the enemy capital for a next-turn occupation. Giant #15 softens the Dagger sitting on my own city tile and Warrior #5 finishes it, reclaiming Bulinrø. Swordsman closes to (3,6) as the intended occupier; enemy Giant #40 is still the main danger.
+  PLAN (7 action(s), 32.8s): attack #35 -> Catapult#52 at (3,8) (preview: deals 18, takes 0, kills); attack #36 -> Defender#37 at (5,7) (preview: deals 7, takes 0); attack #15 -> Dagger#45 at (6,9) (preview: deals 8, takes 6); attack #5 -> Dagger#45 at (6,9) (preview: deals 2, takes 7); move #30 -> (3,6); move #7 -> (5,6); end turn
+  ok  attack #35 -> Catapult#52 at (3,8) (preview: deals 18, takes 0, kills)
+      => enemy Catapult#52 gone (killed or out of sight)
+  ok  attack #36 -> Defender#37 at (5,7) (preview: deals 7, takes 0)
+      => enemy Defender#37 hp 15->8
+  ok  attack #15 -> Dagger#45 at (6,9) (preview: deals 8, takes 6)
+      => Giant#15 hp 8->2; enemy Dagger#45 hp 10->2
+  ok  attack #5 -> Dagger#45 at (6,9) (preview: deals 5, takes 0, kills)
+      => enemy Dagger#45 gone (killed or out of sight); Warrior#5 -> (6,9)
+  ok  move #30 -> (3,6)
+      => Swordsman#30 -> (3,6)
+  ok  move #7 -> (5,6)
+      => Warrior#7 -> (5,6)
+  ok  end turn
+  ENEMY TURN: enemy Defender#29 -> (2,4); enemy Defender#41 -> (7,3); enemy Warrior#8 -> (8,4); lost Catapult#36; enemy Defender#33 -> (6,5); enemy Defender#37 -> (6,7); enemy Dagger#44 -> (10,6); enemy Giant#40 -> (5,9); enemy Archer#34 -> (7,8); enemy Dagger#46 -> (9,7); enemy Knight#51 -> (7,9); enemy Defender#47 -> (5,10); lost Giant#15; lost Warrior#5; lost Rider#31; enemy Dagger#43 -> (6,9); enemy Giant#53 -> (8,9); new enemy Giant#54 at (3,8); new enemy Cloak#55 at (9,9); Tofork level 5->6
+--- turn 25: 7 actions, 1 model call(s), model 33s, wall 71s, est $0.13 this turn ($3.80 so far)
+
+=== TURN 26 | Domination vs 1 Normal bot | Imperius: 50 stars (+0) | 1 cities | units: Catapult x1, Swordsman x1, Warrior x1 ===
+    enemy: 5 reported cities, 5 located | visible units: Defender x7, Dagger x3, Giant x3, Warrior x1, Archer x1, Knight x1, Cloak x1 | enemy capital Tofork at (3,8) lvl 6
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ T  T  T  T  .  T  T  .   ?  ? 
+ 1  T  Tg T  .  T  .  .u T  .   ?  ? 
+ 2  T  .  .  .  .  .  .u .  ^+ .   ? 
+ 3  T  ^  .  .E .  ^  .u T d.E ^   ? 
+ 4   ? T  .+d.  .  .  .  .  T+wT  .  
+ 5  .  ^  T  . C.  .  T d^  ^  T  T  
+ 6  T  .  T  . S.  . W^  T  .EdT+ . y
+ 7  T  .  .+ .  .  .  T dT  ^  .+y.u 
+ 8  .  .  ^  .*g.  .  ^ d. a.+ T+ T+ 
+ 9  T  .  T+ T+ .+ . g.Cy. k.+g.Eq^  
+10  .+ .  ^  T+ ^  . dT+ .  .  .  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking...
+  > Tofork is refilled with a full-health Giant, so the capture plan is dead for now. The catapult takes the one free kill available — finishing the wounded Defender at (6,7) from range 3 with zero retaliation — while the Swordsman and Warrior hold position and heal rather than trade badly into fortified 4.5-defence Defenders and Giants.
+  PLAN (2 action(s), 14.9s): attack #35 -> Defender#37 at (6,7) (preview: deals 11, takes 0, kills); end turn
+  ok  attack #35 -> Defender#37 at (6,7) (preview: deals 11, takes 0, kills)
+      => enemy Defender#37 gone (killed or out of sight)
+  ok  end turn
+--- turn 26: 2 actions, 1 model call(s), model 15s, wall 24s, est $0.09 this turn ($3.89 so far)
+
+GAME OVER on turn 26: you lost (winner player 2, score 1570)
+  scores by turn: 0:515 1:745 2:750 3:765 4:805 5:850 6:1230 7:1250 8:1320 9:1630 10:1940 11:1960 12:2195 13:2735 14:2220 15:2520 16:2790 17:2500 18:2565 19:2585 20:2625 21:3045 22:3530 23:3475 24:2145 25:2145 26:2030
+  tokens: {'input': 70, 'output': 51985, 'cache_write': 187041, 'cache_read': 1186174}  model calls: 34  est. cost $3.89

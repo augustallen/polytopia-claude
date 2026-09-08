@@ -1,0 +1,1262 @@
+connected to Polytopia 2.17.2.16299 | model claude-opus-5 (medium) | log logs\20260905-155237-domination-claude-opus-5.jsonl
+  starting a new game: {'mode': 'Domination', 'difficulty': 'Normal', 'opponents': 1, 'map_preset': 'Dryland', 'tribe': 'Imperius', 'map_size': 11}
+  game created: {'type': 'ok', 'command': 'new_game', 'mode': 'Domination', 'difficulty': 'Normal', 'map_preset': 'Dryland', 'tribe': 'Imperius', 'opponents': 1, 'map_size': 11}
+
+=== TURN 0 | Domination vs 1 Normal bot | Imperius: 5 stars (+2) | 1 cities, 1 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 1-5, y 6-10; each cell = terrain feature unit):
+     1  2  3  4  5
+ 6  T  .c T  T  T  
+ 7  .u T  ^  .u T  
+ 8  T  T  .CWT  .u 
+ 9  T  .u .u ^  ^  
+10  ^  .  .  .  T  
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens
+  > Turn 0: capital Iplolus sits at (3,8) with plenty of fruit nearby. I'll spend 4 of my 5 stars harvesting two fruit tiles, which gives 2 population and immediately levels the capital to 2 (extra income). My lone Warrior heads northwest toward the village spotted at (2,6) — capturing it early means more income and unit capacity, and it opens scouting toward the unexplored north.
+  PLAN: 4 action(s) in 12.7s
+    1. build HarvestFruit at (4,7) (2 stars)
+    2. build HarvestFruit at (2,9) (2 stars)
+    3. move #1 -> (2,7)
+    4. end turn
+  notes: Domination vs Hoodrick, 11x11. Capital Iplolus (3,8). Village at (2,6) — warrior moving via (2,7), should reach (2,6) next turn and capture the turn after. Plan: research Riding (5) ASAP for scouting riders; explore north/east (map only revealed x1-5,y6-10) to find enemy capital. Then mass warriors/
+  ok  build HarvestFruit at (4,7) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (2,9) (2 stars)  (0.0s)
+  ok  [city reward] city reward Explorer at (3,8)  (0.0s)
+  ok  move #1 -> (2,7)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 0: 5 actions, 1 model call(s), model 13s, wall 30s, est $0.06 this turn ($0.06 so far)
+
+=== TURN 1 | Domination vs 1 Normal bot | Imperius: 1 stars (+3) | 1 cities, 1 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ .  .c .  .   ? 
+ 1  Tg Tg .v T  T   ? 
+ 2  .  .u Tg .  Tg  ? 
+ 3  .  .  T  .   ?  ? 
+ 4  .  T  .u .   ?  ? 
+ 5  .  ^  T  .v  ?  ? 
+ 6  .  T  .c T  T  T  
+ 7  Tr .u T W^  .  T  
+ 8  T  T  T  .C T  .u 
+ 9  .  T  .  .u ^  ^  
+10  .+ ^  .  .  .  T  
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~100 tokens
+  > My earlier note about a village at (2,6) was wrong — that tile is just crop. The real villages are (3,5) and (2,1), plus ruins at (0,7). With only 1 star I can't train or research, so the single warrior heads north toward the nearer village at (3,5) via (3,6), aiming to stand on it next turn and capture the turn after.
+  PLAN: 2 action(s) in 8.4s
+    1. move #1 -> (3,6)
+    2. end turn
+  notes: Domination vs Hoodrick, 11x11. Capital Iplolus (3,8). Villages: (3,5) and (2,1); ruins (0,7). Warrior route: (3,6)->(3,5), end turn on village to capture. Save stars for Riding (5) for scout riders; explore north/east (unexplored x>=5 and y<=5) to find enemy capital. Train warriors from capital when
+  ok  move #1 -> (3,6)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 1: 2 actions, 1 model call(s), model 8s, wall 14s, est $0.05 this turn ($0.11 so far)
+
+=== TURN 2 | Domination vs 1 Normal bot | Imperius: 4 stars (+3) | 1 cities, 1 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ .  .c .  .   ? 
+ 1  Tg Tg .v T  T   ? 
+ 2  .  .u Tg .  Tg  ? 
+ 3  .  .  T  .   ?  ? 
+ 4  .  T  .u .   ?  ? 
+ 5  .  ^  T  .v T   ? 
+ 6  .  T  .c T WT  T  
+ 7  Tr .u T  ^  .  T  
+ 8  T  T  T  .C T  .u 
+ 9  .  T  .  .u ^  ^  
+10  .+ ^  .  .  .  T  
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~200 tokens  thinking... ~250 tokens
+  > Warrior steps onto the village at (3,5) so it can capture next turn. I harvest the fruit at (3,9) for population toward capital level 3, and hold the remaining 2 stars so that next turn's income (5 total) buys Riding for fast scouting — the enemy capital is still unfound somewhere north/east.
+  PLAN: 3 action(s) in 10.8s
+    1. move #1 -> (3,5)
+    2. build HarvestFruit at (3,9) (2 stars)
+    3. end turn
+  notes: Warrior sits on village (3,5): capture next turn. Stars: 2 saved + 3 = 5 → research Riding next turn, then train Rider to scout north/east (x>=5, y<=5) and toward village (2,1) and ruins (0,7). Capital Iplolus (3,8) leveling via fruit. Enemy Hoodrick capital unknown.
+  ok  move #1 -> (3,5)  (0.0s)
+  ok  build HarvestFruit at (3,9) (2 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (3,8)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 2: 4 actions, 1 model call(s), model 11s, wall 22s, est $0.06 this turn ($0.17 so far)
+
+=== TURN 3 | Domination vs 1 Normal bot | Imperius: 10 stars (+4) | 1 cities, 1 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ .  .c .  .   ? 
+ 1  Tg Tg .v T  T   ? 
+ 2  .  .u Tg .  Tg  ? 
+ 3  .  .  T  .   ?  ? 
+ 4  .  T  .u .  Tg  ? 
+ 5  .  ^  T  .vWT   ? 
+ 6  .  T  .c T  T  T  
+ 7  Tr .u T  ^  .  T  
+ 8  T  T  T  .C T  .u 
+ 9  .  T  .  .  ^  ^  
+10  .+ ^  .  .  .  T  
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens
+  > My warrior started the turn on the village at (3,5), so I can annex it for free — but tech prices scale with city count, so I buy Riding first at 5 stars while it's cheap. That leaves 5 stars and a second city, after which I'll train a Rider to sprint north/east and find Hoodrick's capital. Omitting end turn so I can queue the Rider once Riding lands.
+  PLAN: 2 action(s) in 11.0s  [asks to be called again]
+    1. research Riding (5 stars)
+    2. capture #1 at (3,5)
+  notes: Turn 3: bought Riding, captured village (3,5) = 2nd city. Next: train Rider (3s) at (3,5) or capital, scout north/east unexplored (x>=5) and village (2,1), ruins (0,7). Keep training cheap units each turn; find Hoodrick capital by turn 6-8. Capital Iplolus (3,8) lvl3.
+  ok  research Riding (5 stars)  (0.0s)
+  ok  capture #1 at (3,5)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~150 tokens
+  > Village at (3,5) is now my second city, Resres. With 9 stars I'll train a Rider at the capital to start scouting the unexplored east/north (enemy capital still unfound) and harvest the fruit at (2,4) to push Resres toward level 2. That leaves 4 stars banked toward Hunting/Archery or another unit next turn.
+  PLAN: 3 action(s) in 11.1s
+    1. train Rider at (3,8) (3 stars)
+    2. build HarvestFruit at (2,4) (2 stars)
+    3. end turn
+  notes: Turn 3: Rider trained at capital (3,8), fruit harvested at (2,4) (Resres pop). 4 stars left. Next turn: send Rider east/north into unexplored x>=5 to find Hoodrick capital; second rider later toward village (2,1) and ruins (0,7). Keep training a cheap unit each turn; consider Hunting->Archery once s
+  ok  train Rider at (3,8) (3 stars)  (0.0s)
+  ok  build HarvestFruit at (2,4) (2 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 3: 5 actions, 2 model call(s), model 22s, wall 42s, est $0.12 this turn ($0.28 so far)
+
+=== TURN 4 | Domination vs 1 Normal bot | Imperius: 4 stars (+5) | 2 cities, 2 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-5, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5
+ 0  .+ .  .c .  .   ? 
+ 1  Tg Tg .v T  T   ? 
+ 2  .  .u Tg .  Tg  ? 
+ 3  .  .  T  .   ?  ? 
+ 4  .  T  .  .  Tg  ? 
+ 5  .  ^  T  .CWT   ? 
+ 6  .  T  .c T  T  T  
+ 7  Tr .u T  ^  .  T  
+ 8  T  T  T  .CRT  .u 
+ 9  .  T  .  .  ^  ^  
+10  .+ ^  .  .  .  T  
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~250 tokens
+  > Enemy capital is still unfound and everything east of x=5 is dark, so the Rider pushes east from the capital to (5,8) to open up the unexplored right side of the map. The Warrior stays in Resres as its garrison since it is too slow to be worth a detour. Only 4 stars and no training options offered, so the turn is short.
+  PLAN: 2 action(s) in 11.9s
+    1. move #5 -> (5,8)
+    2. end turn
+  notes: Turn 4: Rider #5 scouting east at (5,8); continue east/northeast next turn to find Hoodrick capital. Warrior #1 garrisons Resres (3,5). Plan: train cheap units (Warrior 2/Rider 3) each turn as stars allow; later send a second unit north to village (2,1) and ruins (0,7). Research Hunting->Archery onc
+  ok  move #5 -> (5,8)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 4: 2 actions, 1 model call(s), model 12s, wall 18s, est $0.06 this turn ($0.35 so far)
+
+=== TURN 5 | Domination vs 1 Normal bot | Imperius: 9 stars (+5) | 2 cities, 2 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-6, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6
+ 0  .+ .  .c .  .   ?  ? 
+ 1  Tg Tg .v T  T   ?  ? 
+ 2  .  .u Tg .  Tg  ?  ? 
+ 3  .  .  T  .   ?  ?  ? 
+ 4  .  T  .  .  Tg  ?  ? 
+ 5  .  ^  T  .CWT   ?  ? 
+ 6  .  T  .c T  T  T   ? 
+ 7  Tr .u T  ^  .  T  T  
+ 8  T  T  T  .C T  .uR.u 
+ 9  .  T  .  .  ^  ^  .v 
+10  .+ ^  .  .  .  T   ? 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~200 tokens
+  > Rider #5 is one step from the village at (6,9) — parking on it now means I capture it next turn for extra income and unit capacity. With 9 stars I'll buy both a Rider (to scout east/northeast for Hoodrick's capital) and a Warrior from the capital, keeping tempo on army production. Warrior #1 holds Resres as garrison.
+  PLAN: 4 action(s) in 11.3s
+    1. move #5 -> (6,9)
+    2. train Rider at (3,8) (3 stars)
+    3. train Warrior at (3,8) (2 stars)
+    4. end turn
+  notes: Turn 5: Rider #5 sits on village (6,9) — CAPTURE next turn. New Rider + Warrior trained at capital (3,8). Next: new Rider scouts east/northeast past (6,7) to find Hoodrick capital (east/NE unexplored); Warrior heads north toward village (2,1) or ruins (0,7). Research Hunting->Archery once enemy foun
+  ok  move #5 -> (6,9)  (0.0s)
+  ok  train Rider at (3,8) (3 stars)  (0.0s)
+  --  train Warrior at (3,8) (2 stars)  skipped: no longer legal
+  ok  end turn  (0.0s)
+--- turn 5: 3 actions, 1 model call(s), model 11s, wall 22s, est $0.06 this turn ($0.41 so far)
+
+=== TURN 6 | Domination vs 1 Normal bot | Imperius: 11 stars (+5) | 2 cities, 3 units | enemy: 0 cities seen, 0 units visible | enemy capital not found yet ===
+MAP (explored region x 0-7, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7
+ 0  .+ .  .c .  .   ?  ?  ? 
+ 1  Tg Tg .v T  T   ?  ?  ? 
+ 2  .  .u Tg .  Tg  ?  ?  ? 
+ 3  .  .  T  .   ?  ?  ?  ? 
+ 4  .  T  .  .  Tg  ?  ?  ? 
+ 5  .  ^  T  .CWT   ?  ?  ? 
+ 6  .  T  .c T  T  T   ?  ? 
+ 7  Tr .u T  ^  .  T  T   ? 
+ 8  T  T  T  .CRT  .u .u ^  
+ 9  .  T  .  .  ^  ^  .vR.u 
+10  .+ ^  .  .  .  T  .u .c 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~500 tokens
+  > Rider #5 takes the village at (6,9) — that's a new city and more income. Rider #8 heads east from the capital to scout for Hoodrick, freeing the capital tile so I can train another unit this turn. The warrior starts walking north toward the village at (2,1).Rider #5 captures the village at (6,9), giving me a third city and more income/unit capacity. Rider #8 pushes east to (5,6) to scout for the still-unfound Hoodrick capital, which also frees the capital tile so I can train another cheap unit. Warrior #1 begins the trek north toward the village at (2,1).
+  PLAN: 3 action(s) in 17.2s  [asks to be called again]
+    1. capture #5 at (6,9)
+    2. move #8 -> (5,6)
+    3. move #1 -> (2,4)
+  notes: Turn 6: captured village (6,9) -> new city. Rider #8 scouting east from (5,6) toward unexplored x>=7 / NE. Warrior #1 walking north to village (2,1) (route (2,4)->(2,3)->(2,2)->(2,1)). Rider #5 hp4 at (6,9) — rest/recover in new city. After moves, train a Warrior/Rider at capital (3,8). Enemy capita
+  ok  capture #5 at (6,9)  (0.0s)
+  ok  move #8 -> (5,6)  (0.0s)
+  ok  move #1 -> (2,4)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~250 tokens
+  > New city Moip at (6,9) is captured and sits on a cluster of fruit tiles — harvesting four of them cheaply levels it up twice, boosting income and unit capacity for the eastern front. I'm also adding a Rider at the capital to continue scouting the unexplored east/north for Hoodrick's capital, plus a cheap Warrior at Resres to escort the north push toward village (2,1). Rider #5 rests in Moip to heal.
+  PLAN: 7 action(s) in 12.4s
+    1. train Rider at (3,8) (3 stars)
+    2. train Warrior at (3,5) (2 stars)
+    3. build HarvestFruit at (5,8) (2 stars)
+    4. build HarvestFruit at (6,8) (2 stars)
+    5. build HarvestFruit at (7,9) (2 stars)
+    6. build HarvestFruit at (6,10) (2 stars)
+    7. end turn
+  notes: Turn 6: harvested 4 fruit at Moip (6,9) -> should reach level 2/3. New Rider at capital (3,8) -> send east/NE hunting enemy capital (unexplored x>=8). Rider #8 continues east from (5,6). Warrior #1 route (2,4)->(2,3)->(2,2)->(2,1) to capture village. Rider #5 healing in Moip. Enemy capital unfound —
+  ok  train Rider at (3,8) (3 stars)  (0.0s)
+  ok  train Warrior at (3,5) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (5,8) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (6,8) (2 stars)  (0.0s)
+  ok  [city reward] city reward Explorer at (6,9)  (0.0s)
+  ok  build HarvestFruit at (7,9) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (6,10) (2 stars)  (0.0s)
+  ok  end turn  (0.0s)
+-- planning (model call 3 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~200 tokens  thinking... ~250 tokens  thinking... ~300 tokens  thinking... ~350 tokens
+  > Turn's main moves are done: Moip captured a level-up, fruit harvested, and a new Rider plus Warrior trained. I have 8 stars left; rather than a 7-star tech that doesn't help a rush, I'll take the free +3 population monument inside the capital's territory at (3,9) to push Iplolus to level 4 (more unit capacity and income), and bank the stars for units next turn. Enemy capital Wegoth (8,3) is now located with walls and a warrior garrison, and an enemy Archer sits at (7,7) near Moip.
+  PLAN: 2 action(s) in 16.8s
+    1. build Monument7 at (3,9) (0 stars)
+    2. end turn
+  notes: Enemy capital Wegoth (8,3), walls, warrior garrison; also enemy Archer at (7,7) threatening Moip/village (7,6) — kill it with Rider #8 (5,6) + support, then capture village (7,6). Warrior #1 continue (2,4)->(2,3)->(2,2)->(2,1) village. Rider #10 head NE toward (8,3) scouting approach. Bank stars: ne
+  ok  build Monument7 at (3,9) (0 stars)  (0.0s)
+--- turn 6: 12 actions, 3 model call(s), model 46s, wall 91s, est $0.22 this turn ($0.63 so far)
+
+=== TURN 7 | Domination vs 1 Normal bot | Imperius: 8 stars (+7) | 3 cities, 5 units | enemy: 1 cities seen, 4 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^ wT  .  .+ 
+ 1  Tg Tg .v T  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .   ?  ?  ? .  .*wT  T  
+ 4  .  T  . W.  Tg  ?  ? .  T  .c Tg 
+ 5  .  ^  T  .CWT  T  Tg T  . w.  T  
+ 6  .  T  .c T  T  T R.u .v TgaT  T  
+ 7  Tr .u T  ^  .  T  T  .u T  .c T  
+ 8  T  T  T  .CRT  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .  ^  ^  .CR.  T  .v .u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~500 tokens  thinking... ~600 tokens
+  > Free monuments (+3 pop each, 0 stars) are on the table — I'm grabbing them in all three cities to snowball city levels, income and unit capacity. Militarily, Rider #8 pushes onto the village at (7,6) to capture it next turn, Rider #10 advances northeast to (5,7) to join the eastern front, Warrior #1 continues north toward the (2,1) village, and the wounded Rider #5 recovers inside Moip.
+  PLAN: 11 action(s) in 18.4s
+    1. move #8 -> (7,6)
+    2. move #10 -> (5,7)
+    3. move #1 -> (2,3)
+    4. recover at (6,9)
+    5. build Monument7 at (2,4) (0 stars)
+    6. build Monument7 at (2,6) (0 stars)
+    7. build Monument7 at (2,9) (0 stars)
+    8. build Monument7 at (3,9) (0 stars)
+    9. build Monument7 at (7,9) (0 stars)
+    10. build Monument7 at (6,10) (0 stars)
+    11. end turn
+  notes: Rider #8 on village (7,6): capture next turn if it survives (enemy Archer 8,6 / Warrior 8,5 nearby). Rider #10 (5,7) supports east push; focus-fire the Archer at (8,6) when possible. Warrior #1 route (2,3)->(2,2)->(2,1) village. Rider #5 healing in Moip. Cities leveled by free monuments -> more inco
+  !!  move #8 -> (7,6)  REJECTED: Pending command trigger exists
+  ok  [city reward] city reward PopulationGrowth at (3,8)  (0.0s)
+  ok  move #10 -> (5,7)  (0.0s)
+  ok  move #1 -> (2,3)  (0.0s)
+  ok  recover at (6,9)  (0.0s)
+  --  build Monument7 at (2,4) (0 stars)  skipped: no longer legal
+  --  build Monument7 at (2,6) (0 stars)  skipped: no longer legal
+  --  build Monument7 at (2,9) (0 stars)  skipped: no longer legal
+  --  build Monument7 at (3,9) (0 stars)  skipped: no longer legal
+  --  build Monument7 at (7,9) (0 stars)  skipped: no longer legal
+  --  build Monument7 at (6,10) (0 stars)  skipped: no longer legal
+  ok  end turn  (0.0s)
+--- turn 7: 6 actions, 1 model call(s), model 18s, wall 40s, est $0.09 this turn ($0.72 so far)
+
+=== TURN 8 | Domination vs 1 Normal bot | Imperius: 15 stars (+8) | 3 cities, 5 units | enemy: 1 cities seen, 3 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .v T  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T W.   ?  ?  ? .  .*wT  T  
+ 4  .  T  .  .  Tg  ?  ? .  T  .c Tg 
+ 5  .  ^  T  .CWT  T  Tg T  .  .  T  
+ 6  .  T  .c T  T  T R.u .vaTg T wT  
+ 7  Tr .u T  ^  .  T RT  .u T  .c T  
+ 8  T  T  T  .C T  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .+ ^  ^  .CR.  T  .v .u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~500 tokens
+  > The enemy Archer sits on the village at (7,6) with a Warrior backing it at (9,6). I'm swinging both healthy Riders (#8 to (6,7), #5 to (7,7)) adjacent to the Archer so I can focus-fire it this turn — it has defence 1 and should die, freeing the village for capture. Wounded Rider #10 recovers, Warrior #1 continues toward the northern village at (2,1), and the capital pumps out a Warrior and a Rider to build the siege stack for Wegoth.
+  PLAN: 6 action(s) in 17.8s  [asks to be called again]
+    1. move #1 -> (2,2)
+    2. move #8 -> (6,7)
+    3. move #5 -> (7,7)
+    4. recover at (5,7)
+    5. train Warrior at (3,8) (2 stars)
+    6. train Rider at (3,8) (3 stars)
+  notes: Riders #8 (6,7) and #5 (7,7) adjacent to enemy Archer on village (7,6): focus-fire it, then park a rider on (7,6) to capture next turn. #10 healing at (5,7). Warrior #1 (2,2)->(2,1) village capture. New Warrior+Rider from capital (3,8) march east/north to join siege of Wegoth (8,3, walls). Watch ene
+  ok  move #1 -> (2,2)  (0.0s)
+  ok  move #8 -> (6,7)  (0.0s)
+  ok  move #5 -> (7,7)  (0.0s)
+  ok  recover at (5,7)  (0.0s)
+  ok  train Warrior at (3,8) (2 stars)  (0.0s)
+  --  train Rider at (3,8) (3 stars)  skipped: no longer legal
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens
+  > Both riders can hit the enemy Archer sitting on the village at (7,6) for 6 each — 12 damage kills it, and the killing rider advances onto the village tile to capture it next turn. With income at +8 I'll also research Hunting (path to Archery for cracking Wegoth's walls) and train a Rider plus Warrior at Moip to feed the eastern front. Warrior #11 steps toward the front at (4,6).
+  PLAN: 7 action(s) in 13.8s
+    1. attack #8 -> Archer#2 at (7,6) (deals 6, takes 2)
+    2. attack #5 -> Archer#2 at (7,6) (deals 6, takes 2)
+    3. research Hunting (7 stars)
+    4. train Rider at (6,9) (3 stars)
+    5. train Warrior at (6,9) (2 stars)
+    6. move #11 -> (4,6)
+    7. end turn
+  notes: Rider should now stand on village (7,6) — CAPTURE it next turn. Enemy Warrior #7 at (9,6) is the nearby threat; focus-fire it with riders/new units. Research Archery next (after Hunting) for no-retaliation damage vs walled capital Wegoth (8,3). Warrior #1 at (2,2) -> (2,1) to capture that village. K
+  ok  attack #8 -> Archer#2 at (7,6) (deals 6, takes 2)  (0.0s)
+  ok  attack #5 -> Archer#2 at (7,6) (deals 7, takes 0, KILLS)  (0.0s)
+  ok  research Hunting (7 stars)  (0.0s)
+  ok  train Rider at (6,9) (3 stars)  (0.0s)
+  --  train Warrior at (6,9) (2 stars)  skipped: no longer legal
+  ok  move #11 -> (4,6)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 8: 11 actions, 2 model call(s), model 32s, wall 83s, est $0.16 this turn ($0.88 so far)
+
+=== TURN 9 | Domination vs 1 Normal bot | Imperius: 11 stars (+8) | 3 cities, 7 units | enemy: 1 cities seen, 3 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .v T  T   ?  ? .c ^  T  .c 
+ 2  .  .u TgW.  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .   ?  ?  ? .  .*aT  T  
+ 4  .  T  .  .  Tg  ?  ? . wT  .c Tg 
+ 5  .  ^  T  .C T  T  Tg T  .  .  T  
+ 6  .  T  .c T  T WT  .u .vRTg T  T  
+ 7  Tr .u T  ^  .  T RT R.u T w.c T  
+ 8  T  T  T  .CWT  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .+ ^  ^  .CR.  T  .v .u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~300 tokens  thinking... ~400 tokens
+  > Rider #5 is standing on the village at (7,6), so I capture it — a fourth city right on the doorstep of enemy capital Wegoth. I research Archery first (before the capture raises tech costs) so I can start buying Archers to chip the walled capital without retaliation. Warrior #1 steps onto the village at (2,1) to grab it next turn, and the remaining riders and warriors push north toward (8,3) as a group.
+  PLAN: 8 action(s) in 15.2s
+    1. research Archery (10 stars)
+    2. capture #5 at (7,6)
+    3. move #1 -> (2,1)
+    4. move #11 -> (5,6)
+    5. move #10 -> (6,5)
+    6. move #8 -> (7,5)
+    7. move #14 -> (7,7)
+    8. end turn
+  notes: Archery known: train Archers at Moip/new city (7,6) each turn and shell Wegoth (8,3) from range 2 (no retaliation vs walls). Warrior #1 captures village (2,1) next turn. Riders massing at (6,5)/(7,5)/(7,7) — regroup, heal weak ones, then focus-fire the garrison. Village (9,9) still uncaptured; send 
+  ok  research Archery (10 stars)  (0.0s)
+  ok  capture #5 at (7,6)  (0.0s)
+  ok  move #1 -> (2,1)  (0.0s)
+  ok  move #11 -> (5,6)  (0.0s)
+  ok  move #10 -> (6,5)  (0.0s)
+  ok  move #8 -> (7,5)  (0.0s)
+  ok  move #14 -> (7,7)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 9: 8 actions, 1 model call(s), model 15s, wall 52s, est $0.08 this turn ($0.96 so far)
+
+=== TURN 10 | Domination vs 1 Normal bot | Imperius: 9 stars (+8) | 4 cities, 6 units | enemy: 1 cities seen, 3 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .vWT  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .   ?  ?  ? .  .*aT  T  
+ 4  .  T  .  .  Tg .c T  .  T  .c Tg 
+ 5  .  ^  T  .C T  T  TgRT R.  .  T  
+ 6  .  T  .c T  T  T W.u .CwTgwT  T  
+ 7  Tr .u T  ^  .  T  T  .uRT  .c T  
+ 8  T  T  T  .CWT  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .+ ^  ^  .C .  T  .v .u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~500 tokens  thinking... ~600 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~850 tokens  thinking... ~950 tokens  thinking... ~1050 tokens  thinking... ~1100 tokens  thinking... ~1200 tokens  thinking... ~1300 tokens
+  > An enemy warrior has walked onto my city Carolo at (7,6) and another sits at (8,6) — I need to clear them this turn. My two riders there are wounded, so I'm bringing the full-health Warrior #11 up to (6,6) to do the heavy hitting, and softening the target first with Rider #8 (deals 4). Meanwhile Warrior #1 captures the village at (2,1), Moip trains another Archer for the eventual siege of Wegoth, and I add a hunting improvement at Resres. I'll re-evaluate the finishing blows once #11 is adjacent.
+  PLAN: 5 action(s) in 29.7s  [asks to be called again]
+    1. capture #1 at (2,1)
+    2. build Hunting at (4,4) (2 stars)
+    3. train Archer at (6,9) (3 stars)
+    4. attack #8 -> Warrior#9 at (7,6) (deals 4, takes 5)
+    5. move #11 -> (6,6)
+  notes: Priority: retake/hold Carolo (7,6) — enemy warriors #9 (7,6) and #7 (8,6) must die; focus fire, finish with a healthy unit advancing onto the city tile. Riders #10 (6hp) and #14 (4hp) should recover in friendly territory if not needed for a kill. New village (2,1) = 4th... 5th city; Warrior #1 then 
+  ok  capture #1 at (2,1)  (0.0s)
+  ok  build Hunting at (4,4) (2 stars)  (0.0s)
+  ok  [city reward] city reward Workshop at (3,5)  (0.0s)
+  ok  train Archer at (6,9) (3 stars)  (0.0s)
+  ok  attack #8 -> Warrior#9 at (7,6) (deals 4, takes 5)  (0.0s)
+  ok  move #11 -> (6,6)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~600 tokens
+  > Warrior #11 can kill the enemy warrior sitting on Carolo (7,6) with zero retaliation and will advance onto the city tile, retaking it. The wounded riders pull back: #10 recovers at (6,5), #8 (3hp) retreats to (6,4), and #14 rides for the free village at (9,9) to grab a 6th city. With 12 stars I buy three cheap population improvements around Carolo and Moip and train another Archer at Resres to build the stack that will eventually shell Wegoth.
+  PLAN: 9 action(s) in 18.7s
+    1. attack #11 -> Warrior#9 at (7,6) (deals 6, takes 0, KILLS)
+    2. recover at (6,5)
+    3. move #8 -> (6,4)
+    4. move #14 -> (9,9)
+    5. build Hunting at (6,5) (2 stars)
+    6. build HarvestFruit at (6,6) (2 stars)
+    7. build HarvestFruit at (7,7) (2 stars)
+    8. train Archer at (3,5) (3 stars)
+    9. end turn
+  notes: Carolo (7,6) retaken by Warrior #11 — keep it garrisoned; enemy Warrior #7 (7hp) at (8,6) is the next kill (focus with #11 + archers). Rider #14 captures village (9,9) next turn. Riders #10/#8 heal in friendly territory then rejoin. Long-term: mass Archers (range 2, no retaliation) at Carolo/Moip an
+  ok  attack #11 -> Warrior#9 at (7,6) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  recover at (6,5)  (0.0s)
+  ok  move #8 -> (6,4)  (0.0s)
+  ok  move #14 -> (9,9)  (0.0s)
+  ok  build Hunting at (6,5) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (6,6) (2 stars)  (0.0s)
+  ok  [city reward] city reward Workshop at (7,6)  (0.0s)
+  ok  build HarvestFruit at (7,7) (2 stars)  (0.0s)
+  ok  train Archer at (3,5) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 10: 16 actions, 2 model call(s), model 48s, wall 118s, est $0.20 this turn ($1.16 so far)
+
+=== TURN 11 | Domination vs 1 Normal bot | Imperius: 3 stars (+14) | 5 cities, 7 units | enemy: 1 cities seen, 2 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .CWT  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .   ? .c T  .  .*aT  T  
+ 4  .  T  .  .  T  .c T  .  T  .c Tg 
+ 5  .  ^  T  .CAT  T  T RT  .  .  T  
+ 6  .  T  .c T  T  T  .  .CWTg T  T  
+ 7  Tr .u T  ^  .  T  T  .  T  .cwT  
+ 8  T  T  T  .CWT  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .+ ^  ^  .CA.  T  .vR.u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~350 tokens  thinking... ~450 tokens
+  > Village (9,9) gets captured this turn by Rider #14 — that's a fifth... sixth city and more income/unit capacity. With only 3 stars I spend 2 on a Hunting camp at (8,6), which should push Carolo to level 3. Rider #10 pulls back to (7,5) to stay out of the enemy archer's range-2 umbrella while staging north, Archer #16 walks to (7,9) toward the wounded enemy warrior, Archer #17 shifts east to join the northern push, and Warrior #13 heads west for the ruins at (0,7).
+  PLAN: 7 action(s) in 16.7s
+    1. capture #14 at (9,9)
+    2. build Hunting at (8,6) (2 stars)
+    3. move #10 -> (7,5)
+    4. move #16 -> (7,9)
+    5. move #17 -> (4,4)
+    6. move #13 -> (2,7)
+    7. end turn
+  notes: New city at (9,9) — garrison it with #14 (4hp, let it heal/fortify). Enemy Warrior #7 (7hp) near (9,7): kill with Archer #16 + Rider. Main plan: mass Archers at Carolo (7,6)/new eastern city, push to Wegoth (8,3) level 3 + walls + Archer garrison; stay out of range 2 of (8,3) when staging. Warrior #
+  ok  capture #14 at (9,9)  (0.0s)
+  ok  build Hunting at (8,6) (2 stars)  (0.0s)
+  ok  move #10 -> (7,5)  (0.0s)
+  ok  move #16 -> (7,9)  (0.0s)
+  ok  move #17 -> (4,4)  (0.0s)
+  ok  move #13 -> (2,7)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 11: 7 actions, 1 model call(s), model 17s, wall 49s, est $0.08 this turn ($1.24 so far)
+
+=== TURN 12 | Domination vs 1 Normal bot | Imperius: 15 stars (+15) | 6 cities, 7 units | enemy: 1 cities seen, 3 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .CWT  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*sT  T  
+ 4  .  T  .  .  T A.c T  .  T  .caTg 
+ 5  .  ^  T  .C T  T  T  T R.  .  T  
+ 6  .  T  .c T  T  T  .  .CWT wT  T  
+ 7  Tr .u T W^  .  T  T  .  T  .c T  
+ 8  T  T  T  .C T  .  .  ^  .c Tg Tg 
+ 9  .  T  .  .+ ^  ^  .C . AT  .CR.u 
+10  .+ ^  .  .  .  T  .  .c ^  Tg .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~500 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~800 tokens  thinking... ~950 tokens  thinking... ~1050 tokens  thinking... ~1150 tokens
+  > Wounded Warrior #11 finishes off the enemy Warrior at (8,6) for free, keeping Rider #10 fresh to stage north at (6,4), out of the enemy Archer's range. I'm consolidating the eastern front — Archer #16 advances to (8,8), Archer #17 marches east — while spending all 15 stars: a new Archer in Moip and one in the capital, plus four cheap harvests around Icadoip to push it to level 2 for income. Rider #14 rests in the new city and Warrior #13 continues toward the ruins.
+  PLAN: 13 action(s) in 26.3s
+    1. attack #11 -> Warrior#7 at (8,6) (deals 4, takes 0, KILLS)
+    2. move #10 -> (6,4)
+    3. move #17 -> (5,4)
+    4. move #16 -> (8,8)
+    5. recover at (9,9)
+    6. move #13 -> (1,7)
+    7. train Archer at (6,9) (3 stars)
+    8. train Archer at (3,8) (3 stars)
+    9. build Hunting at (9,8) (2 stars)
+    10. build Hunting at (10,8) (2 stars)
+    11. build HarvestFruit at (10,9) (2 stars)
+    12. build Hunting at (9,10) (2 stars)
+    13. end turn
+  notes: Target: Wegoth (8,3) lvl3 + walls, Swordsman garrison, enemy Archer at (9,4). Kill that Archer first with my archers (no retaliation at range 2) before assaulting. Stage units at (7,4)/(8,5) only when 3+ archers ready. Keep training Archers every turn at Moip/Carolo/capital and walking them north-ea
+  ok  attack #11 -> Warrior#7 at (8,6) (deals 4, takes 0, KILLS)  (0.0s)
+  ok  move #10 -> (6,4)  (0.0s)
+  ok  move #17 -> (5,4)  (0.0s)
+  ok  move #16 -> (8,8)  (0.0s)
+  ok  recover at (9,9)  (0.0s)
+  ok  move #13 -> (1,7)  (0.0s)
+  ok  train Archer at (6,9) (3 stars)  (0.0s)
+  ok  train Archer at (3,8) (3 stars)  (0.0s)
+  ok  build Hunting at (9,8) (2 stars)  (0.0s)
+  ok  build Hunting at (10,8) (2 stars)  (0.0s)
+  ok  [city reward] city reward Workshop at (9,9)  (0.0s)
+  ok  build HarvestFruit at (10,9) (2 stars)  (0.0s)
+  ok  build Hunting at (9,10) (2 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 12: 14 actions, 1 model call(s), model 26s, wall 90s, est $0.11 this turn ($1.35 so far)
+
+=== TURN 13 | Domination vs 1 Normal bot | Imperius: 16 stars (+17) | 6 cities, 8 units | enemy: 1 cities seen, 3 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg Tg .CWT  T   ?  ? .c ^  T  .c 
+ 2  .  .u Tg .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*sT  T  
+ 4  .  T  .  .  T  .cAT R. sT  .c Tg 
+ 5  .  ^  T  .C T  T  T  T  . a.  T  
+ 6  .  T  .c T  T  T  .  .C T  T  T  
+ 7  Tr .uWT  ^  .  T  T  .  T  .c T  
+ 8  T  T  T  .CAT  .  .  ^  .cAT  T  
+ 9  .  T  .  .+ ^  ^  .CA.  T  .CR.  
+10  .+ ^  .  .  .  T  .  .c ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~500 tokens
+  > Enemy Swordsman #19 has pushed to (7,4), inside archer range from (5,4) — I hit it for 4 with essentially no retaliation, and keep my rider out of melee range instead of trading 4-for-8. Meanwhile I keep the war machine going: two more Archers (Resres and Carolo) to feed the northeast push on Wegoth, three cheap pop builds at Nuloca to grow the capital region, #13 walks onto the ruins at (0,7), and the wounded rider rests in Icadoip.
+  PLAN: 13 action(s) in 19.4s
+    1. attack #17 -> Swordsman#19 at (7,4) (deals 4, takes -0.1)
+    2. train Archer at (7,6) (3 stars)
+    3. train Archer at (3,5) (3 stars)
+    4. build Hunting at (1,1) (2 stars)
+    5. build HarvestFruit at (1,2) (2 stars)
+    6. build Hunting at (2,2) (2 stars)
+    7. move #10 -> (6,5)
+    8. move #13 -> (0,7)
+    9. move #21 -> (4,7)
+    10. move #16 -> (8,7)
+    11. move #20 -> (6,8)
+    12. recover at (9,9)
+    13. end turn
+  notes: Target Wegoth (8,3) lvl3+walls. Enemy Swordsman#19 at (7,4) now ~11hp: finish with archers (no retaliation at range 2) before advancing. Enemy Archer at (8,5) — kill next. Staging: archers via (8,7)/(7,7)/(6,8) north; rider #10 at (6,5). Never melee full-hp swordsmen. Keep training Archer each turn 
+  ok  attack #17 -> Swordsman#19 at (7,4) (deals 4, takes -0.1)  (0.0s)
+  ok  train Archer at (7,6) (3 stars)  (0.0s)
+  ok  train Archer at (3,5) (3 stars)  (0.0s)
+  ok  build Hunting at (1,1) (2 stars)  (0.0s)
+  ok  build HarvestFruit at (1,2) (2 stars)  (0.0s)
+  ok  [city reward] city reward Workshop at (2,1)  (0.0s)
+  ok  build Hunting at (2,2) (2 stars)  (0.0s)
+  ok  move #10 -> (6,5)  (0.0s)
+  ok  move #13 -> (0,7)  (0.0s)
+  ok  move #21 -> (4,7)  (0.0s)
+  ok  move #16 -> (8,7)  (0.0s)
+  ok  move #20 -> (6,8)  (0.0s)
+  ok  recover at (9,9)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 13: 14 actions, 1 model call(s), model 19s, wall 84s, est $0.10 this turn ($1.45 so far)
+
+=== TURN 14 | Domination vs 1 Normal bot | Imperius: 21 stars (+16) | 6 cities, 9 units | enemy: 1 cities seen, 4 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T  .CWT  T   ?  ? .cw^  T  .c 
+ 2  .  .  T  .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*sT  T  
+ 4  .  T  .  .  T  .cAT  .  T  .caTg 
+ 5  .  ^  T  .CAT  T  T RT  .  .  T  
+ 6  .  T  .c T  T  T  .  .CsT  T  T  
+ 7  TrW.u T  ^  . AT  T  .  T A.c T  
+ 8  T  T  T  .C T  .  . A^  .c T  T  
+ 9  .  T  .  .+ ^  ^  .C .  T  .CR.  
+10  .+ ^  .  .  .  T  .  .c ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~800 tokens  thinking... ~900 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens  thinking... ~1200 tokens
+  > An enemy Swordsman (11 hp) is sitting on my city Carolo at (7,6) — top priority is killing it and reoccupying the tile. Two archers hit it for 4 each with no retaliation, dropping it to ~3 hp, then Rider #10 finishes it and advances onto the city tile. Elsewhere I keep massing toward Wegoth (8,3): archers shuffle north, #13 pops the ruins, and I buy two more archers at Iplolus and Moip.
+  PLAN: 11 action(s) in 27.2s
+    1. attack #17 -> Swordsman#19 at (7,6) (deals 4, takes -0.1)
+    2. attack #20 -> Swordsman#19 at (7,6) (deals 4, takes -0.1)
+    3. attack #10 -> Swordsman#19 at (7,6) (deals 4, takes 7)
+    4. move #16 -> (8,6)
+    5. examine ruins at (0,7)
+    6. move #21 -> (5,6)
+    7. move #24 -> (4,4)
+    8. move #14 -> (7,7)
+    9. train Archer at (6,9) (3 stars)
+    10. train Archer at (3,8) (3 stars)
+    11. end turn
+  notes: Carolo (7,6) was occupied by enemy Swordsman#19 — killed T14, rider #10 now holds it; keep a unit in Carolo. Next: kill enemy Archer#15 (8 hp) near (9,4) with archers at range 2, no retaliation. Then assault Wegoth (8,3, lvl3+walls, Swordsman garrison): need 3+ archers at range 2 (tiles (8,5),(7,4),
+  ok  attack #17 -> Swordsman#19 at (7,6) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #20 -> Swordsman#19 at (7,6) (deals 5, takes -0.1)  (0.0s)
+  ok  attack #10 -> Swordsman#19 at (7,6) (deals 8, takes 0, KILLS)  (0.0s)
+  ok  move #16 -> (8,6)  (0.0s)
+  ok  examine ruins at (0,7)  (0.0s)
+  ok  move #21 -> (5,6)  (0.0s)
+  ok  move #24 -> (4,4)  (0.0s)
+  ok  move #14 -> (7,7)  (0.0s)
+  ok  train Archer at (6,9) (3 stars)  (0.0s)
+  ok  train Archer at (3,8) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 14: 11 actions, 1 model call(s), model 27s, wall 80s, est $0.11 this turn ($1.56 so far)
+
+=== TURN 15 | Domination vs 1 Normal bot | Imperius: 31 stars (+19) | 6 cities, 11 units | enemy: 1 cities seen, 4 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T  .CWT  T   ?  ? .c ^  T  .c 
+ 2  .  .  T  .  Tgs ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*wT  T  
+ 4  .  T  .  .  T A.cAT  . sT  .caTg 
+ 5  .  ^  T  .C T  T  T  T  .  .  T  
+ 6  .  T  .c T  T  T A.  .CRT AT  T  
+ 7  T W.u T  ^  .  T  T  . RT  .c T  
+ 8  T  T  T  .CAT  .  . A^  .c T  T  
+ 9  .  T  .  .+ ^  ^  .CA.  T  .C .  
+10  .+ ^  .  .  .  T  .  .c ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~100 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~600 tokens  thinking... ~800 tokens  thinking... ~900 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens
+  > Enemy Archer#15 (6 hp) dies for free to my wounded Archer#16 at range 2. Archers #17 and #21 pound Swordsman#22 at (7,4) for 8 total (no retaliation), leaving it at 7 hp for next turn's kill, while #24 chips Swordsman#18. I push archers and the rider forward toward Wegoth (8,3) and train two more archers with my 31 stars — the siege stack needs 3-4 archers at range 2 before I commit a melee unit to the city tile.
+  PLAN: 12 action(s) in 23.8s
+    1. attack #16 -> Archer#15 at (9,4) (deals 6, takes 0, KILLS)
+    2. attack #17 -> Swordsman#22 at (7,4) (deals 4, takes -0.1)
+    3. attack #21 -> Swordsman#22 at (7,4) (deals 4, takes -0.1)
+    4. attack #24 -> Swordsman#18 at (4,2) (deals 3, takes -0.1)
+    5. move #14 -> (7,5)
+    6. move #20 -> (6,7)
+    7. move #25 -> (7,9)
+    8. move #26 -> (4,7)
+    9. move #13 -> (1,8)
+    10. train Archer at (3,5) (3 stars)
+    11. train Archer at (9,9) (3 stars)
+    12. end turn
+  notes: Enemy Archer#15 dead T15. Swordsman#22 at (7,4) should be at ~7hp: finish it T16 with archers #17/#21/#16 (no retaliation), never melee it at full hp. Then siege Wegoth (8,3, lvl3+walls, Warrior garrison): archers on (8,5)/(7,4)/(9,5) at range 2, kill garrison, then move rider #14 or #10 onto (8,3) 
+  ok  attack #16 -> Archer#15 at (9,4) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  attack #17 -> Swordsman#22 at (7,4) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #21 -> Swordsman#22 at (7,4) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #24 -> Swordsman#18 at (4,2) (deals 3, takes -0.1)  (0.0s)
+  ok  move #14 -> (7,5)  (0.0s)
+  ok  move #20 -> (6,7)  (0.0s)
+  ok  move #25 -> (7,9)  (0.0s)
+  ok  move #26 -> (4,7)  (0.0s)
+  ok  move #13 -> (1,8)  (0.0s)
+  ok  train Archer at (3,5) (3 stars)  (0.0s)
+  ok  train Archer at (9,9) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 15: 12 actions, 1 model call(s), model 24s, wall 82s, est $0.13 this turn ($1.69 so far)
+
+=== TURN 16 | Domination vs 1 Normal bot | Imperius: 44 stars (+19) | 6 cities, 13 units | enemy: 1 cities seen, 5 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T  .CWT  T   ?  ? .c ^  T  .c 
+ 2  .  .  T  .  Tgs ?  ? T  ^  .u T  
+ 3  .  .  T  . s.u .c T  . w.*sT  T  
+ 4  .  T  .  .  T A.cAT  .  T  .c Tg 
+ 5  .  ^  T  .CAT  T  T sT R.  .  T  
+ 6  .  T  .c T  T  T A.  .CRT AT  T  
+ 7  T  .u T  ^  . AT  T A.  T  .c T  
+ 8  T  T WT  .C T  .  .  ^  .c T  T  
+ 9  .  T  .  .+ ^  ^  .C . AT  .CA.  
+10  .+ ^  .  .  .  T  .  .c ^  T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~500 tokens  thinking... ~600 tokens  thinking... ~700 tokens  thinking... ~800 tokens  thinking... ~900 tokens  thinking... ~1000 tokens  thinking... ~1050 tokens  thinking... ~1150 tokens  thinking... ~1250 tokens  thinking... ~1350 tokens
+  > Swordsman#22 is at 5hp next to Carolo — I finish it with archer #21 at range (no retaliation), keeping both riders free. Archer #29 chips Swordsman#18 for 4, #17 pings the warrior guarding Wegoth's approach, and my two badly hurt archers (#24 1hp, #16 5hp) rest inside friendly territory. Rider #10 pushes to (8,5) to stage the assault on Wegoth, archers shuffle north behind it, and the capital trains another archer while I bank Climbing for mountain movement.
+  PLAN: 14 action(s) in 28.4s
+    1. research Climbing (10 stars)
+    2. attack #21 -> Swordsman#22 at (6,5) (deals 5, takes 0, KILLS)
+    3. attack #17 -> Warrior#28 at (7,3) (deals 2, takes -0.1)
+    4. attack #29 -> Swordsman#18 at (3,3) (deals 4, takes -0.1)
+    5. recover at (4,4)
+    6. recover at (8,6)
+    7. move #10 -> (8,5)
+    8. move #20 -> (7,7)
+    9. move #26 -> (5,7)
+    10. move #20 -> (6,6)
+    11. move #13 -> (2,8)
+    12. move #25 -> (8,8)
+    13. train Archer at (3,8) (3 stars)
+    14. end turn
+  notes: Swordsman#22 killed T16. Siege plan for Wegoth (8,3, lvl3 walls, Swordsman#31): archers to (8,5)/(9,4)/(7,4) range 2, kill garrison, then rider #14 or #10 steps onto (8,3) same turn. #10 now at (8,5), #14 at (7,5). Enemy Warrior#28 (7,3), Swordsmen #27 (4,2)/#18 (3,3) roam near Nuloca — chip with #2
+  ok  research Climbing (10 stars)  (0.0s)
+  ok  attack #21 -> Swordsman#22 at (6,5) (deals 5, takes 0, KILLS)  (0.0s)
+  ok  attack #17 -> Warrior#28 at (7,3) (deals 2, takes -0.1)  (0.0s)
+  ok  attack #29 -> Swordsman#18 at (3,3) (deals 4, takes -0.1)  (0.0s)
+  ok  recover at (4,4)  (0.0s)
+  ok  recover at (8,6)  (0.0s)
+  ok  move #10 -> (8,5)  (0.0s)
+  ok  move #20 -> (7,7)  (0.0s)
+  ok  move #26 -> (5,7)  (0.0s)
+  --  move #20 -> (6,6)  skipped: no longer legal
+  ok  move #13 -> (2,8)  (0.0s)
+  ok  move #25 -> (8,8)  (0.0s)
+  ok  train Archer at (3,8) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 16: 13 actions, 1 model call(s), model 28s, wall 92s, est $0.15 this turn ($1.84 so far)
+
+=== TURN 17 | Domination vs 1 Normal bot | Imperius: 50 stars (+19) | 6 cities, 13 units | enemy: 1 cities seen, 5 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T  .CWT  T   ?  ? .c ^m T  .c 
+ 2  .  .  T  . sTg  ?  ? T s^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*sT  T  
+ 4  .  T  .  .  T s.cAT  . wT  .c Tg 
+ 5  .  ^  T  .CAT  T  T  T R. R.  T  
+ 6  .  T  .c T  T  T A.  .C T AT  T  
+ 7  T  .u T  ^m .  T AT  . AT  .c T  
+ 8  T  T  T W.CAT  .  .  ^m .cAT  T  
+ 9  .  T  .  .+ ^m ^m .C .  T  .CA.  
+10  .+ ^m .  .  .  T  .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~650 tokens  thinking... ~700 tokens  thinking... ~800 tokens  thinking... ~850 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens  thinking... ~1200 tokens  thinking... ~1250 tokens  thinking... ~1350 tokens  thinking... ~1400 tokens  thinking... ~1500 tokens  thinking... ~1550 tokens  thinking... ~1650 tokens  thinking... ~1800 tokens  thinking... ~1850 tokens  thinking... ~1900 tokens  thinking... ~2000 tokens  thinking... ~2100 tokens
+  > The siege of Wegoth (8,3) needs real punch — its garrison is a full-health Swordsman behind walls and my archers only chip 2-3 a hit. So I'm investing this turn's stars into Forestry as the first step toward Mathematics and Catapults (atk 4, range 3), which will crack the capital. Meanwhile archer #21 cleanly kills the wounded Warrior at (7,4) with no retaliation, rider #14 pushes to (8,4) to bait the garrison out, and the eastern archers shuffle north into siege positions while a fresh archer trains in Carolo.
+  PLAN: 14 action(s) in 39.9s
+    1. research Forestry (16 stars)
+    2. attack #21 -> Warrior#28 at (7,4) (deals 6, takes 0, KILLS)
+    3. train Archer at (7,6) (3 stars)
+    4. move #14 -> (8,4)
+    5. move #16 -> (9,5)
+    6. recover at (8,5)
+    7. attack #17 -> Swordsman#27 at (3,2) (deals 2, takes -0.1)
+    8. move #29 -> (3,4)
+    9. move #26 -> (6,6)
+    10. move #20 -> (8,7)
+    11. move #25 -> (9,7)
+    12. move #30 -> (9,8)
+    13. recover at (2,1)
+    14. end turn
+  notes: Researched Forestry T17 -> research MATHEMATICS next turn, then build Catapults (8 stars, range 3) at Carolo (7,6) to shell Wegoth (8,3) from (8,5)/(9,5) safely. Siege ring forming: #14 rider (8,4), #16 (9,5), #10 healing (8,5), #20 (8,7), #25 (9,7). Rider #14 or #10 steps onto (8,3) the turn the ga
+  ok  research Forestry (16 stars)  (0.0s)
+  ok  attack #21 -> Warrior#28 at (7,4) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  train Archer at (7,6) (3 stars)  (0.0s)
+  ok  move #14 -> (8,4)  (0.0s)
+  ok  move #16 -> (9,5)  (0.0s)
+  ok  recover at (8,5)  (0.0s)
+  ok  attack #17 -> Swordsman#27 at (3,2) (deals 2, takes -0.1)  (0.0s)
+  ok  move #29 -> (3,4)  (0.0s)
+  ok  move #26 -> (6,6)  (0.0s)
+  ok  move #20 -> (8,7)  (0.0s)
+  ok  move #25 -> (9,7)  (0.0s)
+  ok  move #30 -> (9,8)  (0.0s)
+  ok  recover at (2,1)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 17: 14 actions, 1 model call(s), model 40s, wall 108s, est $0.16 this turn ($2.00 so far)
+
+=== TURN 18 | Domination vs 1 Normal bot | Imperius: 50 stars (+16) | 6 cities, 14 units | enemy: 1 cities seen, 5 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T  .CWT  T   ?  ? .c ^m T  .c 
+ 2  .  .  T  .  Tgw ?  ? T  ^  .u T  
+ 3  .  .  T  . s.u .c T  . s.*sT  T  
+ 4  .  T  .  . AT  .cAT  .  T R.c Tg 
+ 5  .  ^  T  .CsT  T  T  T  . R. AT  
+ 6  .  T  .c T  T  T A. A.CAT  T  T  
+ 7  T  .u T  ^m .  T  T  .  T A.cAT  
+ 8  T  T  T W.CAT  .  .  ^m .c T AT  
+ 9  .  T  .  .+ ^m ^m .C .  T  .C .  
+10  .+ ^m .  .  .  T  .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~600 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~850 tokens  thinking... ~950 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens  thinking... ~1150 tokens  thinking... ~1250 tokens  thinking... ~1350 tokens
+  > The siege of Wegoth is close: I have five healthy archers converging and 50 stars. I'm researching Mathematics now to unlock Catapults (range 3 — they can shell the walled capital from (8,5)/(9,5) with zero retaliation), then I'll be asked again to buy one. Meanwhile the free ranged chip-attacks go in: #16 hits Swordsman #34 for 4, #17 chips #27, #21 hits #18 for 5 near Resres. Wounded units (#14 at 1hp, #29 at 2hp) pull back out of reach, #10 rests to full, and the archer wall shifts one tile north.
+  PLAN: 14 action(s) in 30.4s  [asks to be called again]
+    1. research Mathematics (22 stars)
+    2. attack #16 -> Swordsman#34 at (7,3) (deals 4, takes -0.1)
+    3. attack #17 -> Swordsman#27 at (3,3) (deals 2, takes -0.1)
+    4. attack #21 -> Swordsman#18 at (3,5) (deals 5, takes -0.1)
+    5. move #29 -> (2,3)
+    6. recover at (2,1)
+    7. move #14 -> (9,6)
+    8. recover at (8,5)
+    9. move #20 -> (8,6)
+    10. move #35 -> (7,5)
+    11. move #26 -> (6,5)
+    12. move #25 -> (10,6)
+    13. move #30 -> (10,7)
+    14. train Archer at (9,9) (3 stars)
+  notes: Mathematics researched T18. Next: train Catapult (8s) at Carolo (7,6)/Icadoip each turn, park it at (8,5) or (9,5) and shell Wegoth (8,3) garrison (range 3, no retaliation). Archer line: #16(9,5) #20(8,6) #25(10,6) #35(7,5) #26(6,5) #30(10,7) pushing to (8,4)/(9,4). Kill garrison then step Rider #10
+  ok  research Mathematics (22 stars)  (0.0s)
+  ok  attack #16 -> Swordsman#34 at (7,3) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #17 -> Swordsman#27 at (3,3) (deals 2, takes -0.1)  (0.0s)
+  ok  attack #21 -> Swordsman#18 at (3,5) (deals 5, takes -0.1)  (0.0s)
+  ok  move #29 -> (2,3)  (0.0s)
+  ok  recover at (2,1)  (0.0s)
+  ok  move #14 -> (9,6)  (0.0s)
+  ok  recover at (8,5)  (0.0s)
+  ok  move #20 -> (8,6)  (0.0s)
+  ok  move #35 -> (7,5)  (0.0s)
+  ok  move #26 -> (6,5)  (0.0s)
+  ok  move #25 -> (10,6)  (0.0s)
+  ok  move #30 -> (10,7)  (0.0s)
+  ok  train Archer at (9,9) (3 stars)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~300 tokens  thinking... ~450 tokens  thinking... ~500 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~850 tokens
+  > Two archers focus Swordsman #34 at (7,3) for 10 damage — that kills the wounded blocker in front of Wegoth with zero retaliation. Archer #29 chips the western Swordsman #18 for free. I'm buying the first Catapult at Carolo (range 3, no retaliation) to start shelling the walled capital garrison next turn, and spending spare stars on lumber huts to level Carolo, Resres and Nuloca for more income and unit capacity. Warrior #13 and Archer #33 shift east/north to screen against the western swordsman.
+  PLAN: 12 action(s) in 20.7s
+    1. attack #26 -> Swordsman#34 at (7,3) (deals 5, takes -0.1)
+    2. attack #35 -> Swordsman#34 at (7,3) (deals 5, takes -0.1)
+    3. attack #29 -> Swordsman#18 at (3,5) (deals 3, takes -0.1)
+    4. train Catapult at (7,6) (8 stars)
+    5. build LumberHut at (6,5) (3 stars)
+    6. build LumberHut at (4,4) (3 stars)
+    7. build LumberHut at (2,5) (3 stars)
+    8. build LumberHut at (4,5) (3 stars)
+    9. build LumberHut at (1,1) (3 stars)
+    10. move #13 -> (3,7)
+    11. move #33 -> (4,7)
+    12. end turn
+  notes: Catapult built at Carolo (7,6): walk it (7,5)->(8,4) area and shell Wegoth (8,3) garrison from range 3 (no retaliation). Buy a second Catapult next turn if stars allow. Archer line #16(9,5) #20(8,6) #25(10,6) #35 #26 #30 push to (8,4)/(9,4). Kill garrison then move Rider #10 onto (8,3) to capture. W
+  ok  attack #26 -> Swordsman#34 at (7,3) (deals 5, takes -0.1)  (0.0s)
+  ok  attack #35 -> Swordsman#34 at (7,3) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  attack #29 -> Swordsman#18 at (3,5) (deals 3, takes -0.1)  (0.0s)
+  ok  train Catapult at (7,6) (8 stars)  (0.0s)
+  ok  build LumberHut at (6,5) (3 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (7,6)  (0.0s)
+  ok  build LumberHut at (4,4) (3 stars)  (0.0s)
+  ok  build LumberHut at (2,5) (3 stars)  (0.0s)
+  ok  build LumberHut at (4,5) (3 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (3,5)  (0.0s)
+  ok  build LumberHut at (1,1) (3 stars)  (0.0s)
+  ok  move #13 -> (3,7)  (0.0s)
+  ok  move #33 -> (4,7)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 18: 28 actions, 2 model call(s), model 51s, wall 183s, est $0.30 this turn ($2.30 so far)
+
+=== TURN 19 | Domination vs 1 Normal bot | Imperius: 28 stars (+17) | 5 cities, 14 units | enemy: 2 cities seen, 5 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .CWT  T   ?  ? .c ^m T  .c 
+ 2  .  .  T  .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T w.  .u .c T  .  .*sT  T  
+ 4  .  T  .  . sT+ .cAT  .  T  .c Tg 
+ 5  .  ^  T+ .csT+ T  T+AT A. s. AT  
+ 6  .  T  .c T  T  T A.  .CCT AT RT A
+ 7  T  .u T  ^mW. AT  T  .  T  .c T A
+ 8  T  T  T  .C T  .  .  ^m .c T  T  
+ 9  .  T  .  .+ ^m ^m .C .  T  .CA.  
+10  .+ ^m .  .  .  T  .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~550 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~850 tokens  thinking... ~950 tokens  thinking... ~1050 tokens  thinking... ~1100 tokens  thinking... ~1200 tokens  thinking... ~1250 tokens  thinking... ~1350 tokens  thinking... ~1450 tokens  thinking... ~1500 tokens  thinking... ~1550 tokens  thinking... ~1650 tokens  thinking... ~1750 tokens  thinking... ~1800 tokens  thinking... ~1900 tokens  thinking... ~2000 tokens  thinking... ~2100 tokens  thinking... ~2250 tokens  thinking... ~2300 tokens  thinking... ~2400 tokens  thinking... ~2500 tokens  thinking... ~2550 tokens
+  > Two kill windows this turn. East: focus-fire Swordsman #36 at (8,5) with the three archers that take no retaliation (#25, #30, #26), then #20 finishes it for free. Then the catapult shells Wegoth's garrison for 10 and archers #35/#16 finish the Swordsman off, leaving the enemy capital empty for next turn. West: #33 and #21 kill both wounded swordsmen — that clears Resres, so Warrior #13 steps to (3,6) to walk in next turn. I also buy four lumber huts to level Carolo and a Rider to scout for Hoodrick's unknown third city.
+  PLAN: 19 action(s) in 45.3s
+    1. attack #25 -> Swordsman#36 at (8,5) (deals 4, takes -0.1)
+    2. attack #30 -> Swordsman#36 at (8,5) (deals 4, takes -0.1)
+    3. attack #26 -> Swordsman#36 at (8,5) (deals 4, takes -0.1)
+    4. attack #20 -> Swordsman#36 at (8,5) (deals 4, takes 8)
+    5. attack #38 -> Swordsman#39 at (8,3) (deals 10, takes -0.1)
+    6. attack #35 -> Swordsman#39 at (8,3) (deals 4, takes -0.1)
+    7. attack #16 -> Swordsman#39 at (8,3) (deals 3, takes -0.1)
+    8. attack #33 -> Swordsman#18 at (3,5) (deals 7, takes 0, KILLS)
+    9. attack #21 -> Swordsman#27 at (3,4) (deals 6, takes 0, KILLS)
+    10. recover at (5,4)
+    11. recover at (9,6)
+    12. move #13 -> (3,6)
+    13. move #37 -> (8,8)
+    14. build LumberHut at (7,5) (3 stars)
+    15. build LumberHut at (8,6) (3 stars)
+    16. build LumberHut at (6,7) (3 stars)
+    17. build LumberHut at (8,7) (3 stars)
+    18. train Rider at (3,8) (3 stars)
+    19. end turn
+  notes: Wegoth (8,3) garrison should be dead: next turn walk an archer/warrior from (8,4)/(7,4) onto (8,3) to capture (kill any new defender first with catapult #38 + archers). Resres (3,5) emptied: #13 at (3,6) moves in, #33/#21 escort. New Rider from capital: scout north/west for Hoodrick's 3rd city. Keep
+  ok  attack #25 -> Swordsman#36 at (8,5) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #30 -> Swordsman#36 at (8,5) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #26 -> Swordsman#36 at (8,5) (deals 5, takes -0.1)  (0.0s)
+  ok  attack #20 -> Swordsman#36 at (8,5) (deals 8, takes 0, KILLS)  (0.0s)
+  ok  attack #38 -> Swordsman#39 at (8,3) (deals 10, takes -0.1)  (0.0s)
+  ok  attack #35 -> Swordsman#39 at (8,3) (deals 6, takes 0, KILLS)  (0.0s)
+  --  attack #16 -> Swordsman#39 at (8,3) (deals 3, takes -0.1)  skipped: no longer legal
+  ok  attack #33 -> Swordsman#18 at (3,5) (deals 7, takes 0, KILLS)  (0.0s)
+  ok  attack #21 -> Swordsman#27 at (3,4) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  recover at (5,4)  (0.0s)
+  ok  recover at (9,6)  (0.0s)
+  ok  move #13 -> (3,6)  (0.0s)
+  ok  move #37 -> (8,8)  (0.0s)
+  ok  build LumberHut at (7,5) (3 stars)  (0.0s)
+  ok  build LumberHut at (8,6) (3 stars)  (0.0s)
+  ok  build LumberHut at (6,7) (3 stars)  (0.0s)
+  ok  build LumberHut at (8,7) (3 stars)  (0.0s)
+  ok  [city reward] city reward PopulationGrowth at (7,6)  (0.0s)
+  ok  train Rider at (3,8) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 19: 19 actions, 1 model call(s), model 45s, wall 134s, est $0.18 this turn ($2.49 so far)
+
+=== TURN 20 | Domination vs 1 Normal bot | Imperius: 30 stars (+18) | 5 cities, 14 units | enemy: 2 cities seen, 4 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .CWT  T   ?  ? .c ^m T  .c 
+ 2  .  .  T  .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*sT  T  
+ 4  .  T w.  .  T+ .cwT  .  T  .c Tg 
+ 5  .  ^  T+ .csT+ T  T+AT+A.  . AT  
+ 6  .  T  .c T WT  T A.  .CCT+AT RT A
+ 7  T  .u T  ^m . AT  T+ .  T+ .c T A
+ 8  T  T  T  .CRT  .  .  ^m .cAT  T  
+ 9  .  T  .  .+ ^m ^m .C .  T  .C .  
+10  .+ ^m .  .  .  T  .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~600 tokens  thinking... ~650 tokens  thinking... ~750 tokens  thinking... ~850 tokens  thinking... ~950 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens  thinking... ~1200 tokens  thinking... ~1250 tokens  thinking... ~1350 tokens  thinking... ~1400 tokens  thinking... ~1500 tokens
+  > The Wegoth garrison Swordsman (15hp) can be wiped this turn: catapult #38 hits for 10 and archers #26/#16 add 4 each — 18 damage, no retaliation. Archers #35 and #21 combine for exactly 10 to kill the roaming Warrior#32 at (5,4), and #33 chips the Resres garrison from range. I'm holding the end-turn so I can walk a unit onto the empty enemy capital tile once the garrison is dead.
+  PLAN: 9 action(s) in 30.0s  [asks to be called again]
+    1. attack #38 -> Swordsman#42 at (8,3) (deals 10, takes -0.1)
+    2. attack #26 -> Swordsman#42 at (8,3) (deals 4, takes -0.1)
+    3. attack #16 -> Swordsman#42 at (8,3) (deals 4, takes -0.1)
+    4. attack #35 -> Warrior#32 at (5,4) (deals 5, takes -0.1)
+    5. attack #21 -> Warrior#32 at (5,4) (deals 5, takes -0.1)
+    6. attack #33 -> Swordsman#41 at (3,5) (deals 4, takes -0.1)
+    7. build LumberHut at (2,7) (3 stars)
+    8. build LumberHut at (2,8) (3 stars)
+    9. build LumberHut at (4,8) (3 stars)
+  notes: After these kills: move Rider #14 or Archer #16/#35 onto (8,3) to capture Wegoth next turn; put #20/#25 adjacent at (8,4)/(9,4) as screen. Resres (3,5) swordsman at ~11hp: keep pounding with #21/#33 (no retaliation), do NOT melee with #13 (takes 8). Third Hoodrick city still unfound — scout with #40
+  ok  attack #38 -> Swordsman#42 at (8,3) (deals 10, takes -0.1)  (0.0s)
+  ok  attack #26 -> Swordsman#42 at (8,3) (deals 6, takes 0, KILLS)  (0.0s)
+  --  attack #16 -> Swordsman#42 at (8,3) (deals 4, takes -0.1)  skipped: no longer legal
+  ok  attack #35 -> Warrior#32 at (5,4) (deals 5, takes -0.1)  (0.0s)
+  ok  attack #21 -> Warrior#32 at (5,4) (deals 6, takes 0, KILLS)  (0.0s)
+  ok  attack #33 -> Swordsman#41 at (3,5) (deals 4, takes -0.1)  (0.0s)
+  ok  build LumberHut at (2,7) (3 stars)  (0.0s)
+  ok  [city reward] city reward SuperUnit at (3,8)  (0.0s)
+  ok  build LumberHut at (2,8) (3 stars)  (0.0s)
+  ok  build LumberHut at (4,8) (3 stars)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~200 tokens  thinking... ~350 tokens  thinking... ~500 tokens  thinking... ~650 tokens  thinking... ~700 tokens  thinking... ~900 tokens  thinking... ~1000 tokens  thinking... ~1100 tokens  thinking... ~1150 tokens  thinking... ~1300 tokens
+  > The catapult/archer battery wiped the swordsman defending Wegoth and the warrior at (5,4), so the enemy capital now sits empty — but nothing can physically reach (8,3) this turn. So I stack up: Archer #16 to (8,4) and #20 to (8,5), one step from walking into Wegoth next turn, with #25/#30/#37 sliding north as a screen. Warrior #13 goes to (4,5) beside Resres instead of trading 4-for-7 against the wounded swordsman, Rider #14 rests at 3hp, and I spend spare stars on a sawmill at (7,7) plus five lumber huts to keep pushing city levels and unit capacity.
+  PLAN: 18 action(s) in 27.1s
+    1. promote at (5,6)
+    2. move #16 -> (8,4)
+    3. move #20 -> (8,5)
+    4. move #25 -> (10,5)
+    5. move #30 -> (9,7)
+    6. move #37 -> (8,7)
+    7. move #13 -> (4,5)
+    8. move #40 -> (4,6)
+    9. recover at (9,6)
+    10. move #1 -> (3,0)
+    11. build Sawmill at (7,7) (5 stars)
+    12. build LumberHut at (3,1) (3 stars)
+    13. build LumberHut at (2,2) (3 stars)
+    14. build LumberHut at (9,8) (3 stars)
+    15. build LumberHut at (10,8) (3 stars)
+    16. build LumberHut at (8,9) (3 stars)
+    17. build LumberHut at (5,10) (3 stars)
+    18. end turn
+  notes: Wegoth (8,3) is EMPTY with walls. Next turn: move Archer #16 from (8,4) straight onto (8,3) (or #20 via (8,4)) and hold it — it captures the turn after. Kill any re-trained defender first with Catapult #38 (range 3 from (7,6)/(8,5)) and archers #26/#35. Resres (3,5): swordsman ~7hp, pound with #33/#
+  ok  promote at (5,6)  (0.0s)
+  ok  move #16 -> (8,4)  (0.0s)
+  ok  move #20 -> (8,5)  (0.0s)
+  ok  move #25 -> (10,5)  (0.0s)
+  ok  move #30 -> (9,7)  (0.0s)
+  ok  move #37 -> (8,7)  (0.0s)
+  ok  move #13 -> (4,5)  (0.0s)
+  ok  move #40 -> (4,6)  (0.0s)
+  ok  recover at (9,6)  (0.0s)
+  ok  move #1 -> (3,0)  (0.0s)
+  ok  build Sawmill at (7,7) (5 stars)  (0.0s)
+  ok  [city reward] city reward SuperUnit at (7,6)  (0.0s)
+  ok  build LumberHut at (3,1) (3 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (2,1)  (0.0s)
+  ok  build LumberHut at (2,2) (3 stars)  (0.0s)
+  ok  build LumberHut at (9,8) (3 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (9,9)  (0.0s)
+  ok  build LumberHut at (10,8) (3 stars)  (0.0s)
+  ok  build LumberHut at (8,9) (3 stars)  (0.0s)
+  ok  build LumberHut at (5,10) (3 stars)  (0.0s)
+  ok  [city reward] city reward Resources at (6,9)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 20: 31 actions, 2 model call(s), model 57s, wall 192s, est $0.31 this turn ($2.79 so far)
+
+=== TURN 21 | Domination vs 1 Normal bot | Imperius: 31 stars (+23) | 5 cities, 16 units | enemy: 2 cities seen, 5 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c . W.   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .C T+ T w ?  ? .c ^m T  .c 
+ 2  .  .  T+ .  Tg  ?  ? T  ^  .u T  
+ 3  .  .  T w.  .u .c T  .  .*sT  T  
+ 4  .  T  . s.  T+ .c T  .  T A.c Tg 
+ 5  .  ^  T+ .csT+WT  T+AT+A. A.  T A
+ 6  .  T  .c T  T RT A.  .CGT+CT RT  
+ 7  T  .u T+ ^m . AT  T+ .+ T+A.cAT  
+ 8  T  T  T+ .CGT+ .  .  ^m .c T+ T+ 
+ 9  .  T  .  .+ ^m ^m .C .  T+ .C .  
+10  .+ ^m .  .  .  T+ .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~300 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens
+  > Wegoth's garrison Swordsman (15hp) is the last thing between me and the enemy capital: Catapult #38 hits for 10, then archers #26 and #35 finish it with zero retaliation. At Resres I chip the defending swordsman with my two safe ranged units (#21, #33) for 8 total damage. After the capital tile is emptied I need to be re-prompted so I can walk Archer #16 from (8,4) onto (8,3) and hold it for the capture.
+  PLAN: 5 action(s) in 17.0s  [asks to be called again]
+    1. attack #38 -> Swordsman#46 at (8,3) (deals 10, takes -0.1)
+    2. attack #26 -> Swordsman#46 at (8,3) (deals 4, takes -0.1)
+    3. attack #35 -> Swordsman#46 at (8,3) (deals 4, takes -0.1)
+    4. attack #21 -> Swordsman#47 at (3,5) (deals 4, takes -0.1)
+    5. attack #33 -> Swordsman#47 at (3,5) (deals 4, takes -0.1)
+  notes: Wegoth (8,3) garrison killed this turn. NOW: move #16 (8,4)->(8,3) to sit on capital, back it with #20/#25 adjacent at (9,3)/(9,4), Giant #45 walking north. Capture triggers next turn if #16 survives. Resres (3,5) swordsman ~7hp: keep pounding with #21/#33 (no retaliation), then walk #13 or Rider #4
+  ok  attack #38 -> Swordsman#46 at (8,3) (deals 10, takes -0.1)  (0.0s)
+  ok  attack #26 -> Swordsman#46 at (8,3) (deals 6, takes 0, KILLS)  (0.0s)
+  --  attack #35 -> Swordsman#46 at (8,3) (deals 4, takes -0.1)  skipped: no longer legal
+  ok  attack #21 -> Swordsman#47 at (3,5) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #33 -> Swordsman#47 at (3,5) (deals 4, takes -0.1)  (0.0s)
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~250 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~500 tokens  thinking... ~550 tokens  thinking... ~700 tokens  thinking... ~800 tokens  thinking... ~900 tokens  thinking... ~1050 tokens  thinking... ~1150 tokens  thinking... ~1250 tokens
+  > Wegoth's garrison is dead and the city tile is empty — Archer #16 steps onto (8,3) to trigger the capture next turn, with #35, #20 and #25 forming a screen around it. At Resres, the 7hp swordsman gets finished by Warrior #13 then Rider #40, whose kill-advance puts the rider on the city tile for a second capture. Giant #44 walks toward Resres as backup, a fresh Warrior garrisons Nuloca against the enemy warrior probing north, and I add an archer plus a catapult in the south.Wegoth's garrison is dead and the capital tile is empty, so Archer #16 occupies (8,3) with three archers screening the approaches — capture should fire next turn. At Resres, Warrior #13 softens the 7hp swordsman and Rider #40 kills it, advancing onto the city tile for a second capture. Giant #44 marches west-north as backup while a new warrior garrisons Nuloca.
+  PLAN: 16 action(s) in 28.6s
+    1. move #16 -> (8,3)
+    2. move #35 -> (7,4)
+    3. move #20 -> (9,4)
+    4. move #25 -> (10,4)
+    5. attack #13 -> Swordsman#47 at (3,5) (deals 5, takes 6)
+    6. attack #40 -> Swordsman#47 at (3,5) (deals 5, takes 6)
+    7. move #44 -> (3,7)
+    8. train Warrior at (2,1) (2 stars)
+    9. move #1 -> (3,1)
+    10. recover at (9,6)
+    11. move #37 -> (7,7)
+    12. move #30 -> (10,6)
+    13. move #45 -> (6,6)
+    14. train Archer at (6,9) (3 stars)
+    15. train Catapult at (9,9) (8 stars)
+    16. end turn
+  notes: Capture Wegoth (8,3) with #16 and Resres (3,5) with Rider #40 next turn — both units must survive; keep #35/#20/#25 adjacent to Wegoth and Giant #44 heading to Resres. Third Hoodrick city still unfound: scout NW/north once capitals fall (enemy warrior #43 at (4,1), swordsman near (2,4)). Keep traini
+  ok  move #16 -> (8,3)  (0.0s)
+  ok  move #35 -> (7,4)  (0.0s)
+  ok  move #20 -> (9,4)  (0.0s)
+  ok  move #25 -> (10,4)  (0.0s)
+  ok  attack #13 -> Swordsman#47 at (3,5) (deals 5, takes 6)  (0.0s)
+  ok  attack #40 -> Swordsman#47 at (3,5) (deals 8, takes 0, KILLS)  (0.0s)
+  ok  move #44 -> (3,7)  (0.0s)
+  ok  train Warrior at (2,1) (2 stars)  (0.0s)
+  ok  move #1 -> (3,1)  (0.0s)
+  ok  recover at (9,6)  (0.0s)
+  ok  move #37 -> (7,7)  (0.0s)
+  ok  move #30 -> (10,6)  (0.0s)
+  ok  move #45 -> (6,6)  (0.0s)
+  ok  train Archer at (6,9) (3 stars)  (0.0s)
+  ok  train Catapult at (9,9) (8 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 21: 20 actions, 2 model call(s), model 46s, wall 143s, est $0.29 this turn ($3.09 so far)
+
+=== TURN 22 | Domination vs 1 Normal bot | Imperius: 41 stars (+23) | 5 cities, 18 units | enemy: 2 cities seen, 2 units visible | enemy capital Wegoth at (8,3) lvl 3 ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .CWT+WT   ?  ? .c ^m T  .c 
+ 2  .  .  T+ .  T   ?  ? T  ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .*AT  T  
+ 4  .  T  . s.  T+ .c T  . AT  .cATgA
+ 5  .  ^  T+ .cwT+WT  T+AT+ .  .  T  
+ 6  .  T  .c T  T  T A. G.C T+CT RT A
+ 7  T  .u T+ ^mG. AT  T+ .+AT+ .c T  
+ 8  T  T  T+ .C T+ .  .  ^m .c T+ T+ 
+ 9  .  T  .  .+ ^m ^m .CA.  T+ .CC.  
+10  .+ ^m .  .  .  T+ .  .c ^m T  .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~300 tokens  thinking... ~400 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~600 tokens  thinking... ~700 tokens
+  > Decisive turn: Archer #16 captures the enemy CAPITAL Wegoth at (8,3). At Resres (3,5) I focus-fire the defending Warrior #4 — veteran archer #21 (4 dmg) and archer #33 (4 dmg) soften it, then wounded Warrior #13 lands the killing blow and advances onto the city tile to capture it next turn. Giant #44 steps to (3,6) to shield #13 from the enemy swordsman at (2,4). Spare stars go into a new catapult, an archer, and a lumber hut.
+  PLAN: 9 action(s) in 19.7s
+    1. attack #21 -> Warrior#4 at (3,5) (deals 4, takes -0.1)
+    2. attack #33 -> Warrior#4 at (3,5) (deals 4, takes -0.1)
+    3. attack #13 -> Warrior#4 at (3,5) (deals 2, takes 7)
+    4. capture #16 at (8,3)
+    5. move #44 -> (3,6)
+    6. train Catapult at (7,6) (8 stars)
+    7. train Archer at (3,8) (3 stars)
+    8. build LumberHut at (9,10) (3 stars)
+    9. end turn
+  notes: Wegoth (8,3) captured this turn — garrison it and keep archers #35/#20/#25 adjacent. Warrior #13 (4hp) sits on Resres (3,5): capture it next turn, Giant #44 at (3,6) protects; kill enemy swordsman #41 near (2,4) with archers. Then only the unknown 3rd Hoodrick city remains — scout NW/north with a ri
+  ok  attack #21 -> Warrior#4 at (3,5) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #33 -> Warrior#4 at (3,5) (deals 5, takes -0.1)  (0.0s)
+  ok  attack #13 -> Warrior#4 at (3,5) (deals 7, takes 0, KILLS)  (0.0s)
+  ok  capture #16 at (8,3)  (0.0s)
+  ok  move #44 -> (3,6)  (0.0s)
+  ok  train Catapult at (7,6) (8 stars)  (0.0s)
+  ok  train Archer at (3,8) (3 stars)  (0.0s)
+  ok  build LumberHut at (9,10) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 22: 9 actions, 1 model call(s), model 20s, wall 62s, est $0.14 this turn ($3.23 so far)
+
+=== TURN 23 | Domination vs 1 Normal bot | Imperius: 50 stars (+26) | 6 cities, 19 units | enemy: 1 cities seen, 3 units visible | enemy capital not found yet ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .CWT+WT   ?  ? .c ^m T  .c 
+ 2  .  .  T+ .  T   ?  ? T  ^  .u T  
+ 3  .  .  T  .  .uw.c T  . s.CAT  T  
+ 4  .  T  .  .  T+ .c T  . AT  .cATgA
+ 5  .  ^  T+ .csT+ T  T+AT+ .  .  T  
+ 6  .  T  .+ T GT  T A. G.CCT+CT RT A
+ 7  T  .u T+ ^m . AT  T+ .+AT+ .c T  
+ 8  T  T  T+ .CAT+ .  .  ^m .c T+ T+ 
+ 9  .  T  .  .+ ^m ^m .CA.  T+ .CC.  
+10  .+ ^m .  .  .  T+ .  .c ^m T+ .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~600 tokens  thinking... ~750 tokens  thinking... ~850 tokens
+  > Big cleanup turn: catapult #51 one-shots the enemy warrior at (4,3), catapult #38 plus archer #20 finish the swordsman at (7,3), and Giant #44 kills the swordsman sitting in Resres (3,5) — the melee kill advances the Giant onto the enemy city tile, so Resres should fall to me next turn. The rest of the western group (Giant #45, archers #21/#33/#26) shifts up to screen the Giant on the city, and I add three cheap lumber huts for population.
+  PLAN: 14 action(s) in 21.0s
+    1. attack #51 -> Warrior#43 at (4,3) (deals 12, takes 0, KILLS)
+    2. attack #38 -> Swordsman#31 at (7,3) (deals 11, takes -0.1)
+    3. attack #20 -> Swordsman#31 at (7,3) (deals 4, takes -0.1)
+    4. attack #44 -> Swordsman#41 at (3,5) (deals 16, takes 0, KILLS)
+    5. move #26 -> (5,4)
+    6. move #21 -> (4,5)
+    7. move #33 -> (4,6)
+    8. move #45 -> (5,5)
+    9. move #14 -> (7,5)
+    10. recover at (8,3)
+    11. build LumberHut at (7,2) (3 stars)
+    12. build LumberHut at (9,3) (3 stars)
+    13. build LumberHut at (8,4) (3 stars)
+    14. end turn
+  notes: Giant #44 should now stand ON Resres (3,5) — CAPTURE it next turn (action appears at start of turn). Archers #21 (4,5), #33 (4,6), #26 (5,4), Giant #45 (5,5) screen it; kill any counterattackers with focus fire. After Resres falls, only 1 unknown Hoodrick city remains: scout NW/north (around (0-4, 0
+  ok  attack #51 -> Warrior#43 at (4,3) (deals 12, takes 0, KILLS)  (0.0s)
+  ok  attack #38 -> Swordsman#31 at (7,3) (deals 11, takes -0.1)  (0.0s)
+  ok  attack #20 -> Swordsman#31 at (7,3) (deals 8, takes 0, KILLS)  (0.0s)
+  ok  attack #44 -> Swordsman#41 at (3,5) (deals 16, takes 0, KILLS)  (0.0s)
+  ok  move #26 -> (5,4)  (0.0s)
+  ok  move #21 -> (4,5)  (0.0s)
+  ok  move #33 -> (4,6)  (0.0s)
+  ok  move #45 -> (5,5)  (0.0s)
+  ok  move #14 -> (7,5)  (0.0s)
+  ok  recover at (8,3)  (0.0s)
+  ok  build LumberHut at (7,2) (3 stars)  (0.0s)
+  ok  build LumberHut at (9,3) (3 stars)  (0.0s)
+  ok  [city reward] city reward PopulationGrowth at (8,3)  (0.0s)
+  ok  build LumberHut at (8,4) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 23: 15 actions, 1 model call(s), model 21s, wall 89s, est $0.15 this turn ($3.38 so far)
+
+=== TURN 24 | Domination vs 1 Normal bot | Imperius: 67 stars (+27) | 6 cities, 18 units | enemy: 1 cities seen, 1 units visible | enemy capital not found yet ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .   ?  ? ^  T  .  .+ 
+ 1  Tg T+ .CWT+WT   ?  ? .c ^m T  .c 
+ 2  .  .  T+ .  T   ?  ? T+ ^  .u T  
+ 3  .  .  T  .  .u .c T  .  .CAT+ T  
+ 4  .  T  .  .  T+ .csT  . AT+ .cATgA
+ 5  .  ^  T+ .cGT+AT GT+ T+R.  .  T  
+ 6  .  T  .+ T  T AT  .  .CCT+CT  T A
+ 7  T  .u T+ ^m .  T  T+ .+AT+ .c T  
+ 8  T  T  T+ .CAT+ .  .  ^m .c T+ T+ 
+ 9  .  T  .  .+ ^m ^m .CA.  T+ .CC.  
+10  .+ ^m .  .  .  T+ .  .c ^m T+ .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~100 tokens  thinking... ~200 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~600 tokens  thinking... ~700 tokens  thinking... ~750 tokens  thinking... ~850 tokens
+  > Giant #44 is standing on Resres and can capture it now. First, both catapults shell the lone Hoodrick swordsman at (5,4) for 10+10 = certain kill with no retaliation, then Giant #44 takes Resres. With that, only one unknown Hoodrick city remains — almost certainly in the unexplored pocket around (5-6, 0-2), so I push rider #14 north to (6,3) and march the northern warriors toward (3,0)/(4,0) to reveal it. Giant #45 and archers shift west/north to follow up.
+  PLAN: 9 action(s) in 21.0s  [asks to be called again]
+    1. attack #51 -> Swordsman#53 at (5,4) (deals 10, takes -0.1)
+    2. attack #38 -> Swordsman#53 at (5,4) (deals 10, takes -0.1)
+    3. capture #44 at (3,5)
+    4. move #14 -> (6,3)
+    5. move #48 -> (3,0)
+    6. move #1 -> (4,0)
+    7. move #45 -> (4,4)
+    8. move #21 -> (3,4)
+    9. move #35 -> (6,3)
+  notes: Resres (3,5) captured turn 24; last Hoodrick city is unknown — search unexplored (5-6,0-2) with rider #14 (now (6,3)) and warriors #1/#48 pushing north from (3,0)/(4,0). Giant #45 + archers #21/#33 advance NW as the strike group. 67+ stars banked: train archers/riders wherever a city has a free slot
+  ok  attack #51 -> Swordsman#53 at (5,4) (deals 10, takes -0.1)  (0.0s)
+  ok  attack #38 -> Swordsman#53 at (5,4) (deals 14, takes 0, KILLS)  (0.0s)
+  ok  capture #44 at (3,5)  (0.0s)
+  ok  move #14 -> (6,3)  (0.0s)
+  ok  move #48 -> (3,0)  (0.0s)
+  ok  move #1 -> (4,0)  (0.0s)
+  ok  move #45 -> (4,4)  (0.0s)
+  ok  move #21 -> (3,4)  (0.0s)
+  --  move #35 -> (6,3)  skipped: no longer legal
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~450 tokens  thinking... ~550 tokens  thinking... ~650 tokens  thinking... ~700 tokens  thinking... ~800 tokens  thinking... ~950 tokens
+  > Hoodrick is down to one known city, Gory (5,2), garrisoned by a fresh Swordsman. My veteran archer #21 and archer #35 pound it for 8 damage with zero retaliation, softening the defender for next turn. I train a Catapult in Nuloca (2,1) — it can reach range-3 of Gory quickly and out-range the garrison — while the rest of the army marches northwest to converge on the city. Wounded archer #16 rests in Wegoth.
+  PLAN: 13 action(s) in 22.5s
+    1. attack #21 -> Swordsman#54 at (5,2) (deals 4, takes -0.1)
+    2. attack #35 -> Swordsman#54 at (5,2) (deals 4, takes -0.1)
+    3. train Catapult at (2,1) (8 stars)
+    4. recover at (8,3)
+    5. move #33 -> (5,5)
+    6. move #20 -> (8,4)
+    7. move #25 -> (9,3)
+    8. move #30 -> (9,5)
+    9. move #37 -> (6,6)
+    10. move #49 -> (5,8)
+    11. move #52 -> (3,7)
+    12. move #50 -> (8,8)
+    13. end turn
+  notes: Only known enemy city: Gory (5,2), level 3, swordsman garrison (softened to ~7hp). Plan: catapults + archers kill garrison, then walk warrior/giant onto city tile to capture. New catapult from Nuloca (2,1) heads east/south to (4,2)-ish range 3 of Gory. Giant #45 (4,4) and #44 (3,5) advance north via
+  ok  attack #21 -> Swordsman#54 at (5,2) (deals 4, takes -0.1)  (0.0s)
+  ok  attack #35 -> Swordsman#54 at (5,2) (deals 4, takes -0.1)  (0.0s)
+  ok  train Catapult at (2,1) (8 stars)  (0.0s)
+  ok  recover at (8,3)  (0.0s)
+  ok  move #33 -> (5,5)  (0.0s)
+  ok  move #20 -> (8,4)  (0.0s)
+  ok  move #25 -> (9,3)  (0.0s)
+  ok  move #30 -> (9,5)  (0.0s)
+  ok  move #37 -> (6,6)  (0.0s)
+  ok  move #49 -> (5,8)  (0.0s)
+  ok  move #52 -> (3,7)  (0.0s)
+  ok  move #50 -> (8,8)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 24: 21 actions, 2 model call(s), model 43s, wall 144s, est $0.30 this turn ($3.68 so far)
+
+=== TURN 25 | Domination vs 1 Normal bot | Imperius: 86 stars (+31) | 7 cities, 19 units | enemy: 1 cities seen, 2 units visible | enemy capital not found yet ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c . W. WT   ? ^  T  .  .+ 
+ 1  Tg T+ .CCT+ T  ^+  ? .c ^m T  .c 
+ 2  .  .  T+ .  T s.csT+ T+ ^  .u T  
+ 3  .  .  T  .  .u .c T R.  .CAT+AT  
+ 4  .  T  .  . AT+G.c T  . AT+A.c Tg 
+ 5  .  ^  T+ .CGT+ T AT+ T+ .  . AT  
+ 6  .  T  .+ T  T  T  . A.CCT+CT  T  
+ 7  T  .u T+ ^mA.  T  T+ .+ T+ .c T  
+ 8  T  T  T+ .C T+ . A.  ^m .cCT+ T+ 
+ 9  .  T  .  .+ ^m ^m .C .  T+ .C .  
+10  .+ ^m .  .  .  T+ .  .c ^m T+ .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~400 tokens  thinking... ~450 tokens  thinking... ~600 tokens  thinking... ~700 tokens  thinking... ~800 tokens  thinking... ~950 tokens  thinking... ~1050 tokens  thinking... ~1150 tokens
+  > Gory (5,2) is the last known enemy city, held by a full-health swordsman. Catapult #55 hits it for 10, then archers #21 and #35 add 4 each — 18 damage on 15 hp, so the garrison dies with zero retaliation. That frees the city tile for Rider #14 at (6,3) to walk onto Gory this same turn and capture it next turn; I'm holding the rider back from attacking so it stays healthy. I'll ask for the follow-up move once the tile is empty.
+  PLAN: 3 action(s) in 24.8s  [asks to be called again]
+    1. attack #55 -> Swordsman#56 at (5,2) (deals 10, takes -0.1)
+    2. attack #21 -> Swordsman#56 at (5,2) (deals 4, takes -0.1)
+    3. attack #35 -> Swordsman#56 at (5,2) (deals 4, takes -0.1)
+  notes: Gory (5,2) garrison killed this turn. Next: move Rider #14 (6,3) onto (5,2) to capture; bring Giant #45 to (4,3) and archers north as escort. Wounded enemy Swordsman #54 (7hp) at (4,2) — kill with catapult #55 / archers next turn. After Gory falls, scout unexplored (6-7,0-1) for remaining enemy citi
+  ok  attack #55 -> Swordsman#56 at (5,2) (deals 10, takes -0.1)  (0.0s)
+  ok  attack #21 -> Swordsman#56 at (5,2) (deals 6, takes 0, KILLS)  (0.0s)
+  --  attack #35 -> Swordsman#56 at (5,2) (deals 4, takes -0.1)  skipped: no longer legal
+-- planning (model call 2 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~250 tokens  thinking... ~350 tokens  thinking... ~500 tokens
+  > Gory's garrison is dead, so the city tile (5,2) is open — Rider #14 steps onto it and will capture Hoodrick's last known city next turn. Giant #45 advances to (4,3) and the two warriors close on the wounded 7hp Swordsman at (4,2) so we can finish it and screen the rider. A new Rider from Moip will scout the unexplored pocket at (6-7,0-1) in case Hoodrick has a hidden city there.
+  PLAN: 8 action(s) in 15.6s
+    1. move #14 -> (5,2)
+    2. move #45 -> (4,3)
+    3. move #48 -> (4,1)
+    4. move #1 -> (5,1)
+    5. move #33 -> (5,4)
+    6. move #35 -> (6,4)
+    7. train Rider at (6,9) (3 stars)
+    8. end turn
+  notes: Rider #14 sits on Gory (5,2) — CAPTURE it next turn (first action). Giant #45 at (4,3) and warriors #48/#1 near (4,1)/(5,1): kill wounded Swordsman #54 (7hp) at (4,2). New Rider at Moip (6,9): send north/east to scout unexplored (6-7,0-1) for any remaining Hoodrick city; domination needs every enemy
+  ok  move #14 -> (5,2)  (0.0s)
+  ok  move #45 -> (4,3)  (0.0s)
+  ok  move #48 -> (4,1)  (0.0s)
+  ok  move #1 -> (5,1)  (0.0s)
+  ok  move #33 -> (5,4)  (0.0s)
+  ok  move #35 -> (6,4)  (0.0s)
+  ok  train Rider at (6,9) (3 stars)  (0.0s)
+  ok  end turn  (0.0s)
+--- turn 25: 10 actions, 2 model call(s), model 40s, wall 86s, est $0.31 this turn ($3.98 so far)
+
+=== TURN 26 | Domination vs 1 Normal bot | Imperius: 114 stars (+31) | 7 cities, 20 units | enemy: 1 cities seen, 1 units visible | enemy capital not found yet ===
+MAP (explored region x 0-10, y 0-10; each cell = terrain feature unit):
+     0  1  2  3  4  5  6  7  8  9 10
+ 0  .+ .  .c .  .  T  .  ^  T  .  .+ 
+ 1  Tg T+ .CCT+ T W^+WT  .c ^m T  .c 
+ 2  .  .  T+ .  T s.cRT+ T+ ^  .u T  
+ 3  .  .  T  .  .uG.c T  .  .CAT+AT  
+ 4  .  T  .  . AT+ .cAT A.  T+A.c Tg 
+ 5  .  ^  T+ .CGT+ T  T+ T+ .  . AT  
+ 6  .  T  .+ T  T  T  . A.CCT+CT  T  
+ 7  T  .u T+ ^mA.  T  T+ .+ T+ .c T  
+ 8  T  T  T+ .C T+ . A.  ^m .cCT+ T+ 
+ 9  .  T  .  .+ ^m ^m .CR.  T+ .C .  
+10  .+ ^m .  .  .  T+ .  .c ^m T+ .+ 
+-- planning (model call 1 of 3 this turn) ...
+  thinking... ~50 tokens  thinking... ~150 tokens  thinking... ~250 tokens  thinking... ~350 tokens
+  > Rider #14 survived on Gory (5,2), so the first action is capturing it — that takes the last known Hoodrick city and should end the game by domination. Warrior #48 finishes the wounded Swordsman #54 at (4,2) with zero retaliation, clearing the only enemy unit on the board. Everything else is already secure, so I end the turn there.
+  PLAN: 3 action(s) in 12.5s
+    1. capture #14 at (5,2)
+    2. attack #48 -> Swordsman#54 at (4,2) (deals 5, takes 0, KILLS)
+    3. end turn
+  notes: Captured Gory (5,2) — last known enemy city; enemy Swordsman #54 killed. If the game continues, Hoodrick must have a hidden city: scout unexplored fringes with Rider #57 and the northern warriors, and use the 114-star bank to train Riders/Catapults for a quick strike. Keep Gory garrisoned (rider is 
+  ok  capture #14 at (5,2)  (0.0s)
+  --  attack #48 -> Swordsman#54 at (4,2) (deals 5, takes 0, KILLS)  skipped: no longer legal
+  ok  end turn  (0.0s)
+--- turn 26: 2 actions, 1 model call(s), model 12s, wall 18s, est $0.14 this turn ($4.12 so far)
+
+GAME OVER on turn 26: YOU WON (winner player 1, score 6525)
+  scores by turn: 0:515 1:735 2:740 3:785 4:1185 5:1200 6:1235 7:1830 8:2290 9:2415 10:2890 11:3295 12:3585 13:3665 14:3735 15:3965 16:3995 17:4095 18:4310 19:4350 20:4415 21:4730 22:4780 23:5220 24:5265 25:6120 26:6145
+  tokens: {'input': 74, 'output': 47654, 'cache_write': 206095, 'cache_read': 1377972}  model calls: 37  est. cost $4.12

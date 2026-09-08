@@ -10,12 +10,13 @@ internal static class StateSerializer
 {
     public static object BuildStateMessage(GameState gs, ClientBase client)
     {
-        var me = LocalPlayer(client);
+        var me = LocalPlayer(gs, client);
         return new Dictionary<string, object?>
         {
             ["type"] = "state",
             ["turn"] = gs.CurrentTurn,
             ["player"] = me.Id,
+            ["roster"] = Roster(gs),
             ["state"] = Build(gs, me),
             ["legal_actions"] = LegalActions.Enumerate(gs, me),
         };
@@ -23,7 +24,7 @@ internal static class StateSerializer
 
     public static object BuildGameOverMessage(GameState gs, ClientBase client)
     {
-        var me = LocalPlayer(client);
+        var me = LocalPlayer(gs, client);
         gs.TryGetWinner(out var winner);
         return new Dictionary<string, object?>
         {
@@ -33,11 +34,32 @@ internal static class StateSerializer
             ["winner"] = winner?.Id,
             ["won"] = winner != null && winner.Id == me.Id,
             ["score"] = me.score,
+            ["roster"] = Roster(gs),
             ["players"] = Players(gs, me),
         };
     }
 
-    static PlayerState LocalPlayer(ClientBase client) => GameManager.LocalPlayer ?? client.GetCurrentLocalPlayer();
+    static PlayerState LocalPlayer(GameState gs, ClientBase client) =>
+        Bridge.LocalSeat(gs, client) ?? GameManager.LocalPlayer ?? client.GetCurrentLocalPlayer();
+
+    /// <summary>Who is in the game, seat-neutral: the same list whichever player is local.</summary>
+    public static List<object> Roster(GameState gs)
+    {
+        var list = new List<object>();
+        foreach (var p in gs.PlayerStates)
+        {
+            if (p.Id == PlayerState.NATURE_PLAYER_ID) continue;
+            list.Add(new Dictionary<string, object?>
+            {
+                ["id"] = p.Id,
+                ["tribe"] = p.tribe.ToString(),
+                ["name"] = p.UserName,
+                ["is_bot"] = p.AutoPlay,
+                ["alive"] = p.killedTurn == 0 && p.resignedTurn <= 0,
+            });
+        }
+        return list;
+    }
 
     static Dictionary<string, object?> Build(GameState gs, PlayerState me)
     {
