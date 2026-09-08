@@ -1,0 +1,522 @@
+{
+ "type": "state",
+ "turn": 1,
+ "player": 1,
+ "roster": [
+  {
+   "id": 1,
+   "tribe": "Imperius",
+   "name": "Player 1",
+   "is_bot": false,
+   "alive": true
+  },
+  {
+   "id": 2,
+   "tribe": "Imperius",
+   "name": "Player 2",
+   "is_bot": false,
+   "alive": true
+  }
+ ],
+ "state": {
+  "turn": 1,
+  "settings": {
+   "map_width": 11,
+   "map_height": 11,
+   "map_size": 11,
+   "game_mode": "Domination",
+   "game_type": "PassAndPlay",
+   "difficulty": "Easy",
+   "opponents": 0,
+   "turn_limit": 0,
+   "score_limit": 0
+  },
+  "me": {
+   "id": 1,
+   "tribe": "Imperius",
+   "stars": 7,
+   "income": 2,
+   "score": 510,
+   "techs": [
+    "Basic",
+    "Organization"
+   ]
+  },
+  "players": [
+   {
+    "id": 1,
+    "tribe": "Imperius",
+    "name": "Player 1",
+    "is_bot": false,
+    "score": 510,
+    "cities": 1,
+    "kills": 0,
+    "killed_turn": 0,
+    "alive": true,
+    "known": true,
+    "is_me": true,
+    "stars": 7
+   },
+   {
+    "id": 2,
+    "tribe": "Imperius",
+    "name": "Player 2",
+    "is_bot": false,
+    "score": 515,
+    "cities": 1,
+    "kills": 0,
+    "killed_turn": 0,
+    "alive": true,
+    "known": false,
+    "relation": "Neutral"
+   }
+  ],
+  "tiles": [
+   {
+    "x": 6,
+    "y": 6,
+    "terrain": "Mountain",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 6,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 8,
+    "y": 6,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 9,
+    "y": 6,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 10,
+    "y": 6,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 6,
+    "y": 7,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 7,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 8,
+    "y": 7,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 9,
+    "y": 7,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 10,
+    "y": 7,
+    "terrain": "Mountain",
+    "owner": 0
+   },
+   {
+    "x": 6,
+    "y": 8,
+    "terrain": "Forest",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 8,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Crop"
+   },
+   {
+    "x": 8,
+    "y": 8,
+    "terrain": "Field",
+    "owner": 1,
+    "road": true,
+    "city": [
+     8,
+     8
+    ],
+    "improvement": "City"
+   },
+   {
+    "x": 9,
+    "y": 8,
+    "terrain": "Mountain",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ]
+   },
+   {
+    "x": 10,
+    "y": 8,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 6,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 7,
+    "y": 9,
+    "terrain": "Forest",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ]
+   },
+   {
+    "x": 8,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Fruit"
+   },
+   {
+    "x": 9,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 1,
+    "city": [
+     8,
+     8
+    ],
+    "resource": "Crop"
+   },
+   {
+    "x": 10,
+    "y": 9,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 6,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 7,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0,
+    "resource": "Fruit"
+   },
+   {
+    "x": 8,
+    "y": 10,
+    "terrain": "Field",
+    "owner": 0
+   },
+   {
+    "x": 9,
+    "y": 10,
+    "terrain": "Forest",
+    "owner": 0
+   }
+  ],
+  "cities": [
+   {
+    "x": 8,
+    "y": 8,
+    "name": "Rosum",
+    "owner": 1,
+    "level": 1,
+    "population": 0,
+    "population_total": 0,
+    "population_to_level": 2,
+    "production": 1,
+    "border_size": 1,
+    "is_capital": true,
+    "connected_to_capital": true,
+    "walls": false,
+    "rewards": []
+   }
+  ],
+  "units": [
+   {
+    "id": 1,
+    "type": "Warrior",
+    "owner": 1,
+    "x": 8,
+    "y": 8,
+    "hp": 10,
+    "max_hp": 10,
+    "attack": 2,
+    "defence": 3,
+    "movement": 1,
+    "range": 1,
+    "veteran": false,
+    "kills": 0,
+    "moved": false,
+    "attacked": false,
+    "can_move": true,
+    "can_attack": true,
+    "home": [
+     8,
+     8
+    ],
+    "abilities": [
+     "Dash",
+     "Fortify",
+     "Land"
+    ]
+   }
+  ],
+  "pending_trigger": null
+ },
+ "legal_actions": [
+  {
+   "kind": "research",
+   "tech": "Climbing",
+   "cost": 5,
+   "unlocks_units": [],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Mining",
+    "Meditation"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Fishing",
+   "cost": 5,
+   "unlocks_units": [],
+   "unlocks_improvements": [
+    "Port",
+    "Fishing"
+   ],
+   "unlocks_techs": [
+    "Sailing",
+    "Ramming"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Hunting",
+   "cost": 5,
+   "unlocks_units": [],
+   "unlocks_improvements": [
+    "Hunting"
+   ],
+   "unlocks_techs": [
+    "Archery",
+    "Forestry"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Riding",
+   "cost": 5,
+   "unlocks_units": [
+    "Rider"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Roads",
+    "FreeSpirit"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Farming",
+   "cost": 6,
+   "unlocks_units": [],
+   "unlocks_improvements": [
+    "Farm"
+   ],
+   "unlocks_techs": [
+    "Construction"
+   ]
+  },
+  {
+   "kind": "research",
+   "tech": "Shields",
+   "cost": 6,
+   "unlocks_units": [
+    "Defender"
+   ],
+   "unlocks_improvements": [],
+   "unlocks_techs": [
+    "Diplomacy"
+   ]
+  },
+  {
+   "kind": "build",
+   "improvement": "HarvestFruit",
+   "at": [
+    7,
+    7
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "HarvestFruit",
+   "at": [
+    8,
+    7
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "build",
+   "improvement": "HarvestFruit",
+   "at": [
+    9,
+    7
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    7,
+    7
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    7,
+    8
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    7,
+    9
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    8,
+    7
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    8,
+    9
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    9,
+    7
+   ]
+  },
+  {
+   "kind": "move",
+   "unit_id": 1,
+   "from": [
+    8,
+    8
+   ],
+   "to": [
+    9,
+    9
+   ]
+  },
+  {
+   "kind": "build",
+   "improvement": "HarvestFruit",
+   "at": [
+    8,
+    9
+   ],
+   "cost": 2,
+   "population": 1
+  },
+  {
+   "kind": "end_turn"
+  }
+ ]
+}

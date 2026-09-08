@@ -1,0 +1,33 @@
+{
+  "text": "{\"commentary\":\"Harvest both fruit to level the capital and scout east with the Warrior.\",\"actions\":[9,20,42],\"notes\":\"Capture the village at (11,13) next turn.\"}",
+  "stopReason": "end_turn",
+  "sessionId": "01a07f68-6458-7022-b0da-fa290540fd9a",
+  "requestId": "5927ca5d-cfd4-40db-9a2b-245c80265920",
+  "thought": "The user wants me to plan the turn. Two fruit harvests reach level 2.",
+  "usage": {
+    "input_tokens": 9266,
+    "cache_read_input_tokens": 128,
+    "cache_creation_input_tokens": 0,
+    "output_tokens": 847,
+    "reasoning_tokens": 825,
+    "total_tokens": 10241
+  },
+  "num_turns": 1,
+  "total_cost_usd": 0.00402526,
+  "total_cost_usd_ticks": 40252600,
+  "modelUsage": {
+    "grok-4.6-build": {
+      "inputTokens": 9266,
+      "outputTokens": 847,
+      "cacheReadInputTokens": 128,
+      "cacheCreationInputTokens": 0,
+      "modelCalls": 1,
+      "costUSD": 0.00402526
+    }
+  },
+  "structuredOutput": {
+    "commentary": "Harvest both fruit to level the capital and scout east with the Warrior.",
+    "actions": [9, 20, 42],
+    "notes": "Capture the village at (11,13) next turn."
+  }
+}

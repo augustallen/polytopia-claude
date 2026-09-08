@@ -36,6 +36,8 @@ class BridgeClient:
         self._queue: deque[Message] = deque()
         self.hello: Message | None = None
         self.on_message = None  # optional callback(direction, message) for logging
+        self.on_warning = None  # optional callback(message) for the bridge's `warning` messages
+        self.warnings: deque[Message] = deque(maxlen=20)
 
     # ------------------------------------------------------------------ lifecycle
 
@@ -104,13 +106,29 @@ class BridgeClient:
         return message
 
     def expect(self, *types: str, timeout: float | None = None) -> Message:
-        """Wait for a message of one of `types`; anything else is queued for later."""
+        """Wait for a message of one of `types`; anything else is queued for later.
+
+        `timeout` is an absolute deadline for the whole wait, not per message, so a stream of unrelated
+        messages (the bridge's hotseat `warning`s, say) cannot keep a wait alive forever. Warnings are
+        handed to `on_warning` and remembered in `warnings`; they are never queued."""
         skipped: list[Message] = []
+        deadline = None if timeout is None else time.monotonic() + timeout
         while True:
-            message = self.recv(timeout)
+            remaining = None
+            if deadline is not None:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    self._queue.extendleft(reversed(skipped))
+                    raise socket.timeout(f"no {'/'.join(types)} within {timeout:.0f}s")
+            message = self.recv(remaining)
             if message.get("type") in types:
                 self._queue.extendleft(reversed(skipped))
                 return message
+            if message.get("type") == "warning":
+                self.warnings.append(message)
+                if self.on_warning:
+                    self.on_warning(message)
+                continue
             skipped.append(message)
 
     # ------------------------------------------------------------------ protocol
@@ -132,10 +150,15 @@ class BridgeClient:
         """Ask the bridge to (re)send the state once it is our turn; use wait_for_state to receive it."""
         self.send({"type": "get_state"})
 
-    def act(self, action: Message) -> Message:
-        """Send one action and return its result ({"ok": bool, "error": str|None, "kind": str})."""
-        self.send({"type": "action", "action": action})
-        return self.expect("result")
+    def act(self, action: Message, timeout: float | None = 120, *, player: int | None = None) -> Message:
+        """Send one action and return its result ({"ok": bool, "error": str|None, "kind": str}).
+        `player` names the seat acting (pass-and-play); the bridge rejects it if another seat is at the
+        keyboard. Raises socket.timeout if no result arrives within `timeout` seconds."""
+        envelope: Message = {"type": "action", "action": action}
+        if player is not None:
+            envelope["player"] = int(player)
+        self.send(envelope)
+        return self.expect("result", timeout=timeout)
 
     def wait_for_state(self, timeout: float | None = None) -> Message:
         """Block until the next state. Raises GameOver when the game ends first."""

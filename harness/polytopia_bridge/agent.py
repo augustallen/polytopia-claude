@@ -22,7 +22,9 @@ from typing import Any
 
 from .observe import render
 
-RULES = (Path(__file__).parent / "rules.md").read_text(encoding="utf-8")
+_HERE = Path(__file__).parent
+RULES = ((_HERE / "rules.md").read_text(encoding="utf-8").rstrip() + "\n\n"
+         + (_HERE / "strategy_perfection.md").read_text(encoding="utf-8"))
 DEFAULT_MODEL = "claude-fable-5-1"
 MAX_RECENT = 15
 
