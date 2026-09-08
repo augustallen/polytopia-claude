@@ -13,3 +13,7 @@ harness/logs/
 harness/results/
 harness/*.jsonl
 harness/smoke_state*.json
+
+# Screen recordings (100+ MB each) and per-run scratch folders
+harness/recordings/
+harness/astra_card/
