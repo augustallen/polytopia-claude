@@ -135,5 +135,8 @@ hotseat handoff.
 ## Scope and safety
 
 Offline only. The bridge acts in single-player games and in the offline Pass & Play mode used for the
-deathmatch, refuses every online `GameType`, and there is no Steam-account automation. Midjiwan's terms of
-service cover automation broadly; this is personal, offline use on the author's own copy of the game.
+deathmatch, refuses every online `GameType`, and there is no Steam-account automation. That refusal is
+deliberate and is the one line that keeps this an offline experiment: removing it to use the bridge in
+matchmaking or other online games would be cheating against real players, and is not something this project
+supports. Midjiwan's terms of service cover automation broadly; this is personal, offline use on the
+author's own copy of the game.

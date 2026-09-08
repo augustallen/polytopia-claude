@@ -1,4 +1,4 @@
-"""Render the game5 social card from source events; Pillow only, no external assets."""
+"""Render the game6 social card from source events; Pillow only, no external assets."""
 import json
 import math
 from pathlib import Path
@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent
 W, H, S = 1800, 2400, 2
 FONT = '%USERPROFILE%/tools/fonts/JosefinSans[wght].ttf'
-events = [json.loads(line) for line in (ROOT / 'game5.jsonl').read_text().splitlines()]
+events = [json.loads(line) for line in (ROOT / 'game6.jsonl').read_text().splitlines()]
 turns = {p: sorted([e for e in events if e['event'] == 'turn' and e['player'] == p], key=lambda e:e['turn']) for p in (1,2)}
 end = next(e for e in events if e['event'] == 'game_over')
 final = {p['id']:p for p in end['players']}
@@ -76,9 +76,9 @@ poly([(1413,174),(1475,174),(1452,193),(1413,193)],BLUE)
 text(90,63,'THE BATTLE OF POLYTOPIA',30,weight=700)
 text(90,119,'AI MATCH REPORT   /   07 SEP 2026',25,fill='#F6D7CB',weight=600)
 text(85,199,'CODEX WINS',103,weight=700)
-text(92,326,'DOMINATION  /  TURN 14',37,weight=700)
-text(92,397,'An expanding empire.',38)
-text(92,448,'A final capital capture.',38)
+text(92,326,'DOMINATION  /  TURN 10',37,weight=700)
+text(92,397,'Grok takes the lead.',38)
+text(92,448,'Codex takes the game.',38)
 
 # End-of-game leaderboard; the game_over event is authoritative.
 box((65,588,1735,917),'#302A44')
@@ -90,30 +90,30 @@ text(125,697,'1',46,BLUE,700)
 text(195,689,'Codex gpt-6-astra',42,BLUE,700)
 text(197,740,'Codex CLI  /  Player 2',25,MUTED)
 text(125,817,'2',42,ORANGE,700)
-text(195,808,'Claude Fable 5.1',40,ORANGE,600)
-text(197,858,'Claude Code  /  Player 1 · moved first',25,MUTED)
+text(195,808,'Grok 4.6',40,ORANGE,600)
+text(197,858,'Grok Build CLI  /  Player 1 · moved first',25,MUTED)
 for p,y,col in [(2,704,BLUE),(1,821,CREAM)]:
     for x,k in [(1175,'score'),(1398,'cities'),(1615,'kills')]: text(x,y,f'{final[p][k]:,}',46,col,600,'mt')
 
-text(90,963,'THE ECONOMY GAP',39,weight=700)
+text(90,963,'THE TURNAROUND',39,weight=700)
 line([(1164,982),(1213,982)],BLUE,6)
 circle(1189,982,6,BLUE)
 text(1230,966,'Codex',28,BLUE)
 line([(1410,982),(1459,982)],ORANGE,5)
-text(1476,966,'Claude',28,ORANGE)
+text(1476,966,'Grok',28,ORANGE)
 
 def chart(rect,key,title,subtitle,ymax,ticks,step=False):
     x,y,w,h=rect
     box((x,y,x+w,y+h),'#302A44')
     text(x+30,y+25,title,34,weight=600)
     text(x+30,y+74,subtitle,24,MUTED)
-    left,top,right,bottom=x+73,y+139,x+w-91,y+h-68
-    xy=lambda t,v:(left+(right-left)*t/14,bottom-(bottom-top)*v/ymax)
+    left,top,right,bottom=x+73,y+139,x+w-(125 if key == 'score' else 91),y+h-68
+    xy=lambda t,v:(left+(right-left)*t/10,bottom-(bottom-top)*v/ymax)
     for v in ticks:
         yy=xy(0,v)[1]
         line([(left,yy),(right,yy)],GRID,1)
         text(left-19,yy,str(v),23,MUTED,anchor='rm')
-    for t in [0,2,4,6,8,10,12,14]:
+    for t in [0,2,4,6,8,10]:
         xx=xy(t,0)[0]
         text(xx,bottom+18,str(t),23,MUTED,anchor='mt')
     text(right,bottom+44,'TURN',18,MUTED,anchor='rt')
@@ -127,25 +127,25 @@ def chart(rect,key,title,subtitle,ymax,ticks,step=False):
         for xx,yy in pts: circle(xx,yy,4,col)
         xx,yy=pts[-1]
         circle(xx,yy,7,col)
-        text(xx+20,yy,str(turns[p][-1][key]),29,col,700,'lm')
+        text(xx+16,yy,f'{turns[p][-1][key]:,}',26,col,700,'lm')
 
 chart((65,1025,1670,452),'stars','Stars in reserve','Unspent stars at the start of each player’s turn',30,[0,10,20,30])
-chart((65,1500,817,427),'income','Star income','Stars per turn',20,[0,5,10,15,20],True)
-chart((906,1500,829,427),'cities','Cities held','Codex: 6 before final capture → 7 after',6,[0,2,4,6],True)
+chart((65,1500,817,427),'score','Score','Grok leads at T7; Codex at T8',2500,[0,1000,2000],False)
+chart((906,1500,829,427),'cities','Cities held','Turn-start holdings; final: 5 vs 0',4,[0,1,2,3,4],True)
 
 text(90,1955,'HOW THE GAME TURNED',32,weight=700)
 for a,b in [(275,632),(825,1182),(1375,1688)]:
     line([(a,2031),(b,2031)],'#73617B',3)
-milestones=[(110,'03','Second city','Codex begins expanding.'),(660,'11','Six cities','Codex captures city #6.'),(1210,'14','Elimination','Claude’s capital falls.')]
+milestones=[(110,'06','Grok expands','Two captures in one turn.'),(660,'07-08','Codex strikes back','Grok falls from 3 cities to 1.'),(1210,'10','Capital falls','Codex eliminates Grok.')]
 for x,t,title,caption in milestones:
     star(x,2031,13,BLUE)
     text(x+26,2015,'TURN '+t,25,BLUE,600)
     text(x,2062,title,36,CREAM,600)
     text(x,2115,caption,25,MUTED)
-text(90,2176,'Charts show each seat’s turn-start state, T0–T14. Final standings follow the winning capture.',24,MUTED)
+text(90,2176,'Charts: each player’s turn-start state, T0–T10. Final standings: after the winning capture.',24,MUTED)
 line([(90,2232),(1710,2232)],GRID,2)
 text(90,2260,'DOMINATION  ·  TINY 11 × 11  ·  IMPERIUS vs IMPERIUS',27,weight=600)
-text(90,2310,'Offline Pass & Play  /  Both models: medium reasoning  /  Source: game5.jsonl',25,MUTED)
+text(90,2310,'Offline Pass & Play  /  Both models: medium reasoning  /  Source: game6.jsonl',25,MUTED)
 im=im.resize((W,H),Image.Resampling.LANCZOS)
 im.save(ROOT/'astra-card.png')
 im.resize((900,1200),Image.Resampling.LANCZOS).save(ROOT/'astra-card-preview.png')

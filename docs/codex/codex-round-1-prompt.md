@@ -16,4 +16,4 @@ Please give concrete, prioritised feedback as a numbered list (max 15 items), ea
 - Anything in the existing runner/client that the new play_turns() loop would break (stale states, GameOver handling, drain_stale_states, wait_until_in_game).
 - Windows-specific pitfalls with subprocess + stream-json from `claude -p`.
 Say explicitly which of the plan's ideas you would drop as unnecessary.
-Plan file path: /c/Users/augus/AppData/Local/Temp/claude/C--Users-augus-polytopia-claude/605af408-cb34-4ae0-8c82-9c685876caa1/scratchpad/plan.md
+Plan file path: <scratchpad>

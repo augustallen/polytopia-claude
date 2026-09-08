@@ -1,6 +1,6 @@
 Read-only review completed; no files modified. The largest gains would come from a stronger opening, spending toward immediate rewards, and planning explicitly around the snapshot action list.
 
-1. **Make the Imperius opening precise, and stop automatically choosing Explorer.** In [strategy_domination.md](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/strategy_domination.md), replace the opening guidance with:
+1. **Make the Imperius opening precise, and stop automatically choosing Explorer.** In [strategy_domination.md](harness/polytopia_bridge/strategy_domination.md), replace the opening guidance with:
 
    > “Imperius starts with Organization. On the first playable turn, normally harvest two fruit for 4 stars to reach capital level 2, take Workshop, and move the starting Warrior toward a nearby village or useful scouting frontier. Buy a second Warrior when it accelerates a separate village capture or answers an immediate threat; do not train automatically just because a support slot is available.”
 
@@ -48,7 +48,7 @@ Read-only review completed; no files modified. The largest gains would come from
 
    > “The runner selects city rewards automatically; do not include reward indices, but account for their stars, population, support capacity, and Giant placement when ordering actions.”
 
-6. **Correct the remaining mechanics text in [rules.md](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/rules.md).**
+6. **Correct the remaining mechanics text in [rules.md](harness/polytopia_bridge/rules.md).**
 
    The blanket claim that ranged attacks at distance 2+ take no retaliation is wrong. Replace it, and the strategy’s “no retaliation” claim, with:
 
@@ -66,13 +66,13 @@ Read-only review completed; no files modified. The largest gains would come from
 
    Custom Houses and the Boat/Ship/Battleship description predate the [naval rework](https://polytopia.io/path-of-the-ocean/). For this Dryland planner, omit the naval tutorial and Perfection scoring paragraph entirely.
 
-7. **Tell the planner to batch chosen actions, preserve tactical options, and justify each additional call.** In [planner.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/planner.py), replace `INSTRUCTIONS` and the duplicated strategy Planning bullet with one authoritative instruction:
+7. **Tell the planner to batch chosen actions, preserve tactical options, and justify each additional call.** In [planner.py](harness/polytopia_bridge/planner.py), replace `INSTRUCTIONS` and the duplicated strategy Planning bullet with one authoritative instruction:
 
    > “Choose useful actions; do not execute actions merely because they are legal. Batch your chosen independent actions. Every index belongs to this snapshot: spending shares one treasury, and a destination blocked now has no selectable move even if another action will free it. Before moving a unit, consider attacks currently available to it. Leave supporting units uncommitted when newly revealed enemies could change their best action. Omit end turn only when you can name a useful follow-up requiring a fresh list, such as training after research, attacking after movement, or occupying a cleared city. Batch compatible enabling actions before that refresh. On the final call, prioritize executable combat, occupation, and spending; newly unlocked actions will otherwise wait until next turn. Current state and legal actions override earlier notes or commentary. An empty list ends the turn.”
 
    Also separate the retry allowance from `calls_left`: the runner passes `min(2, remaining)` as `max_attempts`, so the first prompt currently reports **2 calls remaining even when 3 remain**. Pass `calls_left=remaining` separately and subtract attempts from that value when building retry prompts.
 
-8. **Expose support capacity and meaningful star math.** In [observe.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/observe.py), count supported units using the already-serialized `home` field:
+8. **Expose support capacity and meaningful star math.** In [observe.py](harness/polytopia_bridge/observe.py), count supported units using the already-serialized `home` field:
 
    ```python
    supported = sum(
@@ -116,7 +116,7 @@ Read-only review completed; no files modified. The largest gains would come from
 
 10. **The sample plan is legal-looking but strategically weak, and its Riding claim needs provenance.**
 
-    In [sample_turn_output.txt](C:/Users/augus/polytopia-claude/docs/sample_turn_output.txt), moving Warrior #1 onto `(11,13)` is good. However:
+    In [sample_turn_output.txt](docs/sample_turn_output.txt), moving Warrior #1 onto `(11,13)` is good. However:
 
     - Two hunts spend 4 stars to reach only **2/5 population**, without income, capacity, or reward.
     - Warrior #11 should move to `(10,11)`, putting the northern village `(10,10)` within the next move.
@@ -133,7 +133,7 @@ Read-only review completed; no files modified. The largest gains would come from
 
     The prompt’s “cheap growth” bias and lack of an explicit target per unit explain the movement/spending weakness. Stale history could explain “Riding is in,” but the captured prompt is absent, so that cause is unproven. Label the sample as an adapted **16×16 Xinxi/Easy fixture**, and capture the exact prompt/state alongside future samples; it does not demonstrate Imperius/Normal/Tiny performance.
 
-11. **Show actual action outcomes and the opponent’s reply.** [Console.step()](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/console.py) currently prints acceptance plus a preview. Acceptance is not an observed combat result.
+11. **Show actual action outcomes and the opponent’s reply.** [Console.step()](harness/polytopia_bridge/console.py) currently prints acceptance plus a preview. Acceptance is not an observed combat result.
 
     In `runner.py`, retain the pre-action state and successful action; when the next state arrives, compare unit IDs, HP, positions, city owners/levels, and treasury before rendering the result. Use the same outcome text in `turn_log`, so replans benefit too. Example output format:
 
@@ -152,7 +152,7 @@ Read-only review completed; no files modified. The largest gains would come from
 
     > “Write this first: 2–3 short sentences, at most 70 words. State the immediate objective, the decisive action or spending choice and why, and the main threat or reason another call is needed. Distinguish intended actions from completed results. Do not repeat the full action list.”
 
-    Add `--verbose` in [play_domination.py](C:/Users/augus/polytopia-claude/harness/scripts/play_domination.py). By default, print streamed commentary, a compact plan summary, actual execution results, and the strategic footer. Show the full pre-execution action list, notes, token counts, and per-action timing only in verbose mode. This avoids printing each action twice and stops cutting notes mid-word.
+    Add `--verbose` in [play_domination.py](harness/scripts/play_domination.py). By default, print streamed commentary, a compact plan summary, actual execution results, and the strategic footer. Show the full pre-execution action list, notes, token counts, and per-action timing only in verbose mode. This avoids printing each action twice and stops cutting notes mid-word.
 
     Gate ANSI and in-place thinking updates on `stream.isatty()`; noninteractive output should contain one planning-start line and one completion line.
 

@@ -49,7 +49,7 @@ Protocol (newline-delimited JSON over TCP, PolyZero style, port 9876):
 
 Runtime location: the mod must be built and run on Windows. The Python harness can run on the Mac over LAN (plugin binds `0.0.0.0` only when a config flag is set) or on the Windows PC on loopback. Recommendation: run Claude Code on the Windows PC for the C# work, keep the harness cross-platform so it runs from either box.
 
-## Repository layout (new repo `polytopia-claude`, created in `/Users/augustallen/Claude/`, pushed to GitHub, cloned on Windows)
+## Repository layout (new repo `polytopia-claude`, created in `~/Claude/`, pushed to GitHub, cloned on Windows)
 
 ```
 polytopia-claude/

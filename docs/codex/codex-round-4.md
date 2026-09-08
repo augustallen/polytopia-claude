@@ -2,7 +2,7 @@ Read-only review complete; no files changed. The main problem was delayed conver
 
 1. **Add an explicit spending decision; support caps do not explain the bank.** In the transcript, T14 spends 6 of 21 stars on two Archers; T15 spends 6 of 31; T16 spends 13 of 44 on Climbing and an Archer; T17 spends 19 of 50 on Forestry and an Archer. All execute successfully. The model mentions *capacity* as a growth benefit, but never says a support cap prevents recruitment. Occupied recruitment tiles are a real constraint; a general support-cap explanation is unsupported. The spectator transcript omits the complete legal lists, so it cannot establish every unselected purchase.
 
-   The current strategy’s “build the unit that supplies the missing role,” “Giants or stronger units when basic attacks cannot break the defence,” and “Reserve the stars for this turn’s decisive recruitment, research or roads” point toward the remedy. None explicitly requires converting surplus into that remedy. The last sentence can even encourage continued reservation. Replace it in [strategy_domination.md](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/strategy_domination.md) with:
+   The current strategy’s “build the unit that supplies the missing role,” “Giants or stronger units when basic attacks cannot break the defence,” and “Reserve the stars for this turn’s decisive recruitment, research or roads” point toward the remedy. None explicitly requires converting surplus into that remedy. The last sentence can even encourage continued reservation. Replace it in [strategy_domination.md](harness/polytopia_bridge/strategy_domination.md) with:
 
    > Before ending the turn, identify the purchase that most shortens the next city capture: a needed unit, its technology, a useful road, or population completing a useful reward. Buy it when affordable and timely. Save only for a named purchase with a cost and intended turn, or when further spending cannot help before victory. An occupied recruitment tile and a full support allocation are different constraints; check the city lines and legal training actions.
 
@@ -18,7 +18,7 @@ Read-only review complete; no files changed. The main problem was delayed conver
 
 3. **Require completing affordable research chains within the available calls.** T17 had 50 stars. The observed prices were Forestry 16, Mathematics 22 and Catapult 8: **46 total**. Instead, the model researched Forestry, trained an Archer on Carolo’s recruitment tile, and ended after one call. Mathematics and the first Catapult arrived T18; the Catapult first fired T19 from **(7,6)**, already within range of Wegoth **(8,3)**.
 
-   Earlier execution remains conditional on the refreshed legal lists, but this is a concrete missed opportunity. The current instructions already mention “training after research”; make the obligation explicit by inserting after the fresh-list sentence in [planner.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/planner.py):
+   Earlier execution remains conditional on the refreshed legal lists, but this is a concrete missed opportunity. The current instructions already mention “training after research”; make the obligation explicit by inserting after the fresh-list sentence in [planner.py](harness/polytopia_bridge/planner.py):
 
    > If an affordable research chain unlocks the unit needed for the current fight, use remaining calls to complete the chain and recruit this turn. Keep its intended city tile free; do not fill it with a substitute unit first. Do not end the turn merely because the next prerequisite or recruitment requires a refreshed action list.
 
@@ -49,7 +49,7 @@ Read-only review complete; no files changed. The main problem was delayed conver
 
 6. **Keep reward-trigger re-queuing; fix its end-turn edge case.** The T7 rejection was not a bad move: a reward became pending after the supplied state. Re-queuing once, answering the trigger and revalidating is the right local response. Requesting state before every plan cannot eliminate a trigger appearing after that request or during planning.
 
-   The implemented fix preserves ordinary steps, but the subsequent unconditional `steps.clear()` discards a re-queued `end_turn`. In [runner.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/runner.py), replace the final clearing condition after `act()` with:
+   The implemented fix preserves ordinary steps, but the subsequent unconditional `steps.clear()` discards a re-queued `end_turn`. In [runner.py](harness/polytopia_bridge/runner.py), replace the final clearing condition after `act()` with:
 
    ```python
    if step.get("kind") == "end_turn" and result.get("ok"):
@@ -70,14 +70,14 @@ Read-only review complete; no files changed. The main problem was delayed conver
 
 8. **Finish two spectator fixes that remain in current code.** The new state diffs, compact plans, clamped negative previews and reduced thinking output already address most transcript clutter. Two remaining issues are concrete:
 
-   First, T6 and T21 commentary repeats almost the same paragraph consecutively. `consume_events()` currently forwards both ordinary text and extracted structured commentary to the same callback. That is a plausible cause, although the spectator transcript alone cannot prove which stream supplied each paragraph. In [claude_stream.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/claude_stream.py), replace the `text_delta` forwarding branch with:
+   First, T6 and T21 commentary repeats almost the same paragraph consecutively. `consume_events()` currently forwards both ordinary text and extracted structured commentary to the same callback. That is a plausible cause, although the spectator transcript alone cannot prove which stream supplied each paragraph. In [claude_stream.py](harness/polytopia_bridge/claude_stream.py), replace the `text_delta` forwarding branch with:
 
    ```python
    elif dt == "text_delta":
        continue  # Spectator commentary comes from StructuredOutput only.
    ```
 
-   Second, the current console still describes an already-captured capital as “not located.” Replace its `obj` assignment in [console.py](C:/Users/augus/polytopia-claude/harness/polytopia_bridge/console.py) with:
+   Second, the current console still describes an already-captured capital as “not located.” Replace its `obj` assignment in [console.py](harness/polytopia_bridge/console.py) with:
 
    ```python
    obj = (
